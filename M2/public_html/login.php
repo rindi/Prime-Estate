@@ -5,21 +5,23 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <head>
         <meta charset="UTF-8">
         <title></title>
     </head>
     <body>
-        <nav>
-            <a href="index.php">Home</a>
-            <a href="login.php">Sign in</a>
+        <nav class="navbar navbar-default" role="navigation">
+        <a class="navbar-index" href="index.php">Home</a>
+        <a href="registration.php">Register</a>
         </nav>
         <form align=center action="Brain/login.php" method="POST">
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
             <input type="submit" name="submit"> 
         </form>
-        <footer>
+    <footer>
+        <div class="footer navbar-fixed-bottom">
         <a href="data_usage.php">Data usage</a>
     </footer>
     </body>

@@ -5,6 +5,7 @@ include("Brain/check_if_loggedin.php");
 ?>
 <html>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <body>
         <nav class="navbar navbar-default" role="navigation">
         <a class="navbar-index" href="index.php">Home</a>
@@ -19,8 +20,8 @@ include("Brain/check_if_loggedin.php");
     <h1 align="center">
         Welcome to Prime Estate<?php if($loggedin) echo ", ".$loggedinas; ?>.
     </h1>
-    <h3> Get Started </h3>
-    <form align="center" action="searchresults.php" method="POST">
+    <h3 vcenter> Get Started </h3>
+        <form align="center" action="searchresults.php" method="POST">
         <select name="searchtype">
             <option value="city" id="city" selected>City</option>
             <option value="zip" id="zip" >Zip</option>
