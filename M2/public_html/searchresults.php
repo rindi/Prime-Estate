@@ -56,9 +56,10 @@ and open the template in the editor.
         <th>Bathrooms</th>
         <th>Description</th>
         <th>Date Added</th>
+        <th>Image</th>
         </tr>";
-
         while($row = mysqli_fetch_array($result)) {
+          $houseval=$row['id'];
           echo "<tr>";
           echo "<td>" . $row['address'] . "</td>";
           echo "<td>" . $row['city'] . "</td>";
@@ -68,6 +69,10 @@ and open the template in the editor.
           echo "<td>" . $row['bathrooms'] . "</td>";
           echo "<td>" . $row['description'] . "</td>";
           echo "<td>" . $row['when_added'] . "</td>";
+          $imgquery="SELECT path FROM images WHERE houseid='$houseval'";
+          $imgresult=$con->query($imgquery);
+          while($imgrow = mysqli_fetch_array($imgresult)) {
+          echo "<td> <a href=" . $imgrow['path'] . ">Image</a></td>";}
           echo "</tr>";
         }
 
