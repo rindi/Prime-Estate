@@ -3,7 +3,7 @@
     $host = 'localhost'; //HOST NAME.
     $db_name = 'student_f14g03'; //Database Name
     $db_username = 'f14g03'; //Database Username
-    $db_password = 'swef2014db'; //Database Password
+    $db_password = 'fzR-5NY-5oM-W2y'; //Database Password
 
     try
     {

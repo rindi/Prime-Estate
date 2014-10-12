@@ -1,7 +1,7 @@
 <?php
     /*
 #require 'Brain/dbconfig.php';
-    $con=mysqli_connect("sfsuswe.com","f14g03","swef2014db","student_f14g03");
+    $con=mysqli_connect("sfsuswe.com","f14g03","fzR-5NY-5oM-W2y","student_f14g03");
     if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
