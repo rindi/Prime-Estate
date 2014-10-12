@@ -5,14 +5,15 @@
     
     $un = $_POST["username"];
     $pw = $_POST["password"];
-    
+    $encryptedpswd = base64_encode($pw);
+
     try
     {
         if( $get_records = $pdo->query("SELECT * FROM usertable") )
         {
             while( $row = $get_records->fetch(PDO::FETCH_OBJ) )
                 {
-                if( $row->username == $un && $row->password == $pw )
+                if( $row->username == $un && $row->password == $encryptedpswd )
                         {
                                 setcookie("username", $un, time()*60, "/");
                                 $loggedin = true;
