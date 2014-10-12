@@ -4,21 +4,27 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php
+    include("Brain/check_if_loggedin.php");
+    $type=$_POST["searchtype"];
+    $value=$_POST["searchvalue"];
+?>
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <?php
-        $type=$_POST["searchtype"];
-        $value=$_POST["searchvalue"];
-    ?>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <body>
-        <nav>
-            <a href="index.php">Home</a>
-            <a href="login.php">Sign in</a>
-            <a href="registration.php">Register</a>       
+        <nav class="navbar navbar-default" role="navigation">
+        <a class="navbar-index" href="index.php">Home</a>
+        <?php if(!$loggedin): ?>
+         <a href="login.php">Sign in</a>
+         <a href="registration.php">Register</a>
+        <?php else: ?>
+          Logged in as <?php echo $loggedinas;?> 
+          <a href="Brain/logout.php">Logout</a>
+        <?php endif; ?>
         </nav>
         <form align="center" action="searchresults.php" method="POST">
             <select name="searchtype" >
