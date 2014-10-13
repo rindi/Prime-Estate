@@ -15,16 +15,28 @@ and open the template in the editor.
         <title></title>
     </head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <body>
-        <nav class="navbar navbar-default" role="navigation">
-        <a class="navbar-index" href="index.php">Home</a>
+    <body><nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="index.php">Prime Estate</a>
+        <ul class="nav navbar-nav">
+
         <?php if(!$loggedin): ?>
-         <a href="login.php">Sign in</a>
-         <a href="registration.php">Register</a>
-        <?php else: ?>
-          Logged in as <?php echo $loggedinas;?> 
-          <a href="Brain/logout.php">Logout</a>
-        <?php endif; ?>
+         <li class="active">
+             <a href="login.php">Sign in</a>
+         </li>
+         <li class="active">
+             <a href="registration.php">Register</a>
+         </li>
+        <?php else:?>
+            <li class="active">
+                <a href="profile.php">Signed in as <?php echo $loggedinas;?></a>
+            </li>
+         <li class="active">
+             <a href="Brain/logout.php">Logout</a>
+         </li>
+         <?php endif; ?>
+    
+        </div>
         </nav>
         <form align="center" action="searchresults.php" method="POST">
             <select name="searchtype" >
@@ -46,7 +58,9 @@ and open the template in the editor.
         $query="SELECT * FROM houses WHERE $type='$value'";
         $result=$con->query($query);
         #echo $query;
-        echo "<table style='width:100%' border='1'>
+        echo "<div class='results'>
+        <table class='table' style='width:90%' border='1' align='center'>
+        <thead>
         <tr>
         <th>Address</th>
         <th>City</th>
@@ -57,10 +71,10 @@ and open the template in the editor.
         <th>Description</th>
         <th>Date Added</th>
         <th>Image</th>
-        </tr>";
+        </tr></thead>";
         while($row = mysqli_fetch_array($result)) {
           $houseval=$row['id'];
-          echo "<tr>";
+          echo "<tbody><tr>";
           echo "<td>" . $row['address'] . "</td>";
           echo "<td>" . $row['city'] . "</td>";
           echo "<td>" . $row['zip'] . "</td>";
@@ -76,7 +90,7 @@ and open the template in the editor.
           echo "</tr>";
         }
 
-        echo "</table>";
+        echo "</tbody></table></div>";
         if (!mysqli_query($con,$query)) {
             die('Error: ' . mysqli_error($con));
         }
