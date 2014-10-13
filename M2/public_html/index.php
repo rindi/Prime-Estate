@@ -8,19 +8,39 @@ include("Brain/check_if_loggedin.php");
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <body>
         <nav class="navbar navbar-default" role="navigation">
-        <a class="navbar-index" href="index.php">Home</a>
-        
+        <div class="navbar-header">
+        <a class="navbar-brand" href="index.php">Prime Estate</a>
+        <ul class="nav navbar-nav">
+
         <?php if(!$loggedin): ?>
-            <a href="login.php">Sign in</a>
-         <a href="registration.php">Register</a>
-        <?php else: ?>
-             Logged in as <?php echo $loggedinas;?> <a href="Brain/logout.php">Logout</a>
-        <?php endif; ?>
-    </nav>
-    <h1 align="center">
-        Welcome to Prime Estate<?php if($loggedin) echo ", ".$loggedinas; ?>.
-    </h1>
-    <h3 vcenter> Get Started </h3>
+         <li class="active">
+             <a href="login.php">Sign in</a>
+         </li>
+         <li class="active">
+             <a href="registration.php">Register</a>
+         </li>
+        <?php else:?>
+            <li class="active">
+                <a href="profile.php">Signed in as <?php echo $loggedinas;?></a>
+            </li>
+         <li class="active">
+             <a href="Brain/logout.php">Logout</a>
+         </li>
+         <?php endif; ?>
+    
+        </div>
+        </nav>
+        
+        <br/><br/><br/><br/>
+        
+        <h1 align="center">
+            Welcome to Prime Estate<?php if($loggedin) echo ", ".$loggedinas; ?>.
+        </h1>
+        
+        <br/><br/>
+        
+        <h4 align="center"> Get started - Search by City or Zip</h4><br/>
+        
         <form align="center" action="searchresults.php" method="POST">
         <select name="searchtype">
             <option value="city" id="city" selected>City</option>
@@ -28,10 +48,11 @@ include("Brain/check_if_loggedin.php");
         </select>   
         <input type="search" name="searchvalue">
         <input type="submit" value="Search">
-    </form>
-    <footer>
+        </form>
+        
+        <footer>
         <div class="footer navbar-fixed-bottom">
         <a href="data_usage.php">Data usage</a>
-    </footer>
+        </footer>
 </body>
 </html>
