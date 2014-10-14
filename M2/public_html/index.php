@@ -6,6 +6,12 @@ include("Brain/check_if_loggedin.php");
 <html>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        #dropdown{
+            height:40px;
+            width:80px;
+        }
+    </style>
     <body>
         <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
@@ -44,13 +50,13 @@ include("Brain/check_if_loggedin.php");
         
         <h4 align="center"> Get started - Search by City or Zip</h4><br/>
         
-        <form align="center" action="searchresults.php" method="POST">
-        <select name="searchtype">
+        <form style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
+        <select name="searchtype" id="dropdown">
             <option value="city" id="city" selected>City</option>
             <option value="zip" id="zip" >Zip</option>
         </select>   
         <input type="search" name="searchvalue">
-        <input type="submit" value="Search">
+        <input type="submit" value="Find Home">
         </form>
         
         <footer>

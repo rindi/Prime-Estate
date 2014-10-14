@@ -38,7 +38,7 @@ and open the template in the editor.
     
         </div>
         </nav>
-        <form align="center" action="searchresults.php" method="POST">
+        <form style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
             <select name="searchtype" >
                 <option value="city" id="city" <?php echo ($type == "city" ? "SELECTED" : ""); ?>>City</option>
                 <option value="zip"id="zip" <?php echo ($type == "zip" ? "SELECTED" : ""); ?>>Zip</option>
