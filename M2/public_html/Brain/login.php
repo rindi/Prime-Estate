@@ -1,7 +1,8 @@
-<?php
+<?php header('Refresh: 3;url=../index.php');
+
     include("dbconfig.php");
-    echo $_POST["username"];
-    echo $_POST["password"];
+    #echo $_POST["username"];
+    #echo $_POST["password"];
     
     $un = $_POST["username"];
     $pw = $_POST["password"];
@@ -26,7 +27,5 @@
     catch (Exception $ex) {
 
     }
-    
-    echo "You are logged in. Go home to login";
-    echo '<a href="../index.php"> home </a>'
+        echo 'You are logged in. <a href="../index.php"> Click here to go home. </a>'
 ?>
