@@ -1,5 +1,5 @@
 <?php
-    /*
+   
     #require 'Brain/dbconfig.php';
     $con=mysqli_connect("sfsuswe.com","f14g03","fzR-5NY-5oM-W2y","student_f14g03");
     if (mysqli_connect_errno()) {
@@ -18,5 +18,5 @@
     mysqli_close($con);
 ?> 
 <html>
-        <a href="index.php">Click here to go home</a>
-</html>*/
+        <a href="../index.php">Click here to go home</a>
+</html>
