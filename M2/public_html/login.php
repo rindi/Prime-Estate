@@ -22,8 +22,9 @@ and open the template in the editor.
              <a href="registration.php">Register</a>
          </li>    
         </div>
-        </nav>
-        <form align=center action="Brain/login.php" method="POST">
+    </nav>
+        <h2 style="text-align:center; margin: 0px auto"> Sign in to your account </h2> <br/><br/>
+        <form style="text-align:center; margin: 0px auto" action="Brain/login.php" method="POST">
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
             <input type="submit" name="submit"> 

@@ -32,11 +32,16 @@ include("Brain/check_if_loggedin.php");
     
         </div>
         </nav>
-    
+        <style>
+            input{
+                padding:5px;
+                margin:5px;
+            }
+        </style>
     <div style="text-align:center" >
-        <h3>Adding new listings:</h3>
+        <h3>Adding new listing:</h3>
         <form action="addlistings_process.php" method="post">
-            <table align="center">
+            <table style="text-align:center; margin: 0px auto">
             <tr><td>Address:</td><td><input type="text" name="address" placeholder="Address" /></td>
             <tr><td>City:</td><td><input type="text" name="city" placeholder="City" /></td>
             <tr><td>Zip:</td><td><input type="text" name="zip" placeholder="Zip" /></td>

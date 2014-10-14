@@ -13,7 +13,7 @@ $when_added = date("Y/m/d");
 
 #echo $addr.' '.$city.' '.$zip.' '.$price.' '.$rooms.' '.$brooms.' '.$desc.' ';
 
-$add_house =  $pdo->prepare("INSERT INTO houses (address, city, zip, price, rooms, bathrooms, description, when_added) VALUES (:addr, :city, :zip, :price, :rooms, :brooms, :description, :when_added)");
+#$add_house =  $pdo->prepare("INSERT INTO houses (address, city, zip, price, rooms, bathrooms, description, when_added) VALUES (:addr, :city, :zip, :price, :rooms, :brooms, :description, :when_added)");
 $add_house->execute(array(  ':addr' => $addr,
                             ':city' => $city, 
                             ':zip' => $zip,
