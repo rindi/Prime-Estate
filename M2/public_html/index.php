@@ -24,6 +24,9 @@ include("Brain/check_if_loggedin.php");
                 <a href="profile.php">Signed in as <?php echo $loggedinas;?></a>
             </li>
          <li class="active">
+             <a href="addlistings.php">Add Listings</a>
+         </li>
+         <li class="active">
              <a href="Brain/logout.php">Logout</a>
          </li>
          <?php endif; ?>

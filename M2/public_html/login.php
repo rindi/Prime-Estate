@@ -11,9 +11,17 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <nav class="navbar navbar-default" role="navigation">
-        <a class="navbar-index" href="index.php">Home</a>
-        <a href="registration.php">Register</a>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="index.php">Prime Estate</a>
+        <ul class="nav navbar-nav">
+        <li class="active">
+             <a href="login.php">Sign in</a>
+         </li>
+         <li class="active">
+             <a href="registration.php">Register</a>
+         </li>    
+        </div>
         </nav>
         <form align=center action="Brain/login.php" method="POST">
             <input type="text" name="username" placeholder="Username">

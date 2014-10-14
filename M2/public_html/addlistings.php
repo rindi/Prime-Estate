@@ -1,5 +1,5 @@
 <?php
-
+include("Brain/check_if_loggedin.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,14 +10,28 @@
         <div class="navbar-header">
         <a class="navbar-brand" href="index.php">Prime Estate</a>
         <ul class="nav navbar-nav">
+
+        <?php if(!$loggedin): ?>
          <li class="active">
              <a href="login.php">Sign in</a>
          </li>
          <li class="active">
              <a href="registration.php">Register</a>
          </li>
-         </div>
-    </nav>
+        <?php else:?>
+            <li class="active">
+                <a href="profile.php">Signed in as <?php echo $loggedinas;?></a>
+            </li>
+         <li class="active">
+             <a href="addlistings.php">Add Listings</a>
+         </li>
+         <li class="active">
+             <a href="Brain/logout.php">Logout</a>
+         </li>
+         <?php endif; ?>
+    
+        </div>
+        </nav>
     
     <div style="text-align:center" >
         <h3>Adding new listings:</h3>
