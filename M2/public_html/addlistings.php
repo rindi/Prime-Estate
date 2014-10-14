@@ -26,9 +26,9 @@
             <tr><td>Address:</td><td><input type="text" name="address" placeholder="Address" /></td>
             <tr><td>City:</td><td><input type="text" name="city" placeholder="City" /></td>
             <tr><td>Zip:</td><td><input type="text" name="zip" placeholder="Zip" /></td>
-            <tr><td>Price:</td><td><input type="number" name="price" placeholder="Price" /></td>
-            <tr><td>Rooms #:</td><td><input type="number" name="rooms" placeholder="Rooms" /></td>
-            <tr><td>Bathrooms #:</td><td><input type="number" name="bathrooms" placeholder="Bathrooms" /></td>
+            <tr><td>Price:</td><td><input type="number" name="price" placeholder="Price" min="0"/></td>
+            <tr><td>Rooms #:</td><td><input type="number" name="rooms" placeholder="Rooms" min="0"/></td>
+            <tr><td>Bathrooms #:</td><td><input type="number" name="bathrooms" placeholder="Bathrooms" min="0"/></td>
             <tr><td>Description:</td><td><textarea type="textfield" name="Description"></textarea></td>
             </table>
             <input type="submit" value="Add listing" />
