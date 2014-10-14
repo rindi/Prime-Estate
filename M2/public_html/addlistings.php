@@ -43,7 +43,7 @@ include("Brain/check_if_loggedin.php");
             <tr><td>Price:</td><td><input type="number" name="price" placeholder="Price" min="0"/></td>
             <tr><td>Rooms #:</td><td><input type="number" name="rooms" placeholder="Rooms" min="0"/></td>
             <tr><td>Bathrooms #:</td><td><input type="number" name="bathrooms" placeholder="Bathrooms" min="0"/></td>
-            <tr><td>Description:</td><td><textarea type="textfield" name="Description"></textarea></td>
+            <tr><td>Description:</td><td><textarea type="textfield" name="description"></textarea></td>
             </table>
             <input type="submit" value="Add listing" />
         </form>
