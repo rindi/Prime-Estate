@@ -10,6 +10,11 @@ and open the template in the editor.
     $value=$_POST["searchvalue"];
 ?>
 <html>
+    <style>
+        h2{
+         padding-left:500px;   
+        }
+    </style>
     <head>
         <meta charset="UTF-8">
         <title></title>
@@ -86,7 +91,7 @@ and open the template in the editor.
           $imgquery="SELECT path FROM images WHERE houseid='$houseval'";
           $imgresult=$con->query($imgquery);
           while($imgrow = mysqli_fetch_array($imgresult)) {
-          echo "<a href=" . $imgrow['path'] . ">Image</a>";}
+          echo "<a href = " . $imgrow['path'] . "><img src=" . $imgrow['path'] . " height='42' width='42' ></img></a>";}
           echo "</td></tr>";
         }
 
