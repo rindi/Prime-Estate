@@ -3,6 +3,12 @@ require_once("Brain/dbconfig.php");
 require_once("Brain/dbconnect.php");
 ?>
 <html>
+    <style>
+            input{
+                padding:5px;
+                margin:5px;
+            }
+    </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
@@ -18,7 +24,7 @@ require_once("Brain/dbconnect.php");
         </nav>
   <h2 align="center">Register your account at Prime Estate</h2>
   <form align="center" name="registration" action="Brain/register.php" method="POST">
-  <br/><table align="center" cellpadding="10">
+  <br/><table style="text-align:center; margin: 0px auto">
       <tr>
           <td>Username  </td>
        <td><input type="text" name="username"/></td>

@@ -10,7 +10,7 @@
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $str = 'This is an encoded string';
     $encryptedpswd = base64_encode($pswd);
-    #$sql="INSERT INTO usertable (username, password, email) VALUES ('$un','$encryptedpswd','$email')";
+    $sql="INSERT INTO usertable (username, password, email) VALUES ('$un','$encryptedpswd','$email')";
     if (!mysqli_query($con,$sql)) {
         die('Error: ' . mysqli_error($con));
     }
