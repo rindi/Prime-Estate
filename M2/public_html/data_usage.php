@@ -13,8 +13,6 @@ and open the template in the editor.
         <?php
         // put your code here
         ?>
-        Privacy Policy.
-        Data usage test for SVN.
-        Data usage test for SVN "alex made changes" 
+        Data usage test for SVN "alex and jonathan made changes" 
     </body>
 </html>
