@@ -43,7 +43,7 @@ include("Brain/check_if_loggedin.php");
         <br/><br/><br/><br/>
         
         <h1 align="center">
-            Welcome to Prime Estate<?php if($loggedin) echo ", ".$loggedinas; ?>.
+            Welcome to Prime Estates R US<?php if($loggedin) echo ", ".$loggedinas; ?>.
         </h1>
         
         <br/><br/>
