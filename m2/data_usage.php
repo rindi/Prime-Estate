@@ -14,7 +14,7 @@ and open the template in the editor.
         // put your code here
         ?>
         
-        ALEX WAS HERE. 
+        ALEX WAS HERE. svn test
         
     </body>
 </html>
