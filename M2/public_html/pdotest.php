@@ -17,6 +17,7 @@ foreach($dataSet as $data)
     echo "UserType: ".$data->getUserType();
     echo "</p>";
 }
+
 //ADD USER
 echo '<p>ADD</p>';
 $registration['username'] = "Jacha"; 
@@ -30,9 +31,11 @@ $db->addUser($newUser);
  * ListingData SAMPLE
  */
 echo '<p>LISTINGS</p>';
+
 //DELETE
 echo '<p>DELETE</p>';
 $db->deleteListing(24);
+
 //ADD
 // echo '<p>ADD</p>';
 // $input['address'] = "2345 Culver Trail";
@@ -45,6 +48,7 @@ $db->deleteListing(24);
 // $input['userid'] = "5";
 // $newListing = new ListingData($input);
 // $db->addListing($newListing);
+
 //EDIT
 echo '<p>EDIT</p>';
 $input['address'] = "3571 Culver Trail";
@@ -58,6 +62,7 @@ $input['id'] = "7";
 $input['userid'] = "6";
 $newListing = new ListingData($input);
 $db->editListing($newListing);
+
 //SEARCH
 echo '<p>SEARCH</p>';
 $listingSet = $db->searchListings('94132');
@@ -77,6 +82,7 @@ foreach((array)$listingSet as $listingData)
     echo "Rooms: ".$listingData->getRooms(); 
     echo "</p>";
 }
+
 //REALTOR
 echo '<p>REALTOR</p>';
 $listingSet = $db->getListings('3');
