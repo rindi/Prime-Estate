@@ -5,7 +5,10 @@ require ("Database.php");
  $db = new Database();
 // $db = new PDO($dsn, 'f14g03','fzR-5NY-5oM-W2y');
  
- //SAMPLE USING UserData
+ /**
+  * UserData SAMPLE
+  */
+ //Get Userinfo
  $dataSet = $db->getUsers();
  if($dataSet)
  {
@@ -22,9 +25,32 @@ require ("Database.php");
  }
  else
      echo "No Results Found!";
+ //ADD
+// $registration['username'] = "aaaaaaaa";
+// $registration['password'] = "aaaaaaaas";
+// $registration['type'] = "customer";
+// $registration['email'] = "aaaaaaasajdoas@asmdoann.com";
+// $db->addUser($registration);
  
- //SAMPLE USING ListingData
- $listingSet = $db->searchListings('94324');
+  /**
+  * ListingData SAMPLE
+  */
+ //DELETE
+ //$db->deleteListing(14);
+ //ADD
+// $input['address'] = "3571 Culver Trail";
+// $input['city'] = "Faribault";
+// $input['zip'] = "94112";
+// $input['price'] = "5";
+// $input['rooms'] = "5";
+// $input['bathrooms'] = "3.5";
+// $input['description'] = "Cozy home away from home";
+// $input['when_added'] = "today";
+// $input['when_modified'] = "tomorrow";
+// $db->addListing($input);
+ //SEARCH
+ //$listingSet = $db->searchListings('94132');
+ //$listingSet = $db->searchListings('San Francisco');
  if($listingSet)
  {
      foreach($listingSet as $listingData)
