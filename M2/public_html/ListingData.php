@@ -3,10 +3,13 @@
 class ListingData
 {
     //fields for userdata class
-    private $id, $address, $city, $zip, $price, $rooms, $bathrooms, $description,$when_added, $when_modified;
+    private $id, $address, $city, $zip, $price, $rooms, $bathrooms, $description, $userid, $when_added, $when_modified, $images;
+    
     public function __construct($dbRow)
     {
-        $this->id = $dbRow['id'];
+        //if Listing is new, it doesn't have id
+        if (count($dbRow)>8)
+            $this->id = $dbRow['id'];
         $this->address = $dbRow['address'];
         $this->city = $dbRow['city'];
         $this->zip = $dbRow['zip'];
@@ -14,8 +17,7 @@ class ListingData
         $this->rooms = $dbRow['rooms'];
         $this->bathrooms = $dbRow['bathrooms'];
         $this->description = $dbRow['description'];
-        $this->when_added = $dbRow['when_added'];
-        $this->when_modified = $dbRow['when_modified'];
+        $this->userid = $dbRow['userid'];
     }
     public function getListing()
     {
@@ -61,6 +63,10 @@ class ListingData
     {
         return $this->description;
     }
+    public function getUserId()
+    {
+        return $this->userid;
+    }
     public function getBathrooms()
     {
         return $this->bathrooms;
@@ -69,11 +75,41 @@ class ListingData
     {
         return $this->rooms;
     }
+    public function getImages()
+    {
+        return $this->images;
+    }
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+    public function setCity($city)
+    {
+        $this->city = $city;
+    }
+    public function setZip($zip)
+    {
+        $this->zip = $zip;
+    }
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+    public function setBathrooms($bathrooms)
+    {
+        $this->bathrooms = $bathrooms;
+    }
+    public function setRooms($rooms)
+    {
+        $this->rooms = $rooms;
+    }
+    public function setImages($images)
+    {
+        $this->images = $images;
+    }
 }
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 ?>

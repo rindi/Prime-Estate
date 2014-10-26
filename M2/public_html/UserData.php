@@ -4,14 +4,16 @@ class UserData
 {
     //fields for userdata class
     private $username, $password, $userid, $type, $email;
+    
     public function __construct($dbRow)
-    {
+    { 
+        //if USER is new, they don't have id
+        if (count($dbRow)>4)
+            $this->userid = $dbRow['userid'];
         $this->username = $dbRow['username'];
         $this->password = $dbRow['password'];
-        $this->userid = $dbRow['userid'];
-        $this->email = $dbRow['type'];
-        $this->type = $dbRow['email'];
-        
+        $this->email = $dbRow['email'];
+        $this->type = $dbRow['type'];
     }
     public function getUserName()
     {
@@ -29,9 +31,13 @@ class UserData
     {
         return $this->type;
     }
-    public function getEmail()
+    public function getUserEmail()
     {
         return $this->email;
+    }
+    public function setUserPassword($password)
+    {
+        $this->password = $password;
     }
 }
 
