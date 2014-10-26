@@ -17,6 +17,18 @@ class ListingData
         $this->when_added = $dbRow['when_added'];
         $this->when_modified = $dbRow['when_modified'];
     }
+    public function getListing()
+    {
+        return array(  ':addr' => $addr,
+                                    ':city' => $city, 
+                                    ':zip' => $zip,
+                                    ':price' => $price,
+                                    ':rooms' => $rooms,
+                                    ':brooms' => $bathrooms,
+                                    ':description' => $description,
+                                    ':when_added' => $when_added
+                         );
+    }
     public function getId()
     {
         return $this->id;
