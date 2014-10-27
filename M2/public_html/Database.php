@@ -52,6 +52,23 @@ class Database
         $stmt->execute();  
     }
     
+     /**
+     * Change a user's password
+     * @param type $input
+     */
+    public function changeUserPassword($input)
+    {
+        $sql = "UPDATE user SET password = :password, 
+            WHERE userid = :userid";
+                                          
+        $stmt = $this->con->prepare($sql);
+        $stmt->bindParam(':userid', $input->getUserId(), PDO::PARAM_STR);   
+        $stmt->bindParam(':password', $input->getUserPassword(), PDO::PARAM_STR);   
+        $stmt->bindParam(':id', $input->getId(), PDO::PARAM_INT);   
+
+        $stmt->execute();       
+    }
+    
     /**
      * Search Listings
      * @param type $input
