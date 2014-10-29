@@ -89,6 +89,38 @@ class Database
         else
             return null;
     }
+       /**
+     * Search Listings
+     * @param type $input
+     * @return \ListingData
+     */
+    public function searchListings2($input)
+    {
+       $query = "
+
+        SELECT *,
+
+            MATCH(city, zip) AGAINST ($input) FROM houses
+
+        WHERE MATCH(city, zip) AGAINST($input)
+
+    ";
+
+          $sql = MySQL_query($query);
+  
+              
+        foreach ($this->con->query($sql) as $row) 
+        {
+            $imgstack = $this->getImages($row['id']);
+            $newListing = new ListingData($row);
+            $newListing->setImages($imgstack);
+            $dataSet[] = $newListing;
+        }
+        if (!empty($dataSet))
+            return $dataSet;
+        else
+            return null;
+    }
  
     /**
      * Get Realtor's Listings from the Database
