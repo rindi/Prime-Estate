@@ -65,7 +65,7 @@ $db->editListing($newListing);
 
 //SEARCH
 echo '<p>SEARCH</p>';
-$listingSet = $db->searchListings('S1');
+$listingSet = $db->searchListings('f123');
 //$listingSet = $db->searchListings('San Francisco');
 foreach((array)$listingSet as $listingData)
 {
@@ -82,27 +82,6 @@ foreach((array)$listingSet as $listingData)
     echo "Rooms: ".$listingData->getRooms(); 
     echo "</p>";
 }
-
-//SEARCH2
-echo '<p>SEARCH2</p>';
-$listingSet = $db->searchListings('9');
-//$listingSet = $db->searchListings('San Francisco');
-foreach((array)$listingSet as $listingData)
-{
-    echo "<p>";
-    echo "Id: ".$listingData->getId();
-    echo "Address: ".$listingData->getAddress();
-    echo "City: ".$listingData->getCity();
-    echo "Zip: ".$listingData->getZip();
-    echo "Price: ".$listingData->getPrice();
-    echo "Added: ".$listingData->getDateAdded();
-    echo "Modified: ".$listingData->getDateModified();
-    echo "Description: ".$listingData->getDescription();
-    echo "Bathrooms: ".$listingData->getBathrooms();
-    echo "Rooms: ".$listingData->getRooms(); 
-    echo "</p>";
-}
-
 
 
 //REALTOR
