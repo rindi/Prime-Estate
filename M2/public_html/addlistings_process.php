@@ -11,9 +11,8 @@ $brooms = $_POST['bathrooms'];
 $desc   = $_POST['description'];
 $when_added = date("Y/m/d");
 $addrns = preg_replace('/\s+/', '+', $addr);
-echo $addrns;
-$map = 'https://maps.googleapis.com/maps/api/staticmap?center=/'.addrns.'&zoom=14&size=400x400&markers=color:blue7Clabel:S%7C11206'.addrns;
-echo $map;
+$cityns = preg_replace('/\s+/', '+', $city);
+$map = 'https://maps.googleapis.com/maps/api/staticmap?center=/'.$addrns.','.$cityns.'&zoom=14&size=400x400&markers=color:blue7Clabel:S%7C11206'.$addrns.','.$cityns;
 #echo $addr.' '.$city.' '.$zip.' '.$price.' '.$rooms.' '.$brooms.' '.$desc.' ';
 
 $add_house =  $pdo->prepare("INSERT INTO houses (address, city, zip, price, rooms, bathrooms, description, when_added, map) VALUES (:addr, :city, :zip, :price, :rooms, :brooms, :description, :when_added, :map)");
