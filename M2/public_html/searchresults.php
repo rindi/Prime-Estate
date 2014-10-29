@@ -89,7 +89,8 @@ and open the template in the editor.
           echo "<td>" . $row['bathrooms'] . "</td>";
           echo "<td>" . $row['description'] . "</td>";
           echo "<td>" . $row['when_added'] . "</td><td>";
-          echo "<td>" . $row['map'] . "</td><td>";
+          #echo $row['map'] . "</td><td>";
+          echo "<base href = '>" . $row['map'] . "'> Map </base></td><td>";
           $imgquery="SELECT path FROM images WHERE houseid='$houseval'";
           $imgresult=$con->query($imgquery);
           while($imgrow = mysqli_fetch_array($imgresult)) {
