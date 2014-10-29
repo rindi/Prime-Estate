@@ -16,7 +16,7 @@ $map = 'https://maps.googleapis.com/maps/api/staticmap?center=/'.addrns.'&zoom=1
 echo $map;
 #echo $addr.' '.$city.' '.$zip.' '.$price.' '.$rooms.' '.$brooms.' '.$desc.' ';
 
-$add_house =  $pdo->prepare("INSERT INTO houses (address, city, zip, price, rooms, bathrooms, description, when_added) VALUES (:addr, :city, :zip, :price, :rooms, :brooms, :description, :when_added)");
+$add_house =  $pdo->prepare("INSERT INTO houses (address, city, zip, price, rooms, bathrooms, description, when_added, map) VALUES (:addr, :city, :zip, :price, :rooms, :brooms, :description, :when_added, :map)");
 $add_house->execute(array(  ':addr' => $addr,
                             ':city' => $city, 
                             ':zip' => $zip,
