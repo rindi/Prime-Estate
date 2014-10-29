@@ -77,7 +77,50 @@ class Database
      */
     public function searchListings($input)
     {
-        $sql = "SELECT * FROM houses WHERE zip LIKE'%$input%' OR city LIKE'%$input%'";
+        echo "input is  $input\n";
+        $check = 0;
+        $option =  array(0=>"zip",1 => "city",2=>"");
+    
+        if (ctype_alpha(str_replace(' ', '', $input))) 
+        {
+           
+            $check = 1;
+            
+        }
+       else if (ctype_digit(str_replace(' ', '', $input))) 
+        {
+           
+            $check = 0;
+        }
+        else
+        {
+            $check = 3;
+        }
+        
+        if($check == 3)
+        {
+           
+            
+        $sql = "SELECT * FROM houses WHERE zip AND city like'%$input%'"; 
+             
+        foreach ($this->con->query($sql) as $row) 
+        {
+            $imgstack = $this->getImages($row['id']);
+            $newListing = new ListingData($row);
+            $newListing->setImages($imgstack);
+            $dataSet[] = $newListing;
+        }
+        if (!empty($dataSet))
+            return $dataSet;
+        else
+            return null;   
+        }
+         
+            
+        
+        $sql = "SELECT * FROM houses WHERE $option[i] LIKE'%$input%'"; 
+        
+        
         foreach ($this->con->query($sql) as $row) 
         {
             $imgstack = $this->getImages($row['id']);
@@ -99,8 +142,7 @@ class Database
     {
        echo "input is  $input";
        $sql = "SELECT * FROM houses WHERE zip LIKE'%$input%'";
-      
-        
+
      foreach ($this->con->query($sql) as $row) 
         {
             $imgstack = $this->getImages($row['id']);
