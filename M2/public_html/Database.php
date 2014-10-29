@@ -96,7 +96,7 @@ class Database
      */
     public function searchListings2($input)
     {
-       $query = "
+       $sql = "
 
         SELECT *,
 
@@ -106,7 +106,7 @@ class Database
 
     ";
 
-          $sql = MySQL_query($query);
+        
   
               
         foreach ($this->con->query($sql) as $row) 
