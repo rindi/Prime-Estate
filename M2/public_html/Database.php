@@ -96,20 +96,11 @@ class Database
      */
     public function searchListings2($input)
     {
-       $sql = "
-
-        SELECT *,
-
-            MATCH(city, zip) AGAINST ($input) FROM houses
-
-        WHERE MATCH(city, zip) AGAINST($input)
-
-    ";
-
+       echo "input is  $input";
+       $sql = "SELECT * FROM houses WHERE zip LIKE'%$input%'";
+      
         
-  
-              
-        foreach ($this->con->query($sql) as $row) 
+     foreach ($this->con->query($sql) as $row) 
         {
             $imgstack = $this->getImages($row['id']);
             $newListing = new ListingData($row);
