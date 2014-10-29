@@ -1,4 +1,5 @@
 <?php
+
 require ("UserData.php");
 require ("ListingData.php");
 class Database
@@ -76,7 +77,7 @@ class Database
      */
     public function searchListings($input)
     {
-        $sql = "SELECT * from houses WHERE city = '$input' OR zip = '$input'";
+        $sql = "SELECT * FROM houses WHERE zip LIKE'%$input%' OR city LIKE'%$input%'";
         foreach ($this->con->query($sql) as $row) 
         {
             $imgstack = $this->getImages($row['id']);
@@ -94,7 +95,7 @@ class Database
      * @param type $input
      * @return \ListingData
      */
-    public function searchListings2($input)
+    /*public function searchListings2($input)
     {
        echo "input is  $input";
        $sql = "SELECT * FROM houses WHERE zip LIKE'%$input%'";
@@ -111,7 +112,7 @@ class Database
             return $dataSet;
         else
             return null;
-    }
+    }*/
  
     /**
      * Get Realtor's Listings from the Database

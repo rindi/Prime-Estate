@@ -65,7 +65,7 @@ $db->editListing($newListing);
 
 //SEARCH
 echo '<p>SEARCH</p>';
-$listingSet = $db->searchListings('94132');
+$listingSet = $db->searchListings('S1');
 //$listingSet = $db->searchListings('San Francisco');
 foreach((array)$listingSet as $listingData)
 {
@@ -85,7 +85,7 @@ foreach((array)$listingSet as $listingData)
 
 //SEARCH2
 echo '<p>SEARCH2</p>';
-$listingSet = $db->searchListings2('94132');
+$listingSet = $db->searchListings('9');
 //$listingSet = $db->searchListings('San Francisco');
 foreach((array)$listingSet as $listingData)
 {
@@ -131,8 +131,10 @@ foreach((array)$listingSet as $listingData)
  
  
  ?>
+
 <!DOCTYPE html>
 <html>
+    
 <head>
     <meta charset="UTF-8">
     <title>Database Connection with PDO</title>
