@@ -80,6 +80,7 @@ and open the template in the editor.
         </tr></thead>";
         while($row = mysqli_fetch_array($result)) {
           $houseval=$row['id'];
+          $mapurl = $row['map'];
           echo "<tbody><tr>";
           echo "<td>" . $row['address'] . "</td>";
           echo "<td>" . $row['city'] . "</td>";
@@ -88,8 +89,8 @@ and open the template in the editor.
           echo "<td>" . $row['rooms'] . "</td>";
           echo "<td>" . $row['bathrooms'] . "</td>";
           echo "<td>" . $row['description'] . "</td>";
-          echo "<td>" . $row['when_added'] . "</td><td>";
-          echo $row['map'] . "</td><td>";
+          echo "<td>" . $row['when_added'] . "</td>";
+          echo "<td><a href='" . $mapurl . "'><img src='static/map-creation.png'></img></a></td><td>";
           #echo "<a href = 'https://google.com'> Click Here </a></td><td>";
           #echo "<a href = '>" . $row['map'] . " target='_blank'><img src='static/map-creation.png'></img></a></td><td>";
           $imgquery="SELECT path FROM images WHERE houseid='$houseval'";
