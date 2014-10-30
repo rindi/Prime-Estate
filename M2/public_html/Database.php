@@ -100,8 +100,9 @@ class Database
         if($check == 3)
         {
            
-            
-        $sql = "SELECT * FROM houses WHERE zip AND city like'%$input%'"; 
+      
+        $sql = "SELECT * FROM houses WHERE * like'%$input%'"; 
+      
              
         foreach ($this->con->query($sql) as $row) 
         {
@@ -116,9 +117,9 @@ class Database
             return null;   
         }
          
-            
+
         
-        $sql = "SELECT * FROM houses WHERE $option[i] LIKE'%$input%'"; 
+        $sql = "SELECT * FROM houses WHERE $option[$check] LIKE'%$input%'"; 
         
         
         foreach ($this->con->query($sql) as $row) 
