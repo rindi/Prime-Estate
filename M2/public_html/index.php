@@ -51,10 +51,6 @@ include("Brain/check_if_loggedin.php");
         <h4 align="center"> Get started - Search by City or Zip</h4><br/>
         
         <form style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
-        <select name="searchtype" id="dropdown">
-            <option value="city" id="city" selected>City</option>
-            <option value="zip" id="zip" >Zip</option>
-        </select>   
         <input type="search" name="searchvalue">
         <input type="submit" value="Find Home">
         </form>
