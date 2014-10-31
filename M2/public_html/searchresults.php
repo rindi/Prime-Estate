@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <?php
     include("Brain/check_if_loggedin.php");
-    $type=$_POST["searchtype"];
+    #$type=$_POST["searchtype"];
     $value=$_POST["searchvalue"];
 ?>
 <html>
@@ -45,7 +45,7 @@ and open the template in the editor.
         </nav>
         <form style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
             <select name="searchtype" >
-                <option value="city" id="city" <?php echo ($type == "city" ? "SELECTED" : ""); ?>>City</option>
+                <!--<option value="city" id="city" <?php echo ($type == "city" ? "SELECTED" : ""); ?>>City</option>-->
                 <option value="zip"id="zip" <?php echo ($type == "zip" ? "SELECTED" : ""); ?>>Zip</option>
             </select>
             <input type="search" name="searchvalue" value="<?php echo $value;?>">
@@ -53,13 +53,17 @@ and open the template in the editor.
         </form>
         <h2> Search Results </h2>
         <?php
-        $type=$_POST["searchtype"];
+        #$type=$_POST["searchtype"];
         $value=$_POST["searchvalue"];
         require 'Brain/dbconfig.php';
         $con=mysqli_connect("sfsuswe.com","f14g03","fzR-5NY-5oM-W2y","student_f14g03");
         if (mysqli_connect_errno()) {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
+        if(is_numeric(substr($value, 0, 1)))
+            $type="zip";
+        else
+            $type = "city";
         $query="SELECT * FROM houses WHERE $type='$value'";
         $result=$con->query($query);
         #echo $query;
