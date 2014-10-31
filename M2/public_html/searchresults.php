@@ -44,10 +44,6 @@ and open the template in the editor.
         </div>
         </nav>
         <form style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
-            <select name="searchtype" >
-                <!--<option value="city" id="city" <?php echo ($type == "city" ? "SELECTED" : ""); ?>>City</option>-->
-                <option value="zip"id="zip" <?php echo ($type == "zip" ? "SELECTED" : ""); ?>>Zip</option>
-            </select>
             <input type="search" name="searchvalue" value="<?php echo $value;?>">
             <input type="submit" value="Search">
         </form>
