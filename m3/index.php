@@ -8,5 +8,3 @@
 
 ?>
 hellono
-
-Test (rindi)
