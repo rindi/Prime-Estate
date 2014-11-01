@@ -52,7 +52,7 @@ include("Brain/check_if_loggedin.php");
         
         <form style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
         <input type="search" name="searchvalue">
-        <input type="submit" class="btn btn-info btn-bk" value="Find home">
+        <input type="submit" class="btn btn-inverse" value="Find home">
         <!--<span class="glyphicon glyphicon-search"></span>-->
         </input>
         </form>
