@@ -1,12 +1,5 @@
-
-<html>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-        Please choose a file: <input type="file" name="uploadFile"><br>
-        <input type="submit" value="Upload File">
-    </form>
-</html>
 <?php
-$target_dir = "assets/";
+$target_dir = "assets/images/";
 $target_dir = $target_dir . basename( $_FILES["uploadFile"]["name"]);
 $uploadOk=1;
 
@@ -17,16 +10,16 @@ if (file_exists($target_dir . $_FILES["uploadFile"]["name"])) {
 }
 
 // Check file size
-if ($uploadFile_size > 500000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
+//if ($uploadFile_size > 500000) {
+//    echo "Sorry, your file is too large.";
+//    $uploadOk = 0;
+//}
 
 // Only GIF files allowed 
-if (!($uploadFile_type == "image/gif")) {
-    echo "Sorry, only GIF files are allowed.";
-    $uploadOk = 0;
-}
+//if (!($uploadFile_type == "image/gif")) {
+//    echo "Sorry, only GIF files are allowed.";
+//    $uploadOk = 0;
+//}
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
