@@ -2,7 +2,7 @@
 
 class Controller
 {
-    private $db_connect;
+    protected $db_connect;
     
     public function __construct() 
     {
@@ -13,12 +13,7 @@ class Controller
         $db_connect = new PDO("mysql:host=".$db_host.";dbname=".$db_name, $db_username, $db_password);
         
         /* test connection */
-        if( $db_connect ) echo "CONNECTED TO DB JUST FINE.";
-    }
-    
-    public function getDbConnection()
-    {
-        return $this->db_connect;
+        // if( $db_connect ) echo "CONNECTED TO DB JUST FINE.";
     }
 }
 
