@@ -13,7 +13,12 @@ class Controller
         $db_connect = new PDO("mysql:host=".$db_host.";dbname=".$db_name, $db_username, $db_password);
         
         /* test connection */
-        // if( $db_connect ) echo "CONNECTED TO DB JUST FINE.";
+        if( $db_connect ) echo "CONNECTED TO DB JUST FINE.";
+    }
+    
+    public function getDbConnection()
+    {
+        return $this->db_connect;
     }
 }
 
