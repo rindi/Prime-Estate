@@ -1,6 +1,6 @@
 <?php
 
-class ListingData
+class listing_model
 {
     //fields for userdata class
     private $id = null, $address, $city, $zip, $price, $rooms, $bathrooms, $description, $userid, $when_added, $when_modified, $images;
