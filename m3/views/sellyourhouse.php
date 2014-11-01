@@ -19,5 +19,9 @@
         <!--<span class="glyphicon glyphicon-search"></span>-->
         </input>
         </form>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            Please choose a file: <input type="file" name="uploadFile"><br>
+            <input type="submit" value="Upload File">
+        </form>
     </body>
 </html>
