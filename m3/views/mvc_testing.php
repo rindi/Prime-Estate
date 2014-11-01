@@ -1,5 +1,5 @@
 <?php
-require ("Database.php");
+require ("../controllers/controller.php");
 $db = new Database();
 
  /**
