@@ -1,13 +1,13 @@
 <?php
 require ("../controllers/controller.php");
-$db = new Database();
+$db = new UsersController();
 
  /**
   * UserData SAMPLE
   */
- //GET USERS
+//GET USERS
 echo '<p>GET</p>';
-$dataSet = $db->getUsers();
+//$dataSet = $db->getUsers();
 foreach($dataSet as $data)
 {
     echo "<p>";
