@@ -1,5 +1,5 @@
 <?php
-require ("../controllers/controller.php");
+//require ("../controllers/controller.php");
 require ("../controllers/users_controller.php");
 $db = new UsersController();
 
