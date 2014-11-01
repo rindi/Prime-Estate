@@ -6,9 +6,7 @@ class UsersController extends Controller
     {
         parent::__construct();
         
-        if( parent::$this->db_connect )
-        {
-            echo "<br>CONNECTED TO DB JUST FINE. second";
-        }
+        /* test if connected to db */
+        // if( parent::$this->db_connect ) echo "this is finally working";
     }
 }

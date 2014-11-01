@@ -11,12 +11,6 @@ class Controller
         $db_password = 'fzR-5NY-5oM-W2y';
         $db_host = 'localhost';
         $this->db_connect = new PDO("mysql:host=".$db_host.";dbname=".$db_name, $db_username, $db_password);
-        
-        /* test connection */
-        if( $this->db_connect == true ) 
-        {
-            echo "number 1 working!";
-        }
     }
 }
 
