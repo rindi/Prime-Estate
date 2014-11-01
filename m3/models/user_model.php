@@ -1,6 +1,6 @@
 <?php
 
-class UserData
+class user_model
 {
     //fields for userdata class
     private $username, $password, $userid, $type, $email;

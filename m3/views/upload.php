@@ -3,23 +3,26 @@ $target_dir = "assets/images/";
 $target_dir = $target_dir . basename( $_FILES["uploadFile"]["name"]);
 $uploadOk=1;
 
+$suffix = substr($_FILES["uploadFile"]["name"], strpos($_FILES["uploadFile"]["name"], ".") + 1);
+
 // Check if file already exists
 if (file_exists($target_dir . $_FILES["uploadFile"]["name"])) {
     echo "Sorry, file already exists.";
     $uploadOk = 0;
 }
 
+
 // Check file size
-if ($_FILES["uploadfile"]["size"] > 500000) {
+if ($uploadFile_size > 500000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
 
 // Only GIF files allowed 
-//if (!($uploadFile_type == "image/gif")) {
-//    echo "Sorry, only GIF files are allowed.";
-//    $uploadOk = 0;
-//}
+if (!($uploadFile_type == "image/gif")) {
+    echo "Sorry, only GIF files are allowed.";
+    $uploadOk = 0;
+}
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
