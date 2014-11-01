@@ -10,10 +10,10 @@ if (file_exists($target_dir . $_FILES["uploadFile"]["name"])) {
 }
 
 // Check file size
-//if ($uploadFile_size > 500000) {
-//    echo "Sorry, your file is too large.";
-//    $uploadOk = 0;
-//}
+if ($_FILES["uploadfile"]["size"] > 500000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
 
 // Only GIF files allowed 
 //if (!($uploadFile_type == "image/gif")) {
