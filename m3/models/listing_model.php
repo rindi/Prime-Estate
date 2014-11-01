@@ -3,13 +3,15 @@
 class ListingData
 {
     //fields for userdata class
-    private $id, $address, $city, $zip, $price, $rooms, $bathrooms, $description, $userid, $when_added, $when_modified, $images;
+    private $id = null, $address, $city, $zip, $price, $rooms, $bathrooms, $description, $userid, $when_added, $when_modified, $images;
     
     public function __construct($dbRow)
     {
         //if Listing is new, it doesn't have id
         if (count($dbRow)>8)
+        {
             $this->id = $dbRow['id'];
+        }
         $this->address = $dbRow['address'];
         $this->city = $dbRow['city'];
         $this->zip = $dbRow['zip'];
@@ -19,18 +21,18 @@ class ListingData
         $this->description = $dbRow['description'];
         $this->userid = $dbRow['userid'];
     }
-    public function getListing()
+    /*public function getListing()
     {
-        return array(  ':addr' => $addr,
-                                    ':city' => $city, 
-                                    ':zip' => $zip,
-                                    ':price' => $price,
-                                    ':rooms' => $rooms,
-                                    ':brooms' => $bathrooms,
-                                    ':description' => $description,
-                                    ':when_added' => $when_added
+        return array(   ':addr' => $address,
+                        ':city' => $city, 
+                        ':zip' => $zip,
+                        ':price' => $price,
+                        ':rooms' => $rooms,
+                        ':brooms' => $bathrooms,
+                        ':description' => $description,
+                        ':when_added' => $when_added
                          );
-    }
+    }*/
     public function getId()
     {
         return $this->id;
