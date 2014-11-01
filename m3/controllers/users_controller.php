@@ -9,4 +9,8 @@
 class UsersController extends Controller
 {
     
+    public function __construct() {
+        super();
+        if( $db_connect ) echo "CONNECTED TO DB JUST FINE.";
+    }
 }
