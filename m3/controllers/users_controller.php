@@ -2,7 +2,8 @@
 require ("../controllers/controller.php");
 class UsersController extends Controller
 {
-    public function __construct( ) {
+    public function __construct( ) 
+    {
         parent::__construct();
         
         if( parent::$this->db_connect )
