@@ -9,7 +9,9 @@ class user_model
     { 
         //if USER is new, they don't have id
         if (count($dbRow)>4)
+        {
             $this->userid = $dbRow['userid'];
+        }
         $this->username = $dbRow['username'];
         $this->password = $dbRow['password'];
         $this->email = $dbRow['email'];
