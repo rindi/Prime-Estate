@@ -9,6 +9,7 @@ and open the template in the editor.
     #$type=$_POST["searchtype"];
     $value=$_POST["searchvalue"];
 ?>
+
 <html>
     <style>
         h2{
@@ -44,8 +45,8 @@ and open the template in the editor.
         </div>
         </nav>
         <form style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
-            <input type="search" name="searchvalue" value="<?php echo $value;?>">
-            <input type="submit" class="btn btn-inverse" value="Find home">
+        <input type="search" name="searchvalue" value="<?php echo $value;?>">
+        <input type="submit" class="btn btn-inverse" value="Find home">
         </form>
         <h2> Search Results </h2>
         <?php
