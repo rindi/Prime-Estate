@@ -8,12 +8,8 @@ print_r($user_contr);
 echo "<br>";
 //print_r($users);
 
-foreach($users as $user)
-{
-    print_r($user);
-}
 
 //test user creation
-$test_add_user = new Model();
+$test_add_user = new user_model();
 $temp = $test_add_user->testAddUser();
 $user_contr->addUser($temp);
