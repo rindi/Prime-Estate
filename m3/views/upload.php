@@ -13,13 +13,19 @@ if (file_exists($target_dir . $_FILES["uploadFile"]["name"])) {
 
 
 // Check file size
-if ($uploadFile_size > 500000) {
+//if ($uploadFile_size > 500000) {
+if ($_FILES["uploadFile"]["size"] > 500000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
 
+//// Only GIF files allowed 
+//if (!($uploadFile_type == "image/gif")) {
+//    echo "Sorry, only GIF files are allowed.";
+//    $uploadOk = 0;
+//}
 // Only GIF files allowed 
-if (!($uploadFile_type == "image/gif")) {
+if (!(strcasecmp($suffix, 'gif') == 0)) {
     echo "Sorry, only GIF files are allowed.";
     $uploadOk = 0;
 }
@@ -35,4 +41,16 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+
+$now = "/~f14g03/views/assets/images/".$_FILES["uploadFile"]["name"];
+echo $now;
 ?>
+
+<html>
+
+<body>
+ <h2>Your image:</h2>
+ <img src="<?php echo $now;?>" alt="Mountain View" style="width:304px;height:228px">
+</body>
+
+</html>
