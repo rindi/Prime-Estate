@@ -41,6 +41,14 @@ class user_model
     {
         $this->password = $password;
     }
+    
+    public function testAddUser()
+    {
+        $this->username = "test_un";
+        $this->password = "test_pw";
+        $this->type = "test_ut";
+        $this->email = "test_em";
+    }
 }
 
 ?>
