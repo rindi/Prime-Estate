@@ -8,8 +8,8 @@ print_r($user_contr);
 echo "<br>";
 //print_r($users);
 
+$users['username'] = "chuck norris";
+print_r($users[0]);
 
 //test user creation
-$test_add_user = new user_model();
-$temp = $test_add_user->testAddUser();
-$user_contr->addUser($temp);
+$user_contr->addUser($users[0]);

@@ -16,13 +16,15 @@ class UsersController extends Controller
         foreach( parent::$this->db_connect->query($sql) as $row )
             $dataSet[] = new user_model($row);
         
-        print_r($dataSet[0]);
+        //print_r($dataSet[0]);
         
         $dataSet[1]['username'] = "a";
         $dataSet[1]['password'] = "b";
         $dataSet[1]['email'] = "c";
         $dataSet[1]['type'] = "d";
-        print_r($dataSet[1]);
+        //print_r($dataSet[1]);
+        
+        return $dataSet;
     }
     
     public function addUser($input)
@@ -33,7 +35,7 @@ class UsersController extends Controller
         
         $q = $this->db_connect->prepare($sql);
         $q->execute(array
-                        (':username'    => $input->getUserName(),
+                        (':username'    => $this->setUsername(),
                          ':password'    => $input->getUserPassword(),
                          ':type'        => $input->getUserType(),
                          ':email'       => $input->getUserEmail() 
@@ -42,4 +44,5 @@ class UsersController extends Controller
         
     }
     
+
 }
