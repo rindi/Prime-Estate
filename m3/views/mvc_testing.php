@@ -20,10 +20,10 @@ foreach($users as $data)
 
 //ADD USER
 echo '<p>ADD</p>';
-$registration['username'] = "Mocha"; 
-$registration['password'] = "ahhahaha";
+$registration['username'] = "Mochahhhh"; 
+$registration['password'] = "lol";
 $registration['type'] = "customer";
-$registration['email'] = "ohno@asmdoann.com";
+$registration['email'] = "ohyes@asmdoann.com";
 $newUser = new user_model($registration);
 $user_contr->addUser($newUser);
 
@@ -40,40 +40,40 @@ $user_contr->addUser($newUser);
 echo '<p>LISTINGS</p>';
 $listing_contr = new listings_controller();
 //DELETE
-echo '<p>DELETE</p>';
-$listing_contr->deleteListing(51);
+//echo '<p>DELETE</p>';
+//$listing_contr->deleteListing(51);
 
 //ADD
-echo '<p>ADD</p>';
-$input['address'] = "22 Culver Trail";
-$input['city'] = "Faribault";
-$input['zip'] = "94132";
-$input['price'] = "15";
-$input['rooms'] = "5";
-$input['bathrooms'] = "3.5";
-$input['description'] = "Cozy home away from home";
-$input['userid'] = "5";
-$newListing = new ListingData($input);
-$listing_contr->addListing($newListing);
+//echo '<p>ADD</p>';
+//$input['address'] = "22 Culver Trail";
+//$input['city'] = "Faribault";
+//$input['zip'] = "94132";
+//$input['price'] = "15";
+//$input['rooms'] = "5";
+//$input['bathrooms'] = "3.5";
+//$input['description'] = "Cozy home away from home";
+//$input['userid'] = "5";
+//$newListing = new listing_model($input);
+//$listing_contr->addListing($newListing);
 
 //EDIT
-echo '<p>EDIT</p>';
-$input['address'] = "3571 Culver Trail";
-$input['city'] = "Far";
-$input['zip'] = "94132";
-$input['price'] = "5";
-$input['rooms'] = "10";
-$input['bathrooms'] = "3.5";
-$input['description'] = "Cozzzzy home away from home";
-$input['id'] = "40";
-$input['userid'] = "6";
-$newListing = new ListingData($input);
-$listing_contr->editListing($newListing);
+//echo '<p>EDIT</p>';
+//$input['address'] = "3571 Culver Trail";
+//$input['city'] = "Far";
+//$input['zip'] = "94132";
+//$input['price'] = "5";
+//$input['rooms'] = "10";
+//$input['bathrooms'] = "3.5";
+//$input['description'] = "Cozzzzy home away from home";
+//$input['id'] = "40";
+//$input['userid'] = "6";
+//$newListing = new listing_model($input);
+//$listing_contr->editListing($newListing);
 
 //SEARCH
 echo '<p>SEARCH</p>';
-$listingSet = $db->searchListings('f123');
-//$listingSet = $db->searchListings('San Francisco');
+$listingSet = $listing_contr->searchListings('f192');
+//$listingSet = $listing_contr->searchListings('San Francisco');
 foreach((array)$listingSet as $listingData)
 {
     echo "<p>";

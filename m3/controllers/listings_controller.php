@@ -1,6 +1,6 @@
 <?php
 require_once ("../controllers/controller.php");
-require ("../models/listing_model.php");
+require_once ("../models/listing_model.php");
 class listings_controller extends controller
 {
     public function __construct( ) 
@@ -15,15 +15,57 @@ class listings_controller extends controller
      * @param type $input
      * @return \ListingData
      */
-    public function searchListings2($input)
+    public function searchListings($input)
     {
-       echo "input is  $input";
-       $sql = "SELECT * FROM houses WHERE zip LIKE'%$input%'";
+        $check = 0;
+        $option =  array(0=>"zip",1 => "city",2=>"");
+    
+        if (ctype_alpha(str_replace(' ', '', $input))) 
+        {
+           
+            $check = 1;
+            
+        }
+       else if (ctype_digit(str_replace(' ', '', $input))) 
+        {
+           
+            $check = 0;
+        }
+        else
+        {
+            $check = 3;
+        }
+        
+        if($check == 3)
+        {           
+            $sql = "SELECT * FROM houses WHERE * like'%$input%'"; 
+            
+            foreach ((array) $this->db_connect->query($sql) as $row) 
+            {
+                $imgstack = $this->getImages($row['id']);
+                $newListing = new listing_model($row);
+                $newListing->setImages($imgstack);
+                $dataSet[] = $newListing;
+            }
+            if (!empty($dataSet))
+            {
+                return $dataSet;
+            }
+            else
+            {
+                return null;   
+            }
+        }
+         
 
-     foreach (parent::$this->db_connect->query($sql) as $row) 
+        
+        $sql = "SELECT * FROM houses WHERE $option[$check] LIKE'%$input%'"; 
+        
+        
+        foreach ($this->db_connect->query($sql) as $row) 
         {
             $imgstack = $this->getImages($row['id']);
-            $newListing = new ListingData($row);
+            $newListing = new listing_model($row);
             $newListing->setImages($imgstack);
             $dataSet[] = $newListing;
         }
@@ -44,9 +86,9 @@ class listings_controller extends controller
         $sql = "SELECT * from houses WHERE userid = '$realtorId'";
         foreach (parent::$this->db_connect->query($sql) as $row) 
         {
-//            $imgstack = $this->getImages($row['id']);
+            $imgstack = $this->getImages($row['id']);
             $newListing = new listing_model($row);
-//            $newListing->setImages($imgstack);
+            $newListing->setImages($imgstack);
             $dataSet[] = $newListing;
             
         }
@@ -132,10 +174,10 @@ class listings_controller extends controller
      */
     private function getImages($listingId)
     {
-        $sql2 = "SELECT * from images WHERE houseid = '$listingId'";
-        foreach (parent::$this->db_connect->query($sql) as $row2) 
+        $sql = "SELECT * from images WHERE houseid = '$listingId'";
+        foreach (parent::$this->db_connect->query($sql) as $row) 
         {
-            $imgstack[] = $row2['path'];
+            $imgstack[] = $row['path'];
         }
         if (!empty($imgstack))
             return $imgstack;

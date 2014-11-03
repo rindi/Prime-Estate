@@ -63,17 +63,22 @@ and open the template in the editor.
         $value=$_POST["searchvalue"];
 //        require 'Brain/dbconfig.php';
         require '../models/listing_model.php';
+        require '../controllers/listings_controller.php';
         
 //        $con=mysqli_connect("sfsuswe.com","f14g03","fzR-5NY-5oM-W2y","student_f14g03");
 //        if (mysqli_connect_errno()) {
 //            echo "Failed to connect to MySQL: " . mysqli_connect_error();
 //        }
-        if(is_numeric(substr($value, 0, 1)))
-            $type="zip";
-        else
-            $type = "city";
-        $query="SELECT * FROM houses WHERE $type='$value'";
-        $result=$con->query($query);
+//        
+//        SEARCH
+//        if(is_numeric(substr($value, 0, 1)))
+//            $type="zip";
+//        else
+//            $type = "city";
+//        $query="SELECT * FROM houses WHERE $type='$value'";
+//        $result=$con->query($query);
+        $list_controller = new listings_controller();
+        $listingSet = $list_controller->searchListings($value);
         #echo $query;
         echo "<div class='results'>
         <table class='table' style='width:90%' border='1' align='center'>
@@ -90,32 +95,56 @@ and open the template in the editor.
         <th>View on Map</th>
         <th>Image</th>
         </tr></thead>";
-        while($row = mysqli_fetch_array($result)) {
-          $houseval=$row['id'];
-          $mapurl = $row['map'];
-          echo "<tbody><tr>";
-          echo "<td>" . $row['address'] . "</td>";
-          echo "<td>" . $row['city'] . "</td>";
-          echo "<td>" . $row['zip'] . "</td>";
-          echo "<td>" . $row['price'] . "</td>";
-          echo "<td>" . $row['rooms'] . "</td>";
-          echo "<td>" . $row['bathrooms'] . "</td>";
-          echo "<td>" . $row['description'] . "</td>";
-          echo "<td>" . $row['when_added'] . "</td>";
-          echo "<td><a href='" . $mapurl . "'><img src='static/map-creation.png' height='42' width='42' ></img></a></td><td>";
-          #echo "<a href = 'https://google.com'> Click Here </a></td><td>";
-          #echo "<a href = '>" . $row['map'] . " target='_blank'><img src='static/map-creation.png'></img></a></td><td>";
-          $imgquery="SELECT path FROM images WHERE houseid='$houseval'";
-          $imgresult=$con->query($imgquery);
-          while($imgrow = mysqli_fetch_array($imgresult)) {
-          echo "<a href = " . $imgrow['path'] . "><img src=" . $imgrow['path'] . " height='42' width='42' ></img></a>";}
-          echo "</td></tr>";
-        }
+//        while($row = mysqli_fetch_array($result)) {
+//          $houseval=$row['id'];
+//          $mapurl = $row['map'];
+//          echo "<tbody><tr>";
+//          echo "<td>" . $row['address'] . "</td>";
+//          echo "<td>" . $row['city'] . "</td>";
+//          echo "<td>" . $row['zip'] . "</td>";
+//          echo "<td>" . $row['price'] . "</td>";
+//          echo "<td>" . $row['rooms'] . "</td>";
+//          echo "<td>" . $row['bathrooms'] . "</td>";
+//          echo "<td>" . $row['description'] . "</td>";
+//          echo "<td>" . $row['when_added'] . "</td>";
+//          echo "<td><a href='" . $mapurl . "'><img src='static/map-creation.png' height='42' width='42' ></img></a></td><td>";
+//          #echo "<a href = 'https://google.com'> Click Here </a></td><td>";
+//          #echo "<a href = '>" . $row['map'] . " target='_blank'><img src='static/map-creation.png'></img></a></td><td>";
+//          $imgquery="SELECT path FROM images WHERE houseid='$houseval'";
+//          $imgresult=$con->query($imgquery);
+//          while($imgrow = mysqli_fetch_array($imgresult)) {
+//          echo "<a href = " . $imgrow['path'] . "><img src=" . $imgrow['path'] . " height='42' width='42' ></img></a>";}
+//          echo "</td></tr>";
+//        }
 
-        echo "</tbody></table></div>";
-        if (!mysqli_query($con,$query)) {
-            die('Error: ' . mysqli_error($con));
+        foreach((array)$listingSet as $listingData) 
+        {
+            $houseval=$listingData->getId();
+            $mapurl = $listingData->getMap();;
+            echo "<tbody><tr>";
+            echo "<td>" . $listingData->getAddress() . "</td>";
+            echo "<td>" . $listingData->getCity() . "</td>";
+            echo "<td>" . $listingData->getZip() . "</td>";
+            echo "<td>" . $listingData->getPrice() . "</td>";
+            echo "<td>" . $listingData->getRooms() . "</td>";
+            echo "<td>" . $listingData->getBathrooms() . "</td>";
+            echo "<td>" . $listingData->getDescription() . "</td>";
+            echo "<td>" . $listingData->getDateAdded() . "</td>";
+            echo "<td><a href='" . $mapurl . "'><img src='static/map-creation.png' height='42' width='42' ></img></a></td><td>";
+            #echo "<a href = 'https://google.com'> Click Here </a></td><td>";
+            #echo "<a href = '>" . $row['map'] . " target='_blank'><img src='static/map-creation.png'></img></a></td><td>";
+            #IMAGES!??!
+//            $imgquery="SELECT path FROM images WHERE houseid='$houseval'";
+//            $imgresult=$con->query($imgquery);
+//            while($imgrow = mysqli_fetch_array($imgresult)) {
+//            echo "<a href = " . $imgrow['path'] . "><img src=" . $imgrow['path'] . " height='42' width='42' ></img></a>";}
+//            echo "</td></tr>";
         }
+        
+        echo "</tbody></table></div>";
+//        if (!mysqli_query($con,$query)) {
+//            die('Error: ' . mysqli_error($con));
+//        }
         ?>
     </body>
 </html>
