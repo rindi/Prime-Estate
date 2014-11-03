@@ -1,6 +1,6 @@
 <?php
 //houseid_nameofimg_timestampofupload.jpg
-include("views/navbar.php");
+include 'navbar.php';
 $target_dir = "assets/images/";
 $target_dir = $target_dir . basename( $_FILES["uploadFile"]["name"]);
 $uploadOk=1;
