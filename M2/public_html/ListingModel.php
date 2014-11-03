@@ -3,7 +3,7 @@
 class ListingData
 {
     //fields for userdata class
-    private $id, $address, $city, $zip, $price, $rooms, $bathrooms, $description, $userid, $when_added, $when_modified, $images;
+    private $id, $address, $city, $zip, $price, $rooms, $bathrooms, $description, $userid, $when_added, $when_modified, $images,$map;
     
     public function __construct($dbRow)
     {
@@ -111,5 +111,14 @@ class ListingData
     {
         $this->images = $images;
     }
+    function getMap() {
+        return $this->map;
+    }
+
+    function setMap($map) {
+        $this->map = $map;
+    }
+
+
 }
 ?>
