@@ -1,16 +1,25 @@
 <?php
 
+/**
+ * listing_model class
+ */
 class listing_model
 {
     //fields for userdata class
     private $id = null, $address, $city, $zip, $price, $rooms, $bathrooms, $description, $userid, $when_added, $when_modified, $images, $map;
     
+    /**
+     * Constructor function
+     * @param type $dbRow
+     */
     public function __construct($dbRow)
     {
         //if Listing is new, it doesn't have id
         if (count($dbRow)>8)
         {
             $this->id = $dbRow['id'];
+            $this->when_added = $dbRow['when_added'];
+            $this->map = $dbRow['map'];
         }
         $this->address = $dbRow['address'];
         $this->city = $dbRow['city'];

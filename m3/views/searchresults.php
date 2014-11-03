@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <?php
-//    include("Brain/check_if_loggedin.php");
+//  this is the code from brain/check if logged in;
     if( isset($_COOKIE['username']) )
     {
         $loggedin = true;
@@ -15,7 +11,6 @@ and open the template in the editor.
     {
         $loggedin = false;
     }
-    #$type=$_POST["searchtype"];
     $value = $_POST["searchvalue"];
 ?>
 
@@ -58,27 +53,12 @@ and open the template in the editor.
         <input type="submit" class="btn btn-inverse" value="Find home">
         </form>
         <h2> Search Results </h2>
+        
         <?php
-        #$type=$_POST["searchtype"];
         $value=$_POST["searchvalue"];
-//        require 'Brain/dbconfig.php';
         require '../models/listing_model.php';
         require '../controllers/listings_controller.php';
-        
-//        $con=mysqli_connect("sfsuswe.com","f14g03","fzR-5NY-5oM-W2y","student_f14g03");
-//        if (mysqli_connect_errno()) {
-//            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-//        }
-//        
-//        SEARCH
-//        if(is_numeric(substr($value, 0, 1)))
-//            $type="zip";
-//        else
-//            $type = "city";
-//        $query="SELECT * FROM houses WHERE $type='$value'";
-//        $result=$con->query($query);
-        $list_controller = new listings_controller();
-        $listingSet = $list_controller->searchListings($value);
+     
         #echo $query;
         echo "<div class='results'>
         <table class='table' style='width:90%' border='1' align='center'>
@@ -95,28 +75,9 @@ and open the template in the editor.
         <th>View on Map</th>
         <th>Image</th>
         </tr></thead>";
-//        while($row = mysqli_fetch_array($result)) {
-//          $houseval=$row['id'];
-//          $mapurl = $row['map'];
-//          echo "<tbody><tr>";
-//          echo "<td>" . $row['address'] . "</td>";
-//          echo "<td>" . $row['city'] . "</td>";
-//          echo "<td>" . $row['zip'] . "</td>";
-//          echo "<td>" . $row['price'] . "</td>";
-//          echo "<td>" . $row['rooms'] . "</td>";
-//          echo "<td>" . $row['bathrooms'] . "</td>";
-//          echo "<td>" . $row['description'] . "</td>";
-//          echo "<td>" . $row['when_added'] . "</td>";
-//          echo "<td><a href='" . $mapurl . "'><img src='static/map-creation.png' height='42' width='42' ></img></a></td><td>";
-//          #echo "<a href = 'https://google.com'> Click Here </a></td><td>";
-//          #echo "<a href = '>" . $row['map'] . " target='_blank'><img src='static/map-creation.png'></img></a></td><td>";
-//          $imgquery="SELECT path FROM images WHERE houseid='$houseval'";
-//          $imgresult=$con->query($imgquery);
-//          while($imgrow = mysqli_fetch_array($imgresult)) {
-//          echo "<a href = " . $imgrow['path'] . "><img src=" . $imgrow['path'] . " height='42' width='42' ></img></a>";}
-//          echo "</td></tr>";
-//        }
-
+        
+        $list_controller = new listings_controller();
+        $listingSet = $list_controller->searchListings($value);
         foreach((array)$listingSet as $listingData) 
         {
             $houseval=$listingData->getId();
@@ -134,8 +95,17 @@ and open the template in the editor.
             #echo "<a href = 'https://google.com'> Click Here </a></td><td>";
             #echo "<a href = '>" . $row['map'] . " target='_blank'><img src='static/map-creation.png'></img></a></td><td>";
             #IMAGES!??!
+            $images = $listingData->getImages();
+            foreach((array)$images as $image) 
+            {
+                echo "<a href = " . $image . "><img src=" . $image . " height='42' width='42' ></img></a>";
+                
+            }
+            echo "</td></tr>";
+            
 //            $imgquery="SELECT path FROM images WHERE houseid='$houseval'";
 //            $imgresult=$con->query($imgquery);
+//            
 //            while($imgrow = mysqli_fetch_array($imgresult)) {
 //            echo "<a href = " . $imgrow['path'] . "><img src=" . $imgrow['path'] . " height='42' width='42' ></img></a>";}
 //            echo "</td></tr>";

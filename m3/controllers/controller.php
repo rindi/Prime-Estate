@@ -1,9 +1,15 @@
 <?php
 
+/**
+ * Parent Controller class
+ */
 class controller
 {
     protected $db_connect;
     
+    /**
+     * Constructor
+     */
     public function __construct() 
     {
         $db_name = 'student_f14g03';

@@ -1,8 +1,15 @@
 <?php
 require_once ("../controllers/controller.php");
 require_once ("../models/listing_model.php");
+
+/**
+ * Listings Controller class
+ */
 class listings_controller extends controller
 {
+    /**
+     * Constructor
+     */
     public function __construct( ) 
     {
         parent::__construct();
@@ -56,11 +63,8 @@ class listings_controller extends controller
                 return null;   
             }
         }
-         
-
         
         $sql = "SELECT * FROM houses WHERE $option[$check] LIKE'%$input%'"; 
-        
         
         foreach ($this->db_connect->query($sql) as $row) 
         {
