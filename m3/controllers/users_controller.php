@@ -1,7 +1,7 @@
 <?php
 require ("../controllers/controller.php");
 require ("../models/user_model.php");
-class UsersController extends Controller
+class users_controller extends Controller
 {
     public function __construct( ) 
     {
