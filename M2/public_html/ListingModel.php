@@ -18,9 +18,11 @@ class ListingData
         $this->bathrooms = $dbRow['bathrooms'];
         $this->description = $dbRow['description'];
         $this->userid = $dbRow['userid'];
+        $this->map = $dbRow['map'];
     }
     public function getListing()
     {
+      
         return array(  ':addr' => $addr,
                                     ':city' => $city, 
                                     ':zip' => $zip,
@@ -28,7 +30,8 @@ class ListingData
                                     ':rooms' => $rooms,
                                     ':brooms' => $bathrooms,
                                     ':description' => $description,
-                                    ':when_added' => $when_added
+                                    ':when_added' => $when_added,
+                                    ':map' => $map
                          );
     }
     public function getId()
