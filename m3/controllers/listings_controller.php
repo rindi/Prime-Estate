@@ -84,7 +84,7 @@ class listings_controller extends controller
      * Get Realtor's Listings from the Database
      * @return \UserData
      */
-    public function getListings($realtorId)
+    public function getRealtorListings($realtorId)
     {
         $imgstack = array();
         $sql = "SELECT * from houses WHERE userid = '$realtorId'";
@@ -128,6 +128,26 @@ class listings_controller extends controller
         $stmt->execute();       
     }
 
+    /**
+     * Get Listing by number from the Database
+     * @return \UserData
+     */
+    public function getListing($listingid)
+    {
+        $imgstack = array();
+        $sql = "SELECT * from houses WHERE id = '$listingid'";
+        $tot = parent::$this->db_connect->query($sql);
+        echo count($tot);
+        echo gettype($tot);
+        foreach ($tot as $row) 
+        {
+            $imgstack = $this->getImages($listingid);
+            $newListing = new listing_model($row);
+            $newListing->setImages($imgstack);
+            return $newListing;
+        }
+    }
+    
     /**
      * Edit a Listing in the Database
      * @param type $input
