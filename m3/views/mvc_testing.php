@@ -37,11 +37,28 @@ $user_contr->addUser($newUser);
 /**
  * ListingData SAMPLE
  */
-echo '<p>LISTINGS</p>';
+//echo '<p>LISTINGS</p>';
 $listing_contr = new listings_controller();
 //DELETE
 //echo '<p>DELETE</p>';
 //$listing_contr->deleteListing(51);
+
+////GET
+//echo '<p>GET</p>';
+//
+//$temp  = (listing_model) $listing_contr->getListing(51);
+//echo "<p>";
+//echo "Id: ".$temp->getId();
+//echo "Address: ".$temp->getAddress();
+//echo "City: ".$temp->getCity();
+//echo "Zip: ".$temp->getZip();
+//echo "Price: ".$temp->getPrice();
+//echo "Added: ".$temp->getDateAdded();
+//echo "Modified: ".$temp->getDateModified();
+//echo "Description: ".$temp->getDescription();
+//echo "Bathrooms: ".$temp->getBathrooms();
+//echo "Rooms: ".$temp->getRooms(); 
+//echo "</p>";
 
 //ADD
 //echo '<p>ADD</p>';
@@ -70,50 +87,50 @@ $listing_contr = new listings_controller();
 //$newListing = new listing_model($input);
 //$listing_contr->editListing($newListing);
 
-//SEARCH
-echo '<p>SEARCH</p>';
-$listingSet = $listing_contr->searchListings('f192');
-//$listingSet = $listing_contr->searchListings('San Francisco');
-foreach((array)$listingSet as $listingData)
-{
-    echo "<p>";
-    echo "Id: ".$listingData->getId();
-    echo "Address: ".$listingData->getAddress();
-    echo "City: ".$listingData->getCity();
-    echo "Zip: ".$listingData->getZip();
-    echo "Price: ".$listingData->getPrice();
-    echo "Added: ".$listingData->getDateAdded();
-    echo "Modified: ".$listingData->getDateModified();
-    echo "Description: ".$listingData->getDescription();
-    echo "Bathrooms: ".$listingData->getBathrooms();
-    echo "Rooms: ".$listingData->getRooms(); 
-    echo "</p>";
-}
+////SEARCH
+//echo '<p>SEARCH</p>';
+//$listingSet = $listing_contr->searchListings('f192');
+////$listingSet = $listing_contr->searchListings('San Francisco');
+//foreach((array)$listingSet as $listingData)
+//{
+//    echo "<p>";
+//    echo "Id: ".$listingData->getId();
+//    echo "Address: ".$listingData->getAddress();
+//    echo "City: ".$listingData->getCity();
+//    echo "Zip: ".$listingData->getZip();
+//    echo "Price: ".$listingData->getPrice();
+//    echo "Added: ".$listingData->getDateAdded();
+//    echo "Modified: ".$listingData->getDateModified();
+//    echo "Description: ".$listingData->getDescription();
+//    echo "Bathrooms: ".$listingData->getBathrooms();
+//    echo "Rooms: ".$listingData->getRooms(); 
+//    echo "</p>";
+//}
 
 
 //REALTOR
-echo '<p>REALTOR</p>';
-$listingSet = $listing_contr->getListings('5');
+//echo '<p>REALTOR</p>';
+//$listingSet = $listing_contr->getRealtorListings('5');
 //$listingSet = $db->searchListings('San Francisco');
-foreach((array)$listingSet as $listingData)
-{
-    echo "<p>";
-    echo "Id: ".$listingData->getId();
-    echo "Address: ".$listingData->getAddress();
-    echo "City: ".$listingData->getCity();
-    echo "Zip: ".$listingData->getZip();
-    echo "Price: ".$listingData->getPrice();
-    echo "Added: ".$listingData->getDateAdded();
-    echo "Modified: ".$listingData->getDateModified();
-    echo "Description: ".$listingData->getDescription();
-    echo "Bathrooms: ".$listingData->getBathrooms();
-    echo "Rooms: ".$listingData->getRooms(); 
-    foreach((array)$listingData->getImages() as $img)
-    {
-       echo "Image: ".$img;
-    }
-    echo "</p>";
-}
+//foreach((array)$listingSet as $listingData)
+//{
+//    echo "<p>";
+//    echo "Id: ".$listingData->getId();
+//    echo "Address: ".$listingData->getAddress();
+//    echo "City: ".$listingData->getCity();
+//    echo "Zip: ".$listingData->getZip();
+//    echo "Price: ".$listingData->getPrice();
+//    echo "Added: ".$listingData->getDateAdded();
+//    echo "Modified: ".$listingData->getDateModified();
+//    echo "Description: ".$listingData->getDescription();
+//    echo "Bathrooms: ".$listingData->getBathrooms();
+//    echo "Rooms: ".$listingData->getRooms(); 
+//    foreach((array)$listingData->getImages() as $img)
+//    {
+//       echo "Image: ".$img;
+//    }
+//    echo "</p>";
+//}
  
  
  ?>

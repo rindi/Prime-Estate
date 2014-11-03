@@ -1,5 +1,6 @@
 <?php
 //houseid_nameofimg_timestampofupload.jpg
+require_once ("../controllers/listings_controller.php");
 include 'navbar.php';
 $target_dir = "assets/images/";
 $target_dir = $target_dir . basename( $_FILES["uploadFile"]["name"]);
@@ -15,7 +16,7 @@ if (file_exists($target_dir . $_FILES["uploadFile"]["name"]))
 }
 
 // Check file size
-if ($_FILES["uploadFile"]["size"] > 500000) 
+if ($_FILES["uploadFile"]["size"] > 5000000) 
 {
     echo $_FILES["uploadFile"]["size"];
     echo "Sorry, your file is too large.";
@@ -25,12 +26,12 @@ if ($_FILES["uploadFile"]["size"] > 500000)
 // Only GIF files allowed 
 if (($_FILES["uploadFile"]["type"] == "image/gif") || ($_FILES["uploadFile"]["type"] == "image/jpeg")) 
 {
-    pass;
+    $result = 'success!';
 }
 else
 {
-    echo "404!";
     $uploadOk = 0;
+    $result = 'failure';
 }
 //elseif (!($_FILES["uploadFile"]["type"] == "image/jpeg"))
 //{
@@ -43,28 +44,33 @@ else
 if ($uploadOk == 0) 
 {
     echo "Sorry, your file was not uploaded.";
+    $result = 'failure!';
 // if everything is ok, try to upload file
 } 
 else 
 { 
     if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir)) 
     {
-        echo "The file ". basename( $_FILES["uploadFile"]["name"]). " has been uploaded.";
+//        echo "The file ". basename( $_FILES["uploadFile"]["name"]). " has been uploaded.";
+        $result = 'success!';
     } 
     else 
     {
         echo "Sorry, there was an error uploading your file.";
+        $result = 'failure!';
     }
 }
 
 $now = "/~f14g03/views/assets/images/".$_FILES["uploadFile"]["name"];
-echo $now;
+//$listingcont = new listings_controller();
+//$curlisting = $listingcont->getListing(42);
+
 ?>
 
 <html>
 
 <body>
- <h2>Your image:</h2>
+ <h2>Image upload <?php echo $result;?></h2>
  <img src="<?php echo $now;?>" alt="img" style="width:304px;height:228px">
 </body>
 
