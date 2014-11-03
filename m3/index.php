@@ -15,7 +15,7 @@
         <h1 align="center">
             Welcome to Prime Estate.
         </h1>
-        <form style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
+        <form style="text-align:center; margin: 0px auto" action="views/searchresults.php" method="POST">
         <input type="search" name="searchvalue">
         <input type="submit" class="btn btn-inverse" value="Find home">
         <!--<span class="glyphicon glyphicon-search"></span>-->

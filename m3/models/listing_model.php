@@ -3,7 +3,7 @@
 class listing_model
 {
     //fields for userdata class
-    private $id = null, $address, $city, $zip, $price, $rooms, $bathrooms, $description, $userid, $when_added, $when_modified, $images;
+    private $id = null, $address, $city, $zip, $price, $rooms, $bathrooms, $description, $userid, $when_added, $when_modified, $images, $map;
     
     public function __construct($dbRow)
     {
@@ -81,6 +81,10 @@ class listing_model
     {
         return $this->images;
     }
+    function getMap() 
+    {
+        return $this->map;
+    }
     public function setAddress($address)
     {
         $this->address = $address;
@@ -113,5 +117,8 @@ class listing_model
     {
         $this->images = $images;
     }
-}
+}   function setMap($map) 
+    {
+        $this->map = $map;
+    }
 ?>

@@ -5,9 +5,18 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <?php
-    include("Brain/check_if_loggedin.php");
+//    include("Brain/check_if_loggedin.php");
+    if( isset($_COOKIE['username']) )
+    {
+        $loggedin = true;
+        $loggedinas = $_COOKIE['username'];
+    }
+    else
+    {
+        $loggedin = false;
+    }
     #$type=$_POST["searchtype"];
-    $value=$_POST["searchvalue"];
+    $value = $_POST["searchvalue"];
 ?>
 
 <html>
@@ -52,11 +61,13 @@ and open the template in the editor.
         <?php
         #$type=$_POST["searchtype"];
         $value=$_POST["searchvalue"];
-        require 'Brain/dbconfig.php';
-        $con=mysqli_connect("sfsuswe.com","f14g03","fzR-5NY-5oM-W2y","student_f14g03");
-        if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        }
+//        require 'Brain/dbconfig.php';
+        require '../models/listing_model.php';
+        
+//        $con=mysqli_connect("sfsuswe.com","f14g03","fzR-5NY-5oM-W2y","student_f14g03");
+//        if (mysqli_connect_errno()) {
+//            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+//        }
         if(is_numeric(substr($value, 0, 1)))
             $type="zip";
         else
