@@ -1,15 +1,24 @@
 <?php
-require ("../controllers/controller.php");
-require ("../models/user_model.php");
+require_once ("../controllers/controller.php");
+require_once ("../models/user_model.php");
+
+/**
+ * User Controller Class
+ */
 class users_controller extends Controller
 {
+    /**
+     * Constructor
+     */
     public function __construct( ) 
     {
         parent::__construct();
-        /* test if connected to db */
-        // if( parent::$this->db_connect ) echo "this is finally working";
     }
     
+    /**
+     * get all users from the table
+     * @return \user_model
+     */
     public function getUsers()
     {   
         $sql = "SELECT * from usertable";
@@ -17,21 +26,17 @@ class users_controller extends Controller
         {
             $dataSet[] = new user_model($row);
         }
-        //print_r($dataSet[0]);
-        
-        //alex testing
-//        $dataSet[1]['username'] = "a";
-//        $dataSet[1]['password'] = "b";
-//        $dataSet[1]['email'] = "c";
-//        $dataSet[1]['type'] = "d";
-        //print_r($dataSet[1]);
-        
+
         if (!empty($dataSet))
             return $dataSet;
         else
             return null;
     }
     
+    /**
+     * Add a user to the table
+     * @param type $input
+     */
     public function addUser($input)
     {
         $sql = "INSERT INTO 
@@ -45,14 +50,6 @@ class users_controller extends Controller
         $stmt->bindParam(':email', $input->getUserEmail(), PDO::PARAM_STR);   
         
         $stmt->execute();  
-//        $q->execute(array
-//                        (':username'    => $this->getUsername(),
-//                         ':password'    => $input->getUserPassword(),
-//                         ':type'        => $input->getUserType(),
-//                         ':email'       => $input->getUserEmail() 
-//                        )
-//                    );
-        
     }
     
 

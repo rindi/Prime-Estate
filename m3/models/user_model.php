@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * user_model Class
+ */
 class user_model
 {
     //fields for userdata class
@@ -16,7 +19,6 @@ class user_model
         }
         else
         {
-            //if USER is new, they don't have id
             if (count($dbRow)>4)
             {
                 $this->userid = $dbRow['userid'];
@@ -25,8 +27,7 @@ class user_model
             $this->password = $dbRow['password'];
             $this->email = $dbRow['email'];
             $this->type = $dbRow['type'];
-        }
-        
+        }   
 
     }
     public function getUserName()
