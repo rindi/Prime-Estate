@@ -2,18 +2,7 @@
 
 <?php
 include 'navbar.php';
-
-//  this is the code from brain/check if logged in;
-//    if( isset($_COOKIE['username']) )
-//    {
-//        $loggedin = true;
-//        $loggedinas = $_COOKIE['username'];
-//    }
-//    else
-//    {
-//        $loggedin = false;
-//    }
-//    $value = $_POST["searchvalue"];
+echo $value = $_GET['listing'];
 ?>
 
 <html>
@@ -29,13 +18,12 @@ include 'navbar.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <body>
         <form style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
-        <input type="search" name="searchvalue" value="<?php echo $value;?>">
-        <input type="submit" class="btn btn-inverse" value="Find home">
+       
+        <input type="submit" class="btn btn-inverse" value="<?php echo $value;?>">
         </form>
         <h2> Search Results </h2>
         
         <?php
-        $value=$_POST["searchvalue"];
         require '../models/listing_model.php';
         require '../controllers/listings_controller.php';
      
@@ -81,19 +69,9 @@ include 'navbar.php';
                 echo "<a href = " . $image . "><img src=" . $image . " height='42' width='42' ></img></a>";   
             }
             echo "</td></tr>";
-            
-//            $imgquery="SELECT path FROM images WHERE houseid='$houseval'";
-//            $imgresult=$con->query($imgquery);
-//            
-//            while($imgrow = mysqli_fetch_array($imgresult)) {
-//            echo "<a href = " . $imgrow['path'] . "><img src=" . $imgrow['path'] . " height='42' width='42' ></img></a>";}
-//            echo "</td></tr>";
         }
         
         echo "</tbody></table></div>";
-//        if (!mysqli_query($con,$query)) {
-//            die('Error: ' . mysqli_error($con));
-//        }
         ?>
     </body>
 </html>
