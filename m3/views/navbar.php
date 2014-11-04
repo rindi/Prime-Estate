@@ -18,7 +18,7 @@
             <li class="active">
                 <a href="profile.php">Signed in</a>
             </li>
-            <li class="active">
+            <li class="active"> 
                 <a href="Brain/logout.php">Logout</a>
              </li>
             </div>
