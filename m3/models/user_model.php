@@ -6,7 +6,7 @@
 class user_model
 {
     //fields for userdata class
-    private $username, $password, $userid, $type, $email;
+    public $username, $password, $userid, $type, $email, $date;
     
     public function __construct($dbRow)
     { 
@@ -50,11 +50,21 @@ class user_model
     {
         return $this->email;
     }
+    
+    public function getContactDate()
+    {
+        return $this->date;
+    }
+    
     public function setUserPassword($password)
     {
         $this->password = $password;
     }
     
+    public function setContactDate($date)
+    {
+        $this->date = $date;
+    }
     public function testAddUser()
     {
         $this->username = "test_un";

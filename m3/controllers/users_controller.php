@@ -39,8 +39,8 @@ class users_controller extends controller
      */
     public function getUserInfo($userid)
     {   
-        $sql = "SELECT * from usertable where userid is '$userid'";
-        foreach((array) parent::$this->db_connect->query($sql) as $row )
+        $sql = "SELECT * FROM usertable WHERE userid = '$userid'";
+        foreach(parent::$this->db_connect->query($sql) as $row )
         {
             return $row;
         }

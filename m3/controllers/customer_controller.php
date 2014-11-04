@@ -26,7 +26,9 @@ class customer_controller extends controller
         foreach($this->db_connect->query($sql) as $row)
         {
             $user_controller = new users_controller();
-            $tempuser = new user_model($user_controller->getUserInfo($row['userid']));
+            $temp = $user_controller->getUserInfo($row['userid']);
+            $tempuser = new user_model($temp);
+            $tempuser->setContactDate($row['date']);
             $dataSet[] = $tempuser;
         }
         return $dataSet;
