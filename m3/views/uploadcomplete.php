@@ -30,6 +30,7 @@ if (($_FILES["uploadFile"]["type"] == "image/gif") || ($_FILES["uploadFile"]["ty
 }
 else
 {
+    echo "fail";
     $uploadOk = 0;
     $result = 'failure';
 }
