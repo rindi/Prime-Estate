@@ -45,8 +45,7 @@ $listing_contr = new listings_controller();
 
 ////GET
 //echo '<p>GET</p>';
-//
-//$temp  = $listing_contr->getListing('51');
+//$temp  = new listing_model($listing_contr->getListing('55'));
 //echo "<p>";
 //echo "Id: ".$temp->getId();
 //echo "Address: ".$temp->getAddress();
@@ -60,19 +59,18 @@ $listing_contr = new listings_controller();
 //echo "Rooms: ".$temp->getRooms(); 
 //echo "</p>";
 
-//ADD
-echo '<p>ADD</p>';
-$input['address'] = "22 Culver Trail";
-$input['city'] = "Faribault";
-$input['zip'] = "94132";
-$input['price'] = "15";
-$input['rooms'] = "5";
-$input['bathrooms'] = "3.5";
-$input['description'] = "Cozy home away from home";
-$input['userid'] = "5";
-$newListing = new listing_model($input);
-$listing_contr->addListing($newListing);
-//$listing_contr->setImage($newListing.getId(),'demo.jpg');
+////ADD
+//echo '<p>ADD</p>';
+//$input['address'] = "22 Culver Trail";
+//$input['city'] = "Faribault";
+//$input['zip'] = "94132";
+//$input['price'] = "15";
+//$input['rooms'] = "5";
+//$input['bathrooms'] = "3.5";
+//$input['description'] = "Cozy home away from home";
+//$input['userid'] = "5";
+//$newListing = new listing_model($input);
+//$listing_contr->addListing($newListing);
 
 //EDIT
 //echo '<p>EDIT</p>';
@@ -108,28 +106,28 @@ $listing_contr->addListing($newListing);
 //    echo "</p>";
 //}
 
-//REALTOR
-echo '<p>REALTOR</p>';
-$listingSet = $listing_contr->getRealtorListings('5');
-foreach((array)$listingSet as $listingData)
-{
-    echo "<p>";
-    echo "Id: ".$listingData->getId();
-    echo "Address: ".$listingData->getAddress();
-    echo "City: ".$listingData->getCity();
-    echo "Zip: ".$listingData->getZip();
-    echo "Price: ".$listingData->getPrice();
-    echo "Added: ".$listingData->getDateAdded();
-    echo "Modified: ".$listingData->getDateModified();
-    echo "Description: ".$listingData->getDescription();
-    echo "Bathrooms: ".$listingData->getBathrooms();
-    echo "Rooms: ".$listingData->getRooms(); 
-    foreach((array)$listingData->getImages() as $img)
-    {
-       echo "Image: ".$img;
-    }
-    echo "</p>";
-}
+////REALTOR
+//echo '<p>REALTOR</p>';
+//$listingSet = $listing_contr->getRealtorListings('5');
+//foreach((array)$listingSet as $listingData)
+//{
+//    echo "<p>";
+//    echo "Id: ".$listingData->getId();
+//    echo "Address: ".$listingData->getAddress();
+//    echo "City: ".$listingData->getCity();
+//    echo "Zip: ".$listingData->getZip();
+//    echo "Price: ".$listingData->getPrice();
+//    echo "Added: ".$listingData->getDateAdded();
+//    echo "Modified: ".$listingData->getDateModified();
+//    echo "Description: ".$listingData->getDescription();
+//    echo "Bathrooms: ".$listingData->getBathrooms();
+//    echo "Rooms: ".$listingData->getRooms(); 
+//    foreach((array)$listingData->getImages() as $img)
+//    {
+//       echo "Image: ".$img;
+//    }
+//    echo "</p>";
+//}
  
  
  ?>

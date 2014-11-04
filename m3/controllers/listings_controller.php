@@ -203,5 +203,12 @@ class listings_controller extends controller
             return null;
     }
     
-
+    public function getListing($id)
+    {
+        $sql = "SELECT * from houses WHERE id = '$id'";
+        foreach (parent::$this->db_connect->query($sql) as $row) 
+        {
+            return $row;            
+        }
+    }
 }

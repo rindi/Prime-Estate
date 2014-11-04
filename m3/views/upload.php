@@ -1,77 +1,27 @@
 <?php
-//houseid_nameofimg_timestampofupload.jpg
-require_once ("../controllers/listings_controller.php");
-include 'navbar.php';
-$target_dir = "assets/images/";
-$target_dir = $target_dir . basename( $_FILES["uploadFile"]["name"]);
-$uploadOk=1;
 
-$suffix = substr($_FILES["uploadFile"]["name"], strpos($_FILES["uploadFile"]["name"], ".") + 1);
-
-// Check if file already exists
-if (file_exists($target_dir . $_FILES["uploadFile"]["name"])) 
-{
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
-
-// Check file size
-if ($_FILES["uploadFile"]["size"] > 5000000) 
-{
-    echo $_FILES["uploadFile"]["size"];
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
-
-// Only GIF files allowed 
-if (($_FILES["uploadFile"]["type"] == "image/gif") || ($_FILES["uploadFile"]["type"] == "image/jpeg")) 
-{
-    $result = 'success!';
-}
-else
-{
-    $uploadOk = 0;
-    $result = 'failure';
-}
-//elseif (!($_FILES["uploadFile"]["type"] == "image/jpeg"))
-//{
-//    echo "Sorry, only JPEG files are allowed.";
-//    $uploadOk = 0;
-//}
-
-
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) 
-{
-    echo "Sorry, your file was not uploaded.";
-    $result = 'failure!';
-// if everything is ok, try to upload file
-} 
-else 
-{ 
-    if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir)) 
-    {
-//        echo "The file ". basename( $_FILES["uploadFile"]["name"]). " has been uploaded.";
-        $result = 'success!';
-    } 
-    else 
-    {
-        echo "Sorry, there was an error uploading your file.";
-        $result = 'failure!';
-    }
-}
-
-$now = "/~f14g03/views/assets/images/".$_FILES["uploadFile"]["name"];
-//$listingcont = new listings_controller();
-//$curlisting = $listingcont->getListing(42);
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 ?>
-
 <html>
-
-<body>
- <h2>Image upload <?php echo $result;?></h2>
- <img src="<?php echo $now;?>" alt="img" style="width:304px;height:228px">
-</body>
-
+    <head>
+        <title> Upload Your image </title>
+    </head>
+    <body>
+        <h1 align="center">
+            Please select the image you wish to upload.
+        </h1>
+        
+        <!--<span class="glyphicon glyphicon-search"></span>-->
+        </input>
+        </form>
+        <form align="center" action="upload.php" method="post" enctype="multipart/form-data">
+            Please choose a file: <input type="file" name="uploadFile"><br>
+            <input type="submit" value="Upload File">
+        </form>
+    </body>
 </html>
