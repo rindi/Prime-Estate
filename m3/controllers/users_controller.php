@@ -34,6 +34,19 @@ class users_controller extends controller
     }
     
     /**
+     * get a user's info from the table
+     * @return \user_model
+     */
+    public function getUserInfo($userid)
+    {   
+        $sql = "SELECT * from usertable where userid is '$userid'";
+        foreach( parent::$this->db_connect->query($sql) as $row )
+        {
+            return $row;
+        }
+    }
+    
+    /**
      * Add a user to the table
      * @param type $input
      */
