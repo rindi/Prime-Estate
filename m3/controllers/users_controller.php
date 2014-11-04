@@ -40,7 +40,7 @@ class users_controller extends controller
     public function getUserInfo($userid)
     {   
         $sql = "SELECT * from usertable where userid is '$userid'";
-        foreach( parent::$this->db_connect->query($sql) as $row )
+        foreach((array) parent::$this->db_connect->query($sql) as $row )
         {
             return $row;
         }

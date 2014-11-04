@@ -1,6 +1,8 @@
 <?php
 include 'views/navbar.php';
 $value = 54;
+session_start();
+$_SESSION['varname'] = $value;
 ?>
 <html>
     <head>
@@ -10,7 +12,7 @@ $value = 54;
         <h1 align="center">
             Welcome to Prime Estate.
         </h1>
-        <a href='interestedcustomers.php?listing= <?php echo $value;?>'>click</a>
+        <a href='interestedcustomers.php'>click</a>
         </input>
         </form>
     </body>
