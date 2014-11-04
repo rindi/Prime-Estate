@@ -90,7 +90,7 @@ class listing_model
     {
         return $this->images;
     }
-    function getMap() 
+    public function getMap() 
     {
         return $this->map;
     }
@@ -126,8 +126,9 @@ class listing_model
     {
         $this->images = $images;
     }
-}   function setMap($map) 
+    public function setMap($map) 
     {
         $this->map = $map;
     }
+}
 ?>
