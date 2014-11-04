@@ -1,5 +1,6 @@
 <?php
 require_once ("../controllers/controller.php");
+require_once ("../controllers/users_controller.php");
 require_once ("../models/user_model.php");
 
 /**
@@ -19,17 +20,15 @@ class customer_controller extends controller
      * get all users from the table
      * @return \user_model
      */
-    public function getUsers()
+    public function getCustomers($listing)
     {   
-        $sql = "SELECT * from usertable";
-        foreach( parent::$this->db_connect->query($sql) as $row )
+        $sql = "SELECT * FROM customers WHERE id = '$listing'";
+        foreach($this->db_connect->query($sql) as $row)
         {
-            $dataSet[] = new user_model($row);
+            $user_controller = new users_controller();
+            $tempuser = new user_model($user_controller->getUserInfo($row['userid']));
+            $dataSet[] = $tempuser;
         }
-
-        if (!empty($dataSet))
-            return $dataSet;
-        else
-            return null;
+        return $dataSet;
     }
 }

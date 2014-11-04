@@ -10,8 +10,7 @@ $value = 54;
         <h1 align="center">
             Welcome to Prime Estate.
         </h1>
-        <a href='interestedcustomers.php?listing=<?php echo $value;?>'>click</a>
-        <!--<span class="glyphicon glyphicon-search"></span>-->
+        <a href='interestedcustomers.php?listing= <?php echo $value;?>'>click</a>
         </input>
         </form>
     </body>

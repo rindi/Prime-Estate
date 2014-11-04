@@ -2,7 +2,9 @@
 
 <?php
 include 'navbar.php';
-echo $value = $_GET['listing'];
+require_once ("../controllers/customer_controller.php");
+
+$value = $_GET['listing'];
 ?>
 
 <html>
@@ -32,22 +34,16 @@ echo $value = $_GET['listing'];
         <table class='table' style='width:90%' border='1' align='center'>
         <thead>
         <tr>
-        <th>Address</th>
-        <th>City</th>
-        <th>Zip</th>
-        <th>Price</th>
-        <th>Bedrooms</th>
-        <th>Bathrooms</th>
-        <th>Description</th>
-        <th>Date Added</th>
-        <th>View on Map</th>
-        <th>Image</th>
+        <th>UserName</th>
+        <th>E-mail</th>
+        <th>Date Contacted</th>
         </tr></thead>";
         
-        $list_controller = new listings_controller();
-        $listingSet = $list_controller->searchListings($value);
+        $customer_controller = new customer_controller();
+        $listingSet = $customer_controller->getCustomers($value);
         foreach((array)$listingSet as $listingData) 
         {
+            echo $listingData;
             $houseval=$listingData->getId();
             $mapurl = $listingData->getMap();;
             echo "<tbody><tr>";
