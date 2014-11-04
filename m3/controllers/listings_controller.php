@@ -13,8 +13,6 @@ class listings_controller extends controller
     public function __construct( ) 
     {
         parent::__construct();
-        /* test if connected to db */
-        // if( parent::$this->db_connect ) echo "this is finally working";
     }
     
     /**
@@ -127,26 +125,6 @@ class listings_controller extends controller
   
         $stmt->execute();       
     }
-
-    /**
-     * Get Listing by number from the Database
-     * @return \UserData
-     */
-    public function getListing($listingid)
-    {
-        $imgstack = array();
-        $sql = "SELECT * from houses WHERE id = '$listingid'";
-        $tot = parent::$this->db_connect->query($sql);
-        echo count($tot);
-        echo gettype($tot);
-        foreach ($tot as $row) 
-        {
-            $imgstack = $this->getImages($listingid);
-            $newListing = new listing_model($row);
-            $newListing->setImages($imgstack);
-            return $newListing;
-        }
-    }
     
     /**
      * Edit a Listing in the Database
@@ -189,6 +167,22 @@ class listings_controller extends controller
         //$stmt->bindParam(':id', $id, PDO::PARAM_STR, 12);   
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);   
         $stmt->execute();
+    }
+    
+   
+    public function setImage($id, $imgName)
+//    public function setImage()
+    {
+        $defaultPath = '/~f14g03/views/assets/images/';
+        $imgName = $defaultPath.$imgName;
+        $sql = "INSERT INTO images(houseid, path) VALUES (
+            :houseid, :path)";
+                                       
+        $stmt = $this->db_connect->prepare($sql);
+        $stmt->bindParam(':houseid', $id, PDO::PARAM_STR);       
+        $stmt->bindParam(':path', $imgName, PDO::PARAM_STR); 
+  
+        $stmt->execute();  
     }
     
     /**
