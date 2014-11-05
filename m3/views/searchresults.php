@@ -44,7 +44,7 @@ include 'navbar.php';
         <table class='table' style='width:90%' border='1' align='center'>
         <thead>
         <tr>
-        <th>House #"?><a href="<a href="edit_listing.php?id=41">Edit</a>"></a><?php"</th>
+        <th>House #</th>
         <th>Address</th>
         <th>City</th>
         <th>Zip</th>
@@ -64,7 +64,9 @@ include 'navbar.php';
             $houseval=$listingData->getId();
             $mapurl = $listingData->getMap();;
             echo "<tbody><tr>";
-            echo "<td><a href=\"listing_page.php?id=".$houseval."\">" . $houseval . "</a></td>";
+            echo "<td><a href=\"listing_page.php?id=".$houseval."\">" . $houseval . "</a>";
+            echo "<a href=\"edit_listing.php?id=41\">Edit</a>";
+            echo "</td>";
             echo "<td>" . $listingData->getAddress() . "</td>";
             echo "<td>" . $listingData->getCity() . "</td>";
             echo "<td>" . $listingData->getZip() . "</td>";
