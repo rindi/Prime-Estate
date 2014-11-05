@@ -3,17 +3,17 @@
 require_once ("../controllers/listings_controller.php");
 include 'navbar.php';
 $target_dir = "assets/images/";
-$target_dir = $target_dir . basename( $_FILES["uploadFile"]["name"]);
+//$target_dir = $target_dir . basename( $_FILES["uploadFile"]["name"]);
 $uploadOk=1;
 
 $suffix = substr($_FILES["uploadFile"]["name"], strpos($_FILES["uploadFile"]["name"], ".") + 1);
 
 // Check if file already exists
-if (file_exists($target_dir . $_FILES["uploadFile"]["name"])) 
-{
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
+//if (file_exists($target_dir . $_FILES["uploadFile"]["name"])) 
+//{
+//    echo "Sorry, file already exists.";
+//    $uploadOk = 0;
+//}
 
 // Check file size
 if ($_FILES["uploadFile"]["size"] > 5000000) 
@@ -44,7 +44,11 @@ if ($uploadOk == 0)
 } 
 else 
 { 
-    if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir)) 
+    $temp = explode(".",$_FILES["uploadFile"]["name"]);
+    $newfilename = rand(1,99999) . '.' .end($temp);
+    echo $target_dir . $newfilename;
+    if(move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir . $newfilename))
+    //if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir)) 
     {
 //        echo "The file ". basename( $_FILES["uploadFile"]["name"]). " has been uploaded.";
         $result = 'success!';
@@ -55,12 +59,13 @@ else
         $result = 'failure!';
     }
 }
-
-$now = "/~f14g03/views/assets/images/".$_FILES["uploadFile"]["name"];
+$now = "/~f14g03/views/assets/images/".$newfilename;
+//$now = "/~f14g03/views/assets/images/".$_FILES["uploadFile"]["name"];
 $listingcont = new listings_controller();
 $curlisting = new listing_model($listingcont->getListing(41));
 //Sets the image in the database
-$listingcont->setImage($curlisting->getId(), $_FILES["uploadFile"]["name"])
+//$listingcont->setImage($curlisting->getId(), $_FILES["uploadFile"]["name"])
+$listingcont->setImage($curlisting->getId(), $newfilename)
 ?>
 
 <html>

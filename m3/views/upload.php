@@ -16,9 +16,6 @@ include 'navbar.php';
             Please select the image you wish to upload
         </h3>
         
-        <!--<span class="glyphicon glyphicon-search"></span>-->
-        </input>
-        </form>
         <form action="uploadcomplete.php" method="post" enctype="multipart/form-data">
             Please choose a file: <input type="file" name="uploadFile"><br>
             <input type="submit" value="Upload File">

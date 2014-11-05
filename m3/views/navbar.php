@@ -7,7 +7,7 @@
     <body>
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
-            <a class="navbar-brand" href="index.php">Prime Estate</a>
+            <a class="navbar-brand" href="../index.php">Prime Estate</a>
             <ul class="nav navbar-nav">
             <li class="active">
                 <a href="login.php">Sign in</a>
