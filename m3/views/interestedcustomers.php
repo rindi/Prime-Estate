@@ -2,7 +2,7 @@
 
 <?php
 include 'navbar.php';
-require_once ("../controllers/customer_controller.php");
+require_once ("../controllers/realtor_controller.php");
 require_once ("../models/user_model.php");
 session_start();
 $value = $_SESSION['listing_number'];

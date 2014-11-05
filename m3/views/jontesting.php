@@ -1,6 +1,7 @@
 <?php
 //include 'views/navbar.php';
 require_once ("../controllers/customer_controller.php");
+require_once ("../controllers/profile_controller.php");
 require_once ("../models/customer_model.php");
 
 $value = 54;
@@ -19,6 +20,8 @@ $customerid = 225;
 $custController->newProfile($customerid);
 $custController->getProfile($mycustomerPREFS);
 
+$date = date_create();
+echo date_timestamp_get($date);
 ?>
 <html>
     <head>
