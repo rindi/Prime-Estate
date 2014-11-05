@@ -97,5 +97,8 @@ include 'navbar.php';
 //            die('Error: ' . mysqli_error($con));
 //        }
         ?>
+        <?php if( isset($_COOKIE['seller'])): ?>
+         <a href="edit_listing.php?id=41">Edit house #41</a>
+        <?php endif; ?>
     </body>
 </html>
