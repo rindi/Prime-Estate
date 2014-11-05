@@ -1,5 +1,6 @@
 <?php
 require_once ("../controllers/controller.php");
+require_once ("../controllers/customer_controller.php");
 require_once ("../models/user_model.php");
 
 /**
@@ -63,5 +64,7 @@ class users_controller extends controller
         $stmt->bindParam(':email', $input->getUserEmail(), PDO::PARAM_STR);   
         
         $stmt->execute();  
+        //$custController = new customer_controller();
+        //$custController->newProfile();
     }
 }
