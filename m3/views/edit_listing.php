@@ -11,11 +11,11 @@ if( !isset($_COOKIE['seller'] ) )
 }
 
 $listing_controller = new listings_controller();
-$current_listing = $listing_controller->getListing(41);
-$images = $listing_controller->getImages(41);
+$current_listing = $listing_controller->getListing($_GET['id']);
+$images = $listing_controller->getImages($_GET['id']);
 $image_1 = $images[0];
 
-$listing_model = new listing_model(41);
+$listing_model = new listing_model($_GET['id']);
 ?>
 
 <div class="container">
@@ -30,7 +30,7 @@ $listing_model = new listing_model(41);
                         <div class="col-xs-12">
                             <a href="<?php echo $images[0];?>" class="thumbnail">
                                 <img src="<?php echo $images[0];?>" alt="..."><br>
-                                <a href="edit_photos.php" class="btn btn-default">Edit photos</a>
+                                <a href="edit_photo.php" class="btn btn-default">Edit photos</a>
                             </a>
                         </div>
                     </div>
