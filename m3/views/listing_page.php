@@ -29,6 +29,7 @@ $listing_model = new listing_model($_GET['id']);
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
+                    <!-- WHY FOLLOWING LINE WONT WORK ? -->
                     <?php echo $listing_model->getZip(); ?>
                 </div>
             </div>
