@@ -6,7 +6,4 @@ include("navbar.php");
 if( !isset($_COOKIE['seller'] ) )
 {
     die("Cookie 'seller' is NOT set.");
-}else
-{
-    echo "Cookie 'seller' IS not set.";
 }
