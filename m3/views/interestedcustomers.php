@@ -35,8 +35,8 @@ $value = $_SESSION['varname'];
         <th>Date Contacted</th>
         </tr></thead>";
         
-        $customer_controller = new customer_controller();
-        $listingSet = $customer_controller->getCustomers($value);
+        $realtor_controller = new realtor_controller();
+        $listingSet = $realtor_controller->getCustomers($value);
 
         foreach((array)$listingSet as $userData) 
         {
