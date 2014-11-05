@@ -43,7 +43,7 @@ class listings_controller extends controller
         
         if($check == 3)
         {           
-            $sql = "SELECT * FROM houses WHERE * like'%$input%'"; 
+            $sql = "SELECT * FROM listings WHERE * like'%$input%'"; 
             
             foreach ((array) $this->db_connect->query($sql) as $row) 
             {
@@ -62,7 +62,7 @@ class listings_controller extends controller
             }
         }
         
-        $sql = "SELECT * FROM houses WHERE $option[$check] LIKE'%$input%'"; 
+        $sql = "SELECT * FROM listings WHERE $option[$check] LIKE'%$input%'"; 
         
         foreach ($this->db_connect->query($sql) as $row) 
         {
@@ -85,7 +85,7 @@ class listings_controller extends controller
     public function getRealtorListings($realtorId)
     {
         $imgstack = array();
-        $sql = "SELECT * from houses WHERE userid = '$realtorId'";
+        $sql = "SELECT * from listings WHERE userid = '$realtorId'";
         foreach (parent::$this->db_connect->query($sql) as $row) 
         {
             $imgstack = $this->getImages($row['id']);
@@ -106,7 +106,7 @@ class listings_controller extends controller
      */
     public function addListing($input)
     {
-        $sql = "INSERT INTO houses(address, city, zip, price, rooms, bathrooms, 
+        $sql = "INSERT INTO listings(address, city, zip, price, rooms, bathrooms, 
             description, userid, when_added, when_modified) VALUES (
             :address, :city, :zip, :price, :rooms, :bathrooms, 
             :description, :userid, :when_added, :when_modified)";
@@ -132,7 +132,7 @@ class listings_controller extends controller
      */
     public function editListing($input)
     {
-        $sql = "UPDATE houses SET address = :address, 
+        $sql = "UPDATE listings SET address = :address, 
             city = :city, 
             zip = :zip, 
             price = :price, 
@@ -162,7 +162,7 @@ class listings_controller extends controller
      */
     public function deleteListing($id)
     {
-        $sql = "DELETE FROM houses WHERE id =  :id";
+        $sql = "DELETE FROM listings WHERE id =  :id";
         $stmt = $this->db_connect->prepare($sql);
         //$stmt->bindParam(':id', $id, PDO::PARAM_STR, 12);   
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);   
@@ -190,7 +190,7 @@ class listings_controller extends controller
      * @param type $listingId
      * @return imgStack
      */
-    public function getImages($listingId)
+    private function getImages($listingId)
     {
         $sql = "SELECT * from images WHERE houseid = '$listingId'";
         foreach (parent::$this->db_connect->query($sql) as $row) 
@@ -205,7 +205,7 @@ class listings_controller extends controller
     
     public function getListing($id)
     {
-        $sql = "SELECT * from houses WHERE id = '$id'";
+        $sql = "SELECT * from listings WHERE id = '$id'";
         foreach (parent::$this->db_connect->query($sql) as $row) 
         {
             return $row;            
