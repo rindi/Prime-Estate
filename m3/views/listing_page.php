@@ -6,6 +6,7 @@ require '../controllers/listings_controller.php';
 include("navbar.php");
 $listing_controller = new listings_controller();
 $current_listing = $listing_controller->getListing($_GET['id']);
+$images = $listing_controller->getImages($_GET['id']);
 ?>
 
 <div class="container">
@@ -18,8 +19,8 @@ $current_listing = $listing_controller->getListing($_GET['id']);
                 <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4">
                     <div class="row">
                         <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img data-src="" alt="...">
+                            <a href="./assets/logo/maplink.png" class="thumbnail">
+                                <img src="./assets/logo/maplink.png" alt="...">
                             </a>
                         </div>
                         
