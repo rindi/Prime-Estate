@@ -3,15 +3,16 @@
 require '../models/listing_model.php';
 require '../controllers/listings_controller.php';
 
-include("navbar.php");
+
 $listing_controller = new listings_controller();
 $current_listing = $listing_controller->getListing($_GET['id']);
 $images = $listing_controller->getImages($_GET['id']);
 $image_1 = $images[0];
 
-$listing_model = new listing_model($_GET['id']);
-?>
+$listing_model = new listing_model($current_listing);
 
+?>
+<?php include("navbar.php");?>
 <div class="container">
     <div id="listing" class="panel panel-default">
         <div class="panel-heading">
@@ -30,7 +31,7 @@ $listing_model = new listing_model($_GET['id']);
                 </div>
                 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
                     <!-- WHY FOLLOWING LINE WONT WORK ? -->
-                    <?php echo $listing_model->getZip(); ?>
+                    <?php echo $listing_model->getAddress(); ?>
                 </div>
             </div>
         </div>
