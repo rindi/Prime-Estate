@@ -44,6 +44,7 @@ include 'navbar.php';
         <table class='table' style='width:90%' border='1' align='center'>
         <thead>
         <tr>
+        <th>House #</th>
         <th>Address</th>
         <th>City</th>
         <th>Zip</th>
