@@ -42,7 +42,7 @@ class customer_model
     {
         return $this->personalinformation;
     }
-    public function getUserid($id)
+    public function getUserid()
     {
         return $this->userid;
     }

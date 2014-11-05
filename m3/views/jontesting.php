@@ -15,7 +15,10 @@ $dbRow['personalinformation'] = "imma nice guy like my tie?";
 $dbRow['userid'] = 42;
 $mycustomerPREFS = new customer_model($dbRow);
 $custController = new customer_controller();
+$customerid = 225;
+$custController->newProfile($customerid);
 $custController->getProfile($mycustomerPREFS);
+
 ?>
 <html>
     <head>
