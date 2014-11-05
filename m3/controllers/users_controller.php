@@ -64,6 +64,4 @@ class users_controller extends controller
         
         $stmt->execute();  
     }
-    
-
 }
