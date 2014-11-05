@@ -19,9 +19,13 @@
                 <a href="profile.php">Signed in</a>
             </li>
             <li class="active"> 
-                <a href="Brain/logout.php">Logout</a>
+                <a href="logout.php">Logout</a>
              </li>
             </div>
         </nav>
+        <footer>
+        <div class="footer navbar-fixed-bottom">
+        <a href="data_usage.php">Data usage</a>
+        </footer>
     </body>
 </html>
