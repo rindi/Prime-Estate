@@ -44,7 +44,7 @@ include 'navbar.php';
         <table class='table' style='width:90%' border='1' align='center'>
         <thead>
         <tr>
-        <th>House #</th>
+        <th>House #"?><a href="<a href="edit_listing.php?id=41">Edit</a>"></a><?php"</th>
         <th>Address</th>
         <th>City</th>
         <th>Zip</th>
@@ -99,7 +99,7 @@ include 'navbar.php';
         ?>
         <?php if( isset($_COOKIE['seller'])): ?>
         <a>Edit house #41</a> &nbsp;
-        <a href="edit_listing.php?id=41">Edit</a>
+        
         <?php endif; ?>
     </body>
 </html>
