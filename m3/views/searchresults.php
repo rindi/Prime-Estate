@@ -63,7 +63,7 @@ include 'navbar.php';
             $houseval=$listingData->getId();
             $mapurl = $listingData->getMap();;
             echo "<tbody><tr>";
-            echo "<td>" . $houseval . "</td>";
+            echo "<td><a href=\"listing_page.php?id=".$houseval."\">" . $houseval . "</a></td>";
             echo "<td>" . $listingData->getAddress() . "</td>";
             echo "<td>" . $listingData->getCity() . "</td>";
             echo "<td>" . $listingData->getZip() . "</td>";
