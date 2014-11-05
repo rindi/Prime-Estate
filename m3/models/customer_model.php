@@ -3,16 +3,17 @@
 /**
  * user_model Class
  */
-class user_model
+class customer_model
 {
     //fields for userdata class
-    public $bedrooms, $bathrooms, $price, $zip, $personalinformation, $userid;
+    public $bedrooms, $bathrooms, $pricemax, $pricemin, $zip, $personalinformation, $userid;
     
     public function __construct($dbRow)
     { 
         $this->bedrooms = $dbRow['bedrooms'];
         $this->bathrooms = $dbRow['bathrooms'];
-        $this->price = $dbRow['price'];
+        $this->pricemax = $dbRow['pricemax'];
+        $this->pricemin = $dbRow['pricemin'];
         $this->zip = $dbRow['zip'];
         $this->personalinformation = $dbRow['personalinformation'];
         $this->userid = $dbRow['userid'];
@@ -25,9 +26,13 @@ class user_model
     {
         return $this->bedrooms;
     }
-    public function getPrice()
+    public function getPricemin()
     {
-        return $this->price;
+        return $this->pricemin;
+    }
+    public function getPricemax()
+    {
+        return $this->pricemax;
     }
     public function getZip()
     {
@@ -49,9 +54,13 @@ class user_model
     {
         $this->bedrooms = $input;
     }
-    public function setPrice($input)
+    public function setPricemin($input)
     {
-        $this->price = $input;
+        $this->pricemin = $input;
+    }    
+    public function setPricemax($input)
+    {
+        $this->pricemax = $input;
     }
     public function setZip($input)
     {

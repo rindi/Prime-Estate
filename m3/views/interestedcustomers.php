@@ -5,7 +5,7 @@ include 'navbar.php';
 require_once ("../controllers/customer_controller.php");
 require_once ("../models/user_model.php");
 session_start();
-$value = $_SESSION['varname'];
+$value = $_SESSION['listing_number'];
 ?>
 
 <html>
@@ -23,8 +23,9 @@ $value = $_SESSION['varname'];
         <h2> Interested Customers </h2>
         
         <?php
-        require '../models/listing_model.php';
-        require '../controllers/listings_controller.php';
+        require_once '../models/listing_model.php';
+        require_once '../controllers/listings_controller.php';
+        require_once '../controllers/realtor_controller.php';
      
         echo "<div class='results'>
         <table class='table' style='width:90%' border='1' align='center'>
