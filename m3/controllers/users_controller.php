@@ -1,6 +1,6 @@
 <?php
 require_once ("../controllers/controller.php");
-require_once ("../controllers/customer_controller.php");
+require_once ("../controllers/realtor_controller.php");
 require_once ("../models/user_model.php");
 
 /**

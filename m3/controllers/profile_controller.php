@@ -22,9 +22,9 @@ class profile_controller extends controller
      */
     public function getProfile($customerid)
     {   
-        $temp  = $customerid->getUserid();
-        echo $temp;
-        $sql = "SELECT * FROM customerprofile WHERE userid = '$temp'";
+//        $temp  = $customerid->getUserid();
+//        echo $temp;
+//        $sql = "SELECT * FROM customerprofile WHERE userid = '$temp'";
 //        foreach($this->db_connect->query($sql) as $row)
 //        {
 //            $user_controller = new users_controller();
@@ -52,7 +52,7 @@ class profile_controller extends controller
         $stmt->bindParam(':profile', $default_profile, PDO::PARAM_STR);  
 
         $stmt->execute(); 
-        echo "done";
+//        echo "done";
     }
     
     /**
