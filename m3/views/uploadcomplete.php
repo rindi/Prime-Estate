@@ -45,7 +45,8 @@ if ($uploadOk == 0)
 else 
 { 
     $temp = explode(".",$_FILES["uploadFile"]["name"]);
-    $newfilename = rand(1,99999) . '.' .end($temp);
+    $date = date_create();
+    $newfilename = rand(1,99999) . date_timestamp_get($date) . '.' .end($temp);
     echo $target_dir . $newfilename;
     if(move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir . $newfilename))
     //if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir)) 
