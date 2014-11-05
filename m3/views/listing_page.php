@@ -8,8 +8,13 @@ $listing_controller = new listings_controller();
 $current_listing = $listing_controller->getListing($_GET['id']);
 ?>
 
-<h1>Show house #<?php echo $current_listing['id']; ?></h1>
-
-<div id="listing">
-    
+<div class="container">
+    <div id="listing" class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Show house #<?php echo $current_listing['id']; ?></h2>
+        </div>
+        <div class="panel-body">
+          Basic panel example
+        </div>
+    </div>
 </div>
