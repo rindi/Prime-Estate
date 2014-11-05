@@ -190,7 +190,7 @@ class listings_controller extends controller
      * @param type $listingId
      * @return imgStack
      */
-    private function getImages($listingId)
+    public function getImages($listingId)
     {
         $sql = "SELECT * from images WHERE houseid = '$listingId'";
         foreach (parent::$this->db_connect->query($sql) as $row) 
