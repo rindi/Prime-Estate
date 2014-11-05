@@ -22,7 +22,7 @@ class customer_controller extends controller
      */
     public function getCustomers($listing)
     {   
-        $sql = "SELECT * FROM customers WHERE id = '$listing'";
+        $sql = "SELECT * FROM interestedcustomers WHERE id = '$listing'";
         foreach($this->db_connect->query($sql) as $row)
         {
             $user_controller = new users_controller();
