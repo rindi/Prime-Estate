@@ -1,5 +1,5 @@
 <?php
-include 'views/navbar.php';
+//include 'views/navbar.php';
 $value = 54;
 session_start();
 $_SESSION['varname'] = $value;
@@ -18,5 +18,5 @@ $_SESSION['varname'] = $value;
     </body>
 </html>
 <?php
-include 'views/data_usage.php';
+//include 'views/data_usage.php';
 ?>
