@@ -10,24 +10,16 @@ class user_model
     
     public function __construct($dbRow)
     { 
-        if( !$dbRow )
+
+        if (count($dbRow)>4)
         {
-            $this->username = $dbRow['username'];
-            $this->password = $dbRow['password'];
-            $this->email = $dbRow['email'];
-            $this->type = $dbRow['type'];
+            $this->userid = $dbRow['userid'];
         }
-        else
-        {
-            if (count($dbRow)>4)
-            {
-                $this->userid = $dbRow['userid'];
-            }
-            $this->username = $dbRow['username'];
-            $this->password = $dbRow['password'];
-            $this->email = $dbRow['email'];
-            $this->type = $dbRow['type'];
-        }   
+        $this->username = $dbRow['username'];
+        $this->password = $dbRow['password'];
+        $this->email = $dbRow['email'];
+        $this->type = $dbRow['type'];
+
 
     }
     public function getUserName()
