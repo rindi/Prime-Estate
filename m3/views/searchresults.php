@@ -98,7 +98,8 @@ include 'navbar.php';
 //        }
         ?>
         <?php if( isset($_COOKIE['seller'])): ?>
-         <a href="edit_listing.php?id=41">Edit house #41</a>
+        <a>Edit house #41</a> &nbsp;
+        <a href="edit_listing.php?id=41">Edit</a>
         <?php endif; ?>
     </body>
 </html>
