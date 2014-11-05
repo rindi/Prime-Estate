@@ -1,5 +1,8 @@
 <?php
 
+require '../models/listing_model.php';
+require '../controllers/listings_controller.php';
+
 include("navbar.php");
 $listing_controller = new listings_controller();
 $current_listing = $list_controller->getLisint($_GET['id']);
