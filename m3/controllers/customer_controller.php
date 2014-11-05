@@ -42,7 +42,7 @@ class customer_controller extends controller
      */
     public function newProfile($customerid)
     {   
-        $sql = "INSERT INTO customerprofile(userid, profile) VALUES (
+        $sql = "INSERT INTO customerprofile(userid, personalinformation) VALUES (
             :userid, :profile)";
                           
         $default_profile = "Enter more information about yourself and what kind of home you are interested in!";
@@ -50,7 +50,7 @@ class customer_controller extends controller
         $stmt = $this->db_connect->prepare($sql);
         $stmt->bindParam(':userid', $customerid, PDO::PARAM_INT);       
         $stmt->bindParam(':profile', $default_profile, PDO::PARAM_STR);  
-  
+
         $stmt->execute(); 
         echo "done";
     }
