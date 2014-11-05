@@ -6,7 +6,7 @@ require_once ("../models/user_model.php");
 /**
  * User Controller Class
  */
-class customer_controller extends controller
+class realtor_controller extends controller
 {
     /**
      * Constructor
