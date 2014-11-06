@@ -32,6 +32,7 @@ $listing_model = new listing_model($current_listing);
                 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
                     <!-- WHY FOLLOWING LINE WONT WORK ? -->
                     <?php echo $listing_model->getAddress(); ?>
+                    <?php echo $listing_model->getAddress(); ?>
                 </div>
             </div>
         </div>
