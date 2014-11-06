@@ -25,10 +25,15 @@ require '../controllers/users_controller.php';
     $input[4] = $first_name;
     $input[5] = $last_name;
     
+    for ($i=0;$i<6;$i++)
+    {
+        //echo $i;
+        echo $input[$i];
+    }
     if ($password != $confirm_password)
         echo "Passwords did not match, Registration failed.";
     else
     {
-        $registration_controller = new users_controller();
+        $registration_controller = new registration_controller();
         $registration_controller->addUser($input);
     }
