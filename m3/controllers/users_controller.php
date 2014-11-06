@@ -43,42 +43,36 @@ class users_controller extends controller
         $sql = "SELECT * FROM usertable WHERE userid = '$userid'";
         foreach(parent::$this->db_connect->query($sql) as $row )
         {
-//            return $row;
-            $user = new user_model($row);
-            return $user;
+            return $row;
         }
     }
     
     /**
-     * Add a user to the database
+     * Add a user to the table
      * @param type $input
      */
     public function addUser($input)
     {
         $sql = "INSERT INTO 
-                usertable (username, password, type, email, firstname, lastname) 
-                VALUES (:username, :password, :type, :email, :firstname, :lastname)";
+                usertable (username, password, type, email) 
+                VALUES (:username, :password, :type, :email)";
         
         $stmt = $this->db_connect->prepare($sql);
-        $stmt->bindParam(':username', $input[0]->setUserName(), PDO::PARAM_STR);       
-        $stmt->bindParam(':password', $input[1]->setUserPassword(), PDO::PARAM_STR); 
-        $stmt->bindParam(':type', $input[2]->setUserType(), PDO::PARAM_STR); 
-        $stmt->bindParam(':email', $input[3]->setUserEmail(), PDO::PARAM_STR);   
-        $stmt->bindParam(':firstname', $input[4]->setFirstName(), PDO::PARAM_STR); 
-        $stmt->bindParam(':lastname', $input[5]->setLastName(), PDO::PARAM_STR); 
+        $stmt->bindParam(':username', $input->getUserName(), PDO::PARAM_STR);       
+        $stmt->bindParam(':password', $input->getUserPassword(), PDO::PARAM_STR); 
+        $stmt->bindParam(':type', $input->getUserType(), PDO::PARAM_STR); 
+        $stmt->bindParam(':email', $input->getUserEmail(), PDO::PARAM_STR);   
         
         $stmt->execute();  
-        echo "User added, check DB";
-        //if the new user is a customer set them up with a dummy profile
-        if ($input->getUserType() == 1)
+        $username = $input->getUserName();
+        $sql = "SELECT * FROM usertable WHERE username = '$username'";
+//        $rows = parent::$this->db_connect->query($sql);
+//        var_dump($rows[0]);
+        foreach(parent::$this->db_connect->query($sql) as $row )
         {
-            $username = $input->getUserName();
-            $sql = "SELECT * FROM usertable WHERE username = '$username'";
-            foreach(parent::$this->db_connect->query($sql) as $row )
-            {
-                $custController = new profile_controller();
-                $custController->newProfile($row['userid']);
-            }
+//            var_dump($row);
+            $custController = new customer_controller($row['userid']);
+            $custController->newProfile();
         }
     }
 }
