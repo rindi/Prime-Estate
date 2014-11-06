@@ -60,15 +60,15 @@ class users_controller extends controller
                 VALUES (:username, :password, :type, :email, :firstname, :lastname)";
         
         $stmt = $this->db_connect->prepare($sql);
-        $stmt->bindParam(':username', $input->getUserName(), PDO::PARAM_STR);       
-        $stmt->bindParam(':password', $input->getUserPassword(), PDO::PARAM_STR); 
-        $stmt->bindParam(':type', $input->getUserType(), PDO::PARAM_STR); 
-        $stmt->bindParam(':email', $input->getUserEmail(), PDO::PARAM_STR);   
-        $stmt->bindParam(':firstname', $input->getFirstName(), PDO::PARAM_STR); 
-        $stmt->bindParam(':lastname', $input->getLastName(), PDO::PARAM_STR); 
+        $stmt->bindParam(':username', $input[0]->getUserName(), PDO::PARAM_STR);       
+        $stmt->bindParam(':password', $input[1]->getUserPassword(), PDO::PARAM_STR); 
+        $stmt->bindParam(':type', $input[2]->getUserType(), PDO::PARAM_STR); 
+        $stmt->bindParam(':email', $input[3]->getUserEmail(), PDO::PARAM_STR);   
+        $stmt->bindParam(':firstname', $input[4]->getFirstName(), PDO::PARAM_STR); 
+        $stmt->bindParam(':lastname', $input[5]->getLastName(), PDO::PARAM_STR); 
         
         $stmt->execute();  
-        
+        echo "User added, check DB";
         //if the new user is a customer set them up with a dummy profile
         if ($input->getUserType() == 1)
         {
