@@ -22,10 +22,19 @@ $customerid = 225;
 $profile = $profilecontroller->getProfile($customerid);
 //UPDATE THEIR PROFILE WITH WHATEVER CHANGES THEY MAKE
 $newValue = 2000;
-$profile->setPricemin($newValue);
-$profile->setPricemin($newValue);
+$profile->setPricemax($newValue);
+//$profile->setPricemin($newValue);
 $profilecontroller->updateCustomerProfile($profile);
 
+$results = $profilecontroller->getProfileResults($profile);
+if ((array) $results)
+{
+    foreach ((array) $results as $row) 
+    {
+        var_dump($row); 
+        echo $row->getAddress();
+    }
+}
 ?>
 <html>
     <head>

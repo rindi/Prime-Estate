@@ -55,7 +55,7 @@ $value=$_POST["searchvalue"];
         <th>Description</th>
         <th>Date Added</th>
         <th>View on Map</th>
-        <th>Image</th>
+        <th>Images</th>
         </tr></thead>";
         
         $list_controller = new listings_controller();

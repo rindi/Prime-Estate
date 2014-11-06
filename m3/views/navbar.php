@@ -10,16 +10,16 @@
             <a class="navbar-brand" href="http://sfsuswe.com/~f14g03/index.php">Prime Estate</a>
             <ul class="nav navbar-nav">
             <li class="active">
-                <a href="login.php">Sign in</a>
+                <a href="views/login.php">Sign in</a>
             </li>
             <li class="active">
-                <a href="registration.php">Register</a>
+                <a href="views/registration.php">Register</a>
             </li>
             <li class="active">
-                <a href="profile.php">Signed in</a>
+                <a href="views/profile.php">Signed in</a>
             </li>
             <li class="active"> 
-                <a href="logout.php">Logout</a>
+                <a href="views/logout.php">Logout</a>
              </li>
             </div>
         </nav>

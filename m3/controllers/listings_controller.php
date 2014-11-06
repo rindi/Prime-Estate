@@ -1,6 +1,7 @@
 <?php
 require_once ("../controllers/controller.php");
 require_once ("../models/listing_model.php");
+require_once ("../models/profile_model.php");
 
 /**
  * Listings Controller class
@@ -64,7 +65,8 @@ class listings_controller extends controller
         
         $sql = "SELECT * FROM listings WHERE $option[$check] LIKE'%$input%'"; 
         
-        foreach ($this->db_connect->query($sql) as $row) 
+        
+        foreach ((array) $this->db_connect->query($sql) as $row) 
         {
             $imgstack = $this->getImages($row['id']);
             $newListing = new listing_model($row);
@@ -77,6 +79,27 @@ class listings_controller extends controller
             return null;
     }
  
+    public function profileSearch($input)
+    {
+        $priceMin = $input->getPricemin();
+        $sql = "SELECT * FROM listings WHERE 'pricemin >= '%$priceMin%'"; 
+//        $prefix = "SELECT * FROM listings WHERE 'pricemin => '";
+//        $postfix = "'";
+//        
+//        $sql = $prefix.$input.$postfix; 
+        
+        foreach ((array) $this->db_connect->query($sql) as $row) 
+        {
+            $imgstack = $this->getImages($row['id']);
+            $newListing = new listing_model($row);
+            $newListing->setImages($imgstack);
+            $dataSet[] = $newListing;
+        }
+        if (!empty($dataSet))
+            return $dataSet;
+        else
+            return null;
+    }
     
    /**
      * Get Realtor's Listings from the Database

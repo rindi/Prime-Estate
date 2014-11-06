@@ -1,6 +1,7 @@
 <?php
 require_once ("../controllers/controller.php");
 require_once ("../controllers/users_controller.php");
+require_once ("../controllers/listings_controller.php");
 require_once ("../models/user_model.php");
 require_once ("../models/profile_model.php");
 
@@ -73,5 +74,16 @@ class profile_controller extends controller
         $stmt->bindParam(':userid', $input->getUserid(), PDO::PARAM_INT);   
 
         $stmt->execute();       
+    }
+    
+    /**
+     * Edit a Customer Profile in the Database
+     * @param type $input
+     */
+    public function getProfileResults($input)
+    {
+        $controller = new listings_controller();
+        $results = $controller->profileSearch($input);
+        return $results;
     }
 }
