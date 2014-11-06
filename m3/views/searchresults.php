@@ -2,6 +2,7 @@
 
 <?php
 include 'navbar.php';
+$value=$_POST["searchvalue"];
 
 //  this is the code from brain/check if logged in;
 //    if( isset($_COOKIE['username']) )
