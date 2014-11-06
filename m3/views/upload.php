@@ -17,8 +17,22 @@ include 'navbar.php';
         </h3>
         
         <form action="uploadcomplete.php" method="post" enctype="multipart/form-data">
-            Please choose a file: <input type="file" name="uploadFile"><br>
+            Please choose a file: 
+            <input type="file" name="uploadFile" id="uploadFile"><br>
             <input type="submit" value="Upload File">
         </form>
+        
+            <script>
+            document.forms[0].addEventListener('submit', function( evt ) {
+                var file = document.getElementById('uploadFile').files[0];
+
+                if(file && file.size < 2621440) { // 10 MB (this size is in bytes)
+                    //Submit form        
+                } else {
+                    window.alert("File size is greater than 2.5 MB");
+                    evt.preventDefault();
+                }
+            }, false);
+            </script>
     </body>
 </html>
