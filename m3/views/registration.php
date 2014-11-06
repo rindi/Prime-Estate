@@ -54,14 +54,16 @@
       <script>
             document.forms[0].addEventListener('submit', function( evt ) 
             {
-                var firstpassword = document.getElementById('login_password');
-                var confirmpassword = document.getElementById('login_confirm_password');
+                var firstpassword = document.getElementById('login_username');
+                var confirmpassword = document.getElementById('login_username');
+                alert(firstpassword);
+                alert(confirmpassword);
                 if(firstpassword!=confirmpassword)
                 {
                     window.alert("Passwords do not match.");
                     evt.preventDefault();
                 }
-            });
+            }, false);
        </script>    
       </form>
 </body>

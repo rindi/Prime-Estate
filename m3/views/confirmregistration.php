@@ -1,14 +1,13 @@
 <?php
-include 'views/navbar.php';
+#include 'views/navbar.php';
 require '../controllers/users_controller.php';
-require '../models/user_model.php';
+#require '../models/user_model.php';
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-    $input = [];
     $username = $_POST['login_username'];
     $password = base64($_POST['login_password']);
     $confirm_password = base64($_POST['login_confirm_password']);
