@@ -15,7 +15,7 @@ $current_listing = $listing_controller->getListing($_GET['id']);
 $images = $listing_controller->getImages($_GET['id']);
 $image_1 = $images[0];
 
-$listing_model = new listing_model($_GET['id']);
+$listing_model = new listing_model($current_listing);
 ?>
 
 <div class="container">
