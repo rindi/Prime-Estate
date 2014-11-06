@@ -28,6 +28,10 @@ class user_model
     {
         return $this->username;
     }
+    public function setUserName($username)
+    {
+        $this->username = $username;
+    }
     public function getUserPassword()
     {
         return $this->password;
@@ -44,7 +48,10 @@ class user_model
     {
         return $this->email;
     }
-    
+    public function setUserEmail($email)
+    {
+        $this->email = $email;
+    }
     public function getContactDate()
     {
         return $this->date;
