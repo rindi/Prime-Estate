@@ -64,7 +64,15 @@ class users_controller extends controller
         $stmt->bindParam(':email', $input->getUserEmail(), PDO::PARAM_STR);   
         
         $stmt->execute();  
-        //$custController = new customer_controller();
-        //$custController->newProfile();
+        $username = $input->getUserName();
+        $sql = "SELECT * FROM usertable WHERE username = '$username'";
+//        $rows = parent::$this->db_connect->query($sql);
+//        var_dump($rows[0]);
+        foreach(parent::$this->db_connect->query($sql) as $row )
+        {
+//            var_dump($row);
+            $custController = new customer_controller($row['userid']);
+            $custController->newProfile();
+        }
     }
 }

@@ -31,16 +31,16 @@ include 'navbar.php';
             </tr>
 
             <tr>
-                <td>zip:</td>
+                <td>Zip Code:</td>
                 <td><input id = "textfield"type="text" name="zip" ></td>
             </tr>
             <tr>
-                <td>Bed:</td>
+                <td># Bedrooms:</td>
                 <td><input id = "textfield"type="text" name="bed" ></td>
             </tr>
 
             <tr>
-                <td>Room:</td>
+                <td># Bathrooms:</td>
                 <td><input id = "textfield"type="text" name="room" ></td>
             </tr>
 
