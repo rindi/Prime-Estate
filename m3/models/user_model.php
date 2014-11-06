@@ -66,6 +66,10 @@ class user_model
         return $this->lastname;
     }
     
+     public function setUserType($usertype)
+    {
+        $this->type = $usertype;
+    }
     public function setUserPassword($password)
     {
         $this->password = base64_encode($password);
