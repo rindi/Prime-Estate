@@ -2,6 +2,30 @@
 
 <?php
 include 'navbar.php';
+
+require_once ("../controllers/profile_controller.php");
+require_once ("../models/profile_model.php");
+//SET THESE VARIABLES
+//$dbRow['bedrooms'];
+//$dbRow['bathrooms'];
+//$dbRow['pricemax'];
+//$dbRow['pricemin'];
+//$dbRow['zip'];
+//$dbRow['personalinformation'];
+//$dbRow['userid'];
+//CALL THIS
+//$profile = new profile_model($dbRow);
+$profilecontroller = new profile_controller();
+//GET THE CUSTOMER ID SOMEHOW (prolly cookies)
+$customerid = 225;
+//GET THEIR PROFILE
+$profile = $profilecontroller->getProfile($customerid);
+//UPDATE THEIR PROFILE WITH WHATEVER CHANGES THEY MAKE
+$newValue = 2000;
+$profile->setPricemin($newValue);
+$profile->setPricemin($newValue);
+$profilecontroller->updateCustomerProfile($profile);
+
 ?>
 <html>
     <head>

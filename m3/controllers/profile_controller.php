@@ -2,6 +2,7 @@
 require_once ("../controllers/controller.php");
 require_once ("../controllers/users_controller.php");
 require_once ("../models/user_model.php");
+require_once ("../models/profile_model.php");
 
 /**
  * User Controller Class
@@ -22,18 +23,12 @@ class profile_controller extends controller
      */
     public function getProfile($customerid)
     {   
-//        $temp  = $customerid->getUserid();
-//        echo $temp;
-//        $sql = "SELECT * FROM customerprofile WHERE userid = '$temp'";
-//        foreach($this->db_connect->query($sql) as $row)
-//        {
-//            $user_controller = new users_controller();
-//            $temp = $user_controller->getUserInfo($row['userid']);
-//            $tempuser = new user_model($temp);
-//            $tempuser->setContactDate($row['date']);
-//            $dataSet[] = $tempuser;
-//        }
-//        return $dataSet;
+        $sql = "SELECT * FROM customerprofile WHERE userid = '$customerid'";
+        foreach($this->db_connect->query($sql) as $row)
+        {
+            $profile = new profile_model($row);
+            return $profile;
+        }
     }
     
     
@@ -52,11 +47,10 @@ class profile_controller extends controller
         $stmt->bindParam(':profile', $default_profile, PDO::PARAM_STR);  
 
         $stmt->execute(); 
-//        echo "done";
     }
     
     /**
-     * Edit a Listing in the Database
+     * Edit a Customer Profile in the Database
      * @param type $input
      */
     public function updateCustomerProfile($input)
@@ -65,18 +59,18 @@ class profile_controller extends controller
             bedrooms = :bedrooms, 
             bathrooms = :bathrooms, 
             pricemin = :pricemin, 
-            pricemax = :picemax, 
-            personalinformation = :personalinformation, 
-            WHERE useid = :userid";
-                                          
+            pricemax = :pricemax, 
+            personalinformation = :personalinformation 
+            WHERE userid = :userid";
+                   
         $stmt = $this->db_connect->prepare($sql);
-        $stmt->bindParam(':zip', $input->getAddress(), PDO::PARAM_STR);       
-        $stmt->bindParam(':bedrooms', $input->getCity(), PDO::PARAM_STR); 
-        $stmt->bindParam(':bathrooms', $input->getZip(), PDO::PARAM_INT);  
-        $stmt->bindParam(':pricemin', $input->getPrice(), PDO::PARAM_INT); 
-        $stmt->bindParam(':pricemax', $input->getRooms(), PDO::PARAM_INT);   
-        $stmt->bindParam(':personalinformation', $input->getBathrooms(), PDO::PARAM_INT); 
-        $stmt->bindParam(':userid', $input->getId(), PDO::PARAM_INT);   
+        $stmt->bindParam(':zip', $input->getZip(), PDO::PARAM_INT);       
+        $stmt->bindParam(':bedrooms', $input->getBedrooms(), PDO::PARAM_INT); 
+        $stmt->bindParam(':bathrooms', $input->getBathrooms(), PDO::PARAM_INT);  
+        $stmt->bindParam(':pricemin', $input->getPricemin(), PDO::PARAM_INT);
+        $stmt->bindParam(':pricemax', $input->getPricemax(), PDO::PARAM_INT);   
+        $stmt->bindParam(':personalinformation', $input->getPersonalInformation(), PDO::PARAM_STR); 
+        $stmt->bindParam(':userid', $input->getUserid(), PDO::PARAM_INT);   
 
         $stmt->execute();       
     }
