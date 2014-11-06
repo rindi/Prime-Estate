@@ -13,27 +13,39 @@
       <form align="center" name="registration" action="confirmregistration.php" method="POST">
       <table style="text-align:center; margin: 0px auto">
       <tr>
-        <td>Username</td>
+        <td>Username*</td>
         <td>
           <input type="text" name="login_username" required/>
         </td>
       </tr> 
       <tr>
-        <td>Password</td>
+        <td>Password*</td>
         <td>
             <input type="password" name="login_password" id="login_password" required/>
         </td>
       </tr>
       <tr>
-        <td>Confirm Password</td>
+        <td>Confirm Password*</td>
         <td>
             <input type="password" name="login_confirm_password" id="login_confirm_password" required/>
         </td>
       </tr>
       <tr>
-        <td>Email</td>
+        <td>Email*</td>
         <td>
             <input type="text" name="login_email" required/>
+        </td>
+      </tr>
+      <tr>
+        <td>First Name</td>
+        <td>
+            <input type="text" name="first_name"/>
+        </td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td>
+            <input type="text" name="last_name"/>
         </td>
       </tr>
      </table>
@@ -50,8 +62,8 @@
                     evt.preventDefault();
                 }
             });
-       </script>    </form>
-
+       </script>    
+      </form>
 </body>
 <a href="index.php">Back to Login Page</a>
 </html>
