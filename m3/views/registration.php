@@ -1,7 +1,7 @@
 <?php
-include 'views/navbar.php';
-require '../controllers/users_controller.php';
-require '../models/user_model.php';
+#include 'views/navbar.php';
+#require '../controllers/users_controller.php';
+#require '../models/user_model.php';
 
 ?>
 
@@ -21,13 +21,13 @@ require '../models/user_model.php';
       <tr>
         <td>Password</td>
         <td>
-            <input type="password" name="login_password" required/>
+            <input type="password" name="login_password" id="login_password" required/>
         </td>
       </tr>
       <tr>
         <td>Confirm Password</td>
         <td>
-            <input type="password" name="login_confirm_password" required/>
+            <input type="password" name="login_confirm_password" id="login_confirm_password" required/>
         </td>
       </tr>
       <tr>
@@ -38,8 +38,20 @@ require '../models/user_model.php';
       </tr>
      </table>
        <br/>
-        <input type="submit"  name="register" value="Register" />
-    </form>
+     <input type="submit" value="Register">
+      <script>
+            document.forms[0].addEventListener('submit', function( evt ) 
+            {
+                var firstpassword = document.getElementById('login_password');
+                var confirmpassword = document.getElementById('login_confirm_password');
+                if(firstpassword!=confirmpassword)
+                {
+                    window.alert("Passwords do not match.");
+                    evt.preventDefault();
+                }
+            });
+       </script>    </form>
+
 </body>
 <a href="index.php">Back to Login Page</a>
 </html>
