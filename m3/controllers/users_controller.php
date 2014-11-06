@@ -60,12 +60,12 @@ class users_controller extends controller
                 VALUES (:username, :password, :type, :email, :firstname, :lastname)";
         
         $stmt = $this->db_connect->prepare($sql);
-        $stmt->bindParam(':username', $input[0]->getUserName(), PDO::PARAM_STR);       
-        $stmt->bindParam(':password', $input[1]->getUserPassword(), PDO::PARAM_STR); 
-        $stmt->bindParam(':type', $input[2]->getUserType(), PDO::PARAM_STR); 
-        $stmt->bindParam(':email', $input[3]->getUserEmail(), PDO::PARAM_STR);   
-        $stmt->bindParam(':firstname', $input[4]->getFirstName(), PDO::PARAM_STR); 
-        $stmt->bindParam(':lastname', $input[5]->getLastName(), PDO::PARAM_STR); 
+        $stmt->bindParam(':username', $input[0]->setUserName(), PDO::PARAM_STR);       
+        $stmt->bindParam(':password', $input[1]->setUserPassword(), PDO::PARAM_STR); 
+        $stmt->bindParam(':type', $input[2]->setUserType(), PDO::PARAM_STR); 
+        $stmt->bindParam(':email', $input[3]->setUserEmail(), PDO::PARAM_STR);   
+        $stmt->bindParam(':firstname', $input[4]->setFirstName(), PDO::PARAM_STR); 
+        $stmt->bindParam(':lastname', $input[5]->setLastName(), PDO::PARAM_STR); 
         
         $stmt->execute();  
         echo "User added, check DB";
