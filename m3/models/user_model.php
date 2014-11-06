@@ -6,12 +6,12 @@
 class user_model
 {
     //fields for userdata class
-    public $username, $password, $userid, $type, $email, $date, $firstname, $lastname;
+    public $username, $password, $userid, $type, $email, $date;
     
     public function __construct($dbRow)
     { 
 
-        if (count($dbRow)>6)
+        if (count($dbRow)>4)
         {
             $this->userid = $dbRow['userid'];
         }
@@ -19,8 +19,6 @@ class user_model
         $this->password = $dbRow['password'];
         $this->email = $dbRow['email'];
         $this->type = $dbRow['type'];
-        $this->firstname = $dbRow['firstname'];
-        $this->lastname = $dbRow['lastname'];
 
 
     }
@@ -52,24 +50,6 @@ class user_model
     {
         $this->email = $email;
     }
-    public function getContactDate()
-    {
-        return $this->date;
-    }
-    public function getFirstName()
-    {
-        return $this->firstname;
-    }
-    
-    public function getLastName()
-    {
-        return $this->lastname;
-    }
-    
-     public function setUserType($usertype)
-    {
-        $this->type = $usertype;
-    }
     public function setUserPassword($password)
     {
         $this->password = base64_encode($password);
@@ -79,16 +59,6 @@ class user_model
     {
         $this->date = $date;
     }
-    public function setFirstName($firstname)
-    {
-        $this->firstname = $firstname;
-    }
-    
-    public function setLastName($lastname)
-    {
-        $this->lastname = $lastname;
-    }
-    
     public function testAddUser()
     {
         $this->username = "test_un";
