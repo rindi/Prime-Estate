@@ -9,8 +9,8 @@ require '../controllers/users_controller.php';
  * and open the template in the editor.
  */
     $username = $_POST['login_username'];
-    $password = base64($_POST['login_password']);
-    $confirm_password = base64($_POST['login_confirm_password']);
+    $password = base64_encode($_POST['login_password']);
+    $confirm_password = base64_encode($_POST['login_confirm_password']);
     $email = $_POST['login_email'];
     if(isset($_POST['first_name']))
         $first_name = $_POST['first_name'];

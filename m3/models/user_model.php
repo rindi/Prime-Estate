@@ -61,7 +61,7 @@ class user_model
     
     public function setUserPassword($password)
     {
-        $this->password = $password;
+        $this->password = base64_encode($password);
     }
     
     public function setContactDate($date)
