@@ -51,7 +51,8 @@
      </table>
        <br/>
      <input type="submit" value="Register">
-      <script>
+      <script type="text/javascript">
+            window.onload = function() 
             document.forms[0].addEventListener('submit', function( evt ) 
             {
                 var firstpassword = document.getElementById('login_username');
