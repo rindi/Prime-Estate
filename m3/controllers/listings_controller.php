@@ -208,7 +208,9 @@ class listings_controller extends controller
         $sql = "SELECT * from listings WHERE id = '$id'";
         foreach (parent::$this->db_connect->query($sql) as $row) 
         {
-            return $row;            
+//            return $row;  
+            $listing = new listing_model($row);
+            return $listing;
         }
     }
 }
