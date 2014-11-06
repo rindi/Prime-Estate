@@ -2,7 +2,8 @@
 //include 'views/navbar.php';
 require_once ("../controllers/realtor_controller.php");
 require_once ("../controllers/profile_controller.php");
-require_once ("../models/customer_model.php");
+require_once ("../controllers/listings_controller.php");
+require_once ("../models/profile_model.php");
 
 $value = 54;
 session_start();
@@ -14,18 +15,22 @@ $dbRow['pricemax'] = 10001;
 $dbRow['zip'] = 94112;
 $dbRow['personalinformation'] = "imma nice guy like my tie?";
 $dbRow['userid'] = 42;
-$mycustomerPREFS = new customer_model($dbRow);
+$mycustomerPREFS = new profile_model($dbRow);
 $userController = new users_controller();
 $custController = new profile_controller();
 //$customerid = 225;
-$registration['username'] = "Mochahhhh"; 
-$registration['password'] = "lol";
-$registration['type'] = "customer";
-$registration['email'] = "ohyes@asmdoann.com";
+$registration['firstname'] = "dummy"; 
+$registration['lastname'] = "dummy";
+$registration['username'] = "dummy"; 
+$registration['password'] = "dummy";
+$registration['type'] = 1;
+$registration['email'] = "dummy@dummy.com";
 $newUser = new user_model($registration);
 //$user_contr->addUser($newUser);
 $userController->addUser($newUser);
-$custController->newProfile($customerid);
+//$listingcontroller = new listings_controller();
+//var_dump($listingcontroller->getListing(54));
+//$custController->newProfile($customerid);
 //$custController->getProfile($mycustomerPREFS);
 ?>
 <html>

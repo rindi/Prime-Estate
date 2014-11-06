@@ -59,28 +59,24 @@ class profile_controller extends controller
      * Edit a Listing in the Database
      * @param type $input
      */
-    public function upsertCustomerProfile($input)
+    public function updateCustomerProfile($input)
     {
-        $sql = "UPDATE customerprofile SET address = :address, 
-            city = :city, 
-            zip = :zip, 
-            price = :price, 
-            rooms = :rooms, 
+        $sql = "UPDATE customerprofile SET zip = :zip, 
+            bedrooms = :bedrooms, 
             bathrooms = :bathrooms, 
-            description = :description,  
-            when_modified = :when_modified
-            WHERE id = :id";
+            pricemin = :pricemin, 
+            pricemax = :picemax, 
+            personalinformation = :personalinformation, 
+            WHERE useid = :userid";
                                           
         $stmt = $this->db_connect->prepare($sql);
-        $stmt->bindParam(':address', $input->getAddress(), PDO::PARAM_STR);       
-        $stmt->bindParam(':city', $input->getCity(), PDO::PARAM_STR); 
-        $stmt->bindParam(':zip', $input->getZip(), PDO::PARAM_INT);  
-        $stmt->bindParam(':price', $input->getPrice(), PDO::PARAM_INT); 
-        $stmt->bindParam(':rooms', $input->getRooms(), PDO::PARAM_INT);   
-        $stmt->bindParam(':bathrooms', $input->getBathrooms(), PDO::PARAM_INT); 
-        $stmt->bindParam(':description', $input->getDescription(), PDO::PARAM_STR);   
-        $stmt->bindParam(':when_modified', date("Y/m/d"), PDO::PARAM_STR);   
-        $stmt->bindParam(':id', $input->getId(), PDO::PARAM_INT);   
+        $stmt->bindParam(':zip', $input->getAddress(), PDO::PARAM_STR);       
+        $stmt->bindParam(':bedrooms', $input->getCity(), PDO::PARAM_STR); 
+        $stmt->bindParam(':bathrooms', $input->getZip(), PDO::PARAM_INT);  
+        $stmt->bindParam(':pricemin', $input->getPrice(), PDO::PARAM_INT); 
+        $stmt->bindParam(':pricemax', $input->getRooms(), PDO::PARAM_INT);   
+        $stmt->bindParam(':personalinformation', $input->getBathrooms(), PDO::PARAM_INT); 
+        $stmt->bindParam(':userid', $input->getId(), PDO::PARAM_INT);   
 
         $stmt->execute();       
     }

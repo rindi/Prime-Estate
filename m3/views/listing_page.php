@@ -5,18 +5,16 @@ require '../controllers/listings_controller.php';
 
 
 $listing_controller = new listings_controller();
-$current_listing = $listing_controller->getListing($_GET['id']);
+$listing_model = $listing_controller->getListing($_GET['id']);
 $images = $listing_controller->getImages($_GET['id']);
 $image_1 = $images[0];
-
-$listing_model = new listing_model($current_listing);
 
 ?>
 <?php include("navbar.php");?>
 <div class="container">
     <div id="listing" class="panel panel-default">
         <div class="panel-heading">
-          <h2 class="panel-title">Show house #<?php echo $current_listing['id']; ?></h2>
+            <h2 class="panel-title">Show house #<?php echo $listing_model->getId(); ?></h2>
         </div>
         <div class="panel-body">
             <div class="row">

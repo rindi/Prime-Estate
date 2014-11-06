@@ -3,7 +3,7 @@
 /**
  * user_model Class
  */
-class customer_model
+class profile_model
 {
     //fields for userdata class
     public $bedrooms, $bathrooms, $pricemax, $pricemin, $zip, $personalinformation, $userid;
