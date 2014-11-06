@@ -7,7 +7,7 @@ $uploadOk=1;
 $suffix = substr($_FILES["uploadFile"]["name"], strpos($_FILES["uploadFile"]["name"], ".") + 1);
 
 // Check file size
-if ($_FILES["uploadFile"]["size"] > 5000000) 
+if ($_FILES["uploadFile"]["size"] > 26214400) 
 {
     echo $_FILES["uploadFile"]["size"];
     echo "Sorry, your file is too large.";
