@@ -15,10 +15,18 @@ $dbRow['zip'] = 94112;
 $dbRow['personalinformation'] = "imma nice guy like my tie?";
 $dbRow['userid'] = 42;
 $mycustomerPREFS = new customer_model($dbRow);
+$userController = new users_controller();
 $custController = new profile_controller();
-$customerid = 225;
+//$customerid = 225;
+$registration['username'] = "Mochahhhh"; 
+$registration['password'] = "lol";
+$registration['type'] = "customer";
+$registration['email'] = "ohyes@asmdoann.com";
+$newUser = new user_model($registration);
+//$user_contr->addUser($newUser);
+$userController->addUser($newUser);
 $custController->newProfile($customerid);
-$custController->getProfile($mycustomerPREFS);
+//$custController->getProfile($mycustomerPREFS);
 ?>
 <html>
     <head>
