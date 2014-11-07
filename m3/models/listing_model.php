@@ -20,6 +20,7 @@ class listing_model
             $this->id = $dbRow['id'];
             $this->when_added = $dbRow['when_added'];
             $this->map = $dbRow['map'];
+            $this->when_modified = $dbRow['when_modified'];
         }
         $this->address = $dbRow['address'];
         $this->city = $dbRow['city'];
@@ -93,6 +94,14 @@ class listing_model
     public function getMap() 
     {
         return $this->map;
+    }
+    public function setDateAdded($date)
+    {
+        $this->when_added = $date;
+    }
+    public function setDateModified($when_modified)
+    {
+        $this->when_modified = $when_modified;
     }
     public function setAddress($address)
     {

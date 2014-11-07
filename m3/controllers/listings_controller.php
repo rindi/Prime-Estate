@@ -210,6 +210,7 @@ class listings_controller extends controller
         {
 //            return $row;  
             $listing = new listing_model($row);
+//            $listing.setDateModified($row['when_modified']);
             return $listing;
         }
     }
