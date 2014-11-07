@@ -26,15 +26,15 @@ $profile->setPricemax($newValue);
 //$profile->setPricemin($newValue);
 $profilecontroller->updateCustomerProfile($profile);
 
-$results = $profilecontroller->getProfileResults($profile);
+//$results = $profilecontroller->getProfileResults($profile);
 //if ((array) $results)
 //{
-foreach ((array) $results as $row) 
-{
-//    var_dump($row); 
-    echo $row->getAddress();
-}
+//foreach ((array) $results as $row) 
+//{
+////    var_dump($row); 
+//    echo $row->getAddress();
 //}
+////}
 ?>
 <html>
     <head>
