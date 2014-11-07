@@ -67,7 +67,7 @@ $value=$_POST["searchvalue"];
             $mapurl = $listingData->getMap();;
             echo "<tbody><tr>";
             echo "<td><a href=\"listing_page.php?id=".$houseval."\">" . $houseval . "</a>";
-            echo "<a href=\"edit_listing.php?id=".$houseval."\">Edit</a>";
+            echo "<a href=\"edit_listing.php?id=".$houseval."\"> Edit</a>";
             echo "</td>";
             echo "<td>" . $listingData->getAddress() . "</td>";
             echo "<td>" . $listingData->getCity() . "</td>";
