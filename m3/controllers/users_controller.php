@@ -66,7 +66,9 @@ class users_controller extends controller
         $stmt->bindParam(':firstname', $input->getFirstname(), PDO::PARAM_STR); 
         $stmt->bindParam(':lastname', $input->getLastname(), PDO::PARAM_STR);   
         
-        $stmt->execute();  
+        $stmt->execute();
+        echo 'User Registered.';
+
         $username = $input->getUserName();
         $sql = "SELECT * FROM usertable WHERE username = '$username'";
 //        $rows = parent::$this->db_connect->query($sql);
