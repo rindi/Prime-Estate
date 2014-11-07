@@ -12,3 +12,5 @@ $input['email'] = $_POST['email'];
 $user = new lead_model($input);
 $lead_controller = new leads_controller();
 $lead_controller->addLead($user);
+
+echo 'Thank you for contacting us, we will get in touch with you soon!';
