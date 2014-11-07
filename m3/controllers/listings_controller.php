@@ -74,15 +74,21 @@ class listings_controller extends controller
             $dataSet[] = $newListing;
         }
         if (!empty($dataSet))
+        {
             return $dataSet;
+        }
         else
+        {
             return null;
+        }
     }
  
     public function profileSearch($input)
     {
         $priceMin = $input->getPricemin();
-        $sql = "SELECT * FROM listings WHERE 'pricemin >= '%$priceMin%'"; 
+        $temp = "Far";
+//        $sql = "SELECT * FROM listings WHERE price >= '%$priceMin%'";
+        $sql = "SELECT * FROM listings WHERE city = '$temp'"; 
 //        $prefix = "SELECT * FROM listings WHERE 'pricemin => '";
 //        $postfix = "'";
 //        
@@ -96,9 +102,13 @@ class listings_controller extends controller
             $dataSet[] = $newListing;
         }
         if (!empty($dataSet))
+        {
             return $dataSet;
+        }
         else
+        {
             return null;
+        }
     }
     
    /**
