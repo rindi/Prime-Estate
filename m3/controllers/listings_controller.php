@@ -63,8 +63,8 @@ class listings_controller extends controller
             }
         }
         
-        $sql = "SELECT * FROM listings WHERE $option[$check] LIKE'%$input%'"; 
-        
+//        $sql = "SELECT * FROM listings WHERE '$option[$check]' LIKE '%$input%'"; 
+        $sql = "SELECT * FROM listings WHERE '$option[$check]' LIKE '$input'"; 
         
         foreach ((array) $this->db_connect->query($sql) as $row) 
         {
@@ -86,13 +86,8 @@ class listings_controller extends controller
     public function profileSearch($input)
     {
         $priceMin = $input->getPricemin();
-        $temp = "Far";
-//        $sql = "SELECT * FROM listings WHERE price >= '%$priceMin%'";
+       
         $sql = "SELECT * FROM listings WHERE city = '$temp'"; 
-//        $prefix = "SELECT * FROM listings WHERE 'pricemin => '";
-//        $postfix = "'";
-//        
-//        $sql = $prefix.$input.$postfix; 
         
         foreach ((array) $this->db_connect->query($sql) as $row) 
         {
