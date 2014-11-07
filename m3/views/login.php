@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 
 <?php
-include 'views/navbar.php';
+include 'navbar.php';
 
 ?>
 <html>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <head>
         <meta charset="UTF-8">
         <title></title>
     </head>

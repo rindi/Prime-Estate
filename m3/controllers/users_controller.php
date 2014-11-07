@@ -74,8 +74,8 @@ class users_controller extends controller
         foreach(parent::$this->db_connect->query($sql) as $row )
         {
 //            var_dump($row);
-            $custController = new profile_controller($row['userid']);
-            $custController->newProfile();
+            $custController = new profile_controller();
+            $custController->newProfile($row['userid']);
         }
     }
 }
