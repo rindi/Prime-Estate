@@ -43,7 +43,7 @@ $profilecontroller->updateCustomerProfile($profile);
     </head>
     <style>
 
-        #texttable,#update,p{   
+        #texttable,p{   
             margin-left: 2cm;
         }
 
@@ -52,15 +52,17 @@ $profilecontroller->updateCustomerProfile($profile);
     </style>
     <body>
 
-        <form action="" method="post" style="text-align:left; margin: 0px auto">
+    <form action="" method="post" style="text-align:left; margin: 0px auto">
             <p><center>
                 <b><font size="5">MY PROFILE</font>
             </center></p>
         <p>SEARCH INFORMATION </p>
         <table id ="texttable">
             <tr>
-                <td>Price:</td>
-                <td><input id = "textfield"type="text" name="price" ></td>
+                <td>Price: Min </td>
+                <td><input id = "textfield"type="text" name="pricemin" ></td>
+                <td> Max </td>
+                <td><input id = "textfield"type="text" name="pricemax" ></td>
             </tr>
 
             <tr>
@@ -68,35 +70,26 @@ $profilecontroller->updateCustomerProfile($profile);
                 <td><input id = "textfield"type="text" name="zip" ></td>
             </tr>
             <tr>
-                <td># Bedrooms:</td>
+                <td>Bedrooms:</td>
                 <td><input id = "textfield"type="text" name="bed" ></td>
             </tr>
 
             <tr>
-                <td># Bathrooms:</td>
-                <td><input id = "textfield"type="text" name="room" ></td>
+                <td>Bathrooms:</td>
+                <td><input id = "textfield"type="text" name="bathroom" ></td>
             </tr>
 
 
-
-
-
         </table>
-        <br>
-        <center> <input id = "update"type="submit" value = "UPDATE" > </center>
-        <br><br>
-    </form>
-
-
-
-    <form action="" method="post" style="text-align:left; margin: 0px auto">
+       
+ 
         <p><b>PERSONAL INFORMATION</b> </p>
 
         <p>
-            <textarea name="info" rows="20" cols="80"></textarea>
+            <textarea name="info" rows="20" cols="80"> </textarea>
         </p>
-        <center><input id = "update" type="submit" value = "UPDATE" ></center>
-    </form>
+        <center><input id = "update" type="submit" value = "update" ></center>
+        </form>
 </body>
 
 </html>
