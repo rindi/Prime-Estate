@@ -53,20 +53,20 @@ class user_model
     }
     public function setUserPassword($password)
     {
-        $this->password = base64_encode($password);
+        $this->password = $password;
     }
     
     public function setContactDate($date)
     {
         $this->date = $date;
     }
-    public function testAddUser()
-    {
-        $this->username = "test_un";
-        $this->password = "test_pw";
-        $this->type = "test_ut";
-        $this->email = "test_em";
-    }
+//    public function testAddUser()
+//    {
+//        $this->username = "test_un";
+//        $this->password = "test_pw";
+//        $this->type = "test_ut";
+//        $this->email = "test_em";
+//    }
     
     public function getFirstname()
     {
