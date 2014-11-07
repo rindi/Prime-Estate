@@ -43,8 +43,9 @@ require_once '../models/user_model.php';
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
         echo "Registration failed, email ID is not valid.";
     //alphanumeric characters and underscores, 2 to 16 characters long.
-    //if (preg_match('/^[a-z\d_]{2,20}$/i', $username))
-    //    echo "Registration failed, username is not valid.";
+    $allowed = array(".", "-", "_");
+    if(ctype_alnum( str_replace($allowed, '', username )))
+        echo "Registration failed, username is not valid.";
     else
     {
         $registration_controller = new users_controller();
