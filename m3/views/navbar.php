@@ -16,7 +16,7 @@
                 <a href="http://sfsuswe.com/~f14g03/views/sellit.php">Sell Your Home Today!</a>
              </li>
              <li class="active">
-                <a href="http://sfsuswe.com/~f14g03/views/leads.php">Leads</a>
+                <a href="http://sfsuswe.com/~f14g03/views/leadsit.php">Leads</a>
             </li>
             <li class="active">
                 <a href="http://sfsuswe.com/~f14g03/views/registration.php">Register</a>
