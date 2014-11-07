@@ -84,6 +84,8 @@ class profile_controller extends controller
     {
         $controller = new listings_controller();
         $results = $controller->profileSearch($input);
+        echo count($results);
+        var_dump($results[0]);
         return $results;
     }
 }
