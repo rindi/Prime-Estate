@@ -36,7 +36,7 @@ $value=$_POST["searchvalue"];
         <h2> Search Results </h2>
         
         <?php
-        $value=$_POST["searchvalue"];
+//        $value=$_POST["searchvalue"];
         require '../models/listing_model.php';
         require '../controllers/listings_controller.php';
      
@@ -60,6 +60,7 @@ $value=$_POST["searchvalue"];
         
         $list_controller = new listings_controller();
         $listingSet = $list_controller->searchListings($value);
+ 
         foreach((array)$listingSet as $listingData) 
         {
             $houseval=$listingData->getId();
