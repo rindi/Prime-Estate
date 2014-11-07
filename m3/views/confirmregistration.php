@@ -36,10 +36,12 @@ require_once '../models/user_model.php';
 //        //echo $i;
 //        echo $input[$i];
 //    }
+    if ($username == NULL || $password == NULL) 
+        echo "Please fill values for all required fields.";
     if ($password != $confirm_password) 
         echo "Passwords did not match, Registration failed.";
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-        echo "Email ID is not valid";
+        echo "Email ID is not valid.";
     else
     {
         $registration_controller = new users_controller();
