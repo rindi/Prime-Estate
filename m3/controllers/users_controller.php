@@ -1,6 +1,7 @@
 <?php
 require_once ("../controllers/controller.php");
 require_once ("../controllers/realtor_controller.php");
+require_once ("../controllers/profile_controller.php");
 require_once ("../models/user_model.php");
 
 /**
@@ -54,14 +55,16 @@ class users_controller extends controller
     public function addUser($input)
     {
         $sql = "INSERT INTO 
-                usertable (username, password, type, email) 
-                VALUES (:username, :password, :type, :email)";
+                usertable (username, password, type, email, firstname, lastname) 
+                VALUES (:username, :password, :type, :email, :firstname, :lastname)";
         
         $stmt = $this->db_connect->prepare($sql);
         $stmt->bindParam(':username', $input->getUserName(), PDO::PARAM_STR);       
         $stmt->bindParam(':password', $input->getUserPassword(), PDO::PARAM_STR); 
         $stmt->bindParam(':type', $input->getUserType(), PDO::PARAM_STR); 
         $stmt->bindParam(':email', $input->getUserEmail(), PDO::PARAM_STR);   
+        $stmt->bindParam(':firstname', $input->getFirstname(), PDO::PARAM_STR); 
+        $stmt->bindParam(':lastname', $input->getLastname(), PDO::PARAM_STR);   
         
         $stmt->execute();  
         $username = $input->getUserName();
@@ -71,7 +74,7 @@ class users_controller extends controller
         foreach(parent::$this->db_connect->query($sql) as $row )
         {
 //            var_dump($row);
-            $custController = new customer_controller($row['userid']);
+            $custController = new profile_controller($row['userid']);
             $custController->newProfile();
         }
     }
