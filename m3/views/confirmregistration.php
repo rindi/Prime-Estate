@@ -9,8 +9,8 @@ require_once '../models/user_model.php';
  * and open the template in the editor.
  */
     $username = $_POST['login_username'];
-    $password = base64_encode($_POST['login_password']);
-    $confirm_password = base64_encode($_POST['login_confirm_password']);
+    $password = md5($_POST['login_password']);
+    $confirm_password = md5($_POST['login_confirm_password']);
     $email = $_POST['login_email'];
     if(isset($_POST['first_name']))
         $first_name = $_POST['first_name'];
@@ -20,7 +20,7 @@ require_once '../models/user_model.php';
     
     $input['username'] = $username;
     $input['password'] = $password;
-    $input['type'] = 1;
+    $input['type'] = 1; //This value can be changed when signed in as administrator(admin cookie is set.) 
     $input['email'] = $email;
     $input['firstname'] = $first_name;
     $input['lastname'] = $last_name;
@@ -30,6 +30,7 @@ require_once '../models/user_model.php';
         echo "Registration failed, please fill values for all required fields.";
     if ($password != $confirm_password)
         echo "Registration failed, passwords did not match.";
+        echo $password;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
         echo "Registration failed, email ID is not valid.";
     //alphanumeric characters and underscores, 2 to 16 characters long.
