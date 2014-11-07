@@ -21,7 +21,7 @@ $image_1 = $images[0];
 <div class="container">
     <div id="listing" class="panel panel-default">
         <div class="panel-heading">
-            <h2 class="panel-title">Edit house #<?php echo $listing_model->getId(); ?></h2>
+            <h2 class="panel-title"><?php echo $listing_model->getAddress(); ?></h2>
         </div>
         <div class="panel-body">
             <div class="row">
@@ -37,9 +37,42 @@ $image_1 = $images[0];
                 </div>
                 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
                     <!-- WHY FOLLOWING LINE WONT WORK ? -->
-                    <?php echo "this thing does not work!! WHY ???".$listing_model->getZip(); ?>
+                    <?php echo $listing_model->getZip(); ?>
+                    <form>
+                        <input id="address" value="<?php echo $listing_model->getAddress();?>" type="text" disabled>
+                        <input id="city" value="<?php echo $listing_model->getCity();?>" type="text" disabled>
+                        <input id="zip" value="<?php echo $listing_model->getZip();?>" type="text" disabled>
+                        <input id="price" value="<?php echo $listing_model->getPrice();?>" type="text" disabled>
+                        <input id="rooms" value="<?php echo $listing_model->getRooms();?>" type="text" disabled>
+                        <input id="bathrooms" value="<?php echo $listing_model->getBathrooms();?>" type="text" disabled>
+                        <input id="description" value="<?php echo $listing_model->getDescription();?>" type="text" disabled>
+                        <input id="edit" class="btn btn-default" type="button" value="Edit Listing">
+                        
+                        <a href="edit_photo.php" class="btn btn-default">Save Changes</a>
+                    </form>
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+var el  = document.getElementById('edit');
+var address = document.getElementById('address');
+var city = document.getElementById('city');
+var zip = document.getElementById('zip');
+var price = document.getElementById('price');
+var rooms = document.getElementById('rooms');
+var bathrooms = document.getElementById('bathrooms');
+var description = document.getElementById('description');
+el.addEventListener('click', function(){
+    address.disabled = false;
+    city.disabled = false;
+    zip.disabled = false;
+    price.disabled = false;
+    rooms.disabled = false;
+    bathrooms.disabled = false;
+    description.disabled = false;
+    address.focus(); // set the focus on the editable field
+});
+</script>
