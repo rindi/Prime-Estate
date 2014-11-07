@@ -48,7 +48,6 @@ $image_1 = $images[0];
                         <input id="description" value="<?php echo $listing_model->getDescription();?>" type="text" disabled>
                         <input id="edit" class="btn btn-default" type="button" value="Edit Listing">
                         
-                        <a href="edit_photo.php" class="btn btn-default">Save Changes</a>
                     </form>
                     
                 </div>
@@ -65,14 +64,33 @@ var price = document.getElementById('price');
 var rooms = document.getElementById('rooms');
 var bathrooms = document.getElementById('bathrooms');
 var description = document.getElementById('description');
-el.addEventListener('click', function(){
-    address.disabled = false;
-    city.disabled = false;
-    zip.disabled = false;
-    price.disabled = false;
-    rooms.disabled = false;
-    bathrooms.disabled = false;
-    description.disabled = false;
-    address.focus(); // set the focus on the editable field
+var count = 0;
+
+//building url
+var listingnumeber = "<?php Print($_GET['id']); ?>";
+var postfix = "?id=";
+var postfix = postfix.concat(listingnumeber);
+var prefix = "http://sfsuswe.com/~f14g03/views/edit_listing.php";
+var nextPage = prefix.concat(postfix);
+
+el.addEventListener('click', function()
+{
+    if (count == 0)
+    {
+        address.disabled = false;
+        city.disabled = false;
+        zip.disabled = false;
+        price.disabled = false;
+        rooms.disabled = false;
+        bathrooms.disabled = false;
+        description.disabled = false;
+        address.focus(); // set the focus on the editable field
+        el.value = "Save Changes";
+        count++;
+    }
+    else
+    {
+        window.location = nextPage;
+    }
 });
 </script>
