@@ -37,11 +37,14 @@ require_once '../models/user_model.php';
 //        echo $input[$i];
 //    }
     if ($username == NULL || $password == NULL) 
-        echo "Please fill values for all required fields.";
+        echo "Registration failed, please fill values for all required fields.";
     if ($password != $confirm_password) 
-        echo "Passwords did not match, Registration failed.";
-    else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-        echo "Email ID is not valid.";
+        echo "Registration failed, passwords did not match.";
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+        echo "Registration failed, email ID is not valid.";
+    //alphanumeric characters and underscores, 2 to 16 characters long.
+    if (preg_match('/^[a-z\d_]{2,16}$/i', $username))
+        echo "Registration failed, username is not valid.";
     else
     {
         $registration_controller = new users_controller();
