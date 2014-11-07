@@ -23,7 +23,7 @@ class listings_controller extends controller
      */
     public function searchListings($input)
     {
-        $check = 0;
+               $check = 0;
         $option =  array(0=>"zip",1 => "city",2=>"");
     
         if (ctype_alpha(str_replace(' ', '', $input))) 
@@ -63,10 +63,9 @@ class listings_controller extends controller
             }
         }
         
-//        $sql = "SELECT * FROM listings WHERE '$option[$check]' LIKE '%$input%'"; 
-        $sql = "SELECT * FROM listings WHERE '$option[$check]' LIKE '$input'"; 
+        $sql = "SELECT * FROM listings WHERE $option[$check] LIKE'%$input%'"; 
         
-        foreach ((array) $this->db_connect->query($sql) as $row) 
+        foreach ($this->db_connect->query($sql) as $row) 
         {
             $imgstack = $this->getImages($row['id']);
             $newListing = new listing_model($row);
@@ -74,36 +73,9 @@ class listings_controller extends controller
             $dataSet[] = $newListing;
         }
         if (!empty($dataSet))
-        {
             return $dataSet;
-        }
         else
-        {
             return null;
-        }
-    }
- 
-    public function profileSearch($input)
-    {
-        $priceMin = $input->getPricemin();
-       
-        $sql = "SELECT * FROM listings WHERE city = '$temp'"; 
-        
-        foreach ((array) $this->db_connect->query($sql) as $row) 
-        {
-            $imgstack = $this->getImages($row['id']);
-            $newListing = new listing_model($row);
-            $newListing->setImages($imgstack);
-            $dataSet[] = $newListing;
-        }
-        if (!empty($dataSet))
-        {
-            return $dataSet;
-        }
-        else
-        {
-            return null;
-        }
     }
     
    /**

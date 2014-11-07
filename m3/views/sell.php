@@ -1,4 +1,5 @@
 <?php
+include 'navbar.php';
 #include 'views/navbar.php';
 #require '../controllers/users_controller.php';
 #require '../models/user_model.php';

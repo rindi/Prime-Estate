@@ -13,10 +13,10 @@
                 <a href="http://sfsuswe.com/~f14g03/views/login.php">Sign in</a>
             </li>
             <li class="active"> 
-                <a href="http://sfsuswe.com/~f14g03/views/sellit.php">Sell Your Home Today!</a>
+                <a href="http://sfsuswe.com/~f14g03/views/sell.php">Sell Your Home Today!</a>
              </li>
              <li class="active">
-                <a href="http://sfsuswe.com/~f14g03/views/leadsit.php">Leads</a>
+                <a href="http://sfsuswe.com/~f14g03/views/leads.php">Leads</a>
             </li>
             <li class="active">
                 <a href="http://sfsuswe.com/~f14g03/views/registration.php">Register</a>
