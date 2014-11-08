@@ -19,14 +19,15 @@ $userlist = $usercontroller->getUsers();
                 $loggedin = true;
             }
         }
-
-        if($_SESSION["type"]==1)
-        ?><script type="text/javascript">alert("Buyer");window.location = 'http://sfsuswe.com/~f14g03/views/profile.php';</script><?php
-    
-        if($_SESSION["type"]==2)
-        ?><script type="text/javascript">alert("Realtor");window.location = 'http://sfsuswe.com/~f14g03/views/dashboard.php';</script><?php
-        
-        if($_SESSION["type"]==3)
-        ?><script type="text/javascript">alert("Admin");window.location = 'http://sfsuswe.com/~f14g03/views/admin.php';</script>
+        ?>
+//
+//        if($_SESSION["type"]==1)
+//        ?><script type="text/javascript">alert("Buyer");window.location = 'http://sfsuswe.com/~f14g03/views/profile.php';</script><?php
+//    
+//        if($_SESSION["type"]==2)
+//        ?><script type="text/javascript">alert("Realtor");window.location = 'http://sfsuswe.com/~f14g03/views/dashboard.php';</script><?php
+//        
+//        if($_SESSION["type"]==3)
+//        ?><script type="text/javascript">alert("Admin");window.location = 'http://sfsuswe.com/~f14g03/views/admin.php';</script>
 
             
