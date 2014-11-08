@@ -34,7 +34,7 @@ if(showhide == "show"){
 <body>
 
 <div id="popupbox"> 
-<form method="post" action="profile.php" name="loginform">
+<form method="post" action="loginhandler.php" name="loginform">
                 <label for="login_username">Username</label>
                 <input id="login_username" type="text" name="login_username" placeholder="Username" required />
                 <label for="login_password">Password</label>
