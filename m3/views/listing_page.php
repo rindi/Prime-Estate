@@ -11,13 +11,15 @@ $image_1 = $images[0];
 
 $addressgooglemaps = $listing_model->getAddress();
 $citygooglemaps = $listing_model->getCity();
-$mapaddress = $addressgooglemaps . $citygooglemaps;
+$mapaddress = $addressgooglemaps . ',' . $citygooglemaps;
+
 ?>
 <?php include("navbar.php");?>
+<html>
 <div class="container">
     <div id="listing" class="panel panel-default">
         <div class="panel-heading">
-            <h2 class="panel-title"><?php echo $listing_model->getAddress(); ?> [last modified: <?php echo $listing_model->getDateModified(); ?>]</h2>
+            <h2 class="panel-title">Show house #<?php echo $listing_model->getId(); ?></h2>
         </div>
         <div class="panel-body">
             <div class="row">
@@ -32,6 +34,7 @@ $mapaddress = $addressgooglemaps . $citygooglemaps;
                 </div>
                 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
                     <!-- WHY FOLLOWING LINE WONT WORK ? -->
+                    <?php echo $mapaddress;?>
                     <?php echo $listing_model->getAddress(); ?>
                     <?php echo $listing_model->getCity(); ?> 
                     <?php echo $listing_model->getPrice(); ?>
@@ -43,6 +46,13 @@ $mapaddress = $addressgooglemaps . $citygooglemaps;
         </div>
     </div>
 </div>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  <?php echo 'src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnCdqdD1b6mrD0iiJYz4Hdff1Xj_9ZDY0&q="' . $mapaddress .'"'?>
+</iframe>
 
 <!--<!DOCTYPE html>
 <html>
@@ -81,9 +91,7 @@ window.onload = loadScript;
 
 </body>
 </html>-->
-
-
-<html>
+<!--
 <head>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -92,7 +100,7 @@ window.onload = loadScript;
 <script type="text/javascript">
   var geocoder;
   var map;
-  var address =<?php echo $mapaddress;?>
+  var address = <?php echo $mapaddress;?>;
   function initialize() {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(-37.722, 122.478);
@@ -140,4 +148,4 @@ window.onload = loadScript;
  <div id="map_canvas" style="width:100%; height:100%">
 </body>
 </html>
-<!--http://stackoverflow.com/questions/15925980/using-address-instead-of-longitude-and-latitude-with-google-maps-api-->
+http://stackoverflow.com/questions/15925980/using-address-instead-of-longitude-and-latitude-with-google-maps-api-->
