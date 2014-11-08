@@ -42,9 +42,10 @@ if(showhide == "show"){
                 <input type="submit"  name="login" value="Log in" />
             </form>
 <br />
+Not registered? <a href="http://sfsuswe.com/~f14g03/views/registration.php">Click here to sign up!</a>
 <center><a href="javascript:login('hide');">close</a></center> 
 </div> 
 
-<p><a href="javascript:login('show');">login</a></p>
+<p><a href="javascript:login('show');">Login</a></p>
 </body>
 </html>
