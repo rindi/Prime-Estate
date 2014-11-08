@@ -19,12 +19,12 @@ $userlist = $usercontroller->getUsers();
         }
 
         if($_SESSION["type"]==1)
-        ?><script>window.location = 'http://sfsuswe.com/~f14g03/profile.php';</script><?php
+        ?><script type="text/javascript">alert("Buyer");window.location = 'http://sfsuswe.com/~f14g03/profile.php';</script><?php
     
         if($_SESSION["type"]==2)
-        ?><script>window.location = 'http://sfsuswe.com/~f14g03/dashboard.php';</script><?php
+        ?><script type="text/javascript">alert("Realtor");window.location = 'http://sfsuswe.com/~f14g03/dashboard.php';</script><?php
         
         if($_SESSION["type"]==3)
-        ?><script>window.location = 'http://sfsuswe.com/~f14g03/admin.php';</script>
+        ?><script type="text/javascript">alert("Admin");window.location = 'http://sfsuswe.com/~f14g03/admin.php';</script>
 
             
