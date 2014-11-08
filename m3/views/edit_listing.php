@@ -39,7 +39,7 @@ $image_1 = $images[0];
                 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
                     <!-- WHY FOLLOWING LINE WONT WORK ? -->
                     <?php echo $listing_model->getZip(); ?>
-                    <form>
+                    <form id="listing_form">
                         <input id="address" value="<?php echo $listing_model->getAddress();?>" type="text" disabled>
                         <input id="city" value="<?php echo $listing_model->getCity();?>" type="text" disabled>
                         <input id="zip" value="<?php echo $listing_model->getZip();?>" type="text" disabled>
@@ -57,41 +57,66 @@ $image_1 = $images[0];
     </div>
 </div>
 <script type="text/javascript">
-var el  = document.getElementById('edit');
-var address = document.getElementById('address');
-var city = document.getElementById('city');
-var zip = document.getElementById('zip');
-var price = document.getElementById('price');
-var rooms = document.getElementById('rooms');
-var bathrooms = document.getElementById('bathrooms');
-var description = document.getElementById('description');
-var count = 0;
-
-//building url
-var listingnumeber = "<?php Print($_GET['id']); ?>";
-var postfix = "?id=";
-var postfix = postfix.concat(listingnumeber);
-var prefix = "http://sfsuswe.com/~f14g03/views/edit_listing.php";
-var nextPage = prefix.concat(postfix);
-
-el.addEventListener('click', function()
-{
-    if (count == 0)
+    
+    function updateListing()
     {
-        address.disabled = false;
-        city.disabled = false;
-        zip.disabled = false;
-        price.disabled = false;
-        rooms.disabled = false;
-        bathrooms.disabled = false;
-        description.disabled = false;
-        address.focus(); // set the focus on the editable field
-        el.value = "Save Changes";
-        count++;
+        if (window.XMLHttpRequest) 
+        {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        } 
+        else 
+        { 
+            // code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function() 
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) 
+            {
+                document.getElementById("listing_form").innerHTML=xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET","update_listing.php");
+        xmlhttp.send();
     }
-    else
+    
+    var el  = document.getElementById('edit');
+    var address = document.getElementById('address');
+    var city = document.getElementById('city');
+    var zip = document.getElementById('zip');
+    var price = document.getElementById('price');
+    var rooms = document.getElementById('rooms');
+    var bathrooms = document.getElementById('bathrooms');
+    var description = document.getElementById('description');
+    var count = 0;
+
+    //building url
+    var listingnumeber = "<?php Print($_GET['id']); ?>";
+    var postfix = "?id=";
+    var postfix = postfix.concat(listingnumeber);
+    var prefix = "http://sfsuswe.com/~f14g03/views/edit_listing.php";
+    var nextPage = prefix.concat(postfix);
+
+    el.addEventListener('click', function()
     {
-        window.location = nextPage; 
-    }
-});
+        if (count == 0)
+        {
+            address.disabled = false;
+            city.disabled = false;
+            zip.disabled = false;
+            price.disabled = false;
+            rooms.disabled = false;
+            bathrooms.disabled = false;
+            description.disabled = false;
+            address.focus(); // set the focus on the editable field
+            el.value = "Save Changes";
+            count++;
+        }
+        else
+        {
+            //window.location = nextPage; 
+            updateListing();
+        }
+    });
 </script>
