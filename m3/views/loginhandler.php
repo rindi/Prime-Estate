@@ -12,14 +12,24 @@ $userlist = $usercontroller->getUsers();
             if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
             {
                 session_start();
-                echo $row->getUserName();
-                echo $row->getUserType();
                 $_SESSION["username"] = $username;
                 $_SESSION["type"] = $row->getUserType();
+                if($_SESSION["type"]==1)
+                    $redirect='profile';
+                else if ($_SESSION["type"]==2)
+                    $redirect='dashboard';
+                else if ($_SESSION["type"]==3)
+                    $redirect='admin';
                 $loggedin = true;
+                
             }
         }
-        ?>
+        
+?>
+
+<script type="text/javascript">window.location = "http://sfsuswe.com/~f14g03/views/"<?php echo $redirect;?>".php";</script>
+
+<!--
 //
 //        if($_SESSION["type"]==1)
 //        ?><script type="text/javascript">alert("Buyer");window.location = 'http://sfsuswe.com/~f14g03/views/profile.php';</script><?php
@@ -30,4 +40,4 @@ $userlist = $usercontroller->getUsers();
 //        if($_SESSION["type"]==3)
 //        ?><script type="text/javascript">alert("Admin");window.location = 'http://sfsuswe.com/~f14g03/views/admin.php';</script>
 
-            
+            -->
