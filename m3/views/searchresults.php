@@ -59,6 +59,7 @@ $value=$_POST["searchvalue"];
         </tr></thead>";
         
         $list_controller = new listings_controller();
+        
         $listingSet = $list_controller->searchListings($value);
  
         foreach((array)$listingSet as $listingData) 
