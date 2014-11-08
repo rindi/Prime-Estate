@@ -29,10 +29,10 @@ $end = '.php"';
 $finalurl = $link . $redirect . $end;    
 echo $finalurl;
 ?>
-<html>
-    <a href = <?php echo $finalurl;?> >Link</a>
-    
-</html>
+    <script type="text/javascript">
+        window.location = <?php $finalurl?>;
+    </script>
+
 <!--<script type="text/javascript">window.location = "http://sfsuswe.com/~f14g03/views/"<?php echo $redirect;?>".php";</script>-->
 
 <!--
