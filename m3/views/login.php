@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-
 <?php
 include 'navbar.php';
 ?>
-
 <html>
 <head>
 <title></title>
@@ -35,6 +32,7 @@ if(showhide == "show"){
 </script>
 </head>
 <body>
+
 <div id="popupbox"> 
 <form method="post" action="profile.php" name="loginform">
                 <label for="login_username">Username</label>
@@ -44,10 +42,9 @@ if(showhide == "show"){
                 <input type="submit"  name="login" value="Log in" />
             </form>
 <br />
-Not a member? <a href="http://sfsuswe.com/~f14g03/views/registration.php"> Click here to register!</a>
-<center><a href="javascript:login('hide');">Close</a></center> 
+<center><a href="javascript:login('hide');">close</a></center> 
 </div> 
-<p><a href="javascript:login('show');">Login</a></p>
+
+<p><a href="javascript:login('show');">login</a></p>
 </body>
 </html>
-            
