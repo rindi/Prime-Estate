@@ -4,62 +4,59 @@
 include 'navbar.php';
 
 ?>
+
 <html>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <meta charset="UTF-8">
-        <title></title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <style>
-        .button {
-	display: inline-block;
-	background: #000;
-	padding: 5px 10px;
-	z-index: 0;
-	color: #fff;
+<head>
+<title></title>
+<style type="text/css">
+#popupbox{
+margin: 0; 
+margin-left: 40%; 
+margin-right: 40%;
+margin-top: 50px; 
+padding-top: 10px; 
+width: 20%; 
+height: 150px; 
+position: absolute; 
+background: #FBFBF0; 
+border: solid #000000 2px; 
+z-index: 9; 
+font-family: arial; 
+visibility: hidden; 
 }
- 
-.overlay {
-	z-index: 5;
-	background: rgba(0, 0, 0, .50);
-	display: block;
-	position: fixed;
-	width: 100%;
-	height: 100%;
+</style>
+<script language="JavaScript" type="text/javascript">
+function login(showhide){
+if(showhide == "show"){
+    document.getElementById('popupbox').style.visibility="visible";
+}else if(showhide == "hide"){
+    document.getElementById('popupbox').style.visibility="hidden"; 
 }
- 
-.popup {
-	padding: 10px 10px 35px;
-	background: #fff;
-	z-index: 999;
-	display: none;
-	position: absolute;
-	right: 0;
 }
-        </style>
-        <script>
-        $(document).ready(function() {
-    $(".button").click(function(e) {
-        $("body").append(''); $(".popup").show(); 
-        $(".close").click(function(e) { 
-            $(".popup, .overlay").hide(); 
-        }); 
-    }); 
-});$</script>
-    </head>
-    <body>
-        <div class="ar login_popup">
-        <a class="button" href="#" >Login</a>        
-        <div class="popup">
-            <a href="#" class="close">CLOSE</a>
-            <form method="post" action="profile.php" name="loginform">
+</script>
+</head>
+<body>
+
+<div id="popupbox"> 
+<form method="post" action="profile.php" name="loginform">
                 <label for="login_username">Username</label>
                 <input id="login_username" type="text" name="login_username" placeholder="Username" required />
                 <label for="login_password">Password</label>
                 <input id="login_password" type="password" name="login_password" placeholder="Password"required />
                 <input type="submit"  name="login" value="Log in" />
             </form>
-        </div>
-        </div>
-        <a href="registration.php">Register new account</a>
-    </body>
+<br />
+<center><a href="javascript:login('hide');">close</a></center> 
+</div> 
+
+<p>
+Some text
+</p>
+<p>
+Some more text
+</p>
+<p><a href="javascript:login('show');">login</a></p>
+</body>
 </html>
+I 
+            
