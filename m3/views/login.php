@@ -2,7 +2,6 @@
 
 <?php
 include 'navbar.php';
-
 ?>
 
 <html>
@@ -36,7 +35,6 @@ if(showhide == "show"){
 </script>
 </head>
 <body>
-
 <div id="popupbox"> 
 <form method="post" action="profile.php" name="loginform">
                 <label for="login_username">Username</label>
