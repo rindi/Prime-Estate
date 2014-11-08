@@ -18,33 +18,29 @@ require_once ("../controllers/users_controller.php");
 //CALL THIS
 //$profile = new profile_model($dbRow);
 $usercontroller = new users_controller();
-    $username = $_POST["login_username"];
-    $password = $_POST["login_password"];
-    $encryptedpassword = md5($password);
-    
-    try
-    {
-        if( $get_users = $db_connect->query("SELECT * FROM usertable") )
-        {
-            while( $row = $get_users->fetch(PDO::FETCH_OBJ) )
-                {
-                if( $row->username == $username && $row->password == $encryptedpassword )
-                        {
-                                setcookie("username", $username, time()*60, "/");
-                                $loggedin = true;
-                                $loggedinas = $username;
-                        }
-                }
-        }
-        
-    } 
-    catch (Exception $ex) {
+$username = $_POST["login_username"];
+$password = $_POST["login_password"];
+$encryptedpassword = md5($password);
+$userlist = $usercontroller->getUsers();
 
-    }
-    
+//        if( $get_users = $db_connect->query("SELECT * FROM usertable") )
+//        {
+//    while( $row = $get_users->fetch(PDO::FETCH_OBJ) )
+        foreach ($userlist as $row) 
+        {
+            if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
+            {
+                setcookie("username", $username, time()*60, "/");
+                $loggedin = true;
+                $loggedinas = $username;
+            }
+        }
+//        }
+        
+ 
 $profilecontroller = new profile_controller();
 //GET THE CUSTOMER ID SOMEHOW (prolly cookies)
-$customerid = $_COOKIE["username"];
+$customerid = $_COOKIE['username'];
 //GET THEIR PROFILE
 $profile = $profilecontroller->getProfile($customerid);
 //UPDATE THEIR PROFILE WITH WHATEVER CHANGES THEY MAKE

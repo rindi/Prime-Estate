@@ -22,6 +22,7 @@ $image_1 = $images[0];
     <div id="listing" class="panel panel-default">
         <div class="panel-heading">
             <h2 class="panel-title"><?php echo $listing_model->getAddress(); ?></h2>
+            <a href="http://stackoverflow.com" class="btn btn-default" value="Edit Listing" type="button" onclick="return confirm('Are you sure you wnat to delete this listing?');">Delete Listing</a>
         </div>
         <div class="panel-body">
             <div class="row">
