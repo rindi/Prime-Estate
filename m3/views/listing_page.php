@@ -9,6 +9,9 @@ $listing_model = $listing_controller->getListing($_GET['id']);
 $images = $listing_controller->getImages($_GET['id']);
 $image_1 = $images[0];
 
+$addressgooglemaps = $listing_model->getAddress();
+$citygooglemaps = $listing_model->getCity();
+$mapaddress = $addressgooglemaps . $citygooglemaps;
 ?>
 <?php include("navbar.php");?>
 <div class="container">
@@ -84,15 +87,15 @@ window.onload = loadScript;
 <head>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<title>Google Maps JavaScript API v3 Example: Geocoding Simple</title>
+<title>Prime Estate</title>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
   var geocoder;
   var map;
-  var address ="San Diego, CA";
+  var address =<?php echo $mapaddress;?>
   function initialize() {
     geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var latlng = new google.maps.LatLng(-37.722, 122.478);
     var myOptions = {
       zoom: 8,
       center: latlng,
