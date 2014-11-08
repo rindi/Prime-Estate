@@ -16,11 +16,11 @@ $end = '.php"';
                 $_SESSION["username"] = $username;
                 $_SESSION["type"] = $row->getUserType();
                 if($_SESSION["type"]==1)
-                    $redirect='profile';
+                    header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
                 else if ($_SESSION["type"]==2)
-                    $redirect='dashboard';
+                    header('Location: http://sfsuswe.com/~f14g03/views/dashboard.php');
                 else if ($_SESSION["type"]==3)
-                    $redirect='admin';
+                    header('Location: http://sfsuswe.com/~f14g03/views/admin.php');
                 $loggedin = true;
                 echo $username;
                 echo $_SESSION["type"];
