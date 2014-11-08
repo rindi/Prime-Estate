@@ -12,6 +12,8 @@ $userlist = $usercontroller->getUsers();
             if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
             {
                 session_start();
+                echo $row->getUserName();
+                echo $row->getUserType();
                 $_SESSION["username"] = $username;
                 $_SESSION["type"] = $row->getUserType();
                 $loggedin = true;
@@ -19,12 +21,12 @@ $userlist = $usercontroller->getUsers();
         }
 
         if($_SESSION["type"]==1)
-        ?><script type="text/javascript">alert("Buyer");window.location = 'http://sfsuswe.com/~f14g03/profile.php';</script><?php
+        ?><script type="text/javascript">alert("Buyer");window.location = 'http://sfsuswe.com/~f14g03/views/profile.php';</script><?php
     
         if($_SESSION["type"]==2)
-        ?><script type="text/javascript">alert("Realtor");window.location = 'http://sfsuswe.com/~f14g03/dashboard.php';</script><?php
+        ?><script type="text/javascript">alert("Realtor");window.location = 'http://sfsuswe.com/~f14g03/views/dashboard.php';</script><?php
         
         if($_SESSION["type"]==3)
-        ?><script type="text/javascript">alert("Admin");window.location = 'http://sfsuswe.com/~f14g03/admin.php';</script>
+        ?><script type="text/javascript">alert("Admin");window.location = 'http://sfsuswe.com/~f14g03/views/admin.php';</script>
 
             
