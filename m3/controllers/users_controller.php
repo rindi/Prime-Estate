@@ -4,6 +4,15 @@ require_once ("../controllers/realtor_controller.php");
 require_once ("../controllers/profile_controller.php");
 require_once ("../models/user_model.php");
 
+if( isset($_COOKIE['username']) )
+{
+    $loggedin = true;
+    $loggedinas = $_COOKIE['username'];
+}
+else
+{
+    $loggedin = false;
+}
 /**
  * User Controller Class
  */

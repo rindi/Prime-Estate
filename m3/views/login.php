@@ -8,17 +8,7 @@ include 'navbar.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <meta charset="UTF-8">
         <title></title>
-        <script>
-        $(document).ready(function() {
-    $(".button").click(function(e) {
-        $("body").append(''); $(".popup").show(); 
-        $(".close").click(function(e) { 
-            $(".popup, .overlay").hide(); 
-        }); 
-    }); 
-});$</script>
-    </head>
-    <body>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <style>
         .button {
 	display: inline-block;
@@ -46,12 +36,22 @@ include 'navbar.php';
 	right: 0;
 }
         </style>
-        
+        <script>
+        $(document).ready(function() {
+    $(".button").click(function(e) {
+        $("body").append(''); $(".popup").show(); 
+        $(".close").click(function(e) { 
+            $(".popup, .overlay").hide(); 
+        }); 
+    }); 
+});$</script>
+    </head>
+    <body>
         <div class="ar login_popup">
         <a class="button" href="#" >Login</a>        
         <div class="popup">
             <a href="#" class="close">CLOSE</a>
-            <form method="post" action="index.php" name="loginform">
+            <form method="post" action="profile.php" name="loginform">
                 <label for="login_username">Username</label>
                 <input id="login_username" type="text" name="login_username" placeholder="Username" required />
                 <label for="login_password">Password</label>

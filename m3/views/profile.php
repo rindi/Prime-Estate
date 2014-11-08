@@ -5,6 +5,8 @@ include 'navbar.php';
 
 require_once ("../controllers/profile_controller.php");
 require_once ("../models/profile_model.php");
+require_once ("../controllers/user_controller.php");
+
 //SET THESE VARIABLES
 //$dbRow['bedrooms'];
 //$dbRow['bathrooms'];
@@ -15,9 +17,34 @@ require_once ("../models/profile_model.php");
 //$dbRow['userid'];
 //CALL THIS
 //$profile = new profile_model($dbRow);
+$usercontroller = new user_controller();
+    $username = $_POST["login_username"];
+    $password = $_POST["login_password"];
+    $encryptedpassword = md5($password);
+    
+    try
+    {
+        if( $get_users = $db_connect->query("SELECT * FROM usertable") )
+        {
+            while( $row = $get_users->fetch(PDO::FETCH_OBJ) )
+                {
+                if( $row->username == $username && $row->password == $encryptedpassword )
+                        {
+                                setcookie("username", $username, time()*60, "/");
+                                $loggedin = true;
+                                $loggedinas = $username;
+                        }
+                }
+        }
+        
+    } 
+    catch (Exception $ex) {
+
+    }
+    
 $profilecontroller = new profile_controller();
 //GET THE CUSTOMER ID SOMEHOW (prolly cookies)
-$customerid = 225;
+$customerid = $_COOKIE["username"];
 //GET THEIR PROFILE
 $profile = $profilecontroller->getProfile($customerid);
 //UPDATE THEIR PROFILE WITH WHATEVER CHANGES THEY MAKE
