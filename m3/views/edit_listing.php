@@ -39,7 +39,7 @@ $image_1 = $images[0];
                 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
                     <!-- WHY FOLLOWING LINE WONT WORK ? -->
                     <?php echo $listing_model->getZip(); ?>
-                    <form>
+                    <form action="update_listing.php" method="post">
                         <input id="address" value="<?php echo $listing_model->getAddress();?>" type="text" disabled>
                         <input id="city" value="<?php echo $listing_model->getCity();?>" type="text" disabled>
                         <input id="zip" value="<?php echo $listing_model->getZip();?>" type="text" disabled>
@@ -91,7 +91,7 @@ el.addEventListener('click', function()
     }
     else
     {
-        window.location = nextPage;
+        window.location = nextPage; 
     }
 });
 </script>
