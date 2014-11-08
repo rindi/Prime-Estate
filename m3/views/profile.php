@@ -5,7 +5,7 @@ include 'navbar.php';
 
 require_once ("../controllers/profile_controller.php");
 require_once ("../models/profile_model.php");
-require_once ("../controllers/user_controller.php");
+require_once ("../controllers/users_controller.php");
 
 //SET THESE VARIABLES
 //$dbRow['bedrooms'];
@@ -17,7 +17,7 @@ require_once ("../controllers/user_controller.php");
 //$dbRow['userid'];
 //CALL THIS
 //$profile = new profile_model($dbRow);
-$usercontroller = new user_controller();
+$usercontroller = new users_controller();
     $username = $_POST["login_username"];
     $password = $_POST["login_password"];
     $encryptedpassword = md5($password);
