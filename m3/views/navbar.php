@@ -35,8 +35,8 @@
             <div class="navbar-header"  >
             <a class="navbar-brand" href="http://sfsuswe.com/~f14g03/index.php">Prime Estate</a>
             <ul class="nav navbar-nav">
-            <li class="active">
-                <div id="popupbox"> 
+            <li class="active" id="popupbox">
+                <a href="http://sfsuswe.com/~f14g03/views/login.php">Login</a>
                 <form method="post" action="profile.php" name="loginform">
                 <label for="login_username">Username</label>
                 <input id="login_username" type="text" name="login_username" placeholder="Username" required />
@@ -46,7 +46,7 @@
                 </form>
                 Not a member? <a href="http://sfsuswe.com/~f14g03/views/registration.php"> Click here to register!</a>
                 <center><a href="javascript:login('hide');">Close</a></center> 
-                </div> 
+                 
             </li>
             <li class="active"> 
                 <a href="http://sfsuswe.com/~f14g03/views/sell.php">Sell Your Home Today!</a>
