@@ -2,7 +2,10 @@
 #include 'views/navbar.php';
 #require '../controllers/users_controller.php';
 #require '../models/user_model.php';
-
+if (1 == count($_GET))
+    $type=$_GET['type'];
+else
+    $type=null;
 ?>
 
 <!-- register form -->
@@ -10,7 +13,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <body>
       <br/>
-      <form align="center" name="registration" action="confirmregistration.php" method="POST">
+      <?php
+      if ($type == 2)
+        echo "<form align='center' name='registration' action='confirmregistration.php?type=2' method='POST'>";    
+      else
+        echo "<form align='center' name='registration' action='confirmregistration.php' method='POST'>";    
+      ?>
       <table style="text-align:center; margin: 0px auto">
       <tr>
         <td>Username*</td>
