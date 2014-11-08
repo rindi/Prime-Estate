@@ -16,6 +16,6 @@ $lead_controller->addLead($user);
 echo "Thank you for contacting us ". $user->getFirstname() .", we will get in touch with you soon!";
 ?>
 
-<!--<script>
+<script>
 window.location = 'http://sfsuswe.com/~f14g03/index.php';
-</script>-->
+</script>
