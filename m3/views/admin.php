@@ -1,9 +1,17 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-?> Admin home page
+include 'navbar.php';
+?>
+<html>
+    <head>
+        <title> Administrator </title>
+    </head>
+    <body>
+        <h1 align="center">
+            Administrator Functions
+        </h1>
+        
+    </body>
+</html>
+<?php
+include 'views/data_usage.php';
+?>
