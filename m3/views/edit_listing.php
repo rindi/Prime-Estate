@@ -40,14 +40,14 @@ $image_1 = $images[0];
                     <!-- WHY FOLLOWING LINE WONT WORK ? -->
                     <?php echo $listing_model->getZip(); ?>
                     <form id="listing_form">
-                        <input id="address" value="<?php echo $listing_model->getAddress();?>" type="text" disabled>
-                        <input id="city" value="<?php echo $listing_model->getCity();?>" type="text" disabled>
-                        <input id="zip" value="<?php echo $listing_model->getZip();?>" type="text" disabled>
-                        <input id="price" value="<?php echo $listing_model->getPrice();?>" type="text" disabled>
-                        <input id="rooms" value="<?php echo $listing_model->getRooms();?>" type="text" disabled>
-                        <input id="bathrooms" value="<?php echo $listing_model->getBathrooms();?>" type="text" disabled>
-                        <input id="description" value="<?php echo $listing_model->getDescription();?>" type="text" disabled>
-                        <input id="edit" class="btn btn-default" type="button" value="Edit Listing">
+                        <input id="address" value="<?php echo $listing_model->getAddress();?>" type="text" disabled><br>
+                        <input id="city" value="<?php echo $listing_model->getCity();?>" type="text" disabled><br>
+                        <input id="zip" value="<?php echo $listing_model->getZip();?>" type="text" disabled><br>
+                        <input id="price" value="<?php echo $listing_model->getPrice();?>" type="text" disabled><br>
+                        <input id="rooms" value="<?php echo $listing_model->getRooms();?>" type="text" disabled><br>
+                        <input id="bathrooms" value="<?php echo $listing_model->getBathrooms();?>" type="text" disabled><br>
+                        <input id="description" value="<?php echo $listing_model->getDescription();?>" type="text" disabled><br>
+                        <input id="edit" class="btn btn-default" type="button" value="Edit Listing"><br>
                         
                     </form>
                     
