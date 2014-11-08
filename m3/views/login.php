@@ -46,17 +46,10 @@ if(showhide == "show"){
                 <input type="submit"  name="login" value="Log in" />
             </form>
 <br />
-<center><a href="javascript:login('hide');">close</a></center> 
+Not a member? <a href="http://sfsuswe.com/~f14g03/views/registration.php"> Click here to register!</a>
+<center><a href="javascript:login('hide');">Close</a></center> 
 </div> 
-
-<p>
-Some text
-</p>
-<p>
-Some more text
-</p>
-<p><a href="javascript:login('show');">login</a></p>
+<p><a href="javascript:login('show');">Login</a></p>
 </body>
 </html>
-I 
             
