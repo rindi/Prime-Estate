@@ -89,4 +89,42 @@ class users_controller extends controller
             $custController->newProfile($row['userid']);
         }
     }
+    
+    
+    /**
+     * get all users from the table
+     * @return \user_model
+     */
+    public function getRealtors()
+    {   
+        $sql = "SELECT * from usertable WHERE type = '2'";
+        foreach( parent::$this->db_connect->query($sql) as $row )
+        {
+            $dataSet[] = new user_model($row);
+        }
+
+        if (!empty($dataSet))
+            return $dataSet;
+        else
+            return null;
+    }
+    
+    /**
+     * get all users from the table
+     * @return \user_model
+     */
+    public function getCustomers()
+    {   
+        $sql = "SELECT * from usertable WHERE type = '1'";
+        foreach( parent::$this->db_connect->query($sql) as $row )
+        {
+            $dataSet[] = new user_model($row);
+        }
+
+        if (!empty($dataSet))
+            return $dataSet;
+        else
+            return null;
+    }
+    
 }
