@@ -11,8 +11,11 @@ $image_1 = $images[0];
 
 $addressgooglemaps = $listing_model->getAddress();
 $citygooglemaps = $listing_model->getCity();
-$mapaddress = $addressgooglemaps . ',' . $citygooglemaps;
-
+$mapaddress = '&q=' . $addressgooglemaps . ', ' . $citygooglemaps;
+$key = base64_decode('QUl6YVN5Q25DZHFkRDFiNm1yRDBpaUpZejRIZGZmMVhqXzlaRFkw');
+$start = 'src = "https://www.google.com/maps/embed/v1/place?key=';
+$end = '"';
+$mapstring = $start . $key. $mapaddress . $end;
 ?>
 <?php include("navbar.php");?>
 <html>
@@ -47,12 +50,16 @@ $mapaddress = $addressgooglemaps . ',' . $citygooglemaps;
     </div>
 </div>
 
-<iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  <?php echo 'src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnCdqdD1b6mrD0iiJYz4Hdff1Xj_9ZDY0&q="' . $mapaddress .'"'?>
-</iframe>
+<html>
+    <body>
+        <iframe
+  width='600'
+  height='450'
+  frameborder='0' style='border:0'
+  <?php echo $mapstring;?>>
+</iframe></body>
+</html>
+
 
 <!--<!DOCTYPE html>
 <html>
