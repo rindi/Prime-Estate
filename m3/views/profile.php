@@ -30,9 +30,9 @@ $userlist = $usercontroller->getUsers();
         {
             if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
             {
-                setcookie("username", $username, time()*60, "/");
+                session_start();
+                $_SESSION["username"] = $username;
                 $loggedin = true;
-                $loggedinas = $username;
             }
         }
 //        }
@@ -40,7 +40,7 @@ $userlist = $usercontroller->getUsers();
  
 $profilecontroller = new profile_controller();
 //GET THE CUSTOMER ID SOMEHOW (prolly cookies)
-$customerid = $_COOKIE['username'];
+#$customerid = $_COOKIE['username'];
 //GET THEIR PROFILE
 $profile = $profilecontroller->getProfile($customerid);
 //UPDATE THEIR PROFILE WITH WHATEVER CHANGES THEY MAKE
