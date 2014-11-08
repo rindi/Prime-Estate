@@ -1,0 +1,30 @@
+<?php
+require_once ("../controllers/users_controller.php");
+
+$usercontroller = new users_controller();
+$username = $_POST["login_username"];
+$password = $_POST["login_password"];
+$encryptedpassword = md5($password);
+$userlist = $usercontroller->getUsers();
+
+    foreach ($userlist as $row) 
+        {
+            if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
+            {
+                session_start();
+                $_SESSION["username"] = $username;
+                $_SESSION["type"] = $row->getUserType();
+                $loggedin = true;
+            }
+        }
+
+        if($_SESSION["type"]==1)
+        ?><script>window.location = 'http://sfsuswe.com/~f14g03/profile.php';</script><?php
+    
+        if($_SESSION["type"]==2)
+        ?><script>window.location = 'http://sfsuswe.com/~f14g03/dashboard.php';</script><?php
+        
+        if($_SESSION["type"]==3)
+        ?><script>window.location = 'http://sfsuswe.com/~f14g03/admin.php';</script>
+
+            
