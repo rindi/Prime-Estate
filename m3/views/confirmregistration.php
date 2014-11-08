@@ -2,7 +2,10 @@
 #include 'views/navbar.php';
 require_once '../controllers/users_controller.php';
 require_once '../models/user_model.php';
-
+if (1 == count($_GET))
+    $type=$_GET['type'];
+else
+    $type=1;
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,7 +23,7 @@ require_once '../models/user_model.php';
     
     $input['username'] = $username;
     $input['password'] = $password;
-    $input['type'] = 1; //This value can be changed when signed in as administrator(admin cookie is set.) 
+    $input['type'] = $type; //This value can be changed when signed in as administrator(admin cookie is set.) 
     $input['email'] = $email;
     $input['firstname'] = $first_name;
     $input['lastname'] = $last_name;
