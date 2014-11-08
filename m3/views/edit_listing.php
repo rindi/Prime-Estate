@@ -58,8 +58,11 @@ $image_1 = $images[0];
 </div>
 <script type="text/javascript">
     
-    function updateListing(address)
+    function updateListing(
+            address, city, zip, price, rooms, bathrooms, description
+            )
     {
+        alert(address + city + zip + price + rooms + bathrooms + description);
         if (window.XMLHttpRequest) 
         {
             // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -76,8 +79,17 @@ $image_1 = $images[0];
             {
                 document.getElementById("listing_form").innerHTML=xmlhttp.responseText;
             }
-        }
-        xmlhttp.open("GET","update_listing.php?address="+address);
+        } 
+        var valuesToUpdate = "update_listing.php?" + 
+                "address="+address + 
+                "&city"+city,
+                "&zip"+zip,
+                "&price"+price,
+                "&rooms"+rooms,
+                "&bathrooms"+bathrooms,
+                "&description"+description;
+        
+        xmlhttp.open("GET", valuesToUpdate, true);
         xmlhttp.send();
     }
     
@@ -117,7 +129,13 @@ $image_1 = $images[0];
         {
             //window.location = nextPage; 
             updateListing(
-                    address.innerHTML
+                    address.value,
+                    city.value,
+                    zip.value,
+                    price.value,
+                    rooms.value,
+                    bathrooms.value,
+                    description.value
                     );
         }
     });
