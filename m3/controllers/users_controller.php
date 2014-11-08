@@ -127,4 +127,16 @@ class users_controller extends controller
             return null;
     }
     
+    
+    /**
+     * get all users from the table
+     * @return \user_model
+     */
+    public function delete($userid)
+    {   
+        $sql = "DELETE FROM usertable WHERE userid = :userid";
+        $stmt = $this->db_connect->prepare($sql); 
+        $stmt->bindParam(':userid', $userid, PDO::PARAM_INT);   
+        $stmt->execute();
+    }
 }

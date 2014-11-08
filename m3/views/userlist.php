@@ -7,6 +7,8 @@ require_once ("../models/user_model.php");
 //TYPE Real vs Cust
 $type=$_GET['type'];
 
+
+
 //  this is the code from brain/check if logged in;
 //    if( isset($_COOKIE['username']) )
 //    {
@@ -57,6 +59,14 @@ $type=$_GET['type'];
         
         $user_controller = new users_controller();
         
+        //if we were asked to delete a user delete them!
+        if (count($_GET)==2)
+{       {
+            $user_controller->delete($_GET['userid']);
+}       }
+        
+        
+        
         if ($type == 1)
             $userSet = $user_controller->getCustomers();
         else
@@ -74,7 +84,7 @@ $type=$_GET['type'];
             echo "<td>" . $userData->getUserid() . "</td>";
             echo "<td>" . $userData->getUserType() . "</td>";
             echo "<td>" . $userData->getUserEmail() . "</td>";
-            echo "<td>" . "<a href='http://stackoverflow.com' class='btn btn-default' value='Edit Listing' type='button' onclick='return confirm("."'Are you sure you want to delete this listing?'".");'>Delete User</a>" . "</td>";
+            echo "<td>" . "<a href='http://sfsuswe.com/~f14g03/views/userlist.php?type=".$type."&userid=".$userData->getUserid()."' class='btn btn-default' value='Edit Listing' type='button' onclick='return confirm("."'Are you sure you want to delete this listing?'".");'>Delete User</a>" . "</td>";
 //            echo "<td><a href='" . $mapurl . "'><img src='assets/logo/maplink.png' height='42' width='42' ></img></a></td><td>";
 //            echo "<a href = 'https://google.com'> Click Here </a></td><td>";
 //            echo "<a href = '>" . $mapurl . " target='_blank'><img src='static/map-creation.png'></img></a></td><td>";
