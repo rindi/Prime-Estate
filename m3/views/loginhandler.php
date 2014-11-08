@@ -6,7 +6,8 @@ $username = $_POST["login_username"];
 $password = $_POST["login_password"];
 $encryptedpassword = md5($password);
 $userlist = $usercontroller->getUsers();
-
+$link = '"http://sfsuswe.com/~f14g03/views/';
+$end = '.php"';
     foreach ($userlist as $row) 
         {
             if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
@@ -21,13 +22,18 @@ $userlist = $usercontroller->getUsers();
                 else if ($_SESSION["type"]==3)
                     $redirect='admin';
                 $loggedin = true;
-                
+                echo $username;
+                echo $_SESSION["type"];
             }
         }
-        
+$finalurl = $link . $redirect . $end;    
+echo $finalurl;
 ?>
-
-<script type="text/javascript">window.location = "http://sfsuswe.com/~f14g03/views/"<?php echo $redirect;?>".php";</script>
+<html>
+    <a href = <?php echo $finalurl;?> >Link</a>
+    
+</html>
+<!--<script type="text/javascript">window.location = "http://sfsuswe.com/~f14g03/views/"<?php echo $redirect;?>".php";</script>-->
 
 <!--
 //
