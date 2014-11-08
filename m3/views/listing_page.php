@@ -11,11 +11,11 @@ $image_1 = $images[0];
 
 $addressgooglemaps = $listing_model->getAddress();
 $citygooglemaps = $listing_model->getCity();
-$mapaddress = '&q=' . $addressgooglemaps . ', ' . $citygooglemaps;
-$key = base64_decode('QUl6YVN5Q25DZHFkRDFiNm1yRDBpaUpZejRIZGZmMVhqXzlaRFkw');
-$start = 'src = "https://www.google.com/maps/embed/v1/place?key=';
+$mapaddress = $addressgooglemaps . ', ' . $citygooglemaps;
+$enc = base64_decode('QUl6YVN5Q25DZHFkRDFiNm1yRDBpaUpZejRIZGZmMVhqXzlaRFkw') . '&q=';
+$srcstart = 'src = "https://www.google.com/maps/embed/v1/place?key=';
 $end = '"';
-$mapstring = $start . $key. $mapaddress . $end;
+$mapstring = $srcstart . $enc. $mapaddress . $end;
 ?>
 <?php include("navbar.php");?>
 <html>
@@ -32,6 +32,12 @@ $mapstring = $start . $key. $mapaddress . $end;
                             <a href="<?php echo $images[0];?>" class="thumbnail">
                                 <img src="<?php echo $images[0];?>" alt="...">
                             </a>
+                            <iframe
+                              width='340'
+                              height='250'
+                              frameborder='0' style='border:0'
+                              <?php echo $mapstring;?>>
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -49,17 +55,6 @@ $mapstring = $start . $key. $mapaddress . $end;
         </div>
     </div>
 </div>
-
-<html>
-    <body>
-        <iframe
-  width='600'
-  height='450'
-  frameborder='0' style='border:0'
-  <?php echo $mapstring;?>>
-</iframe></body>
-</html>
-
 
 <!--<!DOCTYPE html>
 <html>
