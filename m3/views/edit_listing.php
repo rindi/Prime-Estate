@@ -116,7 +116,9 @@ $image_1 = $images[0];
         else
         {
             //window.location = nextPage; 
-            updateListing();
+            updateListing(
+                    
+                    );
         }
     });
 </script>
