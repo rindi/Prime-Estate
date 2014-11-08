@@ -40,13 +40,13 @@ $image_1 = $images[0];
                     <!-- WHY FOLLOWING LINE WONT WORK ? -->
                     <?php echo $listing_model->getZip(); ?>
                     <form id="listing_form">
-                        <input id="address" value="<?php echo $listing_model->getAddress();?>" type="text" disabled><br>
-                        <input id="city" value="<?php echo $listing_model->getCity();?>" type="text" disabled><br>
-                        <input id="zip" value="<?php echo $listing_model->getZip();?>" type="text" disabled><br>
-                        <input id="price" value="<?php echo $listing_model->getPrice();?>" type="text" disabled><br>
-                        <input id="rooms" value="<?php echo $listing_model->getRooms();?>" type="text" disabled><br>
-                        <input id="bathrooms" value="<?php echo $listing_model->getBathrooms();?>" type="text" disabled><br>
-                        <input id="description" value="<?php echo $listing_model->getDescription();?>" type="text" disabled><br>
+                        Address: <input id="address" value="<?php echo $listing_model->getAddress();?>" type="text" disabled><br>
+                        City: <input id="city" value="<?php echo $listing_model->getCity();?>" type="text" disabled><br>
+                        Zip: <input id="zip" value="<?php echo $listing_model->getZip();?>" type="text" disabled><br>
+                        Price: <input id="price" value="<?php echo $listing_model->getPrice();?>" type="text" disabled><br>
+                        Rooms: <input id="rooms" value="<?php echo $listing_model->getRooms();?>" type="text" disabled><br>
+                        Baths: <input id="bathrooms" value="<?php echo $listing_model->getBathrooms();?>" type="text" disabled><br>
+                        Description: <input id="description" value="<?php echo $listing_model->getDescription();?>" type="text" disabled><br>
                         <input id="edit" class="btn btn-default" type="button" value="Edit Listing"><br>
                         
                     </form>
@@ -58,7 +58,7 @@ $image_1 = $images[0];
 </div>
 <script type="text/javascript">
     
-    function updateListing()
+    function updateListing(address)
     {
         if (window.XMLHttpRequest) 
         {
@@ -77,7 +77,7 @@ $image_1 = $images[0];
                 document.getElementById("listing_form").innerHTML=xmlhttp.responseText;
             }
         }
-        xmlhttp.open("GET","update_listing.php");
+        xmlhttp.open("GET","update_listing.php?address="+address);
         xmlhttp.send();
     }
     
@@ -117,7 +117,7 @@ $image_1 = $images[0];
         {
             //window.location = nextPage; 
             updateListing(
-                    
+                    address.innerHTML
                     );
         }
     });

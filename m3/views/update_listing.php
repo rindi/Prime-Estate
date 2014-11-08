@@ -1,3 +1,3 @@
 <?php
-echo "I get called througj AJAX (made by ALEX)";
+echo "I get called througj AJAX. Address is " + $_GET['address'];
 ?>
