@@ -36,10 +36,7 @@
             <a class="navbar-brand" href="http://sfsuswe.com/~f14g03/index.php">Prime Estate</a>
             <ul class="nav navbar-nav">
             <li class="active">
-                Login
-                <script>
-                    javascript:window.open('http://sfsuswe.com/~f14g03/views/login.php','popup','menubar=0,resizable=1,width=350,height=250');void(0);
-                </script>
+                <a href="http://sfsuswe.com/~f14g03/views/login.php">Login</a>
             </li>
             <li class="active"> 
                 <a href="http://sfsuswe.com/~f14g03/views/sell.php">Sell Your Home Today!</a>
