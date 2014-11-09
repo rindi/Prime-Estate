@@ -22,7 +22,7 @@ $listing_controller->addListing($house);
 echo $input['address'] . ' added';
 
 
-//header('Location: http://sfsuswe.com/~f14g03/views/upload.php');
+header('Location: http://sfsuswe.com/~f14g03/views/upload.php');
 }
 
 ?>

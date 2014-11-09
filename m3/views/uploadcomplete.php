@@ -70,7 +70,9 @@ $listingcont = new listings_controller();
 $curlisting = new listing_model($listingcont->getNewListing($_SESSION['userid']));
 //Sets the image in the database
 //$listingcont->setImage($curlisting->getId(), $_FILES["uploadFile"]["name"])
-$listingcont->setImage($curlisting->getId(), $newfilename)
+$listingcont->setImage($curlisting->getId(), $newfilename);
+
+$list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingcont->getNewListing($_SESSION['userid']).'"';
 ?>
 
 <html>
@@ -79,5 +81,5 @@ $listingcont->setImage($curlisting->getId(), $newfilename)
  <h2>Image upload <?php echo $result;?></h2>
  <img src="<?php echo $now;?>" alt="img" style="width:304px;height:228px">
 </body>
-
+<a href=<?php echo $list_page;?>>Click here to go to listing page</a>
 </html>
