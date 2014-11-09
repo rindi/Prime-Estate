@@ -57,6 +57,15 @@ class users_controller extends controller
         }
     }
     
+    public function getUserNameInfo($username)
+    {   
+        $sql = "SELECT * FROM usertable WHERE username = '$username'";
+        foreach(parent::$this->db_connect->query($sql) as $row )
+        {
+            return $row;
+        }
+    }
+    
     /**
      * Add a user to the table
      * @param type $input
