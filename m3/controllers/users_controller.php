@@ -1,6 +1,6 @@
 <?php
 require_once ("../controllers/controller.php");
-require_once ("../controllers/realtor_controller.php");
+require_once ("../controllers/interest_controller.php");
 require_once ("../controllers/profile_controller.php");
 require_once ("../models/user_model.php");
 
