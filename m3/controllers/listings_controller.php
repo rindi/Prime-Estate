@@ -218,13 +218,13 @@ class listings_controller extends controller
     
     public function getNewListing($userid)
     {
-        $sql = "SELECT * from listings WHERE userid = '$userid' order by id desc LIMIT 1";
+        $sql = "SELECT * from listings WHERE userid = '$userid' ORDER BY id DESC LIMIT 1";
         foreach (parent::$this->db_connect->query($sql) as $row) 
         {
 //            return $row;  
             $listing = new listing_model($row);
 //            $listing.setDateModified($row['when_modified']);
-            return $listing;
+            return $listing->getId();
         }
     }
 }
