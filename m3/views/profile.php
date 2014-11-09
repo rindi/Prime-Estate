@@ -18,9 +18,9 @@ require_once ("../controllers/users_controller.php");
 //CALL THIS
 //$profile = new profile_model($dbRow);
 $usercontroller = new users_controller();
-$username = $_POST["login_username"];
-$password = $_POST["login_password"];
-$encryptedpassword = md5($password);
+//$username = $_POST["login_username"];
+//$password = $_POST["login_password"];
+//$encryptedpassword = md5($password);
 $userlist = $usercontroller->getUsers();
 
 //        if( $get_users = $db_connect->query("SELECT * FROM usertable") )
@@ -42,10 +42,10 @@ $profilecontroller = new profile_controller();
 //GET THE CUSTOMER ID SOMEHOW (prolly cookies)
 #$customerid = $_COOKIE['username'];
 //GET THEIR PROFILE
-$profile = $profilecontroller->getProfile($customerid);
+$profile = $profilecontroller->getProfile($_SESSION['userid']);
 //UPDATE THEIR PROFILE WITH WHATEVER CHANGES THEY MAKE
 $newValue = 2000;
-$profile->setPricemax($newValue);
+//$profile->setPricemax($newValue);
 //$profile->setPricemin($newValue);
 $profilecontroller->updateCustomerProfile($profile);
 

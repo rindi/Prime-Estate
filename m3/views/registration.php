@@ -1,5 +1,5 @@
 <?php
-#include 'views/navbar.php';
+include 'navbar.php';
 #require '../controllers/users_controller.php';
 #require '../models/user_model.php';
 if (1 == count($_GET))
@@ -76,6 +76,6 @@ else
        </script>    
       </form>
 </body>
-<a href="index.php">Back to Login Page</a>
+<a href="login.php">Back to Login Page</a>
 </html>
   
