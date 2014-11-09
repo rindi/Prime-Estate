@@ -13,6 +13,7 @@ $input['price'] = $_POST['price'];
 $input['rooms'] = $_POST['rooms'];
 $input['bathrooms'] = $_POST['bathrooms'];
 $input['description'] = $_POST['description'];
+$input['userid'] = $_SESSION['userid'];
 $house = new listing_model($input);
 
 $listing_controller = new listings_controller();
@@ -24,6 +25,7 @@ header('Location: http://sfsuswe.com/~f14g03/views/upload.php');
 
 ?>
 <div style="text-align:center" >
+    <?php echo $_SESSION['userid'];?>
         <h3>Adding new listing:</h3>
         <h3>Step 1.</h3>
         <form action="" method="post">
