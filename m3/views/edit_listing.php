@@ -62,7 +62,7 @@ $image_1 = $images[0];
             id, address, city, zip, price, rooms, bathrooms, description
             )
     {
-        alert("ID: " + id + " " + address + city + zip + price + rooms + bathrooms + description);
+        // alert("ID: " + id + " " + address + city + zip + price + rooms + bathrooms + description);
         if (window.XMLHttpRequest) 
         {
             // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -94,7 +94,6 @@ $image_1 = $images[0];
         xmlhttp.send();
     }
     var id = <?php echo $listing_model->getId(); ?>;
-    alert("ID: " + id);
     var el  = document.getElementById('edit');
     var address = document.getElementById('address');
     var city = document.getElementById('city');
