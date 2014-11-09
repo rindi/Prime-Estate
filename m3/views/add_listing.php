@@ -1,8 +1,9 @@
 <?php
-
 include("navbar.php");
 require '../models/listing_model.php';
 require '../controllers/listings_controller.php';
+session_start();
+echo $_SESSION['userid'];
 if(isset($_POST['SubmitButton'])) 
 {
    

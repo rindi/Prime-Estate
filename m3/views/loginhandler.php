@@ -19,28 +19,33 @@ $end = '.php"';
                 $_SESSION["username"] = $username;
                 $_SESSION["type"] = $row->getUserType();
                 $_SESSION["userid"] = $row->getUserId();
-                
+
+                echo $_SESSION["username"] . '<br>';
+                echo $_SESSION["type"] . '<br>';
+                echo $_SESSION["userid"] . '<br>';
                 if($_SESSION["type"]==1)
-                    header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
+                echo'1';//header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
                 else if ($_SESSION["type"]==2)
-                    header('Location: http://sfsuswe.com/~f14g03/views/dashboard.php');
+                echo'2';//header('Location: http://sfsuswe.com/~f14g03/views/dashboard.php');
                 else if ($_SESSION["type"]==3)
-                    header('Location: http://sfsuswe.com/~f14g03/views/admin.php');
+                echo'3';//header('Location: http://sfsuswe.com/~f14g03/views/admin.php');
                 $loggedin = true;
                 
-                $finalurl = $link . $redirect . $end;
+                //$finalurl = $link . $redirect . $end;
             }
-            else
-            {
-                echo "User/Password are incorrect, please check your inputs and try again";
-                $finalurl = "http://sfsuswe.com/~f14g03/views/login.php";
-            }
+//            else
+//            {
+//                echo "User/Password are incorrect, please check your inputs and try again";
+//                $finalurl = "http://sfsuswe.com/~f14g03/views/login.php";
+//            }
         }
+        
 ?>
-<script type="text/javascript">
+
+<!--<script type="text/javascript">
     var php_var = "<?php echo $finalurl; ?>";
     window.location = php_var;
-</script>
+</script>-->
 
 <!--
 //
