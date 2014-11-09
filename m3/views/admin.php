@@ -1,5 +1,14 @@
 <?php
 include 'navbar.php';
+
+
+if(isset($_SESSION["type"]))
+    $usertype = $_SESSION["type"];
+else
+    $usertype = 0;
+
+if($usertype==3)
+{
 ?>
 <html>
     <head>
@@ -16,5 +25,11 @@ include 'navbar.php';
     </body>
 </html>
 <?php
+
+}
+else
+{
+    echo "Sorry, you do not have sufficient priveleges to access this page.";
+}
 include 'data_usage.php';
 ?>
