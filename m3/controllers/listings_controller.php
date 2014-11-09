@@ -218,7 +218,7 @@ class listings_controller extends controller
     
     public function getNewListing($userid)
     {
-        $sql = "SELECT * from listings WHERE userid = '$userid' order by id desc";
+        $sql = "SELECT * from listings WHERE userid = '$userid' order by id desc LIMIT 1";
         foreach (parent::$this->db_connect->query($sql) as $row) 
         {
 //            return $row;  
