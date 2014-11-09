@@ -115,7 +115,7 @@ else
                 echo "<td>" . $listingData->getBathrooms() . "</td>";
                 echo "<td>" . $listingData->getDescription() . "</td>";
                 echo "<td>" . $listingData->getDateAdded() . "</td>";
-                echo "<td><a href='" . $mapurl . "'><img src='assets/logo/maplink.png' height='42' width='42' ></img></a></td><td>";
+    //            echo "<td><a href='" . $mapurl . "'><img src='assets/logo/maplink.png' height='42' width='42' ></img></a></td><td>";
     //            echo "<a href = 'https://google.com'> Click Here </a></td><td>";
     //            echo "<a href = '>" . $mapurl . " target='_blank'><img src='static/map-creation.png'></img></a></td><td>";
                 #IMAGES!??!
