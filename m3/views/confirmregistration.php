@@ -45,7 +45,14 @@ else
         $_SESSION["username"] = $username;
         $_SESSION["type"] = $type;
         $registration_controller = new users_controller();
-        $registration_controller->addUser($user);
-        #echo 'Done';
-        header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
+        if($registration_controller->getUserNameInfo($username)==NULL)
+        {
+            $registration_controller->addUser($user);
+            header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
+        }
+        else
+        {
+            echo "Registration failed, user already exists.";
+            //header('Location: http://sfsuswe.com/~f14g03/views/login.php');
+        }
     }
