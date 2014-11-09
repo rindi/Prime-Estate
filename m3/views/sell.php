@@ -20,7 +20,7 @@ include 'navbar.php';
                     alert('Please enter valid email address');
                     e.preventDefault();
                 }
-                if (validateEmail(sPhone)) {
+                if (validatePhone(sPhone)) {
                    1=1;
                 }
                 else {
