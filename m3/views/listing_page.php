@@ -3,16 +3,17 @@
 require '../models/listing_model.php';
 require '../controllers/listings_controller.php';
 
+session_start();
 //dynamically need user id!?!?!?!?
-$userid = 4;
 $interested = 1;
-
 
 $listing_controller = new listings_controller();
 $listing_model = $listing_controller->getListing($_GET['id']);
 $images = $listing_controller->getImages($_GET['id']);
+echo $images."<br/>";
+print_r($images);
 $image_1 = $images[0];
-
+echo "<br/>".$image_1."<br/>";
 //expressing interest
 require_once "../controllers/interest_controller.php";
 if(isset($_GET['interest']))
