@@ -3,16 +3,28 @@
 require '../models/listing_model.php';
 require '../controllers/listings_controller.php';
 
+//dynamically need user id!?!?!?!?
+$userid = 4;
+$interested = 1;
+
 
 $listing_controller = new listings_controller();
 $listing_model = $listing_controller->getListing($_GET['id']);
 $images = $listing_controller->getImages($_GET['id']);
 $image_1 = $images[0];
 
+//expressing interest
+require_once "../controllers/interest_controller.php";
+if(isset($_GET['interest']))
+{
+    $interest = new interest_controller();
+    $interest->expressInterest($userid,$_GET['id']);
+}
+
 $addressgooglemaps = $listing_model->getAddress();
 $citygooglemaps = $listing_model->getCity();
 $zipgooglemaps = $listing_model->getZip();
-$mapaddress = $addressgooglemaps . ', ' . $citygooglemaps . ' ' . $zipgooglemaps;
+$mapaddress = $addressgooglemaps . ', ' . $citygooglemaps . " ". $zipgooglemaps;
 $enc = base64_decode('QUl6YVN5Q25DZHFkRDFiNm1yRDBpaUpZejRIZGZmMVhqXzlaRFkw') . '&q=';
 $srcstart = 'src = "https://www.google.com/maps/embed/v1/place?key=';
 $end = '"';
@@ -24,6 +36,8 @@ $mapstring = $srcstart . $enc. $mapaddress . $end;
     <div id="listing" class="panel panel-default">
         <div class="panel-heading">
             <h2 class="panel-title">Show house #<?php echo $listing_model->getId(); ?></h2>
+            
+            <?php echo "<td>" . "<a href='http://sfsuswe.com/~f14g03/views/listing_page.php?interest=".$interested."&id=".$_GET['id']."' class='btn btn-default' value='Edit Listing' type='button';'>Contact Seller</a>" . "</td>";?>
         </div>
         <div class="panel-body">
             <div class="row">
