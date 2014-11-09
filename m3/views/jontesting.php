@@ -34,6 +34,7 @@ require_once ("../models/lead_model.php");
 ////var_dump($listingcontroller->getListing(54));
 ////$custController->newProfile($customerid);
 ////$custController->getProfile($mycustomerPREFS);
+
 ?>
 <html>
     <head>
@@ -43,7 +44,7 @@ require_once ("../models/lead_model.php");
         <h1 align="center">
             Welcome to Prime Estate.
         </h1>
-        <a href='interestedcustomers.php'>click</a>
+        <a href='http://sfsuswe.com/~f14g03/views/interestedcustomers.php?uid=<?php >'>click</a>
         </input>
         </form>
     </body>

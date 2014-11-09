@@ -2,7 +2,7 @@
 
 <?php
 include 'navbar.php';
-require_once ("../controllers/realtor_controller.php");
+require_once ("../controllers/interest_controller.php");
 require_once ("../models/user_model.php");
 session_start();
 $value = $_SESSION['listing_number'];
@@ -36,8 +36,8 @@ $value = $_SESSION['listing_number'];
         <th>Date Contacted</th>
         </tr></thead>";
         
-        $realtor_controller = new realtor_controller();
-        $listingSet = $realtor_controller->getCustomers($value);
+        $realtor_controller = new interest_controller();
+        $listingSet = $realtor_controller->getInterestedCustomers($value);
 
         foreach((array)$listingSet as $userData) 
         {
