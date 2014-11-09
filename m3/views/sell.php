@@ -6,8 +6,35 @@ include 'navbar.php';
 
 ?>
 
-<!-- register form -->
 <html>
+    <script>
+        $(document).ready(function(e) {
+            $('#submitlead').click(function() {
+                var sEmail = $('#email').val();
+                if ($.trim(sEmail).length == 0) {
+                    alert('Please enter valid email address');
+                    e.preventDefault();
+                }
+                if (validateEmail(sEmail)) {
+                    alert('Email is valid');
+                }
+                else {
+                    alert('Invalid Email Address');
+                    e.preventDefault();
+                }
+            });
+        });
+
+        function validateEmail(sEmail) {
+            var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            if (filter.test(sEmail)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        } 
+    </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <body>
       <br/>
@@ -28,18 +55,18 @@ include 'navbar.php';
       <tr>
         <td>Phone Number*</td>
         <td>
-            <input type="text" name="phone" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd" required/>
+            <input type="text" name="phone" required/>
         </td>
       </tr>
       <tr>
         <td>Email*</td>
         <td>
-            <input type="text" name="email" required/>
+            <input type="email" name="email" id="email" placeholder="me@example.com" required/>
         </td>
       </tr>
      </table>
        <br/>
-     <input type="submit" value="Submit">   
+     <input type="submit" value="Submit" id="submitlead">   
       </form>
 </body>
 </html>

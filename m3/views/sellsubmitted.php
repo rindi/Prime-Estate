@@ -4,15 +4,31 @@ require_once '../controllers/leads_controller.php';
 require_once '../models/user_model.php';
 require_once '../models/lead_model.php';
 
-$input['firstname'] = $_POST['firstname'];
-$input['lastname'] = $_POST['lastname'];
-$input['phone'] = $_POST['phone'];
-$input['email'] = $_POST['email'];
+$flag = 'true';
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$phone = preg_replace("/[^0-9]/", '', $_POST['phone']);
+$email = $_POST['email'];
 
+$phone = preg_replace("/[^0-9]/", '', $_POST['phone']);
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+{
+    echo 'Invalid email!';
+    $flag = 'fail';
+}
+
+
+if(flag == 'true')
+{
+$input['firstname'] = $firstname;
+$input['lastname'] = $lastname;
+$input['phone'] = $phone;
+$input['email'] = $email;
 $user = new lead_model($input);
 $lead_controller = new leads_controller();
 $lead_controller->addLead($user);
-
+}
 //echo "Thank you for contacting us ". $user->getFirstname() .", we will get in touch with you soon!";
 ?>
 <!--echo '<script type="text/javascript">alert("Thank you for contacting us, we will get in touch with you soon!");</script>';-->
