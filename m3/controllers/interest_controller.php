@@ -6,7 +6,7 @@ require_once ("../models/user_model.php");
 /**
  * User Controller Class
  */
-class realtor_controller extends controller
+class interest_controller extends controller
 {
     /**
      * Constructor
@@ -20,7 +20,7 @@ class realtor_controller extends controller
      * get all users from the table
      * @return \user_model
      */
-    public function getCustomers($listing)
+    public function getInterestedCustomers($listing)
     {   
         $sql = "SELECT * FROM interestedcustomers WHERE id = '$listing'";
         foreach($this->db_connect->query($sql) as $row)
@@ -33,5 +33,20 @@ class realtor_controller extends controller
         }
         return $dataSet;
     }
-    
+    /**
+     * get all users from the table
+     * @return \user_model
+     */
+    public function expressInterest($uid,$listing)
+    {   
+        $sql = "INSERT INTO interestedcustomers(userid, id, date) VALUES (
+            :userid, :id, :date)";
+                                       
+        $stmt = $this->db_connect->prepare($sql);
+        $stmt->bindParam(':userid', $uid, PDO::PARAM_INT);       
+        $stmt->bindParam(':id', $listing, PDO::PARAM_INT); 
+        $stmt->bindParam(':date', date("Y/m/d"), PDO::PARAM_STR);  
+        
+        $stmt->execute();  
+    }
 }

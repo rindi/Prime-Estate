@@ -2,7 +2,16 @@
 
 <?php
 include 'navbar.php';
-$value=$_POST["searchvalue"];
+
+if(isset($_GET['search']))
+{
+    $value = $_GET['search'];
+}
+else
+{
+    $value = $_POST["searchvalue"];
+}
+
 
 //  this is the code from brain/check if logged in;
 //    if( isset($_COOKIE['username']) )
@@ -36,7 +45,7 @@ $value=$_POST["searchvalue"];
         <h2> Search Results </h2>
         
         <?php
-//        $value=$_POST["searchvalue"];
+        
         require '../models/listing_model.php';
         require '../controllers/listings_controller.php';
      
@@ -61,9 +70,40 @@ $value=$_POST["searchvalue"];
         $list_controller = new listings_controller();
         
         $listingSet = $list_controller->searchListings($value);
- 
-        foreach((array)$listingSet as $listingData) 
+       
+        //pagination
+        
+        $offset = 5;
+        if( isset($_GET['page'] ) )
         {
+            $page = $_GET['page'];
+            $start = $offset*($page-1);
+        }
+        else
+        {
+            $start = 0;
+            $page = 1;
+        }
+        
+        $end = $start + $offset;
+        if ($end>count($listingSet))
+        {
+            $end = count($listingSet);
+        }
+        echo count($listingSet);
+        echo " results!  Now Showing page ";
+        echo $page;
+        echo " of ";
+        $max = round(count($listingSet)/$offset, 0, PHP_ROUND_HALF_DOWN);
+        echo $max;
+        echo " TOTAL RESULTS: ";
+        echo count($listingSet);
+        
+        
+        for ($i = $start; $i<$end; $i++)
+        //foreach((array)$listingSet as $listingData) 
+        {
+            $listingData = $listingSet[$i];
             $houseval=$listingData->getId();
             $mapurl = $listingData->getMap();;
             echo "<tbody><tr>";
@@ -101,6 +141,26 @@ $value=$_POST["searchvalue"];
 //        if (!mysqli_query($con,$query)) {
 //            die('Error: ' . mysqli_error($con));
 //        }
+        
+        if( $page > 1 && $page < $max )
+        {
+           $page = $page + 1;
+           $last = $page - 2;
+           echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$last."'>Last 10 Records</a>";
+           echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$page."'>Next 10 Records</a>";
+        }
+        else if( $page == 1 )
+        {
+           $page = $page + 1;
+//           echo "<a href=\"$_PHP_SELF?page=$page\">Next 10 Records</a>";
+           echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$page."'>Next 10 Records</a>";
+        }
+        else 
+        {
+           $last = $page - 1;
+           echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$last."'>Last 10 Records</a>";
+        }
+   
         ?>
         <?php if( isset($_COOKIE['seller'])): ?>
         <a>Edit house #41</a> &nbsp;
