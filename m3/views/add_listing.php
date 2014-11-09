@@ -27,8 +27,7 @@ header('Location: http://sfsuswe.com/~f14g03/views/upload.php');
 
 ?>
 <div style="text-align:center" >
-    <?php echo $_SESSION['userid'];?>
-        <h3>Adding new listing:</h3>
+    <h3>Adding new listing:</h3>
         <h3>Step 1.</h3>
         <form action="" method="post">
         <!--<form action="add_listings.php" method="post">-->
