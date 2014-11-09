@@ -24,11 +24,11 @@ $end = '.php"';
                 echo $_SESSION["type"] . '<br>';
                 echo $_SESSION["userid"] . '<br>';
                 if($_SESSION["type"]==1)
-                echo'1';//header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
+                header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
                 else if ($_SESSION["type"]==2)
-                echo'2';//header('Location: http://sfsuswe.com/~f14g03/views/dashboard.php');
+                header('Location: http://sfsuswe.com/~f14g03/views/dashboard.php');
                 else if ($_SESSION["type"]==3)
-                echo'3';//header('Location: http://sfsuswe.com/~f14g03/views/admin.php');
+                header('Location: http://sfsuswe.com/~f14g03/views/admin.php');
                 $loggedin = true;
                 
                 //$finalurl = $link . $redirect . $end;
