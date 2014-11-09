@@ -214,4 +214,17 @@ class listings_controller extends controller
             return $listing;
         }
     }
+    
+    
+    public function getNewListing($userid)
+    {
+        $sql = "SELECT * from listings WHERE userid = '$userid' order by id desc";
+        foreach (parent::$this->db_connect->query($sql) as $row) 
+        {
+//            return $row;  
+            $listing = new listing_model($row);
+//            $listing.setDateModified($row['when_modified']);
+            return $listing;
+        }
+    }
 }
