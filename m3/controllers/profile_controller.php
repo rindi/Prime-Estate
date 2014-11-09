@@ -24,7 +24,7 @@ class profile_controller extends controller
      */
     public function getProfile($username)
     {   
-        $sql = "SELECT * FROM customerprofile WHERE username = '$username'";
+        $sql = "SELECT * FROM customerprofile WHERE username = '". $username. "'";
         foreach($this->db_connect->query($sql) as $row)
         {
             $profile = new profile_model($row);
