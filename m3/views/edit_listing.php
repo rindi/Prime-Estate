@@ -5,9 +5,9 @@ require '../models/listing_model.php';
 require '../controllers/listings_controller.php';
 
 /* check if user is seller aka. allowed to edit listing */
-if( !isset($_COOKIE['seller'] ) )
+if(!($_SESSION['type']==2))
 {
-    die("Cookie 'seller' is NOT set.");
+    die("Session 'Realtor' is NOT set.");
 }
 
 $listing_controller = new listings_controller();
