@@ -1,5 +1,9 @@
 <?php
-
+session_start();
+if(isset($_SESSION['type']))
+    $type = $_SESSION['type'];
+else
+    $type = 0;
 ?>
 <html>
     <head>
@@ -35,24 +39,53 @@
             <div class="navbar-header"  >
             <a class="navbar-brand" href="http://sfsuswe.com/~f14g03/index.php">Prime Estate</a>
             <ul class="nav navbar-nav">
-            <li class="active">
+            <?php if($type==0)
+            {?>
+                <li class="active">
                 <a href="http://sfsuswe.com/~f14g03/views/login.php">Login</a>
-            </li>
+            </li><?php
+            }
+            if($type==0||$type==1)
+            {?>
             <li class="active"> 
                 <a href="http://sfsuswe.com/~f14g03/views/sell.php">Sell Your Home Today!</a>
-             </li>
+             </li><?php
+            }
+            if($type==2)
+            {?>
              <li class="active">
                 <a href="http://sfsuswe.com/~f14g03/views/leads.php">Leads</a>
-            </li>
+            </li><?php
+            }
+            if($type==0)
+            {?>
             <li class="active">
                 <a href="http://sfsuswe.com/~f14g03/views/registration.php">Register</a>
-            </li>
+            </li><?php
+            }
+            if($type==1)
+            {?>
             <li class="active">
                 <a href="http://sfsuswe.com/~f14g03/views/profile.php">Signed in</a>
-            </li>
+            </li><?php
+            }
+            if($type==2)
+            {?>
+            <li class="active">
+                <a href="http://sfsuswe.com/~f14g03/views/dashboard.php">Signed in</a>
+            </li><?php
+            }
+            if($type==3)
+            {?>
+            <li class="active">
+                <a href="http://sfsuswe.com/~f14g03/views/admin.php">Signed in</a>
+            </li><?php
+            }
+            if($type==1||$type==2||type==3)
+            {?>
             <li class="active"> 
                 <a href="http://sfsuswe.com/~f14g03/views/logout.php">Logout</a>
-             </li>
+            </li><?php } ?>
             </div>
         </nav>
         <footer>
