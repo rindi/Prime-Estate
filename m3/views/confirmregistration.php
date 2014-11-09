@@ -23,7 +23,7 @@ else
     
     $input['username'] = $username;
     $input['password'] = $password;
-    $input['type'] = $type; //This value can be changed when signed in as administrator(admin cookie is set.) 
+    $input['type'] = $type;
     $input['email'] = $email;
     $input['firstname'] = $first_name;
     $input['lastname'] = $last_name;
@@ -42,6 +42,8 @@ else
 //        echo "Registration failed, username is not valid.";
     else
     {
+        $_SESSION["username"] = $username;
+        $_SESSION["type"] = $type;
         $registration_controller = new users_controller();
         $registration_controller->addUser($user);
         #echo 'Done';
