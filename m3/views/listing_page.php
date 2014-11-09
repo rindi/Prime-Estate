@@ -11,7 +11,8 @@ $image_1 = $images[0];
 
 $addressgooglemaps = $listing_model->getAddress();
 $citygooglemaps = $listing_model->getCity();
-$mapaddress = $addressgooglemaps . ', ' . $citygooglemaps;
+$zipgooglemaps = $listing_model->getZip();
+$mapaddress = $addressgooglemaps . ', ' . $citygooglemaps . ' ' . $zipgooglemaps;
 $enc = base64_decode('QUl6YVN5Q25DZHFkRDFiNm1yRDBpaUpZejRIZGZmMVhqXzlaRFkw') . '&q=';
 $srcstart = 'src = "https://www.google.com/maps/embed/v1/place?key=';
 $end = '"';
