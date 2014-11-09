@@ -71,16 +71,19 @@ else
 
             //pagination
             $offset = 5;
-            if( isset($_GET['page'] ) )
+            //Rushab's edit
+            $start = 0;
+            $page = 1;
+            if( isset($_GET['page'] ))
             {
                 $page = $_GET['page'];
                 $start = $offset*($page-1);
             }
-            else
-            {
-                $start = 0;
-                $page = 1;
-            }
+            //else
+            //{
+            //    $start = 0;
+            //    $page = 1;
+            //}
             $end = $start + $offset;
             if ($end>count($listingSet))
             {
@@ -90,7 +93,7 @@ else
             echo " results!  Now Showing page ";
             echo $page;
             echo " of ";
-            $max = round(count($listingSet)/$offset, 0, PHP_ROUND_HALF_DOWN);
+            $max = ceil(count($listingSet)/$offset);
             echo $max;
             echo " TOTAL RESULTS: ";
             echo count($listingSet);
@@ -101,7 +104,6 @@ else
             {
                 $listingData = $listingSet[$i];
                 $houseval=$listingData->getId();
-                $mapurl = $listingData->getMap();;
                 echo "<tbody><tr>";
                 echo "<td><a href=\"listing_page.php?id=".$houseval."\">" . $houseval . "</a>";
                 echo "<a href=\"edit_listing.php?id=".$houseval."\"> Edit</a>";
@@ -142,19 +144,20 @@ else
             {
                $page = $page + 1;
                $last = $page - 2;
-               echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$last."'>Last 10 Records</a>";
-               echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$page."'>Next 10 Records</a>";
+               echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$last."'>Last 5 Records</a>";
+               echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$page."'>Next 5 Records</a>";
             }
             else if( $page == 1 )
             {
                $page = $page + 1;
     //           echo "<a href=\"$_PHP_SELF?page=$page\">Next 10 Records</a>";
-               echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$page."'>Next 10 Records</a>";
+               if($max!=1)
+                   echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$page."'>Next 5 Records</a>";
             }
             else 
             {
                $last = $page - 1;
-               echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$last."'>Last 10 Records</a>";
+               echo "<a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=".$value."&page=".$last."'>Last 5 Records</a>";
             }
         }
         else {echo "There were no results for your search.  Please check your search and try again!";}
