@@ -67,12 +67,14 @@ $now = "/~f14g03/views/assets/images/".$newfilename;
 //$now = "/~f14g03/views/assets/images/".$_FILES["uploadFile"]["name"];
 $listingcont = new listings_controller();
 //$curlisting = new listing_model($listingcont->getListing(41));
+echo $listingcont->getNewListing($_SESSION['userid']);
 $curlisting = new listing_model($listingcont->getNewListing($_SESSION['userid']));
 //Sets the image in the database
 //$listingcont->setImage($curlisting->getId(), $_FILES["uploadFile"]["name"])
 $listingcont->setImage($curlisting->getId(), $newfilename);
 
 $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingcont->getNewListing($_SESSION['userid']).'"';
+echo $list_page;
 ?>
 
 <html>
