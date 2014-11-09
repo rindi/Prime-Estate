@@ -82,12 +82,12 @@ $image_1 = $images[0];
         } 
         var valuesToUpdate = "update_listing.php?" + 
                 "address="+address + 
-                "&city"+city,
-                "&zip"+zip,
-                "&price"+price,
-                "&rooms"+rooms,
-                "&bathrooms"+bathrooms,
-                "&description"+description;
+                "&city="+city + 
+                "&zip="+zip + 
+                "&price="+price + 
+                "&rooms="+rooms + 
+                "&bathrooms="+bathrooms + 
+                "&description="+description;
         
         xmlhttp.open("GET", valuesToUpdate, true);
         xmlhttp.send();

@@ -1,9 +1,17 @@
 <?php
-echo "Address: ".$_GET['address']."<br>";
-echo "Address: ".$_GET['city']."<br>";
-echo "Address: ".$_GET['zip']."<br>";
-echo "Address: ".$_GET['price']."<br>";
-echo "Address: ".$_GET['rooms']."<br>";
-echo "Address: ".$_GET['bathrooms']."<br>";
-echo "Address: ".$_GET['description']."<br>";
+
+include("../models/listing_model.php");
+include("../controllers/listing_controller.php");
+
+$a = $_GET['address'];
+$b = $_GET['city'];
+$c = $_GET['zip'];
+$d = $_GET['price'];
+$e = $_GET['rooms'];
+$f = $_GET['bathrooms'];
+$g = $_GET['description'];
+
+echo "".$a.$b.$c.$d.$e.$f.$g;
+
+
 ?>
