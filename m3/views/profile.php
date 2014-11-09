@@ -41,7 +41,7 @@ $profilecontroller = new profile_controller();
 //GET THE CUSTOMER ID SOMEHOW (prolly cookies)
 #$customerid = $_COOKIE['username'];
 //GET THEIR PROFILE
-$profile = $profilecontroller->getProfile($_SESSION['userid']);
+$profile = $profilecontroller->getProfile($_SESSION['username']);
 //UPDATE THEIR PROFILE WITH WHATEVER CHANGES THEY MAKE
 $newValue = 2000;
 //$profile->setPricemax($newValue);
