@@ -33,7 +33,7 @@ else
         echo "Registration failed, please fill values for all required fields.";
     if ($password != $confirm_password)
         echo "Registration failed, passwords did not match.";
-        echo $password;
+        #echo $password;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
         echo "Registration failed, email ID is not valid.";
     //alphanumeric characters and underscores, 2 to 16 characters long.
@@ -44,5 +44,6 @@ else
     {
         $registration_controller = new users_controller();
         $registration_controller->addUser($user);
-        echo 'Done';
+        #echo 'Done';
+        header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
     }
