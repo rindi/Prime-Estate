@@ -109,7 +109,8 @@ else
                 $houseval=$listingData->getId();
                 echo "<tbody><tr>";
                 echo "<td><a href=\"listing_page.php?id=".$houseval."\">" . $houseval . "</a>";
-                echo "<a href=\"edit_listing.php?id=".$houseval."\"> Edit</a>";
+                if($_SESSION["type"]==2)
+                    echo "<a href=\"edit_listing.php?id=".$houseval."\"> Edit</a>";
                 echo "</td>";
                 echo "<td>" . $listingData->getAddress() . "</td>";
                 echo "<td>" . $listingData->getCity() . "</td>";
@@ -166,9 +167,8 @@ else
         else {echo "There were no results for your search.  Please check your search and try again!";}
         ?>
         
-        <?php if( isset($_COOKIE['seller'])): ?>
+        <!--<//?php if( isset($_COOKIE['seller'])): ?>
         <a>Edit house #41</a> &nbsp;
-        
-        <?php endif; ?>
+        <//?php endif; ?>-->
     </body>
 </html>

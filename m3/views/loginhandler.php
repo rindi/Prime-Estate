@@ -11,6 +11,7 @@ $encryptedpassword = md5($password);
 $userlist = $usercontroller->getUsers();
 $link = '"http://sfsuswe.com/~f14g03/views/';
 $end = '.php"';
+$successflag = 0;
     foreach ($userlist as $row) 
         {
             if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
@@ -30,16 +31,15 @@ $end = '.php"';
                 else if ($_SESSION["type"]==3)
                 header('Location: http://sfsuswe.com/~f14g03/views/admin.php');
                 $loggedin = true;
-                
+                $successflag = 1;
                 //$finalurl = $link . $redirect . $end;
             }
-//            else
-//            {
-//                echo "User/Password are incorrect, please check your inputs and try again";
-//                $finalurl = "http://sfsuswe.com/~f14g03/views/login.php";
-//            }
         }
         
+        if($successflag==0)
+            {
+                echo "User/Password are incorrect, please check your inputs and try again";
+            }
 ?>
 
 <!--<script type="text/javascript">
