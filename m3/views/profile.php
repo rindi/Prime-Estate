@@ -2,7 +2,6 @@
 
 <?php
 include 'navbar.php';
-session_start();
 require_once ("../controllers/profile_controller.php");
 require_once ("../models/profile_model.php");
 require_once ("../controllers/users_controller.php");
