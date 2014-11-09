@@ -4,7 +4,6 @@
 include 'navbar.php';
 require_once ("../controllers/interest_controller.php");
 require_once ("../models/user_model.php");
-session_start();
 $value = $_SESSION['listing_number'];
 ?>
 
