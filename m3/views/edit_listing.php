@@ -59,10 +59,10 @@ $image_1 = $images[0];
 <script type="text/javascript">
     
     function updateListing(
-            address, city, zip, price, rooms, bathrooms, description
+            id, address, city, zip, price, rooms, bathrooms, description
             )
     {
-        alert(address + city + zip + price + rooms + bathrooms + description);
+        alert("ID: " + id + " " + address + city + zip + price + rooms + bathrooms + description);
         if (window.XMLHttpRequest) 
         {
             // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -87,7 +87,8 @@ $image_1 = $images[0];
                 "&price="+price + 
                 "&rooms="+rooms + 
                 "&bathrooms="+bathrooms + 
-                "&description="+description;
+                "&description="+description +
+                "&id="+id;
         
         xmlhttp.open("GET", valuesToUpdate, true);
         xmlhttp.send();

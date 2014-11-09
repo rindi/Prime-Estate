@@ -13,6 +13,4 @@ $f = $_GET['bathrooms'];
 $g = $_GET['description'];
 
 
-
-
 ?>
