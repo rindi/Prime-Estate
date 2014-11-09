@@ -20,8 +20,9 @@ $house = new listing_model($input);
 $listing_controller = new listings_controller();
 $listing_controller->addListing($house);
 
+echo $listings_controller->getNewListing($_SESSION['userid']);
 echo $input['address'] . ' added';
-header('Location: http://sfsuswe.com/~f14g03/views/upload.php');
+//header('Location: http://sfsuswe.com/~f14g03/views/upload.php');
 }
 
 ?>

@@ -10,7 +10,8 @@ session_start();
 ?>
 <html>
     <head>
-        <title> Upload Your image </title>
+        <title> Upload Your image </title>    <?php echo $_SESSION['userid'];?>
+
     </head>
     <body>
         <h3>
