@@ -1,9 +1,12 @@
 <?php
 require_once ("../controllers/users_controller.php");
+include("navbar.php");
 
 $usercontroller = new users_controller();
 $username = $_POST["login_username"];
 $password = $_POST["login_password"];
+if ($username == NULL || $password == NULL)
+    echo "Login failed, please fill values for all required fields.";
 $encryptedpassword = md5($password);
 $userlist = $usercontroller->getUsers();
 $link = '"http://sfsuswe.com/~f14g03/views/';
@@ -22,12 +25,15 @@ $end = '.php"';
                 else if ($_SESSION["type"]==3)
                     header('Location: http://sfsuswe.com/~f14g03/views/admin.php');
                 $loggedin = true;
-                echo $username;
-                echo $_SESSION["type"];
+                
+                $finalurl = $link . $redirect . $end;
+            }
+            else
+            {
+                echo "User/Password are incorrect, please check your inputs and try again";
+                $finalurl = "http://sfsuswe.com/~f14g03/views/login.php";
             }
         }
-$finalurl = $link . $redirect . $end;    
-echo $finalurl;
 ?>
 <script type="text/javascript">
     var php_var = "<?php echo $finalurl; ?>";
