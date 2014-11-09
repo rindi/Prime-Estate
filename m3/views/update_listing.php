@@ -1,7 +1,7 @@
 <?php
 
 include("../models/listing_model.php");
-include("../controllers/listing_controller.php");
+include("../controllers/listings_controller.php");
 
 $a = $_GET['address'];
 $b = $_GET['city'];
