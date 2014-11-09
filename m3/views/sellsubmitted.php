@@ -10,7 +10,10 @@ $lastname = $_POST['lastname'];
 $phone = preg_replace("/[^0-9]/", '', $_POST['phone']);
 $email = $_POST['email'];
 
-$phone = preg_replace("/[^0-9]/", '', $_POST['phone']);
+echo $firstname;
+echo $lastname;
+echo $email;
+echo $phone;
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL))
 {
@@ -33,7 +36,7 @@ echo "Thank you for contacting us ". $user->getFirstname() .", we will get in to
 //echo "Thank you for contacting us ". $user->getFirstname() .", we will get in touch with you soon!";
 ?>
 <!--echo '<script type="text/javascript">alert("Thank you for contacting us, we will get in touch with you soon!");</script>';-->
-<script type="text/javascript">
+<!--<script type="text/javascript">
     var flag = "<?php echo $flag;?>";
     document.write(flag);
 
