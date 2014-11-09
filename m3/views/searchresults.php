@@ -12,7 +12,10 @@ else
     $value = $_POST["searchvalue"];
 }
 
-
+if(isset($_SESSION["type"]))
+    $usertype = $_SESSION["type"];
+else
+    $usertype = 0;
 //  this is the code from brain/check if logged in;
 //    if( isset($_COOKIE['username']) )
 //    {
@@ -109,7 +112,7 @@ else
                 $houseval=$listingData->getId();
                 echo "<tbody><tr>";
                 echo "<td><a href=\"listing_page.php?id=".$houseval."\">" . $houseval . "</a>";
-                if($_SESSION["type"]==2)
+                if($usertype==2)
                     echo "<a href=\"edit_listing.php?id=".$houseval."\"> Edit</a>";
                 echo "</td>";
                 echo "<td>" . $listingData->getAddress() . "</td>";
