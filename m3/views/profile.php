@@ -16,11 +16,11 @@ require_once ("../controllers/users_controller.php");
 //$dbRow['userid'];
 //CALL THIS
 //$profile = new profile_model($dbRow);
-$usercontroller = new users_controller();
+//$usercontroller = new users_controller();
 //$username = $_POST["login_username"];
 //$password = $_POST["login_password"];
 //$encryptedpassword = md5($password);
-$userlist = $usercontroller->getUsers();
+//$userlist = $usercontroller->getUsers();
 
 //        if( $get_users = $db_connect->query("SELECT * FROM usertable") )
 //        {
@@ -46,7 +46,7 @@ $profile = $profilecontroller->getProfile($_SESSION["username"]);
 $newValue = 2000;
 //$profile->setPricemax($newValue);
 //$profile->setPricemin($newValue);
-$profilecontroller->updateCustomerProfile($profile);
+//$profilecontroller->updateCustomerProfile($profile);
 
 //$results = $profilecontroller->getProfileResults($profile);
 //if ((array) $results)
