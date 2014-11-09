@@ -71,7 +71,6 @@ else
             </tr></thead>";
 
             //pagination
-
             $offset = 5;
             if( isset($_GET['page'] ) )
             {
@@ -83,7 +82,6 @@ else
                 $start = 0;
                 $page = 1;
             }
-
             $end = $start + $offset;
             if ($end>count($listingSet))
             {

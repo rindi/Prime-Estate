@@ -47,11 +47,38 @@ include 'navbar.php';
         <th>Phone</th>
         <th>Date of Lead</th>
         </tr></thead>";
-        
         $lead_controller = new leads_controller();
         $leadSet = $lead_controller->getLeads();
-        foreach((array)$leadSet as $leadData) 
+        //pagination
+        $offset = 10;
+        if( isset($_GET['page'] ) )
         {
+            $page = $_GET['page'];
+            $start = $offset*($page-1);
+        }
+        else
+        {
+            $start = 0;
+            $page = 1;
+        }
+        $end = $start + $offset;
+        if ($end>count($leadSet))
+        {
+            $end = count($leadSet);
+        }
+        echo count($leadSet);
+        echo " leads!  Now Showing page ";
+        echo $page;
+        echo " of ";
+        $max = round(count($leadSet)/$offset, 0, PHP_ROUND_HALF_DOWN);
+        echo $max;
+        echo " TOTAL LEADS: ";
+        echo count($leadSet);
+
+        for ($i = $start; $i<$end; $i++)
+//        foreach((array)$leadSet as $leadData) 
+            {
+                $leadData = $leadSet[$i];
             echo "<tbody><tr>";
             echo "<td>" . $leadData->getFirstname() . "</td>";
             echo "<td>" . $leadData->getLastname() . "</td>";
@@ -68,6 +95,24 @@ include 'navbar.php';
         }
         
         echo "</tbody></table></div>";
+        if( $page > 1 && $page < $max )
+            {
+               $page = $page + 1;
+               $last = $page - 2;
+               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$last."'>Last 10 </a>";
+               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$page."'>Next 10 </a>";
+            }
+        else if( $page == 1 )
+            {
+               $page = $page + 1;
+    //           echo "<a href=\"$_PHP_SELF?page=$page\">Next 10 Records</a>";
+               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$page."'>Next 10 </a>";
+            }
+        else 
+            {
+               $last = $page - 1;
+               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$last."'>Last 10 </a>";
+            }
 //        if (!mysqli_query($con,$query)) {
 //            die('Error: ' . mysqli_error($con));
 //        }
