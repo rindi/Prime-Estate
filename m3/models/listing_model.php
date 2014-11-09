@@ -123,6 +123,10 @@ class listing_model
     {
         $this->description = $description;
     }
+    public function setUserID($userID)
+    {
+        $this->userid = $userID;
+    }
     public function setBathrooms($bathrooms)
     {
         $this->bathrooms = $bathrooms;
