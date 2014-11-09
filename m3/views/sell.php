@@ -16,7 +16,7 @@ include 'navbar.php';
                     e.preventDefault();
                 }
                 if (validateEmail(sEmail)) {
-                    alert('Email is valid');
+                   1=1;
                 }
                 else {
                     alert('Invalid Email Address');
