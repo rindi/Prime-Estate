@@ -7,6 +7,7 @@ $newfilename = "";
 //$target_dir = $target_dir . basename( $_FILES["uploadFile"]["name"]);
 $uploadOk = 1;
 session_start();
+echo $_SESSION['userid'];
 
 $suffix = substr($_FILES["uploadFile"]["name"], strpos($_FILES["uploadFile"]["name"], ".") + 1);
 echo $suffix;
