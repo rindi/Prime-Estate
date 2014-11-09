@@ -12,5 +12,7 @@ $e = $_GET['rooms'];
 $f = $_GET['bathrooms'];
 $g = $_GET['description'];
 
+echo "id: ".$z;
 
+$listings_controller = new listings_controller();
 ?>
