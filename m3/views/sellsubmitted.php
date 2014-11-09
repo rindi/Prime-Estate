@@ -19,7 +19,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL))
 }
 
 
-if(flag == 'true')
+if($flag == 'true')
 {
 $input['firstname'] = $firstname;
 $input['lastname'] = $lastname;
