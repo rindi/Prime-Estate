@@ -66,22 +66,22 @@ else
             if($type==1)
             {?>
             <li class="active">
-                <a href="http://sfsuswe.com/~f14g03/views/profile.php">Signed in</a>
+                <a href="http://sfsuswe.com/~f14g03/views/profile.php">Customer</a>
             </li><?php
             }
             if($type==2)
             {?>
             <li class="active">
-                <a href="http://sfsuswe.com/~f14g03/views/dashboard.php">Signed in</a>
+                <a href="http://sfsuswe.com/~f14g03/views/dashboard.php">Realtor</a>
             </li><?php
             }
             if($type==3)
             {?>
             <li class="active">
-                <a href="http://sfsuswe.com/~f14g03/views/admin.php">Signed in</a>
+                <a href="http://sfsuswe.com/~f14g03/views/admin.php">Admin</a>
             </li><?php
             }
-            if($type==1||$type==2||type==3)
+            if($type==1||$type==2||$type==3)
             {?>
             <li class="active"> 
                 <a href="http://sfsuswe.com/~f14g03/views/logout.php">Logout</a>
