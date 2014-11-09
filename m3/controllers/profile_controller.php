@@ -22,9 +22,9 @@ class profile_controller extends controller
      * get profile for a customer by their id
      * @return \user_model
      */
-    public function getProfile($username)
+    public function getProfile($userid)
     {   
-        $sql = "SELECT * FROM customerprofile WHERE username = '". $username. "'";
+        $sql = "SELECT * FROM customerprofile WHERE userid = '$userid'";
         foreach($this->db_connect->query($sql) as $row)
         {
             $profile = new profile_model($row);

@@ -29,7 +29,7 @@ if($usertype==3)
 }
 else
 {
-    echo "Sorry, you do not have sufficient priveleges to access this page.";
+    echo "Sorry, you do not have sufficient privileges to access this page.";
 }
 include 'data_usage.php';
 ?>
