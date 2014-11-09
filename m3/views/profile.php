@@ -2,7 +2,7 @@
 
 <?php
 include 'navbar.php';
-
+session_start();
 require_once ("../controllers/profile_controller.php");
 require_once ("../models/profile_model.php");
 require_once ("../controllers/users_controller.php");
@@ -26,15 +26,15 @@ $userlist = $usercontroller->getUsers();
 //        if( $get_users = $db_connect->query("SELECT * FROM usertable") )
 //        {
 //    while( $row = $get_users->fetch(PDO::FETCH_OBJ) )
-        foreach ($userlist as $row) 
-        {
-            if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
-            {
-                session_start();
-                $_SESSION["username"] = $username;
-                $loggedin = true;
-            }
-        }
+        //foreach ($userlist as $row) 
+        //{
+          //  if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
+            //{
+              //  session_start();
+                //$_SESSION["username"] = $username;
+                //$loggedin = true;
+            //}
+        //}
 //        }
         
  
