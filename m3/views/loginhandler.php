@@ -18,6 +18,8 @@ $end = '.php"';
                 session_start();
                 $_SESSION["username"] = $username;
                 $_SESSION["type"] = $row->getUserType();
+                $_SESSION["userid"] = $row->getUserId();
+                
                 if($_SESSION["type"]==1)
                     header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
                 else if ($_SESSION["type"]==2)
