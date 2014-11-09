@@ -6,6 +6,7 @@ $target_dir = "assets/images/";
 $newfilename = "";
 //$target_dir = $target_dir . basename( $_FILES["uploadFile"]["name"]);
 $uploadOk = 1;
+session_start();
 
 $suffix = substr($_FILES["uploadFile"]["name"], strpos($_FILES["uploadFile"]["name"], ".") + 1);
 echo $suffix;
@@ -64,8 +65,8 @@ else
 $now = "/~f14g03/views/assets/images/".$newfilename;
 //$now = "/~f14g03/views/assets/images/".$_FILES["uploadFile"]["name"];
 $listingcont = new listings_controller();
-$curlisting = new listing_model($listingcont->getListing(41));
-//$curlisting = new listing_model($listingcont->getNewListing($_SESSION['userid']));
+//$curlisting = new listing_model($listingcont->getListing(41));
+$curlisting = new listing_model($listingcont->getNewListing($_SESSION['userid']));
 //Sets the image in the database
 //$listingcont->setImage($curlisting->getId(), $_FILES["uploadFile"]["name"])
 $listingcont->setImage($curlisting->getId(), $newfilename)

@@ -3,6 +3,7 @@
 include("navbar.php");
 require '../models/listing_model.php';
 require '../controllers/listings_controller.php';
+session_start();
 
 $input['address'] = $_POST['address'];
 $input['city'] = $_POST['city'];
