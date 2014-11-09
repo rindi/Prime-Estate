@@ -19,7 +19,6 @@ class listing_model
         {
             $this->id = $dbRow['id'];
             $this->when_added = $dbRow['when_added'];
-            $this->map = $dbRow['map'];
             $this->when_modified = $dbRow['when_modified'];
         }
         $this->address = $dbRow['address'];
@@ -91,10 +90,6 @@ class listing_model
     {
         return $this->images;
     }
-    public function getMap() 
-    {
-        return $this->map;
-    }
     public function setDateAdded($date)
     {
         $this->when_added = $date;
@@ -138,10 +133,6 @@ class listing_model
     public function setImages($images)
     {
         $this->images = $images;
-    }
-    public function setMap($map) 
-    {
-        $this->map = $map;
     }
 }
 ?>
