@@ -90,7 +90,10 @@ else
                 $end = count($listingSet);
             }
             echo count($listingSet);
-            echo " results!  Now Showing page ";
+            if(count($listingSet)==1)
+                echo " result! Showing page ";
+            else
+                echo " results! Now Showing page ";
             echo $page;
             echo " of ";
             $max = ceil(count($listingSet)/$offset);
