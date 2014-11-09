@@ -38,7 +38,7 @@ $image_1 = $images[0];
                 </div>
                 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
                     <!-- WHY FOLLOWING LINE WONT WORK ? -->
-                    <?php echo $listing_model->getZip(); ?>
+                    <div id="listing_id" ><?php echo $listing_model->getId(); ?></div>
                     <form id="listing_form">
                         Address: <input id="address" value="<?php echo $listing_model->getAddress();?>" type="text" disabled><br>
                         City: <input id="city" value="<?php echo $listing_model->getCity();?>" type="text" disabled><br>
@@ -92,7 +92,8 @@ $image_1 = $images[0];
         xmlhttp.open("GET", valuesToUpdate, true);
         xmlhttp.send();
     }
-    
+    var id = <?php echo $listing_model->getId(); ?>;
+    alert("ID: " + id);
     var el  = document.getElementById('edit');
     var address = document.getElementById('address');
     var city = document.getElementById('city');
@@ -129,6 +130,7 @@ $image_1 = $images[0];
         {
             //window.location = nextPage; 
             updateListing(
+                    id,
                     address.value,
                     city.value,
                     zip.value,
