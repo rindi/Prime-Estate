@@ -66,7 +66,6 @@ else
             <th>Bathrooms</th>
             <th>Description</th>
             <th>Date Added</th>
-            <th>View on Map</th>
             <th>Images</th>
             </tr></thead>";
 
@@ -114,7 +113,7 @@ else
                 echo "<td>" . $listingData->getRooms() . "</td>";
                 echo "<td>" . $listingData->getBathrooms() . "</td>";
                 echo "<td>" . $listingData->getDescription() . "</td>";
-                echo "<td>" . $listingData->getDateAdded() . "</td>";
+                echo "<td>" . $listingData->getDateAdded() . "</td><td>";
     //            echo "<td><a href='" . $mapurl . "'><img src='assets/logo/maplink.png' height='42' width='42' ></img></a></td><td>";
     //            echo "<a href = 'https://google.com'> Click Here </a></td><td>";
     //            echo "<a href = '>" . $mapurl . " target='_blank'><img src='static/map-creation.png'></img></a></td><td>";
