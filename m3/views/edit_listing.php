@@ -21,8 +21,11 @@ $image_1 = $images[0];
 <div class="container">
     <div id="listing" class="panel panel-default">
         <div class="panel-heading">
-            <h2 class="panel-title"><?php echo $listing_model->getAddress(); ?></h2>
-            <a href="http://stackoverflow.com" class="btn btn-default" value="Edit Listing" type="button" onclick="return confirm('Are you sure you want to delete this listing?');">Delete Listing</a>
+            <h3 class="panel-title">
+                <?php echo $listing_model->getAddress(); ?>
+            <a href="http://stackoverflow.com" class="btn btn-danger pull-right" value="Edit Listing" type="button" onclick="return confirm('Are you sure you want to delete this listing?');">Delete Listing</a>
+            </h3>
+            <br>
         </div>
         <div class="panel-body">
             <div class="row">
@@ -48,8 +51,8 @@ $image_1 = $images[0];
                         Rooms: <input id="rooms" value="<?php echo $listing_model->getRooms();?>" type="text" disabled><br>
                         Baths: <input id="bathrooms" value="<?php echo $listing_model->getBathrooms();?>" type="text" disabled><br>
                         Description: <input id="description" value="<?php echo $listing_model->getDescription();?>" type="text" disabled><br>
+                        <hr>
                         <input id="edit" class="btn btn-default" type="button" value="Edit Listing"><br>
-                        
                     </form>
                     
                 </div>
