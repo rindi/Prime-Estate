@@ -57,19 +57,11 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                                         <?php endfor; ?>
                                     </ol>
                                     <div class="carousel-inner" role="listbox">
+                                        <?php foreach( $images as $image ) : ?>
                                         <div class="item active">
-                                            <a href="<?php echo $images[1]; ?>">
-                                                <img src="<?php echo $images[1]; ?>" alt="First slide">
+                                            <a href="<?php echo $image; ?>">
+                                                <img src="<?php echo $image; ?>" alt="First slide">
                                             </a>
-                                        </div>
-                                        <div class="item">
-                                            <img src="<?php echo $images[2]; ?>" alt="Second slide">
-                                        </div>
-                                        <div class="item">
-                                            <img src="<?php echo $images[3]; ?>" alt="Third slide">
-                                        </div>
-                                        <div class="item">
-                                            <img src="<?php echo $images[4]; ?>" alt="Third slide">
                                         </div>
                                     </div>
                                     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
