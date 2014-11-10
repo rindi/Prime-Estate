@@ -60,6 +60,7 @@ $mapstring = $srcstart . $enc. $mapaddress . $end;
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
@@ -67,10 +68,12 @@ $mapstring = $srcstart . $enc. $mapaddress . $end;
         </div>
         <div class="item">
           <img src="<?php echo $images[2];?>" alt="Second slide">
-          
         </div>
         <div class="item">
           <img src="<?php echo $images[3];?>" alt="Third slide">
+        </div>
+          <div class="item">
+          <img src="<?php echo $images[4];?>" alt="Third slide">
         </div>
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
