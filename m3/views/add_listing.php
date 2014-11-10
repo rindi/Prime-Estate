@@ -7,7 +7,7 @@ if( !isset($_SESSION))
     session_start();
 }
 
-echo $_SESSION['userid'];
+//echo $_SESSION['userid'];
 if(isset($_POST['SubmitButton'])) 
 {
    
