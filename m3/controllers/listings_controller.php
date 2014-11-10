@@ -144,15 +144,15 @@ class listings_controller extends controller
                                           
         $stmt = $this->db_connect->prepare($sql);
         
-        $stmt->bindParam(':address', $input->getAddress(), PDO::PARAM_STR);       
-        $stmt->bindParam(':city', $input->getCity(), PDO::PARAM_STR); 
-        $stmt->bindParam(':zip', $input->getZip(), PDO::PARAM_INT);  
-        $stmt->bindParam(':price', $input->getPrice(), PDO::PARAM_INT); 
-        $stmt->bindParam(':rooms', $input->getRooms(), PDO::PARAM_INT);   
-        $stmt->bindParam(':bathrooms', $input->getBathrooms(), PDO::PARAM_INT); 
-        $stmt->bindParam(':description', $input->getDescription(), PDO::PARAM_STR);   
+        $stmt->bindParam(':address', $input[1], PDO::PARAM_STR);       
+        $stmt->bindParam(':city', $input[2], PDO::PARAM_STR); 
+        $stmt->bindParam(':zip', $input[3], PDO::PARAM_INT);  
+        $stmt->bindParam(':price', $input[4], PDO::PARAM_INT); 
+        $stmt->bindParam(':rooms', $input[5], PDO::PARAM_INT);   
+        $stmt->bindParam(':bathrooms', $input[6], PDO::PARAM_INT); 
+        $stmt->bindParam(':description', $input[7], PDO::PARAM_STR);   
         $stmt->bindParam(':when_modified', date("Y/m/d"), PDO::PARAM_STR);   
-        $stmt->bindParam(':id', $input->getId(), PDO::PARAM_INT);   
+        $stmt->bindParam(':id', $input[0], PDO::PARAM_INT);   
 
         $stmt->execute();       
     }
