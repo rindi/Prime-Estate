@@ -211,13 +211,11 @@ class listings_controller extends controller
     public function removeImage($imagePath)
     {
         // delete path from db
-        $sql = "DELETE * FROM images WHERE path = :path";
-        $stmt = $this->db_connect->prepare($sql);
-        $stmt->bindParam(':path', $imagePath, PDO::PARAM_STR);
-        if ( $stmt->execute() )
+        if( ! $affected_rows = $this->db_connect->exec("DELETE FROM images WHERE path = '$imagePath'") )
         {
-            echo "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS";
+            echo "WWWWWWWWWWWWWWw".$affected_rows;
         }
+        
         
         // delete from server
         $path = "../../../../".$imagePath;
