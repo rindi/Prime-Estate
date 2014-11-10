@@ -204,6 +204,16 @@ class listings_controller extends controller
             return null;
     }
     
+    /**
+     * Get image id based on path
+     * @param type $imagePath
+     * @return $imageId
+    */
+    public function getImageId($imagePath)
+    {
+        
+    }
+    
     public function getListing($id)
     {
         $sql = "SELECT * from listings WHERE id = '$id'";
