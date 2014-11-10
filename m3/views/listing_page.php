@@ -47,6 +47,7 @@ $mapstring = $srcstart . $enc. $mapaddress . $end;
                         <div class="col-xs-12">
                             <a href="<?php echo $images[0];?>" class="thumbnail">
                                 <img src="<?php echo $images[0];?>" alt="...">
+                                <br>this is where other stuff go.
                             </a>
                             <iframe
                               width='340'
