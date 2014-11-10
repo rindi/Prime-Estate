@@ -81,6 +81,8 @@ else
             //    $start = 0;
             //    $page = 1;
             //}
+            
+            echo "<div class=\"container\"><div class=\"alert alert-success\">";
             $end = $start + $offset;
             if ($end > count($listingSet)) {
                 $end = count($listingSet);
@@ -96,7 +98,7 @@ else
             echo $max;
             echo " TOTAL RESULTS: ";
             echo count($listingSet);
-
+            echo "</div></div>";
 
             for ($i = $start; $i < $end; $i++) {
             //foreach((array)$listingSet as $listingData) 
