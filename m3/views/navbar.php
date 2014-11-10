@@ -45,49 +45,49 @@ else
             <ul class="nav navbar-nav">
             <?php if($type==0)
             {?>
-                <li class="active">
+                <li>
                 <a href="http://sfsuswe.com/~f14g03/views/login.php">Login</a>
             </li><?php
             }
             if($type==0||$type==1)
             {?>
-            <li class="active"> 
+            <li> 
                 <a href="http://sfsuswe.com/~f14g03/views/sell.php">Sell Your Home Today!</a>
              </li><?php
             }
             if($type==2)
             {?>
-             <li class="active">
+             <li>
                 <a href="http://sfsuswe.com/~f14g03/views/leads.php">Leads</a>
             </li><?php
             }
             if($type==0)
             {?>
-            <li class="active">
+            <li>
                 <a href="http://sfsuswe.com/~f14g03/views/registration.php">Register</a>
             </li><?php
             }
             if($type==1)
             {?>
-            <li class="active">
+            <li>
                 <a href="http://sfsuswe.com/~f14g03/views/profile.php">Customer</a>
             </li><?php
             }
             if($type==2)
             {?>
-            <li class="active">
+            <li>
                 <a href="http://sfsuswe.com/~f14g03/views/dashboard.php">Realtor</a>
             </li><?php
             }
             if($type==3)
             {?>
-            <li class="active">
+            <li>
                 <a href="http://sfsuswe.com/~f14g03/views/admin.php">Admin</a>
             </li><?php
             }
             if($type==1||$type==2||$type==3)
             {?>
-            <li class="active"> 
+            <li> 
                 <a href="http://sfsuswe.com/~f14g03/views/logout.php">Logout</a>
             </li><?php } ?>
             </div>
