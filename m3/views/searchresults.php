@@ -29,7 +29,7 @@ else
 <html>
     <style>
         h2{
-            padding-left:500px;   
+            test-align: center;   
         }
     </style>
     <head>
