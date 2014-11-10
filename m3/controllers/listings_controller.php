@@ -205,18 +205,23 @@ class listings_controller extends controller
     }
     
     /**
-     * Get image id based on path
+     * Remove image based on path
      * @param type $imagePath
-     * @return $imageId
     */
-    public function getImageId($imagePath)
+    public function removeImage($imagePath)
     {
-        $sql = "SELECT imageid FROM images WHERE path = :path";
+        // delete path from db
+        $sql = "DELETE * FROM images WHERE path = :path";
         $stmt = $this->db_connect->prepare($sql);
         $stmt->bindParam(':path', $imagePath, PDO::PARAM_STR);
-        $imageId = $stmt->execute();
-        echo $imageId;
-        return $imageId;
+        if ( $stmt->execute() )
+        {
+            echo "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS";
+        }
+        
+        // delete from server
+        $path = "../../../../".$imagePath;
+        unlink($path);
     }
     
     public function getListing($id)
