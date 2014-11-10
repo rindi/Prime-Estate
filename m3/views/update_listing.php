@@ -15,18 +15,20 @@ $g = $_GET['description'];
 $listings_controller = new listings_controller();
 $listing_model = new listing_model($z);
 
-$listing_model->setAddress($a);
-$listing_model->setCity($b);
-$listing_model->setZip($c);
-$listing_model->setPrice($d);
-$listing_model->setRooms($e);
-$listing_model->setBathrooms($f);
-$listing_model->setDescription($g);
 
-if (!$listings_controller->editListing($listing_model) )
-{
-    die("if you see this call for editListing() returned false: database not updated.");
-}
+// 0-id 1-address 2-city 3-zip 4-price 5-rooms 6-bathromms 7-description
+
+$arr[0] = $z;
+$arr[1] = $a;
+$arr[2] = $b;
+$arr[3] = $c;
+$arr[4] = $d;
+$arr[5] = $e;
+$arr[6] = $f;
+$arr[7] = $g;
+
+$listings_controller->editListing($arr);
+
 
 echo "id: ".$listing_model->getId()."<br>"; 
 echo "address: ".$listing_model->getAddress()."<br>";
@@ -37,3 +39,5 @@ echo "rooms: ".$listing_model->getRooms()."<br>";
 echo "bathrooms: ".$listing_model->getBathrooms()."<br>";
 echo "description: ".$listing_model->getDescription()."<br>";
 ?>
+
+<label>Address</label>
