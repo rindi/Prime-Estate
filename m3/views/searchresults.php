@@ -41,7 +41,7 @@ else
         <form class="form-horizontal" style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
             <div class="form-group">
                 <div class="col-xs-offset-3 col-xs-5">
-                  <input type="search" name="searchvalue" value="<?php echo $value; ?>">
+                  <input class="form-control" type="search" name="searchvalue" value="<?php echo $value; ?>">
                 </div>
                 <input type="submit" class="btn btn-inverse col-xs-1" value="Find home">
             </div>
