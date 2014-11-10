@@ -1,4 +1,4 @@
-<!-- CARUSEL: DYNAMIC IMAGES SCROLLING -->
+ <!-- CARUSEL: DYNAMIC IMAGES SCROLLING -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
