@@ -12,16 +12,6 @@ $e = $_GET['rooms'];
 $f = $_GET['bathrooms'];
 $g = $_GET['description'];
 
-echo "id: ".$z."<br>"; 
-echo "address: ".$a."<br>";
-echo "city: ".$b."<br>";
-echo "zip: ".$c."<br>";
-echo "price: ".$d."<br>";
-echo "rooms: ".$e."<br>";
-echo "bathrooms: ".$f."<br>";
-echo "description: ".$g."<br>";
-
-
 $listings_controller = new listings_controller();
 $listing_model = new listing_model($z);
 
@@ -33,5 +23,17 @@ $listing_model->setRooms($e);
 $listing_model->setBathrooms($f);
 $listing_model->setDescription($g);
 
-$listings_controller->editListing($listing_model);
+if (!$listings_controller->editListing($listing_model) )
+{
+    die("if you see this call for editListing() returned false: database not updated.");
+}
+
+echo "id: ".$listing_model->getId()."<br>"; 
+echo "address: ".$listing_model->getAddress()."<br>";
+echo "city: ".$listing_model->getCity()."<br>";
+echo "zip: ".$listing_model->getZip()."<br>";
+echo "price: ".$listing_model->getPrice()."<br>";
+echo "rooms: ".$listing_model->getRooms()."<br>";
+echo "bathrooms: ".$listing_model->getBathrooms()."<br>";
+echo "description: ".$listing_model->getDescription()."<br>";
 ?>

@@ -128,7 +128,7 @@ class listings_controller extends controller
     
     /**
      * Edit a Listing in the Database
-     * @param type $input
+     * @param type $input (id number)
      */
     public function editListing($input)
     {
@@ -143,6 +143,7 @@ class listings_controller extends controller
             WHERE id = :id";
                                           
         $stmt = $this->db_connect->prepare($sql);
+        
         $stmt->bindParam(':address', $input->getAddress(), PDO::PARAM_STR);       
         $stmt->bindParam(':city', $input->getCity(), PDO::PARAM_STR); 
         $stmt->bindParam(':zip', $input->getZip(), PDO::PARAM_INT);  
