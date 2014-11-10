@@ -12,7 +12,7 @@ include 'views/navbar.php';
         <form class="form-horizontal" style="text-align:center; margin: 0px auto" action="views/searchresults.php" method="POST">
             <div class="form-group">
                 <div class="col-xs-offset-3 col-xs-5">
-                  <input type="search" name="searchvalue" class="form-control  col-xs-5">
+                  <input type="search" name="searchvalue" class="form-control">
                 </div>
                 <input type="submit" class="btn btn-inverse col-xs-1" value="Find home">
             </div>

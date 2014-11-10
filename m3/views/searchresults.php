@@ -38,9 +38,13 @@ else
     </head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <body>
-        <form style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
-            <input type="search" name="searchvalue" value="<?php echo $value; ?>">
-            <input type="submit" class="btn btn-inverse" value="Find home">
+        <form class="form-horizontal" style="text-align:center; margin: 0px auto" action="searchresults.php" method="POST">
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-5">
+                  <input type="search" name="searchvalue" value="<?php echo $value; ?>">
+                </div>
+                <input type="submit" class="btn btn-inverse col-xs-1" value="Find home">
+            </div>
         </form>
         <h2> Search Results </h2>
 
