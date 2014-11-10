@@ -14,8 +14,8 @@ $all_images = $images_controller->getImages($_GET['id']);
                 <a class="thumbnail">
                     <img src="<?php echo $all_images[$i]; ?>" alt="...">
                 </a>
-                <a>
-                    <button class="btn btn-danger" value="Remove">X</button>
+                <a href="edit_photo.php?id=<?php echo $_GET['id'];?>">
+                    <button class="btn btn-danger" value="Remove">Remove</button>
                 </a>
             </div>
         <?php endfor; ?>
