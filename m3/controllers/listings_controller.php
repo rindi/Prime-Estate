@@ -211,15 +211,33 @@ class listings_controller extends controller
     public function removeImage($imagePath)
     {
         // delete path from db
+        echo $imagePath."<br><br>";
+        $slash_count = 0;
+        $filename = "";
+        for( $i=0; $i<strlen($imagePath); $i++ )
+        {
+            echo $imagePath[$i]." ";
+            if($imagePath[$i] == '/') $slash_count++;
+            if($slash_count == 5){  $slash_count++; continue; }
+            if($slash_count == 6)
+            {
+                $filename .= $imagePath[$i];
+            }
+        }
+        
+        echo "<br><br>".$filename."<br><br>";
+        
+        die("<BR>STOP HERE.");
         if( ! $affected_rows = $this->db_connect->exec("DELETE FROM images WHERE path = '$imagePath'") )
         {
-            echo "WWWWWWWWWWWWWWw".$affected_rows;
+            echo $affected_rows;
         }
         
         
         // delete from server
-        $path = "../../../../".$imagePath;
-        unlink($path);
+        $pathToImageDir = "../views/assets/";
+        echo $imagePath;
+        unlink();
     }
     
     public function getListing($id)
