@@ -10,7 +10,7 @@ if( $_SESSION['type'] != 2 )
 {
     die("Hey now brown cow! You are not realtor. Can't be here. die()");
 }
-?>
+
 //echo $_SESSION['userid'];
 if(isset($_POST['SubmitButton'])) 
 {
