@@ -6,7 +6,6 @@ $all_images = $images_controller->getImages($_GET['id']);
 
 if( $_GET['removepath'] )
 {
-    echo "remove house with id ".$_GET['removepath'];
     $images_controller->removeImage($_GET['removepath']);
     $all_images = $images_controller->getImages($_GET['id']);
 }
