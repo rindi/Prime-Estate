@@ -63,6 +63,8 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                                                 <img src="<?php echo $image; ?>" alt="First slide">
                                             </a>
                                         </div>
+                                        <?php endforeach; ?>
+                                        
                                     </div>
                                     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                                         <span class="glyphicon glyphicon-chevron-left"></span>
