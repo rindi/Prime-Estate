@@ -1,8 +1,11 @@
 <?php
 require '../models/listing_model.php';
 require '../controllers/listings_controller.php';
+if( !isset($_SESSION) )
+{
+    session_start();
+}
 
-session_start();
 //dynamically need user id!?!?!?!?
 $interested = 1;
 $userid = $_SESSION['userid'];
