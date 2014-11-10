@@ -29,15 +29,12 @@ $arr[7] = $g;
 
 $listings_controller->editListing($arr);
 
-
-echo "id: ".$listing_model->getId()."<br>"; 
-echo "address: ".$listing_model->getAddress()."<br>";
-echo "city: ".$listing_model->getCity()."<br>";
-echo "zip: ".$listing_model->getZip()."<br>";
-echo "price: ".$listing_model->getPrice()."<br>";
-echo "rooms: ".$listing_model->getRooms()."<br>";
-echo "bathrooms: ".$listing_model->getBathrooms()."<br>";
-echo "description: ".$listing_model->getDescription()."<br>";
 ?>
 
-<label>Address</label>
+<label>Address</label><input type="text" value="<?php echo $a;?>"><br>
+<label>City</label><input type="text" value="<?php echo $b;?>"><br>
+<label>Zip</label><input type="number" value="<?php echo $c;?>"><br>
+<label>Price</label><input type="number" value="<?php echo $d;?>"><br>
+<label>Rooms</label><input type="number" value="<?php echo $e;?>"><br>
+<label>Bathrooms</label><input type="number" value="<?php echo $f;?>"><br>
+<label>Description</label><input value="<?php echo $g;?>"><br>

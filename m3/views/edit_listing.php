@@ -50,7 +50,7 @@ $image_1 = $images[0];
                         Price: <input id="price" value="<?php echo $listing_model->getPrice();?>" type="text" disabled><br>
                         Rooms: <input id="rooms" value="<?php echo $listing_model->getRooms();?>" type="text" disabled><br>
                         Baths: <input id="bathrooms" value="<?php echo $listing_model->getBathrooms();?>" type="text" disabled><br>
-                        Description: <input id="description" value="<?php echo $listing_model->getDescription();?>" type="text" disabled><br>
+                        Description: <input id="description" value="<?php echo $listing_model->getDescription();?>" type="textarea" disabled><br>
                         <hr>
                         <input id="edit" class="btn btn-default" type="button" value="Edit Listing"><br>
                     </form>
