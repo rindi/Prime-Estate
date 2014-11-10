@@ -31,8 +31,9 @@ $image_1 = $images[0];
                         <div class="col-xs-12">
                             <a href="<?php echo $images[0];?>" class="thumbnail">
                                 <img src="<?php echo $images[0];?>" alt="..."><br>
-                                <a href="edit_photo.php" class="btn btn-default">Edit photos</a>
                             </a>
+                            <?php include("houses_carousel.php"); ?>
+                            <a href="edit_photo.php" class="btn btn-default">Edit photos</a>
                         </div>
                     </div>
                 </div>
