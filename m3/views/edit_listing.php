@@ -36,7 +36,7 @@ $image_1 = $images[0];
                                 <img src="<?php echo $images[0];?>" alt="..."><br>
                             </a>
                             <?php include("houses_carousel.php"); ?>
-                            <a href="edit_photo.php?id=<?php echo $listing_model->getId();?>" class="btn btn-default">Edit photos</a>
+                            <a href="edit_photo.php?id=<?php echo $listing_model->getId();?>&removepath=" class="btn btn-default">Edit photos</a>
                         </div>
                     </div>
                 </div>
