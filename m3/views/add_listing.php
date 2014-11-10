@@ -33,7 +33,7 @@ header('Location: http://sfsuswe.com/~f14g03/views/upload.php');
 <div style="text-align:center" >
     <h3>Adding new listing:</h3>
         <h3>Step 1.</h3>
-        <form action="" method="post">
+        <form action="add_listing.php" method="post">
         <!--<form action="add_listings.php" method="post">-->
             <table style="text-align:center; margin: 0px auto">
             <tr><td>Address*:</td><td><input type="text" name="address" placeholder="Address" required/></td>
