@@ -210,13 +210,11 @@ class listings_controller extends controller
     */
     public function removeImage($imagePath)
     {
-        // delete path from db
-        echo $imagePath."<br><br>";
+        // get pure filename
         $slash_count = 0;
         $filename = "";
         for( $i=0; $i<strlen($imagePath); $i++ )
         {
-            echo $imagePath[$i]." ";
             if($imagePath[$i] == '/') $slash_count++;
             if($slash_count == 5){  $slash_count++; continue; }
             if($slash_count == 6)
@@ -225,19 +223,20 @@ class listings_controller extends controller
             }
         }
         
-        echo "<br><br>".$filename."<br><br>";
         
-        die("<BR>STOP HERE.");
-        if( ! $affected_rows = $this->db_connect->exec("DELETE FROM images WHERE path = '$imagePath'") )
-        {
-            echo $affected_rows;
-        }
+        // $pathToImageDir = "../views/assets/".$filename;
+        // echo $pathToImageDir;
+        
+        // delete from dir
+        array_map('unlink', glob("/home/f14g03/public_html/views/assets/images/".$filename));
+
+        // delete from db
+        $affected_rows = $this->db_connect->exec("DELETE FROM images WHERE path = '$imagePath'");
+
         
         
         // delete from server
-        $pathToImageDir = "../views/assets/";
-        echo $imagePath;
-        unlink();
+        
     }
     
     public function getListing($id)
