@@ -211,9 +211,11 @@ class listings_controller extends controller
     */
     public function getImageId($imagePath)
     {
-        $sql = "SELECT imageid FROM images WHERE path = '$imagePath'";
-        $imageId = parent::$this->db_connect->query($sql);
-        echo "In listings_controller.php: \$imageId is ".$imageId."<br>";
+        $sql = "SELECT imageid FROM images WHERE path = :path";
+        $stmt = $this->db_connect->prepare($sql);
+        $stmt->bindParam(':path', $imagePath, PDO::PARAM_STR);
+        $imageId = $stmt->execute();
+        echo $imageId;
         return $imageId;
     }
     

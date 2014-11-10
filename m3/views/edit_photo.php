@@ -18,7 +18,7 @@ if( $_GET['removeid'] )
                 <a class="thumbnail">
                     <img src="<?php echo $all_images[$i]; ?>" alt="...">
                 </a>
-                <a href="edit_photo.php?id=<?php echo $_GET['id'];?>&removeid=<?php echo $images_controller->getImageId($image[$i]);?>">
+                <a href="edit_photo.php?id=<?php echo $_GET['id'];?>&removeid=">
                     <button class="btn btn-danger" value="Remove">Remove</button>
                 </a>
             </div>
