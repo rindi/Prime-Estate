@@ -10,20 +10,23 @@ $interested = 1;
 if( isset($_SESSION['userid']) )
 {
     $userid = $_SESSION['userid'];
+}else{
+    die("userid is not set");
 }
+//expressing interest
+require_once "../controllers/interest_controller.php";
+if (isset($_GET['interest']) && isset($_GET['userid'])) {
+    $interest = new interest_controller();
+    $interest->expressInterest($userid, $_GET['id']);
+}else if( isset($_GET['interest']) )
+{
+    die("ADD FUNCTIONALITY TO CONTACT SELLER WITHOUT ID. EVERY SITE HAS IT.");
+}
+
 $listing_controller = new listings_controller();
 $listing_model = $listing_controller->getListing($_GET['id']);
 $images = $listing_controller->getImages($_GET['id']);
-//echo $images."<br/>";
-//print_r($images);
 $image_1 = $images[0];
-//echo "<br/>".$image_1."<br/>";
-//expressing interest
-require_once "../controllers/interest_controller.php";
-if (isset($_GET['interest'])) {
-    $interest = new interest_controller();
-    $interest->expressInterest($userid, $_GET['id']);
-}
 
 $addressgooglemaps = $listing_model->getAddress();
 $citygooglemaps = $listing_model->getCity();
@@ -55,7 +58,11 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                     </div>
                     
                     <div class="col-xs-12 col-sm-9 col-md-9 col-lg-6">
-                        <?php echo "<td>" . "<a href='http://sfsuswe.com/~f14g03/views/listing_page.php?interest=" . $interested . "&id=" . $_GET['id'] . "' class='btn btn-default' value='Edit Listing' type='button';'>Contact Seller</a>" . "</td>"; ?>
+                        <td>
+                            <a href="listing_page.php?interest=<?php echo $interested ;?>&id=<?php echo $_GET['id'];?>&userid=<?php echo $userid;?>"
+                               class="btn btn-default" value="Edit listing" type="button">Contact seller
+                            </a>
+                        </td>
                     </div>
                     
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
