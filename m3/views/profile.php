@@ -66,9 +66,17 @@ require_once ("../controllers/users_controller.php");
     </head>
     <style>
 
+    
         #texttable,p{   
             margin-left: 2cm;
         }
+       #div1 {
+    margin-left: 2cm;
+    width: 500px;
+    height: 150px;
+    
+    overflow-x: hidden;
+    }
 
 
 
@@ -84,7 +92,7 @@ require_once ("../controllers/users_controller.php");
     
      
      ?>
-        <form action="profilehandler.php" method="post" style="text-align:left; margin: 0px auto">
+        <form id = "f1" action="profilehandler.php" method="post" style="text-align:left; margin: 0px auto">
             <p><center>
                 <b><font size="5">MY PROFILE</font>
             </center></p>
@@ -93,7 +101,7 @@ require_once ("../controllers/users_controller.php");
             <tr>
                 <td>Price: Min </td>
                 <td><input id = "textfield"type="text" name="pricemin" value ="<?php echo $profile->pricemin?>"></td>
-                <td> Max </td>
+                <td> Max &nbsp; </td>
                 <td><input id = "textfield"type="text" name="pricemax" value ="<?php echo $profile->pricemax?>" ></td>
             </tr>
 
@@ -118,14 +126,19 @@ require_once ("../controllers/users_controller.php");
         <p><b>PERSONAL INFORMATION</b> </p>
 
         <p>
-            <textarea name = "info" id="info" rows="20" cols="80" > <?php echo $profile->personalinformation?></textarea>
+   
+        
+        <div class="form-group" id ="div1" >
+            
+            <textarea class="form-control"  cols="60"rows="10" name = "info" id="info"><?php echo $profile->personalinformation?></textarea>
+        </div>
         </p>
          
          
         
         <input name = "id" type = "hidden"value  =<?php echo $id ?>>
          <center><input id = "update" type="submit" value = "update" ></center>
-         <>
+         
       
          
         </form>
