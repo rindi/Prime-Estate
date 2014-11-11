@@ -36,19 +36,12 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 <html>
     <div class="container">
         <div id="listing" class="panel panel-default">
-            <div class="panel-heading">
-                <h2 class="panel-title">Show house #<?php echo $listing_model->getId(); ?></h2>
-
-<?php echo "<td>" . "<a href='http://sfsuswe.com/~f14g03/views/listing_page.php?interest=" . $interested . "&id=" . $_GET['id'] . "' class='btn btn-default' value='Edit Listing' type='button';'>Contact Seller</a>" . "</td>"; ?>
-            </div>
             <div class="panel-body">
+                <?php echo "<td>" . "<a href='http://sfsuswe.com/~f14g03/views/listing_page.php?interest=" . $interested . "&id=" . $_GET['id'] . "' class='btn btn-default' value='Edit Listing' type='button';'>Contact Seller</a>" . "</td>"; ?>
                 <div class="row">
                     <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4">
                         <div class="row">
                             <div class="col-xs-12">
-                                <a href="<?php echo $images[0]; ?>" class="thumbnail">
-                                    <img src="<?php echo $images[0]; ?>" alt="...">
-                                </a>
                                 
                                 <?php include("houses_carousel.php"); ?>
 
