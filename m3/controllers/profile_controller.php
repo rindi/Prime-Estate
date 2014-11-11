@@ -23,13 +23,35 @@ class profile_controller extends controller
      * @return \user_model
      */
     public function getProfile($userid)
-    {   
-        $sql = "SELECT * FROM customerprofile WHERE userid = '$userid'";
-        foreach($this->db_connect->query($sql) as $row)
-        {
-            $profile = new profile_model($row);
-            return $profile;
-        }
+    { 
+      
+         $sql = "SELECT * FROM customerprofile WHERE userid = '$userid'";
+         $check = 0;
+         foreach($this->db_connect->query($sql) as $row)
+         {
+             
+             $profile = new profile_model($row);
+             return $profile;
+             $check = 1;
+         }
+         if($check == 0)
+         {
+           
+             $this->newProfile($userid);
+            foreach($this->db_connect->query($sql) as $row)
+            {
+                echo "just created!";
+             
+             $profile = new profile_model($row);
+             return $profile;
+             }
+             
+             
+             
+         }
+         return NULL;
+      
+      
     }
     
     
@@ -38,6 +60,7 @@ class profile_controller extends controller
      */
     public function newProfile($customerid)
     {   
+        
         $sql = "INSERT INTO customerprofile(userid, personalinformation) VALUES (
             :userid, :profile)";
                           
