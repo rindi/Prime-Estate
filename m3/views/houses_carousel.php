@@ -1,5 +1,5 @@
  <!-- CARUSEL: DYNAMIC IMAGES SCROLLING -->
- <?php if(count($images) >= 1):?>
+ <?php if(count($images) >= 2):?>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <?php if(count($images) >= 2):?>
