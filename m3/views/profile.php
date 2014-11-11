@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <?php
 include 'navbar.php';
 require_once ("../controllers/profile_controller.php");
@@ -19,6 +18,7 @@ require_once ("../controllers/users_controller.php");
 //$usercontroller = new users_controller();
 //$username = $_POST["login_username"];
 //$password = $_POST["login_password"];
+
 //$encryptedpassword = md5($password);
 //$userlist = $usercontroller->getUsers();
 
@@ -37,13 +37,13 @@ require_once ("../controllers/users_controller.php");
 //        }
         
  
-$profilecontroller = new profile_controller();
+//$profilecontroller = new profile_controller();
 //GET THE CUSTOMER ID SOMEHOW (prolly cookies)
-#$customerid = $_COOKIE['username'];
+//$customerid = $_COOKIE['username'];
 //GET THEIR PROFILE
-$profile = $profilecontroller->getProfile($_SESSION["username"]);
+//$profile = $profilecontroller->getProfile($_SESSION["username"]);
 //UPDATE THEIR PROFILE WITH WHATEVER CHANGES THEY MAKE
-$newValue = 2000;
+//$newValue = 2000;
 //$profile->setPricemax($newValue);
 //$profile->setPricemin($newValue);
 //$profilecontroller->updateCustomerProfile($profile);
@@ -58,6 +58,7 @@ $newValue = 2000;
 //}
 ////}
 ?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -73,8 +74,17 @@ $newValue = 2000;
 
     </style>
     <body>
-
-    <form action="" method="post" style="text-align:left; margin: 0px auto">
+        
+     <?php
+     $userid =$_SESSION["username"];
+      $profilecontroller = new profile_controller();
+      $usercontroller = new users_controller();
+     $id = $usercontroller->getUserId($userid);
+     $profile = $profilecontroller->getProfile(($id));
+    
+     
+     ?>
+        <form action="profilehandler.php" method="post" style="text-align:left; margin: 0px auto">
             <p><center>
                 <b><font size="5">MY PROFILE</font>
             </center></p>
@@ -82,23 +92,23 @@ $newValue = 2000;
         <table id ="texttable">
             <tr>
                 <td>Price: Min </td>
-                <td><input id = "textfield"type="text" name="pricemin" ></td>
+                <td><input id = "textfield"type="text" name="pricemin" value ="<?php echo $profile->pricemin?>"></td>
                 <td> Max </td>
-                <td><input id = "textfield"type="text" name="pricemax" ></td>
+                <td><input id = "textfield"type="text" name="pricemax" value ="<?php echo $profile->pricemax?>" ></td>
             </tr>
 
             <tr>
                 <td>Zip Code:</td>
-                <td><input id = "textfield"type="text" name="zip" ></td>
+                <td><input id = "textfield"type="text" name="zip"value ="<?php echo $profile->zip?>" ></td>
             </tr>
             <tr>
                 <td>Bedrooms:</td>
-                <td><input id = "textfield"type="text" name="bed" ></td>
+                <td><input id = "textfield"type="text" name="bed"value ="<?php echo $profile->bedrooms?>" ></td>
             </tr>
 
             <tr>
                 <td>Bathrooms:</td>
-                <td><input id = "textfield"type="text" name="bathroom" ></td>
+                <td><input id = "textfield"type="text" name="bathroom" value ="<?php echo $profile->bathrooms?>"></td>
             </tr>
 
 
@@ -108,10 +118,23 @@ $newValue = 2000;
         <p><b>PERSONAL INFORMATION</b> </p>
 
         <p>
-            <textarea name="info" rows="20" cols="80"> </textarea>
+            <textarea name = "info" id="info" rows="20" cols="80" > <?php echo $profile->personalinformation?></textarea>
         </p>
-        <center><input id = "update" type="submit" value = "update" ></center>
+         
+         
+        
+        <input name = "id" type = "hidden"value  =<?php echo $id ?>>
+         <center><input id = "update" type="submit" value = "update" ></center>
+         <>
+      
+         
         </form>
+        
+        
+        
+    
+        
 </body>
 
 </html>
+
