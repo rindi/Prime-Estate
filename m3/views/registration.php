@@ -41,7 +41,7 @@ else
       <tr>
         <td>Email*</td>
         <td>
-            <input type="text" name="login_email" required/>
+            <input type="text" name="login_email" placeholder="me@example.com" required/>
         </td>
       </tr>
       <tr>
