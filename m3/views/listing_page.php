@@ -1,14 +1,16 @@
 <?php
 require '../models/listing_model.php';
 require '../controllers/listings_controller.php';
-if( !isset($_SESSION) )
-{
+if (!isset($_SESSION)) {
     session_start();
 }
 
 //dynamically need user id!?!?!?!?
 $interested = 1;
-$userid = $_SESSION['userid'];
+if( isset($_SESSION['userid']) )
+{
+    $userid = $_SESSION['userid'];
+}
 $listing_controller = new listings_controller();
 $listing_model = $listing_controller->getListing($_GET['id']);
 $images = $listing_controller->getImages($_GET['id']);
@@ -37,26 +39,27 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
     <div class="container">
         <div id="listing" class="panel panel-default">
             <div class="panel-body">
-                <?php echo "<td>" . "<a href='http://sfsuswe.com/~f14g03/views/listing_page.php?interest=" . $interested . "&id=" . $_GET['id'] . "' class='btn btn-default' value='Edit Listing' type='button';'>Contact Seller</a>" . "</td>"; ?>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-6">
                         <div class="row">
                             <div class="col-xs-12">
-                                
                                 <?php include("houses_carousel.php"); ?>
-
                                 <iframe
                                     width='340'
                                     height='250'
                                     frameborder='0' style='border:0'
-<?php echo $mapstring; ?>>
+                                    <?php echo $mapstring; ?>>
                                 </iframe>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
-                        <!-- WHY FOLLOWING LINE WONT WORK ? -->
-<?php echo $mapaddress; ?>
+                    
+                    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-6">
+                        <?php echo "<td>" . "<a href='http://sfsuswe.com/~f14g03/views/listing_page.php?interest=" . $interested . "&id=" . $_GET['id'] . "' class='btn btn-default' value='Edit Listing' type='button';'>Contact Seller</a>" . "</td>"; ?>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <?php echo $mapaddress; ?>
                         <?php echo $listing_model->getAddress(); ?>
                         <?php echo $listing_model->getCity(); ?> 
                         <?php echo $listing_model->getPrice(); ?>
