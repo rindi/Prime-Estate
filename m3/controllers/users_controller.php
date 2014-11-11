@@ -56,7 +56,20 @@ class users_controller extends controller
             return $row;
         }
     }
-    
+    public function getUserId($username)
+    {
+          $sql = "SELECT * FROM usertable WHERE username = '$username'";
+          $data;
+        foreach(parent::$this->db_connect->query($sql) as $row )
+        {
+           $data = $row;
+        }
+        return $data["userid"];
+        
+        
+    }
+
+
     public function getUserNameInfo($username)
     {   
         $sql = "SELECT * FROM usertable WHERE username = '$username'";
