@@ -20,11 +20,11 @@ require_once ("../controllers/users_controller.php");
         $id = $_POST["id"];
  */
           
-            $dbRow['bedrooms'] = $_POST["zip"];
-            $dbRow['bathrooms'] = $_POST["bed"];
+            $dbRow['bedrooms'] = $_POST["bed"];
+            $dbRow['bathrooms'] = $_POST["bathroom"];
             $dbRow['pricemax']= $_POST["pricemax"];
             $dbRow['pricemin']= $_POST["pricemin"];
-            $dbRow['zip'] = $_POST["zip"] = $_POST["zip"];
+            $dbRow['zip']  = $_POST["zip"];
             $dbRow['personalinformation']  = $_POST["info"];
             $dbRow['userid'] =  $_POST["id"];
             $profile = new profile_model($dbRow);
