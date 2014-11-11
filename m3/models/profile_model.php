@@ -7,7 +7,22 @@ class profile_model
 {
     //fields for userdata class
     public $bedrooms, $bathrooms, $pricemax, $pricemin, $zip, $personalinformation, $userid;
-    
+     public function __construct($dbRow) {
+  
+            $this->bedrooms = $dbRow['bedrooms'];
+            $this->bathrooms = $dbRow['bathrooms'];
+            $this->pricemax = $dbRow['pricemax'];
+            $this->pricemin = $dbRow['pricemin'];
+            $this->zip = $dbRow['zip'];
+            $this->personalinformation = $dbRow['personalinformation'];
+            $this->userid = $dbRow['userid'];
+            
+            
+         
+      
+         
+     }
+    /**
     public function __construct($dbRow)
     { 
         $this->bedrooms = $dbRow['bedrooms'];
@@ -17,6 +32,20 @@ class profile_model
         $this->zip = $dbRow['zip'];
         $this->personalinformation = $dbRow['personalinformation'];
         $this->userid = $dbRow['userid'];
+    
+    }
+     * 
+     */
+    public function info()
+    {
+        echo"profile_model begin \n";
+        echo "$this->bedrooms\n";
+        echo "$this->bathrooms\n";
+        echo "$this->pricemax\n";
+        echo "$this->pricemin\n";
+        echo "$this->zip\n";
+        echo "$this->personalinformation\n";
+        echo "profile_model end\n";
     }
     public function getBathrooms()
     {
