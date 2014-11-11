@@ -16,11 +16,9 @@ include 'views/navbar.php';
                     <div class="col-xs-offset-3 col-xs-5">
                       <input type="search" name="searchvalue" class="form-control">
                     </div>
-                    <input type="submit" class="btn btn-inverse col-xs-1" value="Find home">
+                    <label for="submit-form" class="btn btn-default btn-lg col-xs-1"><i class="glyphicon glyphicon-search"></i></label>
+                    <input id="submit-form" type="submit" class="btn btn-inverse col-xs-1 hidden">
                 </div>
-
-            <!--<span class="glyphicon glyphicon-search"></span>-->
-            </input>
             </form>
           </div>
         </div>
