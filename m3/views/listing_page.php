@@ -150,13 +150,15 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                     </div>
                     
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <?php echo $mapaddress; ?>
-                        <?php echo $listing_model->getAddress(); ?>
-                        <?php echo $listing_model->getCity(); ?> 
-                        <?php echo $listing_model->getPrice(); ?>
-                        <?php echo $listing_model->getRooms(); ?> 
-                        <?php echo $listing_model->getBathrooms(); ?>
-                        <?php echo $listing_model->getDescription(); ?>
+                        <div class="well">
+                          <?php echo $mapaddress; ?>
+                          <?php echo $listing_model->getAddress(); ?>
+                          <?php echo $listing_model->getCity(); ?> 
+                          <?php echo $listing_model->getPrice(); ?>
+                          <?php echo $listing_model->getRooms(); ?> 
+                          <?php echo $listing_model->getBathrooms(); ?>
+                          <?php echo $listing_model->getDescription(); ?>
+                        </div>
                     </div>
                 </div>
             </div>
