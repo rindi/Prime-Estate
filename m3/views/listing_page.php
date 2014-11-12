@@ -7,8 +7,7 @@ if (!isset($_SESSION)) {
 
 //dynamically need user id!?!?!?!?
 $interested = 1;
-if( isset($_SESSION['userid']) )
-{
+if (isset($_SESSION['userid'])) {
     $userid = $_SESSION['userid'];
 }
 //expressing interest
@@ -16,8 +15,7 @@ require_once "../controllers/interest_controller.php";
 if (isset($_GET['interest']) && isset($_GET['userid'])) {
     $interest = new interest_controller();
     $interest->expressInterest($userid, $_GET['id']);
-}else if( isset($_GET['interest']) )
-{
+} else if (isset($_GET['interest'])) {
     die("ADD FUNCTIONALITY TO CONTACT SELLER WITHOUT ID. EVERY SITE HAS IT.");
 }
 
@@ -38,128 +36,62 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 <?php include("navbar.php"); ?>
 
 <script>
-    $(document).ready(function(){
-        $("#photos").click(function(){
+    $(document).ready(function () {
+        $("#photos").click(function () {
             $("#mapitis").attr("class", "");
             $("#photositis").attr("class", "displaynone");
             $("#photos").attr("id", "seepht");
-            
+
         });
-        $("#seepht").click(function(){
+        $("#seepht").click(function () {
             $("#mapitis").attr("class", "displaynone");
             $("#photositis").attr("class", "");
             $("#seepht").attr("id", "photos");
         });
-    }); 
+    });
 </script>
-<style>
-    .displaynone{
-        display: none;
-    }
-</style>
+
 <html>
     <div class="container">
         <div id="listing" class="panel panel-default">
+            <!-- contains 3 wells: 1) image/info 2) map 3) description etc. -->
             <div class="panel-body">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+
+                <div class="well"> 
+                    <?php include("houses_carousel.php"); ?>                                   
+                </div>
+
+                <div class="well">
+                    <iframe
+                        width='100%'
+                        height='250'
+                        frameborder='0' style='border:0'
+                        <?php echo $mapstring; ?>>
+                    </iframe>
+                </div>
+
+                <div class="well">
+                    <h2>Contact realtor for this home</h2>
+                    <?php if (isset($_SESSION['userid'])): ?>
+                        <a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
+                           class="btn btn-success col-sm-offset-8 col-sm-3" 
+                           value="Edit listing" type="button">Contact seller
+                        </a>
+                    <?php else: ?>
                         <div class="row">
-                            <div class="col-xs-12">
-                                <div class="well">
-                                    <div id="photositis" class="">
-                                        <?php include("houses_carousel.php"); ?>
-                                    </div>                                    
-                                    
-                                </div>
-                                <div class="well">
-                                    <iframe
-                                        width='100%'
-                                        height='250'
-                                        frameborder='0' style='border:0'
-                                        <?php echo $mapstring; ?>>
-                                    </iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                        <div class="well">
-                            <h2>Contact realtor for this home</h2>
-                            <div class="row">
-                                <div class="col-xs-4">
-                                    <div class="thumbnail">
-                                        <img src="./assets/images/demo.jpg" alt="...">
-                                    </div>        
-                                </div>
-                                <div class="col-xs-8">
-                                    <h4>Joe Schmack</h4>
-                                    <p>Goodsell Banker Residential - San Antoniano - Sierra Costo</p>
-                                    <span class="glyphicon glyphicon glyphicon-earphone"> (123)311-2331</span>
-                                </div>
-                                
-                                <div class="col-xs-12" style="margin:5px">
-                                    
-                                </div>
-                                
-                                <?php if( isset($_SESSION['userid']) ):?>
-                                <a href="listing_page.php?interest=<?php echo $interested ;?>&id=<?php echo $_GET['id'];?>&userid=<?php echo $userid;?>"
-                                    class="btn btn-success col-sm-offset-8 col-sm-3" 
-                                    value="Edit listing" type="button">Contact seller
-                                </a>
-                                <?php else: ?>
-                                    <div class="col-xs-12">
-                                        <form class="">
-                                            <div class="form-group">
-                                                <label class="sr-only control-label"></label>
-                                                <div class=""col-xs-12>
-                                                    <input type="text" class="form-control" placeholder="Name">
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="sr-only control-label"></label>
-                                                <div class=""col-xs-12>
-                                                    <input type="email" class="form-control" placeholder="E-mail">
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="sr-only control-label"></label>
-                                                <div class=""col-xs-12>
-                                                    <input type="tel" class="form-control" placeholder="Phone number">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="sr-only control-label"></label>
-                                                <div class=""col-xs-12>
-                                                    <textarea class="form-control" style="max-width:100%; min-width:100%; min-height:100px;max-height:250px;">Hi, I am interested in <?php echo $listing_model->getAddress(); ?></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="submit" class="btn btn-success pull-right" value="Contact">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    
-                                <?php endif?>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                    
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="well">
-                          <?php echo $mapaddress; ?>
-                          <?php echo $listing_model->getAddress(); ?>
-                          <?php echo $listing_model->getCity(); ?> 
-                          <?php echo $listing_model->getPrice(); ?>
-                          <?php echo $listing_model->getRooms(); ?> 
-                          <?php echo $listing_model->getBathrooms(); ?>
-                          <?php echo $listing_model->getDescription(); ?>
-                        </div>
-                    </div>
+                            <a href="login.php" class="btn btn-default col-xs-8 col-xs-offset-2">Login to contact</a>
+                        </div>   
+                    <?php endif ?>
+                </div>
+
+                <div class="well">
+                    <?php echo $mapaddress; ?>
+                    <?php echo $listing_model->getAddress(); ?>
+                    <?php echo $listing_model->getCity(); ?> 
+                    <?php echo $listing_model->getPrice(); ?>
+                    <?php echo $listing_model->getRooms(); ?> 
+                    <?php echo $listing_model->getBathrooms(); ?>
+                    <?php echo $listing_model->getDescription(); ?>
                 </div>
             </div>
         </div>
@@ -211,7 +143,7 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
     <script type="text/javascript">
       var geocoder;
       var map;
-      var address = <?php echo $mapaddress; ?>;
+      var address = <! -- ?php echo $mapaddress; ? >;
       function initialize() {
         geocoder = new google.maps.Geocoder();
         var latlng = new google.maps.LatLng(-37.722, 122.478);
