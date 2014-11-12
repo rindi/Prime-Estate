@@ -66,35 +66,19 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="well">
-                                <ul class="nav nav-pills" role="tablist">
-                                    <li role="presentation" id="photos"><a href="#">See map</a></li>
-                                </ul>
-                                <br>
-                                <div id="photosormap" >
                                     <div id="photositis" class="">
                                         <?php include("houses_carousel.php"); ?>
-                                    </div>
-                                    
-                                    <div id="mapitis" class="displaynone">
-                                        <iframe
-                                            width='340'
-                                            height='250'
-                                            frameborder='0' style='border:0'
-                                            <?php echo $mapstring; ?>>
-                                        </iframe>
-                                    </div>
+                                    </div>                                    
                                     
                                 </div>
-                                    <div>
-                                        <iframe
-                                            width='340'
-                                            height='250'
-                                            frameborder='0' style='border:0'
-                                            <?php echo $mapstring; ?>>
-                                        </iframe>
-                                    </div>
+                                <div>
+                                    <iframe
+                                        width='340'
+                                        height='250'
+                                        frameborder='0' style='border:0'
+                                        <?php echo $mapstring; ?>>
+                                    </iframe>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
