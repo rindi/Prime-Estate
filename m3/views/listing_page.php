@@ -10,8 +10,6 @@ $interested = 1;
 if( isset($_SESSION['userid']) )
 {
     $userid = $_SESSION['userid'];
-}else{
-    die("userid is not set");
 }
 //expressing interest
 require_once "../controllers/interest_controller.php";
@@ -43,10 +41,13 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
         <div id="listing" class="panel panel-default">
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-6">
+                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                         <div class="row">
                             <div class="col-xs-12">
-                                <?php include("houses_carousel.php"); ?>
+                                <div class="well">
+                                    <?php include("houses_carousel.php"); ?>
+                                </div>
+                                
                                 <iframe
                                     width='340'
                                     height='250'
@@ -57,12 +58,70 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                         </div>
                     </div>
                     
-                    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-6">
-                        <td>
-                            <a href="listing_page.php?interest=<?php echo $interested ;?>&id=<?php echo $_GET['id'];?>&userid=<?php echo $userid;?>"
-                               class="btn btn-default" value="Edit listing" type="button">Contact seller
-                            </a>
-                        </td>
+                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                        <div class="well">
+                            <h2>Contact realtor for this home</h2>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="thumbnail">
+                                        <img src="./assets/images/demo.jpg" alt="...">
+                                    </div>        
+                                </div>
+                                <div class="col-xs-8">
+                                    <h4>Joe Schmack</h4>
+                                    <p>Goodsell Banker Residential - San Antoniano - Sierra Costo</p>
+                                    <span class="glyphicon glyphicon glyphicon-earphone"> (123)311-2331</span>
+                                </div>
+                                
+                                <div class="col-xs-12" style="margin:5px">
+                                    
+                                </div>
+                                
+                                <?php if( isset($_SESSION['userid']) ):?>
+                                <a href="listing_page.php?interest=<?php echo $interested ;?>&id=<?php echo $_GET['id'];?>&userid=<?php echo $userid;?>"
+                                    class="btn btn-success col-sm-offset-8 col-sm-3" 
+                                    value="Edit listing" type="button">Contact seller
+                                </a>
+                                <?php else: ?>
+                                    <div class="col-xs-12">
+                                        <form class="">
+                                            <div class="form-group">
+                                                <label class="sr-only control-label"></label>
+                                                <div class=""col-xs-12>
+                                                    <input type="text" class="form-control" placeholder="Name">
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only control-label"></label>
+                                                <div class=""col-xs-12>
+                                                    <input type="email" class="form-control" placeholder="E-mail">
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only control-label"></label>
+                                                <div class=""col-xs-12>
+                                                    <input type="tel" class="form-control" placeholder="Phone number">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only control-label"></label>
+                                                <div class=""col-xs-12>
+                                                    <textarea class="form-control">Hi, I am interested in <?php echo $listing_model->getAddress(); ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="submit" class="btn btn-success pull-right" value="Contact">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                <?php endif?>
+                            </div>
+                            
+                            
+                        </div>
                     </div>
                     
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
