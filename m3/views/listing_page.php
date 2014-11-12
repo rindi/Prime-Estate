@@ -71,9 +71,9 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                                     </div>                                    
                                     
                                 </div>
-                                <div>
+                                <div class="well">
                                     <iframe
-                                        width='340'
+                                        width='100%'
                                         height='250'
                                         frameborder='0' style='border:0'
                                         <?php echo $mapstring; ?>>
