@@ -57,42 +57,61 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
             <!-- contains 3 wells: 1) image/info 2) map 3) description etc. -->
             <div class="panel-body">
 
-                <div class="well"> 
-                    <?php include("houses_carousel.php"); ?>                                   
+
+                <!-- 1ST WELL: CAROUSEL AND PRIMARY INFO -->
+                <div class="well">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <?php include("houses_carousel.php"); ?>                                   
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <h2>Contact realtor for this home</h2>
+                            <?php if (isset($_SESSION['userid'])): ?>
+                                <a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
+                                   class="btn btn-success col-sm-offset-8 col-sm-3" 
+                                   value="Edit listing" type="button">Contact seller
+                                </a>
+                            <?php else: ?>
+                                <div class="row">
+                                    <a href="login.php" class="btn btn-default col-xs-8 col-xs-offset-2">Login to contact</a>
+                                </div>   
+                            <?php endif ?>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- 2ND WELL: MAP -->
                 <div class="well">
-                    <iframe
-                        width='100%'
-                        height='250'
-                        frameborder='0' style='border:0'
-                        <?php echo $mapstring; ?>>
-                    </iframe>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <iframe
+                                width='100%'
+                                height='250'
+                                frameborder='0' style='border:0'
+                                <?php echo $mapstring; ?>>
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
 
+
+
+                <!-- 3ND WELL: dESCRIPTION etc. -->
                 <div class="well">
-                    <h2>Contact realtor for this home</h2>
-                    <?php if (isset($_SESSION['userid'])): ?>
-                        <a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
-                           class="btn btn-success col-sm-offset-8 col-sm-3" 
-                           value="Edit listing" type="button">Contact seller
-                        </a>
-                    <?php else: ?>
-                        <div class="row">
-                            <a href="login.php" class="btn btn-default col-xs-8 col-xs-offset-2">Login to contact</a>
-                        </div>   
-                    <?php endif ?>
+                    <div class="row">
+                        <div class="">
+                            <?php echo $mapaddress; ?>
+                            <?php echo $listing_model->getAddress(); ?>
+                            <?php echo $listing_model->getCity(); ?> 
+                            <?php echo $listing_model->getPrice(); ?>
+                            <?php echo $listing_model->getRooms(); ?> 
+                            <?php echo $listing_model->getBathrooms(); ?>
+                            <?php echo $listing_model->getDescription(); ?>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="well">
-                    <?php echo $mapaddress; ?>
-                    <?php echo $listing_model->getAddress(); ?>
-                    <?php echo $listing_model->getCity(); ?> 
-                    <?php echo $listing_model->getPrice(); ?>
-                    <?php echo $listing_model->getRooms(); ?> 
-                    <?php echo $listing_model->getBathrooms(); ?>
-                    <?php echo $listing_model->getDescription(); ?>
-                </div>
             </div>
         </div>
     </div>
