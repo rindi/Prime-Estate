@@ -133,7 +133,9 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                                             <div class="form-group">
                                                 <label class="sr-only control-label"></label>
                                                 <div class=""col-xs-12>
-                                                    <textarea class="form-control">Hi, I am interested in <?php echo $listing_model->getAddress(); ?></textarea>
+                                                    <textarea class="form-control" style="max-width:100%; min-width:100%; min-height:100px;max-height:250px;">
+                                                      Hi, I am interested in <?php echo $listing_model->getAddress(); ?>
+                                                    </textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
