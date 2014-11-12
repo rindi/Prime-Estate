@@ -45,15 +45,22 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="well">
-                                    <?php include("houses_carousel.php"); ?>
+                                    <?php if(isset($_SESSION['viewwhat'])): ?>
+                                        <?php if( $_SESSION['viewwhat'] == "map"): ?>
+                                            <iframe
+                                                width='340'
+                                                height='250'
+                                                frameborder='0' style='border:0'
+                                                <?php echo $mapstring; ?>>
+                                            </iframe>
+                                        <?php endif; ?>
+                                    <?php else: ?>    
+                                        <?php include("houses_carousel.php"); ?>
+                                    <?php endif; ?>
+                                    <hr>
+                                    <button class="btn btn-default" onclick="loadXMLDoc()">Show on map</button>
                                 </div>
                                 
-                                <iframe
-                                    width='340'
-                                    height='250'
-                                    frameborder='0' style='border:0'
-                                    <?php echo $mapstring; ?>>
-                                </iframe>
                             </div>
                         </div>
                     </div>
@@ -116,7 +123,6 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                                             </div>
                                         </form>
                                     </div>
-                                    
                                 <?php endif?>
                             </div>
                             
