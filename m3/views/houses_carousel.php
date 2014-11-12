@@ -35,5 +35,4 @@
       </a>
       <?php endif;?>
   </div><!-- /.carousel -->
-  <hr>  
 <?php endif; ?>
