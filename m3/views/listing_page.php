@@ -36,6 +36,27 @@ $end = '"';
 $mapstring = $srcstart . $enc . $mapaddress . $end;
 ?>
 <?php include("navbar.php"); ?>
+
+<script>
+    $(document).ready(function(){
+        $("#photos").click(function(){
+            $("#mapitis").attr("class", "");
+            $("#photositis").attr("class", "displaynone");
+            $("#photos").attr("id", "seepht");
+            
+        });
+        $("#seepht").click(function(){
+            $("#mapitis").attr("class", "displaynone");
+            $("#photositis").attr("class", "");
+            $("#seepht").attr("id", "photos");
+        });
+    }); 
+</script>
+<style>
+    .displaynone{
+        display: none;
+    }
+</style>
 <html>
     <div class="container">
         <div id="listing" class="panel panel-default">
@@ -45,20 +66,33 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="well">
-                                    <?php if(isset($_SESSION['viewwhat'])): ?>
-                                        <?php if( $_SESSION['viewwhat'] == "map"): ?>
-                                            <iframe
-                                                width='340'
-                                                height='250'
-                                                frameborder='0' style='border:0'
-                                                <?php echo $mapstring; ?>>
-                                            </iframe>
-                                        <?php endif; ?>
-                                    <?php else: ?>    
+                                <ul class="nav nav-pills" role="tablist">
+                                    <li role="presentation" id="photos"><a href="#">See map</a></li>
+                                </ul>
+                                <br>
+                                <div id="photosormap" >
+                                    <div id="photositis" class="">
                                         <?php include("houses_carousel.php"); ?>
-                                    <?php endif; ?>
-                                    <hr>
-                                    <button class="btn btn-default" onclick="loadXMLDoc()">Show on map</button>
+                                    </div>
+                                    
+                                    <div id="mapitis" class="displaynone">
+                                        <iframe
+                                            width='340'
+                                            height='250'
+                                            frameborder='0' style='border:0'
+                                            <?php echo $mapstring; ?>>
+                                        </iframe>
+                                    </div>
+                                    
+                                </div>
+                                    <div>
+                                        <iframe
+                                            width='340'
+                                            height='250'
+                                            frameborder='0' style='border:0'
+                                            <?php echo $mapstring; ?>>
+                                        </iframe>
+                                    </div>
                                 </div>
                                 
                             </div>
@@ -123,6 +157,7 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                                             </div>
                                         </form>
                                     </div>
+                                    
                                 <?php endif?>
                             </div>
                             
