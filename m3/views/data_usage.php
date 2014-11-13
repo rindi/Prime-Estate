@@ -11,8 +11,8 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        
-        // put your code here
+            echo "While this is just a demo, feel free to contact us for the development of your next web application.";
+            // put your code here
         ?> 
     </body>
 </html>
