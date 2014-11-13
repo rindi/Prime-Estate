@@ -39,18 +39,21 @@ else
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <body>
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="navbar-header"  >
-                <a class="navbar-brand" href="http://sfsuswe.com/~f14g03/index.php">
-                    <img alt="Prime Estate" src="http://sfsuswe.com/~f14g03/views/assets/logo/PrimeEstate_Logo_Menu.png">
+        <nav class="navbar navbar-inverse" role="navigation">
+            
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>    
+            </div>
+            <a class="navbar-brand" href="http://sfsuswe.com/~f14g03/index.php">
+                    <img style="max-width:100px; margin-top: -7px;" src="http://sfsuswe.com/~f14g03/views/assets/logo/PrimeEstate_Logo_Menu.png">
                 </a>
-            <ul class="nav navbar-nav">
-            <?php if($type==0)
-            {?>
-                <li>
-                <a href="http://sfsuswe.com/~f14g03/views/login.php">Login</a>
-            </li><?php
-            }
+            <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left"> 
+            <?php
             if($type==0||$type==1)
             {?>
             <li> 
@@ -63,22 +66,16 @@ else
                 <a href="http://sfsuswe.com/~f14g03/views/leads.php">Leads</a>
             </li><?php
             }
-            if($type==0)
-            {?>
-            <li>
-                <a href="http://sfsuswe.com/~f14g03/views/registration.php">Register</a>
-            </li><?php
-            }
             if($type==1)
             {?>
             <li>
-                <a href="http://sfsuswe.com/~f14g03/views/profile.php">Customer</a>
+                <a href="http://sfsuswe.com/~f14g03/views/profile.php">My Profile</a>
             </li><?php
             }
             if($type==2)
             {?>
             <li>
-                <a href="http://sfsuswe.com/~f14g03/views/dashboard.php">Realtor</a>
+                <a href="http://sfsuswe.com/~f14g03/views/dashboard.php">Realtor Dashboard</a>
             </li><?php
             }
             if($type==3)
@@ -86,17 +83,34 @@ else
             <li>
                 <a href="http://sfsuswe.com/~f14g03/views/admin.php">Admin</a>
             </li><?php
-            }
+            }?>
+            </ul>
+            <ul     class="nav navbar-nav navbar-right">
+            <?php
             if($type==1||$type==2||$type==3)
             {?>
             <li> 
                 <a href="http://sfsuswe.com/~f14g03/views/logout.php">Logout</a>
             </li><?php } ?>
+            <?php 
+            if($type==0)
+            {?>
+            <li>
+                <a href="http://sfsuswe.com/~f14g03/views/registration.php">Register</a>
+            </li>
+            
+            <?php }
+            if($type==0)
+            {?>
+                <li>
+                <a href="http://sfsuswe.com/~f14g03/views/login.php">Login</a>
+            </li>
+            <?php }?></ul>
             </div>
         </nav>
         <footer>
         <div class="footer navbar-fixed-bottom">
-        <a href="data_usage.php">Data usage</a>
+        <a href="http://sfsuswe.com/~f14g03/views/data_usage.php">San Francisco State University Software Engineering Project, Fall 2014.  For Demonstration Purposes Only</a>
         </footer>
     </body>
 </html>
