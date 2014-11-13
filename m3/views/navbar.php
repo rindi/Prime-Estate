@@ -41,7 +41,9 @@ else
     <body>
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header"  >
-            <a class="navbar-brand" href="http://sfsuswe.com/~f14g03/index.php">Prime Estate</a>
+                <a class="navbar-brand" href="http://sfsuswe.com/~f14g03/index.php">
+                    <img alt="Prime Estate" src="http://sfsuswe.com/~f14g03/views/assets/logo/PrimeEstate_Logo_Menu.png">
+                </a>
             <ul class="nav navbar-nav">
             <?php if($type==0)
             {?>
