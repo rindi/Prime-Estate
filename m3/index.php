@@ -24,6 +24,3 @@ include 'views/navbar.php';
         </div>
     </body>
 </html>
-<?php
-include 'views/data_usage.php';
-?>
