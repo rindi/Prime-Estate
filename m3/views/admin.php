@@ -31,5 +31,4 @@ else
 {
     echo "Sorry, you do not have sufficient privileges to access this page.";
 }
-include 'data_usage.php';
 ?>
