@@ -19,6 +19,3 @@ if( $_SESSION['type'] != 2 )
         <a href="http://sfsuswe.com/~f14g03/views/add_listing.php" class="btn btn-default">Add listings</a>
     </body>
 </html>
-<?php
-include 'data_usage.php';
-?>
