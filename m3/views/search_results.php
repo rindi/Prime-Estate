@@ -89,20 +89,16 @@ else
         
         <div class="row">
             <div class="col-md-5">
-                <?php
-                    echo $houseval;
-                    $images = $listingData->getImages();
-                    if($images)
-                        echo '<a href="listing_page.php?id='.$houseval.'>';
-                    else   
-                        echo '<a href="#">';
-                    echo '<img class="img-responsive" src=';
+                <a href="#">
+                    <img class="img-responsive" src=
+                         <?php
+                         $images = $listingData->getImages();
                          if($images)
-                            echo '"'. $images[0] . '" height="500" width="300" ';
+                            echo "'" . $images[0] . "' height='500' width='300' ";
                          else   
-                            echo "'http://placehold.it/500x300'>";
+                            echo "http://placehold.it/500x300";
                          ?>
-                </img></a>
+                </a>
             </div>
             <div class="col-md-7">
                 <h3><?php echo $listingData->getAddress();?></h3>
