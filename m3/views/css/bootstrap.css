@@ -12,7 +12,12 @@ div.footer > a
     color:  #12ACA5;
     background-color: #12ACA5!important;
     border-color: #12ACA5!important;
-    background-color: #12ACA5!important;
+    border: 1px solid #95C11F;
+}
+.panel-primary
+{   
+    border-color: #12ACA5!important;
+    /*background-color: #95C11F!important;*/
 }
 table tr td 
 {
@@ -22,7 +27,7 @@ table tr td
 
 .btn-primary
 {
-    background-color:  #12ACA5;
+    background-color:  #12ACA5!important;
 }
 /*
 To change this license header, choose License Headers in Project Properties.
