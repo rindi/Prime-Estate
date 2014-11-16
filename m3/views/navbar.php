@@ -79,6 +79,12 @@ else
                 <a href="http://sfsuswe.com/~f14g03/views/dashboard.php">Realtor Dashboard</a>
             </li><?php
             }
+            if($type==2)
+            {?>
+            <li>
+                <a href="http://sfsuswe.com/~f14g03/views/add_listing.php">Add Listing</a>
+            </li><?php
+            }
             if($type==3)
             {?>
             <li>
