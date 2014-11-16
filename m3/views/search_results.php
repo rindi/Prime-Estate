@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php
 include 'navbar.php';
 
@@ -8,19 +10,50 @@ if (isset($_GET['search'])) {
 }
 
 if (isset($_SESSION["type"]))
-{
     $usertype = $_SESSION["type"];
-}
 else
     $usertype = 0;
+?>
 
-require '../models/listing_model.php';
-require '../controllers/listings_controller.php';
-$list_controller = new listings_controller();
-$listingSet = $list_controller->searchListings($value);
+<html lang="en">
 
-if (count($listingSet) > 0) {
-            //Pagination
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Prime Estate - Search Results</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Search Results
+                    <small> for <?php echo $value;?></small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!--Results-->
+        
+        <?php
+        require '../models/listing_model.php';
+        require '../controllers/listings_controller.php';
+        $list_controller = new listings_controller();
+        $listingSet = $list_controller->searchListings($value);
+        if (count($listingSet) > 0) {
             $offset = 5;
             $start = 0;
             $page = 1;
@@ -29,6 +62,7 @@ if (count($listingSet) > 0) {
                 $start = $offset * ($page - 1);
             }
             
+            echo "<div class=\"container\"><div class=\"alert alert-success\">";
             $end = $start + $offset;
             if ($end > count($listingSet)) {
                 $end = count($listingSet);
@@ -44,140 +78,64 @@ if (count($listingSet) > 0) {
             echo $max;
             echo " TOTAL RESULTS: ";
             echo count($listingSet);
+            echo "</div></div>";
             
-for ($i = $start; $i < $end; $i++) {
-            //foreach((array)$listingSet as $listingData) 
-                $listingData = $listingSet[$i];
-                $houseval = $listingData->getId();
-//                echo "<td><a href=\"listing_page.php?id=" . $houseval . "\">" . $houseval . "</a>";
-//                if ($usertype == 2)
-//                    echo "<a href=\"edit_listing.php?id=" . $houseval . "\"> Edit</a>";
-//                echo "</td>";
-                //            echo "<td><a href='" . $mapurl . "'><img src='assets/logo/maplink.png' height='42' width='42' ></img></a></td><td>";
-                $images = $listingData->getImages();
-                foreach ((array) $images as $image) {
-                //echo "<a href = " . $image . "><img src=" . $image . " height='42' width='42' ></img></a>";
-}}}
-?>
-<html>
-    <head>
-        <style>
-            .well {
-                margin-top:-20px;
-                background-color:#00A19A;
-                border:2px solid #00A19A;
-                text-align:center;
-                cursor:pointer;
-                font-size: 25px;
-                padding: 15px;
-                border-radius: 0px !important;
-            }
-
-            .well:hover {
-                margin-top:-20px;
-                background-color:#95C11F;
-                border:2px solid #7FD0CC;
-                text-align:center;
-                cursor:pointer;
-                font-size: 25px;
-                padding: 15px;
-                border-radius: 0px !important;
-                border-bottom : 2px solid rgba(97, 203, 255, 0.65);
-            }
-
-            body {
-            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-            font-size: 14px;
-            line-height: 1.42857143;
-            color: #fff;
-            }
-            
-            .right {
-                float: right;
-                width: 300px;
-            }
-            .bg_blur
+            for ($i = $start; $i < $end; $i++)
             {
-                //background-image:url('http://data2.whicdn.com/images/139218968/large.jpg');
-                //height: 300px;
-                background-size: cover;
-            }
-
-            .header{
-                color : #808080;
-                margin-left:5%;
-                margin-top:0px;
-            }
-
-            .picture{
-                height:150px;
-                width:150px;
-                position:absolute;
-                top: 75px;
-                left: 35px;
-            }
-
-            .picture_mob{
-                position: absolute;
-                width: 35%;
-                left: 35%;
-                bottom: 70%;
-            }
-
-            .btn-style{
-                color: #fff;
-                background-color: #007FBE;
-                border-color: #adadad;
-                width: 33.3%;
-            }
-
-            .btn-style:hover {
-                color: #333;
-                background-color: #3D5DE0;
-                border-color: #adadad;
-                width: 33.3%;
-            }
-
-            @media (max-width: 767px) {
-                .header{
-                    text-align : center;
-                }
-
-                .nav{
-                    margin-top : 30px;
-                }
-            }
-        </style>
-    </head>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<body>
-    <h2> Search Results </h2>
-<div class="container" style="margin-top: 20px; margin-bottom: 20px;">
-    <div class="row panel">
-        <div class="col-md-4 bg_blur "></div>
-        <div class="col-md-8  col-xs-12">
-           <div class="header">
-                <h1><?php echo $listingData->getAddress();?></h1>
-                <h4><?php echo $listingData->getCity();?></h4>
-                <h4><?php echo $listingData->getZip();?></h4>
-                <h4><?php echo $listingData->getPrice();?></h4>
-                <h4><?php echo $listingData->getRooms();?></h4>
-                <h4><?php echo $listingData->getBathrooms();?></h4>
-                <h4><?php echo $listingData->getDateAdded();?></h4>
-
-                <span>
-                </span>
+        ?>
+        
+        <div class="row">
+            <div class="col-md-5">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                </a>
             </div>
-        </div>         
+            <div class="col-md-7">
+                <h3><?php echo $listingData->getAddress();?></h3>
+                <h4><?php echo $listingData->getCity(). ' ' .$listingData->getZip();?></h4>
+                <h4>Bedrooms : <?php echo $listingData->getRooms();?> Bathrooms : <?php echo $listingData->getBathrooms();?></h4>
+                <a class="btn btn-primary" href="#">View House <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="#">Contact Seller<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+        <?php
+            }
+            echo "<div class=\"container\">";
+            echo "<nav style=\"text-align: center\"><ul class=\"pagination\">";
+            if ($page > 1 && $page < $max) {
+                $page = $page + 1;
+                $last = $page - 2;
+                echo "<li><a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=" . $value . "&page=" . $last . "'>Previous 5 Records</a></li>";
+                echo "<li><a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=" . $value . "&page=" . $page . "'>Next 5 Records</a></li>";
+            } else if ($page == 1) {
+                $page = $page + 1;
+                //           echo "<a href=\"$_PHP_SELF?page=$page\">Next 10 Records</a>";
+                if ($max != 1)
+                    echo "<li><a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=" . $value . "&page=" . $page . "'>Next 5 Records</a></li>";
+            }
+            else {
+                $last = $page - 1;
+                echo "<li><a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=" . $value . "&page=" . $last . "'>Previous 5 Records</a></li>";
+            }
+            echo "</ul></nav>";
+            echo "</div>";
+            // PAGINATION END
+        } 
+        
+        else {
+            echo "There were no results for your search.  Please check your search and try again!";
+        }
+        ?>
+    <hr>
     </div>
-        <div class="row panel">
-            <div class="col-md-4 col-xs-4 well center">
-                <a href="listing_page.php?id="<?php $houseval ?>>View</a>
-            </div>            
-        </div>
-        <div class="row panel">
-            <div class="col-md-4 col-xs-4 well center">Contact</div>
-        </div>
-</div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
