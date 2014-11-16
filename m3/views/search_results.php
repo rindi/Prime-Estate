@@ -89,9 +89,12 @@ else
         
         <div class="row">
             <div class="col-md-5">
-                <a href="#">
-                    <img class="img-responsive" src=
-                         <?php
+                <?php
+                    if($images)
+                        echo '<a href="listing_page.php?id='.$houseval.'">';
+                    else
+                        echo '<a href="#">';
+                    echo '<img class="img-responsive" src=';
                          $images = $listingData->getImages();
                          if($images)
                             echo "'" . $images[0] . "' height='500' width='300' ";
