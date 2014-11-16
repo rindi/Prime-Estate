@@ -78,7 +78,7 @@ require_once ("../controllers/users_controller.php");
               <input type="text"                     
                     <?php 
                     if($profile->zip==0) 
-                        echo 'placeholder="Lower Range"';
+                        echo 'placeholder="Zip / Postal Code"';
                       else 
                         echo 'value =' . $profile->zip;
                     ?>class="form-control">
@@ -92,7 +92,7 @@ require_once ("../controllers/users_controller.php");
               <input type="text"
                     <?php 
                     if($profile->bedrooms==0) 
-                        echo 'placeholder="Lower Range"';
+                        echo 'placeholder="Bedrooms"';
                       else 
                         echo 'value =' . $profile->bedrooms;
                     ?>class="form-control">
@@ -106,7 +106,7 @@ require_once ("../controllers/users_controller.php");
             <input type="text"
                     <?php 
                     if($profile->bathrooms==0) 
-                        echo 'placeholder="Lower Range"';
+                        echo 'placeholder="Bathrooms"';
                       else 
                         echo 'value =' . $profile->bathrooms;
                     ?>class="form-control">            
