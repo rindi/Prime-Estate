@@ -84,14 +84,16 @@ else
             {   
                 $listingData = $listingSet[$i];
                 $houseval = $listingData->getId();
+                
         ?>
         
         <div class="row">
             <div class="col-md-5">
                 <?php
+                    echo $houseval;
                     $images = $listingData->getImages();
                     if($images)
-                        echo '<a href="listing_page.php?id="'.$houseval.'">';
+                        echo '<a href="listing_page.php?id='.$houseval.'>';
                     else   
                         echo '<a href="#">';
                     echo '<img class="img-responsive" src=';
