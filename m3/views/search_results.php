@@ -96,10 +96,11 @@ else
                 <h3><?php echo $listingData->getAddress();?></h3>
                 <h4><?php echo $listingData->getCity(). ' ' .$listingData->getZip();?></h4>
                 <h4>Bedrooms : <?php echo $listingData->getRooms();?> Bathrooms : <?php echo $listingData->getBathrooms();?></h4>
-                <a class="btn btn-primary" href="#">View House <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="listing_page.php?id=<?php echo $houseval;?>">View House <span class="glyphicon glyphicon-chevron-right"></span></a>
                 <a class="btn btn-primary" href="#">Contact Seller<span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
+        <hr>
         <!-- /.row -->
         <?php
             }
