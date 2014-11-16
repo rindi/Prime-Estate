@@ -1,6 +1,18 @@
+<!DOCTYPE html>
+<?php
+include 'navbar.php';
+require_once ("../controllers/profile_controller.php");
+require_once ("../models/profile_model.php");
+require_once ("../controllers/users_controller.php");
 
-<html lang="en">
+    $userid =$_SESSION["username"];
+    $profilecontroller = new profile_controller();
+    $usercontroller = new users_controller();
+    $id = $usercontroller->getUserId($userid);
+    $profile = $profilecontroller->getProfile(($id));
 
+?>
+<html>
 <head>
 
     <meta charset="utf-8">
@@ -28,12 +40,25 @@
           <div class="form-group">
             <label class="col-sm-2 control-label" for="textinput">Price</label>
             <div class="col-sm-4">
-              <input type="text" placeholder="Min" class="form-control">
+              <input type="text" 
+                    <?php 
+                    if($profile->pricemin==0) 
+                        echo 'placeholder="Lower Range"';
+                      else 
+                        echo 'value =' . $profile->pricemin;
+                    ?>class="form-control">
             </div>
 
             <label class="col-sm-2 control-label" for="textinput">Maximum</label>
             <div class="col-sm-4">
-              <input type="text" placeholder="Max" class="form-control">
+              <input type="text" 
+                    <?php 
+                    if($profile->pricemax==0) 
+                        echo 'placeholder="Upper Range"';
+                      else 
+                        echo 'value =' . $profile->pricemax;
+                    ?>class="form-control">
+
             </div>
           </div>
            
@@ -50,7 +75,13 @@
           <div class="form-group">
             <label class="col-sm-2 control-label" for="textinput">Zip</label>
             <div class="col-sm-10">
-              <input type="text" placeholder="Zip / Postal Code" class="form-control">
+              <input type="text"                     
+                    <?php 
+                    if($profile->zip==0) 
+                        echo 'placeholder="Lower Range"';
+                      else 
+                        echo 'value =' . $profile->zip;
+                    ?>class="form-control">
             </div>
           </div>
 
@@ -58,7 +89,13 @@
           <div class="form-group">
             <label class="col-sm-2 control-label" for="textinput">Bedrooms</label>
             <div class="col-sm-10">
-              <input type="text" placeholder="Bedrooms" class="form-control">
+              <input type="text"
+                    <?php 
+                    if($profile->bedrooms==0) 
+                        echo 'placeholder="Lower Range"';
+                      else 
+                        echo 'value =' . $profile->bedrooms;
+                    ?>class="form-control">
             </div>
           </div>
 
@@ -66,7 +103,13 @@
           <div class="form-group">
             <label class="col-sm-2 control-label" for="textinput">Bathrooms</label>
             <div class="col-sm-10">
-              <input type="text" placeholder="Bathrooms" class="form-control">
+            <input type="text"
+                    <?php 
+                    if($profile->bathrooms==0) 
+                        echo 'placeholder="Lower Range"';
+                      else 
+                        echo 'value =' . $profile->bathrooms;
+                    ?>class="form-control">            
             </div>
           </div>
           
@@ -90,3 +133,4 @@
       </form>
     </div><!-- /.col-lg-12 -->
 </div><!-- /.row -->
+</html>
