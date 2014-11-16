@@ -28,12 +28,19 @@ require_once ("../controllers/users_controller.php");
 
 </head>
 
-<div class="row">
-    <div class="col-md-4 col-md-offset-4">
+<!--<div class="row">-->
+    <!--<div class="col-md-4 col-md-offset-4">-->
+                <div class="container-fluid">
+            <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Profile</h3>
+                    </div>
+                    <div class="panel-body">
       <form class="form-horizontal" role="form" action="profilehandler.php" method="post" >
-        <fieldset>
+        <!--<fieldset>-->
           <!-- Form Name -->
-          <legend>Home Preferences</legend>
+          <!--<legend>Home Preferences</legend>-->
 
           
            <!-- Text input-->
@@ -128,9 +135,12 @@ require_once ("../controllers/users_controller.php");
               </div>
             </div>
           </div>
-
-        </fieldset>
+ </div>
+                </div>
+            </div> 
+        </div>  
+        <!--</fieldset>-->
       </form>
-    </div><!-- /.col-lg-12 -->
-</div><!-- /.row -->
+<!--    </div> /.col-lg-12 
+</div> /.row -->
 </html>
