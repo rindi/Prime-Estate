@@ -94,5 +94,5 @@ else
         </script>    
     </form>
 </body>
-<a href="login.php"><p style="text-align:center">Back to Login Page</a>
+
 </html>
