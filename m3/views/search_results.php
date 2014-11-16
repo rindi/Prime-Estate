@@ -89,15 +89,16 @@ else
         <div class="row">
             <div class="col-md-5">
                 <a href="#">
-                    <img class="img-responsive" src="
+                    <img class="img-responsive" src=
                          <?php
                          $images = $listingData->getImages();
+                         echo $images;
                          if($images)
-                            echo $image[0] . " height='500' width='300' ";
+                            echo '"'. $images[0] . '" height="500" width="300" ';
                          else   
-                            echo "http://placehold.it/500x300";
+                            echo "'http://placehold.it/500x300'>";
                          ?>
-                </a>
+                </img></a>
             </div>
             <div class="col-md-7">
                 <h3><?php echo $listingData->getAddress();?></h3>
