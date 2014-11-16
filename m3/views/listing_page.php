@@ -50,11 +50,11 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
         });
     });
 </script>
-
 <html>
     <div class="container">
         <div id="listing" class="panel panel-default">
             <!-- contains 3 wells: 1) image/info 2) map 3) description etc. -->
+
             <div class="panel-body">
 
 
@@ -64,6 +64,7 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                             <?php include("houses_carousel.php"); ?>                                   
                         </div>
+            <FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
 
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                             <h2>Contact realtor for this home</h2>
