@@ -109,17 +109,17 @@ else
             if ($page > 1 && $page < $max) {
                 $page = $page + 1;
                 $last = $page - 2;
-                echo "<li><a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=" . $value . "&page=" . $last . "'>Previous 5 Records</a></li>";
-                echo "<li><a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=" . $value . "&page=" . $page . "'>Next 5 Records</a></li>";
+                echo "<li><a href='http://sfsuswe.com/~f14g03/views/search_results.php?search=" . $value . "&page=" . $last . "'>Previous 5 Records</a></li>";
+                echo "<li><a href='http://sfsuswe.com/~f14g03/views/search_results.php?search=" . $value . "&page=" . $page . "'>Next 5 Records</a></li>";
             } else if ($page == 1) {
                 $page = $page + 1;
                 //           echo "<a href=\"$_PHP_SELF?page=$page\">Next 10 Records</a>";
                 if ($max != 1)
-                    echo "<li><a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=" . $value . "&page=" . $page . "'>Next 5 Records</a></li>";
+                    echo "<li><a href='http://sfsuswe.com/~f14g03/views/search_results.php?search=" . $value . "&page=" . $page . "'>Next 5 Records</a></li>";
             }
             else {
                 $last = $page - 1;
-                echo "<li><a href='http://sfsuswe.com/~f14g03/views/searchresults.php?search=" . $value . "&page=" . $last . "'>Previous 5 Records</a></li>";
+                echo "<li><a href='http://sfsuswe.com/~f14g03/views/search_results.php?search=" . $value . "&page=" . $last . "'>Previous 5 Records</a></li>";
             }
             echo "</ul></nav>";
             echo "</div>";
