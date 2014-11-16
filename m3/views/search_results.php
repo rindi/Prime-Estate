@@ -99,13 +99,25 @@ else
                          if($images)
                             echo "'" . $images[0] . "' height='500' width='300' ";
                          else   
-                            echo "views/assets/images/NoImage.jpg";
+                            echo "http://placehold.it/500x300";
 
                          echo "</img></a>";
                          ?>
             </div>
             <div class="col-md-7">
-                <h3><?php echo $listingData->getAddress();?></h3>
+                <div class="h3">
+                    <style>
+                        .alignleft {
+                                float: left;
+                        }
+                        .alignright {
+                                float: right;
+                        }
+                    </style>
+                    <h3 class="alignleft"><?php echo $listingData->getAddress();?></h3>
+                    <h3 class="alignright"><?php echo '$' . $listingData->getPrice();?></h3>
+                </div>
+                <br><br><br>
                 <h4><?php echo $listingData->getCity(). ' ' .$listingData->getZip();?></h4>
                 <h4>Bedrooms : <?php echo $listingData->getRooms();?> Bathrooms : <?php echo $listingData->getBathrooms();?></h4>
                 <a class="btn btn-primary" href="listing_page.php?id=<?php echo $houseval;?>">View House <span class="glyphicon glyphicon-chevron-right"></span></a>
