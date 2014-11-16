@@ -81,7 +81,9 @@ else
             echo "</div></div>";
             
             for ($i = $start; $i < $end; $i++)
-            {
+            {   
+                $listingData = $listingSet[$i];
+                $houseval = $listingData->getId();
         ?>
         
         <div class="row">
