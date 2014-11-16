@@ -35,19 +35,7 @@ include 'navbar.php';
 //        $value=$_POST["searchvalue"];
         require '../models/lead_model.php';
         require '../controllers/leads_controller.php';
-     
-        #echo $query;
-        echo "<div class='results'>
-        <table class='table' style='width:90%' border='1' align='center'>
-        <thead>
-        <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>E-mail</th>
-        <th>Phone</th>
-        <th>Date of Lead</th>
-        </tr></thead>";
-        $lead_controller = new leads_controller();
+           $lead_controller = new leads_controller();
         $leadSet = $lead_controller->getLeads();
         //pagination
         $offset = 10;
@@ -66,14 +54,29 @@ include 'navbar.php';
         {
             $end = count($leadSet);
         }
-        echo count($leadSet);
-        echo " leads!  Now Showing page ";
-        echo $page;
-        echo " of ";
         $max = round(count($leadSet)/$offset, 0, PHP_ROUND_HALF_DOWN);
-        echo $max;
-        echo " TOTAL LEADS: ";
-        echo count($leadSet);
+        echo count($leadSet)." leads!  Now Showing page ".$page." of ".$max." TOTAL LEADS: ".count($leadSet);
+        
+        #echo $query;
+        echo "<div class='results'>
+        <table class='table' style='width:90%' border='1' align='center'>
+        <thead>
+        <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>E-mail</th>
+        <th>Phone</th>
+        <th>Date of Lead</th>
+        </tr></thead>";
+
+//        echo count($leadSet);
+//        echo " leads!  Now Showing page ";
+//        echo $page;
+//        echo " of ";
+//        $max = round(count($leadSet)/$offset, 0, PHP_ROUND_HALF_DOWN);
+//        echo $max;
+//        echo " TOTAL LEADS: ";
+//        echo count($leadSet);
 
         for ($i = $start; $i<$end; $i++)
 //        foreach((array)$leadSet as $leadData) 
@@ -99,19 +102,19 @@ include 'navbar.php';
             {
                $page = $page + 1;
                $last = $page - 2;
-               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$last."'>Last 10 </a>";
-               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$page."'>Next 10 </a>";
+               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$last."'>Previous</a>";
+               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$page."'>Next</a>";
             }
         else if( $page == 1 )
             {
                $page = $page + 1;
     //           echo "<a href=\"$_PHP_SELF?page=$page\">Next 10 Records</a>";
-               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$page."'>Next 10 </a>";
+               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$page."'>Next</a>";
             }
         else 
             {
                $last = $page - 1;
-               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$last."'>Last 10 </a>";
+               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$last."'>Previous</a>";
             }
 //        if (!mysqli_query($con,$query)) {
 //            die('Error: ' . mysqli_error($con));
