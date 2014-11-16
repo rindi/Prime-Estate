@@ -99,7 +99,7 @@ else
                          if($images)
                             echo "'" . $images[0] . "' height='500' width='300' ";
                          else   
-                            echo "http://placehold.it/500x300";
+                            echo "views/assets/images/NoImage.jpg";
 
                          echo "</img></a>";
                          ?>
