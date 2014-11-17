@@ -25,7 +25,7 @@ if($usertype==3)
                         <p>        
                         <a href="http://sfsuswe.com/~f14g03/views/registration.php" class="btn btn-primary btn-lg btn-block">Add Customer</a>
                         </p><p>
-                        <a href="http://sfsuswe.com/~f14g03/views/userlist.php?type=1" class="btn btn-primary btn-lg btn-block">View Customer</a>
+                        <a href="http://sfsuswe.com/~f14g03/views/userlist.php?type=1" class="btn btn-primary btn-lg btn-block">View Customers</a>
                         </p><p>
                         <a href="http://sfsuswe.com/~f14g03/views/registration.php?type=2" class="btn btn-primary btn-lg btn-block">Add Realtor</a>
                         </p><p>
