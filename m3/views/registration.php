@@ -68,8 +68,13 @@ else
                                 <td></td>
                               
                             </tr>
+                           
                         </table>
-
+                        <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> By checking here you agree to our <a href="http://sfsuswe.com/~f14g03/views/policy.php">Terms of Use and Privacy Policy.</a>
+                        </label>
+                        </div>
                         <input type="submit" value="Register">
                     </div>
                 </div>
