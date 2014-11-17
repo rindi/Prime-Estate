@@ -91,7 +91,7 @@ echo $list_page;
  
  <img src="<?php echo $now;?>" alt="img" style="width:304px;height:228px">
  
- <li><a href="http://sfsuswe.com/~f14g03/views/upload.php">Upload Another Image</a></li>
+ <li><a href="http://sfsuswe.com/~f14g03/views/upload.php">Step 3: Upload Another Image</a></li>
  <li><a href=<?php echo $list_page;?>>Continue to Listing Page</a></li>
  </div>
             </div> 
