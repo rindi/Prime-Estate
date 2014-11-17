@@ -110,7 +110,7 @@ else
             if($type==0)
             {?>
                 <li>
-                <a href="http://sfsuswe.com/~f14g03/views/login.php">Login</a>
+                <a href="http://sfsuswe.com/~f14g03/views/newlogin.php">Login</a>
             </li>
             <?php }?></ul>
             </div>
