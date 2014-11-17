@@ -35,11 +35,11 @@ if (isset($_POST['SubmitButton'])) {
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Adding new listing</h2>
+                    <h2 class="panel-title">Step 1: Adding new listing</h2>
                 </div>
                 <div class="panel-body">
                     <!--    <h3>Adding new listing:</h3>-->
-                    <h3>Step 1</h3>
+                    <!--<h3>Step 1</h3>-->
                     <form action="add_listing.php" method="post">
                         <!--<form action="add_listings.php" method="post">-->
                         <table style="text-align:center; margin: 0px auto">

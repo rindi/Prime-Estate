@@ -18,7 +18,7 @@ session_start();
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Please select the image you wish to upload</h2>
+                    <h2 class="panel-title">Step 2: Please select the image you wish to upload</h2>
                 </div>
                 <div class="panel-body">
    
