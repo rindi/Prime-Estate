@@ -52,9 +52,12 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 </script>
 <html>
     <div class="container">
+	<form>
+	    <input class="btn btn-default" type="button" value="&laquo; Back" onClick="history.go(-1); return true;">
+	</form>
         <div id="listing" class="panel panel-default">
             <!-- contains 3 wells: 1) image/info 2) map 3) description etc. -->
-
+	    
             <div class="panel-body">
 
 
@@ -64,10 +67,17 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                             <?php include("houses_carousel.php"); ?>                                   
                         </div>
-            <FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+                        
 
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                            <h2>Contact realtor for this home</h2>
+			    <div class="container">
+				<h2>$ <?php echo $listing_model->getPrice(); ?></h2>
+				<h3><?php echo $listing_model->getAddress(); ?></h3>
+				<h3><small><?php echo $listing_model->getCity(); ?>, <?php echo $listing_model->getZip(); ?></small></h3>
+			    </div>
+			    <br><br>
+			    
+                            <h3>Contact realtor for this home</h3>
                             <?php if (isset($_SESSION['userid'])): ?>
                                 <a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
                                    class="btn btn-success col-sm-offset-8 col-sm-3" 
@@ -75,9 +85,9 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                                 </a>
                             <?php else: ?>
                                 <div class="row">
-                                    <a href="login.php" class="btn btn-default col-xs-8 col-xs-offset-2">Login to contact</a>
+                                    <a href="newlogin.php" class="btn btn-default col-xs-4 col-xs-offset-8">Login to contact</a>
                                 </div>   
-                            <?php endif ?>
+			    <?php endif ?>
                         </div>
                     </div>
                 </div>
@@ -90,7 +100,7 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                                 width='100%'
                                 height='250'
                                 frameborder='0' style='border:0'
-                                <?php echo $mapstring; ?>>
+<?php echo $mapstring; ?>>
                             </iframe>
                         </div>
                     </div>
@@ -101,14 +111,9 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                 <!-- 3ND WELL: dESCRIPTION etc. -->
                 <div class="well">
                     <div class="row">
+			<h2>Description: </h2>
                         <div class="">
-                            <?php echo $mapaddress; ?>
-                            <?php echo $listing_model->getAddress(); ?>
-                            <?php echo $listing_model->getCity(); ?> 
-                            <?php echo $listing_model->getPrice(); ?>
-                            <?php echo $listing_model->getRooms(); ?> 
-                            <?php echo $listing_model->getBathrooms(); ?>
-                            <?php echo $listing_model->getDescription(); ?>
+			<?php echo $listing_model->getDescription(); ?>
                         </div>
                     </div>
                 </div>
