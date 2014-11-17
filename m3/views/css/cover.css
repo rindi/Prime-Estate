@@ -113,7 +113,7 @@ body {
   padding: 0 20px;
 }
 .cover .btn-lg {
-  padding: 10px 20px;
+  //padding: 10px 20px;
   font-weight: bold;
 }
 
@@ -145,6 +145,7 @@ body {
   /* Start the vertical centering */
   .site-wrapper-inner {
     //vertical-align: middle;
+    padding-top: 40px;    
   }
   /* Handle the widths */
   .masthead,
@@ -164,11 +165,17 @@ body {
 
 body{
     background-image: url("../assets/images/121951415243587.JPG");
-    background-size: 100% 100%;
+    background-size: 100% auto;
     background-position: 0px 0px;
 }
 
 .navbar{
     background: rgba(255,255,255, 0.9);
     border-radius: 0px;
+}
+
+.cover-container{
+    padding: 50px;
+    background: rgba(255,255,255,0.6);
+    width: 90%;
 }
