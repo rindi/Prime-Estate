@@ -55,7 +55,7 @@ include 'navbar.php';
             $end = count($leadSet);
         }
         $max = round(count($leadSet)/$offset, 0, PHP_ROUND_HALF_DOWN);
-        echo count($leadSet)." leads!  Now Showing page ".$page." of ".$max." TOTAL LEADS: ".count($leadSet);
+        echo "Now Showing page ".$page." of ".$max." TOTAL LEADS: ".count($leadSet);
         
         #echo $query;
         echo "<div class='results'>
