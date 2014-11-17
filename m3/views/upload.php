@@ -14,10 +14,14 @@ session_start();
 
     </head>
     <body>
-        <h3>
-            Please select the image you wish to upload
-        </h3>
-        
+        <div class="container-fluid">
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Please select the image you wish to upload</h2>
+                </div>
+                <div class="panel-body">
+   
         <!--<span class="glyphicon glyphicon-search"></span>-->
         </input>
         </form>
@@ -39,5 +43,8 @@ session_start();
                 }
             }, false);
             </script>
+            </div>
+            </div> 
+        </div>  
     </body>
 </html>
