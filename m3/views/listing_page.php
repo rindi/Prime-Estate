@@ -53,11 +53,12 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 <html>
     <div class="container">
 	<form>
-	    <input class="btn btn-default" type="button" value="&laquo; Back" onClick="history.go(-1); return true;">
+	    <input class="btn btn-default" type="button" value="&laquo; Back" onClick="history.go(-1);
+                    return true;">
 	</form>
         <div id="listing" class="panel panel-default">
             <!-- contains 3 wells: 1) image/info 2) map 3) description etc. -->
-	    
+
             <div class="panel-body">
 
 
@@ -65,29 +66,54 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
                 <div class="well">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                            <?php include("houses_carousel.php"); ?>                                   
+			    <div class="well">
+				<?php include("houses_carousel.php"); ?>      
+			    </div>                         
                         </div>
-                        
 
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			    <div class="container">
-				<h2>$ <?php echo $listing_model->getPrice(); ?></h2>
-				<h3><?php echo $listing_model->getAddress(); ?></h3>
-				<h3><small><?php echo $listing_model->getCity(); ?>, <?php echo $listing_model->getZip(); ?></small></h3>
-			    </div>
-			    <br><br>
+			    <div class="">
+
+				<div class="panel panel-default">
+				    <div class="panel-body">
+					<h2>$ <?php echo $listing_model->getPrice(); ?></h2>
+				    </div>
+				    <table class="table">
+					<tr>
+					    <td>
+						<h3><?php echo $listing_model->getAddress(); ?></h3>
+					    </td>
+					    <td></td>
+					</tr>
+					<tr>
+					    <td>
+						<?php echo $listing_model->getCity(); ?>, <?php echo $listing_model->getZip(); ?>
+					    </td>
+					    <td></td>
+					</tr>
+					<tr>
+					    <td>
+						Bathrooms: <?php echo $listing_model->getBathrooms(); ?>
+					    </td>
+					    <td>
+						Rooms: <?php echo $listing_model->getRooms(); ?>
+					    </td>
+					</tr>
+				    </table>
+				    <div class="panel-footer">
+					<?php if (isset($_SESSION['userid'])): ?>
+					<a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
+					   class="btn btn-success col-sm-offset-8 col-sm-3" 
+					   value="Edit listing" type="button">Contact seller
+					</a>
+					<?php else: ?>
+					<div class="clearfix">
+					    <a href="newlogin.php" class="btn btn-primary pull-right">Login to contact</a>
+					</div>   
+					<?php endif ?>
+				    </div>
+				</div>
 			    
-                            <h3>Contact realtor for this home</h3>
-                            <?php if (isset($_SESSION['userid'])): ?>
-                                <a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
-                                   class="btn btn-success col-sm-offset-8 col-sm-3" 
-                                   value="Edit listing" type="button">Contact seller
-                                </a>
-                            <?php else: ?>
-                                <div class="row">
-                                    <a href="newlogin.php" class="btn btn-default col-xs-4 col-xs-offset-8">Login to contact</a>
-                                </div>   
-			    <?php endif ?>
                         </div>
                     </div>
                 </div>
@@ -108,14 +134,23 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 
 
 
-                <!-- 3ND WELL: dESCRIPTION etc. -->
+                <!-- 3ND WELL: DESCRIPTION etc. -->
                 <div class="well">
-                    <div class="row">
-			<h2>Description: </h2>
-                        <div class="">
-			<?php echo $listing_model->getDescription(); ?>
-                        </div>
-                    </div>
+                    <table class="table">
+			<tr>
+			    <td>
+				<h2>Description: </h2>
+				<div class="">
+				    <?php echo $listing_model->getDescription(); ?>
+				</div>
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<strong>Posted: </strong><?php echo $listing_model->getDateAdded(); ?>
+			    </td>
+			</tr>
+		    </table>
                 </div>
 
             </div>
