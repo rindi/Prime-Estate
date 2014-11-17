@@ -56,21 +56,22 @@ include 'views/navbar.php';
 		    <!-- Three columns of text below the carousel -->
 		    <div class="row" style="padding-top: 60px;">
 			<div class="col-lg-4">
-			    <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-			    <h2>Heading</h2>
-			    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+			    <img class="img-circle" src="views/assets/images/121951415243587.JPG" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <h2>Recently added</h2>
+			    <p>House near Ocean Beach has recently joined our listing. It has beautiful view to the ocean, nice breeze, big rooms and 5 bathrooms. 
+				</p>
 			    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
-			    <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-			    <h2>Heading</h2>
-			    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+			    <img class="img-circle" src="views/assets/images/121951415243587.JPG" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <h2>Recently sold</h2>
+			    <p>We are proud to inform we just sold this nice house at the city's heart. </p>
 			    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
-			    <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-			    <h2>Heading</h2>
-			    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+			    <img class="img-circle" src="views/assets/images/121951415243587.JPG" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <h2>Testemony</h2>
+			    <p>I bought house for my doughter from this website. It is great! Staff are very nice. Website is fully debugged!</p>
 			    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
 			</div><!-- /.col-lg-4 -->
 		    </div><!-- /.row -->
