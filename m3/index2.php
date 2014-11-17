@@ -14,9 +14,6 @@ include 'views/navbar.php';
 
 	<title>Cover Template for Bootstrap</title>
 
-	<!-- Bootstrap core CSS -->
-	<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
 	<!-- Custom styles for this template -->
 	<link href="cover.css" rel="stylesheet">
 
@@ -32,47 +29,29 @@ include 'views/navbar.php';
 	
 	<link rel="stylesheet" href="http://sfsuswe.com/~f14g03/views/css/index.css" />
 	<link rel="stylesheet" href="./views/css/cover.css" />
+	<style>
+	    
+	</style>
     </head>
 
     <body>
-
 	<div class="site-wrapper">
-
 	    <div class="site-wrapper-inner">
-
 		<div class="cover-container">
-
-		    <div class="masthead clearfix">
-			<div class="inner">
-			    <h3 class="masthead-brand">Cover</h3>
-			    <nav>
-				<ul class="nav masthead-nav">
-				    <li class="active"><a href="#">Home</a></li>
-				    <li><a href="#">Features</a></li>
-				    <li><a href="#">Contact</a></li>
-				</ul>
-			    </nav>
-			</div>
-		    </div>
-
 		    <div class="inner cover">
-			<h1 class="cover-heading">Cover your page.</h1>
-			<p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-			<p class="lead">
-			    <a href="#" class="btn btn-lg btn-default">Learn more</a>
-			</p>
+			<h1 class="cover-heading">Welcome to Prime Estate.</h1>
+			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="views/search_results.php" method="POST">
+                <div class="form-group">
+                    <div class="col-xs-offset-3 col-xs-5">
+                      <input type="search" name="searchvalue" placeholder="Enter a City or Zipcode" class="form-control">
+                    </div>
+                    <label for="submit-form" class="btn btn-default btn-lg col-xs-1"><i class="glyphicon glyphicon-search"></i></label>
+                    <input id="submit-form" type="submit" class="btn btn-inverse col-xs-1 hidden">
+                </div>
+            </form>
 		    </div>
-
-		    <div class="mastfoot">
-			<div class="inner">
-			    <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-			</div>
-		    </div>
-
 		</div>
-
 	    </div>
-
 	</div>
 
 	<!-- Bootstrap core JavaScript
@@ -83,5 +62,19 @@ include 'views/navbar.php';
 	<script src="../../assets/js/docs.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script>
+	    (function () {
+		'use strict';
+		if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+		  var msViewportStyle = document.createElement('style')
+		  msViewportStyle.appendChild(
+		    document.createTextNode(
+		      '@-ms-viewport{width:auto!important}'
+		    )
+		  )
+		  document.querySelector('head').appendChild(msViewportStyle)
+		}
+	      })();
+	</script>
     </body>
 </html>
