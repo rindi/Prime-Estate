@@ -81,8 +81,21 @@ echo $list_page;
 <html>
 
 <body>
- <h2>Image upload <?php echo $result;?></h2>
+           <div class="container-fluid">
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Image upload <?php echo $result;?></h2>
+                </div>
+                <div class="panel-body">
+ 
  <img src="<?php echo $now;?>" alt="img" style="width:304px;height:228px">
+ 
+ <li><a href="http://sfsuswe.com/~f14g03/views/upload.php">Upload Another Image</a></li>
+ <li><a href=<?php echo $list_page;?>>Continue to Listing Page</a></li>
+ </div>
+            </div> 
+        </div>  
 </body>
-<a href=<?php echo $list_page;?>>Click here to go to listing page</a>
+
 </html>
