@@ -40,7 +40,7 @@ else
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://sfsuswe.com/~f14g03/views/css/bootstrap.css" />
     <body>
-        <nav class="navbar navbar" role="navigation" style="border-bottom:0px;">
+        <nav class="navbar navbar" role="navigation" style="margin-bottom:0px;">
             
             <div class="navbar-header" >
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
