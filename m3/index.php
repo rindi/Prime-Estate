@@ -1,7 +1,9 @@
 <?php
 include 'views/navbar.php';
+
 ?>
 <html>
+        <link rel="stylesheet" href="http://sfsuswe.com/~f14g03/views/css/index.css" />
     <head>
         <title> Prime Estate </title>
     </head>
