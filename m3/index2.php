@@ -30,7 +30,10 @@ include 'views/navbar.php';
 	<link rel="stylesheet" href="http://sfsuswe.com/~f14g03/views/css/index.css" />
 	<link rel="stylesheet" href="./views/css/cover.css" />
 	<style>
-	    
+	    body, html { 
+	    overflow-x: hidden; 
+	    overflow-y: auto;
+	}
 	</style>
     </head>
 
