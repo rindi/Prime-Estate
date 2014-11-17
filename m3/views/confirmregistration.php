@@ -1,5 +1,5 @@
 <?php
-#include 'views/navbar.php';
+include 'navbar.php';
 require_once '../controllers/users_controller.php';
 require_once '../models/user_model.php';
 if (1 == count($_GET))
@@ -30,12 +30,12 @@ else
     $user = new user_model($input);
     
     if ($username == NULL || $password == NULL)
-        echo "Registration failed, please fill values for all required fields.";
+        echo "<h2>Registration failed, please fill values for all required fields.</h2> ";
     if ($password != $confirm_password)
-        echo "Registration failed, passwords did not match.";
+        echo "<h2>Registration failed, passwords did not match.</h2>";
         #echo $password;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-        echo "Registration failed, email ID is not valid.";
+        echo "<h2>Registration failed, email ID is not valid.</h2>";
     //alphanumeric characters and underscores, 2 to 16 characters long.
 //    $allowed = array(".", "-", "_");
 //    if(ctype_alnum( str_replace($allowed, '', username )))
@@ -52,7 +52,7 @@ else
         }
         else
         {
-            echo "Registration failed, user already exists.";
+            echo '<h2 align="center">Registration failed, user already exists.</h2>';
             //header('Location: http://sfsuswe.com/~f14g03/views/login.php');
         }
     }
