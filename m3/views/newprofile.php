@@ -53,7 +53,7 @@ $profile = $profilecontroller->getProfile(($id));
                                     echo 'placeholder="Lower Range"';
                                 else
                                     echo 'value =' . $profile->pricemin;
-                                ?>class="form-control">
+                                ?>>
                             </div>
 
                             <label class="col-sm-2 control-label" for="textinput">Maximum</label>
@@ -64,7 +64,7 @@ $profile = $profilecontroller->getProfile(($id));
                                     echo 'placeholder="Upper Range"';
                                 else
                                     echo 'value =' . $profile->pricemax;
-                                ?>class="form-control">
+                                ?>>
 
                             </div>
                         </div>
@@ -73,7 +73,7 @@ $profile = $profilecontroller->getProfile(($id));
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">City</label>
                             <div class="col-sm-10">
-                                <input type="text" placeholder="City" class="form-control">
+                                <input type="text" placeholder="City"<?php echo 'value='. $profile->city ?> >
                             </div>
                         </div>
 
@@ -88,7 +88,7 @@ $profile = $profilecontroller->getProfile(($id));
                                     echo 'placeholder="Zip / Postal Code"';
                                 else
                                     echo 'value =' . $profile->zip;
-                                ?>class="form-control">
+                                ?>>
                             </div>
                         </div>
 
@@ -102,7 +102,7 @@ $profile = $profilecontroller->getProfile(($id));
                                     echo 'placeholder="Bedrooms"';
                                 else
                                     echo 'value =' . $profile->bedrooms;
-                                ?>class="form-control">
+                                ?>>
                             </div>
                         </div>
 
@@ -116,14 +116,15 @@ $profile = $profilecontroller->getProfile(($id));
                                     echo 'placeholder="Bathrooms"';
                                 else
                                     echo 'value =' . $profile->bathrooms;
-                                ?>class="form-control">            
+                                ?>>            
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Details</label>
                             <div class="col-sm-10">
-                                <input type="textarea" placeholder="Please enter your personal preferences here" class="form-control">
+                                <input type="textarea"  placeholder="Please enter your personal preferences here" 
+                                <?php echo 'value=' . $profile->personalinformation ?>>
                             </div>
                         </div>
 
@@ -132,6 +133,7 @@ $profile = $profilecontroller->getProfile(($id));
                                 <div class="pull-right">
                                     <button type="submit" class="btn btn-default">Cancel</button>
                                     <button type="submit" class="btn btn-primary">Save</button>
+                                     <button type="submit" formaction="views/search_results.php"class="btn btn-success">Search</button>
                                 </div>
                             </div>
                         </div>
