@@ -70,8 +70,8 @@ include 'views/navbar.php';
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 			    <img class="img-circle" src="views/assets/images/121951415243587.JPG" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-			    <h2>Testemony</h2>
-			    <p>I bought house for my doughter from this website. It is great! Staff are very nice. Website is fully debugged!</p>
+			    <h2>Testimony</h2>
+			    <p>I bought house for my daughter from this website. It is great! Staff are very nice. Website is fully debugged!</p>
 			    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
 			</div><!-- /.col-lg-4 -->
 		    </div><!-- /.row -->
