@@ -108,7 +108,7 @@ else
             if($type==0)
             {?>
             <li>
-                <a href="http://sfsuswe.com/~f14g03/views/registration.php">Register</a>
+                <a href="http://sfsuswe.com/~f14g03/views/registration.php">Sign Up</a>
             </li>
             
             <?php }
