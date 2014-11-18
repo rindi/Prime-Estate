@@ -68,7 +68,7 @@ include 'navbar.php';
             <div id="paneler" class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">Sell Your Home</h3>
-                </div>
+                </div></div>
                 <div class="row">
                     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-sm-12 ">
                         <div class="panel panel-primary">
@@ -76,7 +76,6 @@ include 'navbar.php';
                                                         <h3 class="panel-title">Registration</h3>
                                                     </div>-->
                             <div class="panel-body">
-
                                 <table style="text-align:center; margin: 0px auto">
                                     <tr>
                                         <td>First Name*</td>
@@ -105,8 +104,10 @@ include 'navbar.php';
                                 </table>
                                 <br/>
                                 <input type="submit" value="Submit" id="submitlead">   
-</div>
                             </div>
+                            </div>                        
+                            </div>
+
                             <div id="infobox" style="margin-top:50px;" class="mainbox col-md-6 col-sm-12 ">
                                 <div class="panel panel-next">
                                     <h2>
@@ -123,8 +124,8 @@ include 'navbar.php';
                                     </p>
                                 </div>
                             </div>
-                        </div></div>
-                        </div>  
+                        </div>                            
+  
                         <!-- Three columns of text below the carousel -->
                         <div class="row" style="padding-top: 60px;">
                             <div class="col-lg-4">
