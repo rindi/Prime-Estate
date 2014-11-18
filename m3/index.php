@@ -11,7 +11,7 @@ include 'views/navbar.php';
 	<meta name="author" content="">
 	<link rel="icon" href="../../favicon.ico">
 
-	<title>Cover Template for Bootstrap</title>
+	<title>PrimeEstate - Index</title>
 
 	<!-- Custom styles for this template -->
 	<link href="cover.css" rel="stylesheet">
@@ -42,6 +42,7 @@ include 'views/navbar.php';
 		<div class="cover-container">
 		    <div class="inner cover">
 			<h1 class="cover-heading">Welcome to Prime Estate.</h1>
+                        <h3 class="cover-heading">Search for your dream home by City or Zip.</h3>
 			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="views/search_results.php" method="POST">
 			    <div class="form-group">
 				<div class="col-xs-offset-3 col-xs-5">
@@ -54,25 +55,27 @@ include 'views/navbar.php';
 		    </div>
 		    <hr>
 		    <!-- Three columns of text below the carousel -->
-		    <div class="row" style="padding-top: 60px;">
+		    <div class="row" style="padding-top: 40px;">
 			<div class="col-lg-4">
 			    <img class="img-circle" src="views/assets/images/121951415243587.JPG" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Recently added</h2>
-			    <p>House near Ocean Beach has recently joined our listing. It has beautiful view to the ocean, nice breeze, big rooms and 5 bathrooms. 
+			    <p>House on Ocean Beach has joined our listings. It has beautiful view of the ocean, nice breeze & spacious rooms. 
 				</p>
-			    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                            <div><a class="btn btn-default" href="#" role="button">View details &raquo;</a></div>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 			    <img class="img-circle" src="views/assets/images/121951415243587.JPG" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Recently sold</h2>
 			    <p>We are proud to inform we just sold this nice house at the city's heart. </p>
-			    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                            <div><a class="btn btn-default" href="#" role="button">View details &raquo;</a></div>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 			    <img class="img-circle" src="views/assets/images/121951415243587.JPG" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Testimony</h2>
-			    <p>I bought house for my daughter from this website. It is great! Staff are very nice. Website is fully debugged!</p>
-			    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+			    <p>"I bought house for my daughter from this website. It is great! Staff are very nice. Website is fully debugged!"</p>
+			</div>
+                        <div>
+                            <a class="btn btn-default" href="#" role="button">View details &raquo;</a>
 			</div><!-- /.col-lg-4 -->
 		    </div><!-- /.row -->
 		</div>
