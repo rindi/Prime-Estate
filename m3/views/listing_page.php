@@ -50,6 +50,13 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
         });
     });
 </script>
+<style>
+    body{
+	background-image: url("./assets/images/bgsoft.png");
+    }
+    
+</style>
+
 <html>
     <div class="container">
 	<form>
