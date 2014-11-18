@@ -40,7 +40,7 @@ class profile_controller extends controller
              $this->newProfile($userid);
             foreach($this->db_connect->query($sql) as $row)
             {
-                echo "just created!";
+                
              
              $profile = new profile_model($row);
              return $profile;
@@ -84,7 +84,8 @@ class profile_controller extends controller
             bathrooms = :bathrooms, 
             pricemin = :pricemin, 
             pricemax = :pricemax, 
-            personalinformation = :personalinformation 
+            personalinformation = :personalinformation,
+            city =;city
             WHERE userid = :userid";
                    
         $stmt = $this->db_connect->prepare($sql);
@@ -92,7 +93,8 @@ class profile_controller extends controller
         $stmt->bindParam(':bedrooms', $input->getBedrooms(), PDO::PARAM_INT); 
         $stmt->bindParam(':bathrooms', $input->getBathrooms(), PDO::PARAM_INT);  
         $stmt->bindParam(':pricemin', $input->getPricemin(), PDO::PARAM_INT);
-        $stmt->bindParam(':pricemax', $input->getPricemax(), PDO::PARAM_INT);   
+        $stmt->bindParam(':pricemax', $input->getPricemax(), PDO::PARAM_INT); 
+        $stmt->bindParam(':city', $input->getCity(), PDO::PARAM_INT);
         $stmt->bindParam(':personalinformation', $input->getPersonalInformation(), PDO::PARAM_STR); 
         $stmt->bindParam(':userid', $input->getUserid(), PDO::PARAM_INT);   
 
