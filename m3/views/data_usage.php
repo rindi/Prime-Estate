@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-            echo "While this is just a demo, feel free to contact us for the development of your next web application.";
-            // put your code here
-        ?> 
-    </body>
-</html>
+<?php
+header('Location: http://sfsuswe.com/~f14g03/views/policy.php');
+?>
