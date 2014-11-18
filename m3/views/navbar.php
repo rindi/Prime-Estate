@@ -39,6 +39,11 @@ else
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://sfsuswe.com/~f14g03/views/css/bootstrap.css" />
+    <style>
+	.navbar{
+	    margin-bottom: 0px;
+	}
+    </style>
     <body>
         <nav class="navbar navbar" role="navigation" style="margin-bottom:0px;">
             
