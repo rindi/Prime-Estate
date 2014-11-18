@@ -82,10 +82,13 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 			    <div class="">
 
 				<div class="panel panel-default">
-				    <div class="panel-body">
-					<h2>$ <?php echo $listing_model->getPrice(); ?></h2>
-				    </div>
+				    
 				    <table class="table">
+					<tr>
+					    <td>
+						<h2>$ <?php echo $listing_model->getPrice(); ?></h2>
+					    </td>
+					</tr>
 					<tr>
 					    <td>
 						<h3><?php echo $listing_model->getAddress(); ?></h3>
@@ -141,25 +144,15 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 
 
 
-                <!-- 3ND WELL: DESCRIPTION etc. -->
-                <div class="well">
-                    <table class="table">
-			<tr>
-			    <td>
-				<h2>Description: </h2>
-				<div class="">
-				    <?php echo $listing_model->getDescription(); ?>
-				</div>
-			    </td>
-			</tr>
-			<tr>
-			    <td>
-				<strong>Posted: </strong><?php echo $listing_model->getDateAdded(); ?>
-			    </td>
-			</tr>
-		    </table>
-                </div>
-
+		<div class="panel panel-default">
+		    <div class="panel-body">
+			<h2>Description</h2>
+			<p><?php echo $listing_model->getDescription(); ?></p>
+		    </div>
+		    <div class="panel-footer">
+			<strong>Date posted: </strong><?php echo $listing_model->getDateAdded(); ?>
+		    </div>
+		</div>
             </div>
         </div>
     </div>
