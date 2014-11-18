@@ -38,10 +38,14 @@ else
 
         <!-- Page Heading -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Search Results
-                    <small> for <?php echo $value;?></small>
-                </h1>
+            <div id="heading" class="mainbox col-md-4 col-sm-12 ">
+                <h1>Search Results for </h1>
+            </div>
+            <div id="searchbox" class="mainbox col-md-8 col-sm-12 ">
+                <form action="search_results.php" method="POST">
+                  <input type="search" name="searchvalue" value="<?php echo $value; ?>">
+                  <input type="submit" value="Find home">
+                 </form>
             </div>
         </div>
         <!-- /.row -->

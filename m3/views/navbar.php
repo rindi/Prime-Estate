@@ -102,7 +102,7 @@ else
         </nav>
         <footer>
         <div class="footer navbar-fixed-bottom">
-        <a href="http://sfsuswe.com/~f14g03/views/data_usage.php">San Francisco State University Software Engineering Project, Fall 2014.  For Demonstration Purposes Only</a>
+        <a href="http://sfsuswe.com/~f14g03/views/policy.php">San Francisco State University Software Engineering Project, Fall 2014.  For Demonstration Purposes Only</a>
         </div>
         </footer>
     </body>
