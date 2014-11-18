@@ -45,7 +45,7 @@ else
 	}
     </style>
     <body>
-        <nav class="navbar navbar" role="navigation" style="margin-bottom:0px;">
+        <nav class="navbar" role="navigation" style="margin-bottom:0px;">
             
             <div class="navbar-header" >
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
