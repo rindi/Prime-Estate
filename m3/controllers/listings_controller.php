@@ -17,13 +17,119 @@ class listings_controller extends controller
     }
     
     /**
+     * search2
+     */
+    
+    public function searchListings($input)
+    {
+        $check = -1;
+        $dataSet = array();
+        if(strlen($input)  == 0)
+        {
+           
+            return NULL;
+        }
+          if (ctype_alpha(str_replace(' ', '', $input))) 
+        {
+           
+            $check = 1;
+            
+        }
+       else if (ctype_digit(str_replace(' ', '', $input))) 
+        {
+           
+            $check = 0;
+        }
+        else
+        {
+            $check = 3;
+        }
+        
+        if($check == 1)
+        {
+            $input = str_replace(' ', '', $input);
+            
+            
+        $sql = "SELECT * FROM listings WHERE city like '%$input%'";
+        $res = $this->db_connect->query($sql);
+      
+         foreach ($res as $row) 
+         {
+                $imgstack = $this->getImages($row['id']);
+                $newListing = new listing_model($row);
+                $newListing->setImages($imgstack);
+                $dataSet[] = $newListing;
+         }
+            
+            
+            
+        }
+       
+        if($check == 0)
+        {
+        $input = str_replace(' ', '', $input);
+        $sql = "SELECT * FROM listings WHERE zip like '%$input%'";
+        $res = $this->db_connect->query($sql);
+      
+         foreach ($res as $row) 
+         {
+                $imgstack = $this->getImages($row['id']);
+                $newListing = new listing_model($row);
+                $newListing->setImages($imgstack);
+                $dataSet[] = $newListing;
+         }
+        }
+        
+        
+        if($check == 3)
+        {
+            
+            
+            $letters = preg_replace("/[^a-z\s]/i", "", $input); 
+           // $letters = preg_replace("/\s\s+/"," ", $letters);
+           $digits =  preg_replace("/[^0-9\s]/i", "", $input);
+           $letters = str_replace(' ', '', $letters);
+           $digits = str_replace(' ', '', $digits);
+           
+        $sql = "SELECT * FROM listings WHERE zip like '%$digits%' OR city like '%$letters%'  ";
+            
+               $res = $this->db_connect->query($sql);
+          foreach ($res as $row) 
+         {
+                $imgstack = $this->getImages($row['id']);
+                $newListing = new listing_model($row);
+                $newListing->setImages($imgstack);
+                $dataSet[] = $newListing;
+         }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+       //  print_r($dataSet);
+       //  $size = sizeof($dataSet);
+       //  echo "size is $size";
+       
+        
+       
+        
+        return $dataSet;
+    }
+    /**
      * Search Listings
      * @param type $input
      * @return \ListingData
      */
-    public function searchListings($input)
+    public function searchListings1($input)
     {
-               $check = 0;
+        $check = 0;
         $option =  array(0=>"zip",1 => "city",2=>"");
     
         if (ctype_alpha(str_replace(' ', '', $input))) 
