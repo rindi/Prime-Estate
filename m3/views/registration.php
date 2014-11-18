@@ -95,7 +95,7 @@ else
                                 home you are interested in.  Other benefits include:
                             <li>Exclusive access to a profile page where you can create a customized search!</li>
                             <li>Contact realtors quickly without having to enter your contact information more than once</li>
-                            <li>Access exclusive Home Buyer's Guide</li>
+                            <li>Access exclusive Home Buyer's Guide </li>
             </p>
             </div>
         </div>  
