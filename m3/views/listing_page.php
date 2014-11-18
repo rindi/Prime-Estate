@@ -111,11 +111,13 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 					</tr>
 				    </table>
 				    <div class="panel-footer">
+					<div class="clearfix">
 					<?php if (isset($_SESSION['userid'])): ?>
-					<a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
-					   class="btn btn-success col-sm-offset-8 col-sm-3" 
-					   value="Edit listing" type="button">Contact seller
-					</a>
+					    <a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
+					       class="btn btn-success pull-right" 
+					       value="Edit listing" type="button">Contact seller
+					    </a>
+					</div>
 					<?php else: ?>
 					<div class="clearfix">
 					    <a href="newlogin.php" class="btn btn-primary pull-right">Login to contact</a>
