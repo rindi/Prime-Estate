@@ -27,7 +27,6 @@ include 'navbar.php';
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <body>
         <h2> Leads </h2>
         
