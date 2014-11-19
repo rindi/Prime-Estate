@@ -45,3 +45,8 @@ body{
 .footer{
     border-top: 2px solid #12cac5;
 }
+
+.alert-success{
+    background: rgba(194,255,182,0.4);
+    border: 2px solid green;
+}
