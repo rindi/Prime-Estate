@@ -62,7 +62,9 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 
             <div class="panel-body">
 
-
+		
+		
+		
                 <!-- 1ST WELL: CAROUSEL AND PRIMARY INFO -->
                 <div class="well">
                     <div class="row">
@@ -129,7 +131,7 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
     					</div>
 					<?php else: ?>
     					<div class="clearfix">
-    					    <a href="newlogin.php" class="btn btn-default pull-right">Login to contact</a>
+    					    <a href="newlogin.php" class="btn btn-default pull-right">Contact</a>
     					</div>   
 					<?php endif ?>
 				    </div>
