@@ -130,7 +130,6 @@ if(isset($_POST['backButton']))
                                 </div>
                             </div>
                         </div>
-                </div>
                     </form>
                 </div>
                 
