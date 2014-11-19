@@ -19,3 +19,11 @@
 body{
     background-image: url('../assets/images/pattern.png');
 }
+
+.panel{
+    border: 2px solid #12cac5;
+}
+
+.panel .panel-footer{
+    border-top: 2px solid #12cac5;
+}
