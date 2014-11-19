@@ -6,7 +6,6 @@ $target_dir = "assets/images/";
 $newfilename = "";
 //$target_dir = $target_dir . basename( $_FILES["uploadFile"]["name"]);
 $uploadOk = 1;
-session_start();
 echo $_SESSION['userid'];
 
 $suffix = substr($_FILES["uploadFile"]["name"], strpos($_FILES["uploadFile"]["name"], ".") + 1);
@@ -67,7 +66,7 @@ $now = "/~f14g03/views/assets/images/".$newfilename;
 //$now = "/~f14g03/views/assets/images/".$_FILES["uploadFile"]["name"];
 $listingcont = new listings_controller();
 //$curlisting = new listing_model($listingcont->getListing(41));
-echo $listingcont->getNewListing($_SESSION['userid']);
+//echo $listingcont->getNewListing($_SESSION['userid']);
 $curlisting = new listing_model($listingcont->getNewListing($_SESSION['userid']));
 //Sets the image in the database
 //$listingcont->setImage($curlisting->getId(), $_FILES["uploadFile"]["name"])
@@ -75,7 +74,7 @@ $curlisting = new listing_model($listingcont->getNewListing($_SESSION['userid'])
 $listingcont->setImage($listingcont->getNewListing($_SESSION['userid']), $newfilename);
 
 $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingcont->getNewListing($_SESSION['userid']).'"';
-echo $list_page;
+//echo $list_page;
 ?>
 
 <html>
