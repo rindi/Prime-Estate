@@ -7,6 +7,7 @@ if (isset($_GET['search'])) {
     $value = $_GET['search'];
 } else {
     $value = $_POST["searchvalue"];
+    $_GET['search'] = $_POST["searchvalue"];
 }
 
 if (isset($_SESSION["type"]))
