@@ -6,6 +6,7 @@
 .btn-default:hover, .btn-primary:hover{
     background: rgba(38,195,182,0.3);
     border: 2px solid #12cac5;
+    color: white;
 }
 
 .container{
@@ -29,6 +30,10 @@ body{
 
 .panel .panel-footer{
     border-top: 2px solid #12cac5;
+}
+
+.panel-footer{
+    background-color: rgba(18,172,168,0.3);
 }
 
 .realtor-desc{
