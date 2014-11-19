@@ -3,25 +3,23 @@ include 'navbar.php';
 #include 'views/navbar.php';
 #require '../controllers/users_controller.php';
 #require '../models/user_model.php';
-
 //Courtesy of:
 //http://www.bennadel.com/coldfusion/privacy-policy-generator.htm#primary-navigation
 ?>
 
 <html>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <body>
         <br/>
         <form align="center" name="sell" action="sellsubmitted.php" method="POST">
             <div class="container-fluid">
                 <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             <h2 class="panel-title">PrimeEstate Terms and Conditions of Use</h2>
                         </div>
                         <div class="panel-body">
 
-                  
+
 
                             <h3>
                                 1. Terms
@@ -116,9 +114,9 @@ include 'navbar.php';
 
 
 
-                       
 
-                       		
+
+
 
 
 
@@ -128,48 +126,47 @@ include 'navbar.php';
                     </div> 
                 </div>  
         </form>
-        <div class="container-fluid">
-                <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h2 class="panel-title">PrimeEstate Privacy Policy</h2>
-                        </div>
-                        <div class="panel-body">
-                            
-                                 <p>
-                                Your privacy is very important to us. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines our privacy policy.
-                            </p>
+	<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+	    <div class="panel panel-default">
+		<div class="panel-heading">
+		    <h2 class="panel-title">PrimeEstate Privacy Policy</h2>
+		</div>
+		<div class="panel-body">
 
-                            <ul>
-                                <li>
-                                    Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.
-                                </li>
-                                <li>
-                                    We will collect and use of personal information solely with the objective of fulfilling those purposes specified by us and for other compatible purposes, unless we obtain the consent of the individual concerned or as required by law.		
-                                </li>
-                                <li>
-                                    We will only retain personal information as long as necessary for the fulfillment of those purposes. 
-                                </li>
-                                <li>
-                                    We will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned. 
-                                </li>
-                                <li>
-                                    Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date. 
-                                </li>
-                                <li>
-                                    We will protect personal information by reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification.
-                                </li>
-                                <li>
-                                    We will make readily available to customers information about our policies and practices relating to the management of personal information. 
-                                </li>
-                            </ul>
+		    <p>
+			Your privacy is very important to us. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines our privacy policy.
+		    </p>
 
-                            <p>
-                                We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained. 
-                            </p>
-                                          </div>
-                    </div> 
-                </div>           
-                            
+		    <ul>
+			<li>
+			    Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.
+			</li>
+			<li>
+			    We will collect and use of personal information solely with the objective of fulfilling those purposes specified by us and for other compatible purposes, unless we obtain the consent of the individual concerned or as required by law.		
+			</li>
+			<li>
+			    We will only retain personal information as long as necessary for the fulfillment of those purposes. 
+			</li>
+			<li>
+			    We will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned. 
+			</li>
+			<li>
+			    Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date. 
+			</li>
+			<li>
+			    We will protect personal information by reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification.
+			</li>
+			<li>
+			    We will make readily available to customers information about our policies and practices relating to the management of personal information. 
+			</li>
+		    </ul>
+
+		    <p>
+			We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained. 
+		    </p>
+		</div>
+	    </div> 
+
+	</div>
     </body>
 </html>
