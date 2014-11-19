@@ -1,0 +1,13 @@
+.btn-default{
+    padding: 9px;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid #12cac5;
+}
+.btn-default:hover{
+    background: rgba(38,195,182,0.3);
+    border: 2px solid #12cac5;
+}
+
+.container{
+    margin-top: 20px;
+}
