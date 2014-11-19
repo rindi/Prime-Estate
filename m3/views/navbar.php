@@ -68,7 +68,7 @@ else
 		if ($type == 2) {
 			?>
     		    <li>
-    			<a href="http://sfsuswe.com/~f14g03/views/dashboard.php">Realtor Dashboard</a>
+    			<a href="http://sfsuswe.com/~f14g03/views/dashboard.php">Dashboard</a>
     		    </li><?php
 		}
 		if ($type == 2) {
