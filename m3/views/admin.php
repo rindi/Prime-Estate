@@ -19,6 +19,11 @@ else if($usertype != 3)
 <html>
     <head>
 	<title> Administrator </title>
+	<style>
+	    .panel-heading{
+		background-color: rgba(18,172,168,0.3);
+	    }
+	</style>
     </head>
     <body>
 	<div class="container-fluid">
