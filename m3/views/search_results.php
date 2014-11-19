@@ -132,7 +132,7 @@ else
 					    }
 					</style>
 					<h3 class="alignleft"><?php echo $listingData->getAddress(); ?></h3>
-					<h3 class="alignright"><?php echo '$' . $listingData->getPrice(); ?></h3>
+					<h3 class="alignright"><?php echo '$' . number_format($listingData->getPrice(), 0, '.', ',');?></h3>
 				    </div>
 				    <br><br><br>
 				    <h4><?php echo $listingData->getCity() . ' ' . $listingData->getZip(); ?></h4>
