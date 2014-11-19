@@ -34,6 +34,8 @@ include 'views/navbar.php';
 		overflow-y: auto;
 	    }
 	</style>
+
+	
     </head>
 
     <body>
