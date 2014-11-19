@@ -54,7 +54,7 @@ if(isset($_POST['backButton']))
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">add listing</h3>
+                    <h1 class="panel-title" style="text-align:center"><strong>STEP 1: ADD LISTING INFO</strong></h1>
                 </div>
                 <div class="panel-body">
                      <form class="form-horizontal" role="form" action="add_listing.php" method="post" >
