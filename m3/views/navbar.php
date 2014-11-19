@@ -15,6 +15,7 @@ else
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://sfsuswe.com/~f14g03/views/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <style>
 	.navbar{
 	    margin-bottom: 0px;
