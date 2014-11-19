@@ -33,7 +33,7 @@ if (isset($_POST['SubmitButton'])) {
 <div style="text-align:center" >
     <div class="container-fluid">
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2 class="panel-title">Step 1: Adding new listing</h2>
                 </div>
