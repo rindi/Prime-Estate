@@ -19,16 +19,22 @@ include 'navbar.php';
 
 <html>
     <style>
-        h2{
-         padding-left:500px;   
+        h1{
+         text-align: center; 
+	 color: #12aca5;
+	 font-weight: bold;
         }
     </style>
     <head>
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <body>
-        <h2> Leads </h2>
+    <body style="padding-bottom: 40px;">
+	<div class="container">
+	<div class="panel panel-default">
+	    <h1> Leads </h1>
+	</div>
+        
         
         <?php
 //        $value=$_POST["searchvalue"];
@@ -54,11 +60,14 @@ include 'navbar.php';
             $end = count($leadSet);
         }
         $max = round(count($leadSet)/$offset, 0, PHP_ROUND_HALF_DOWN);
-        echo "Now Showing page ".$page." of ".$max." TOTAL LEADS: ".count($leadSet);
-        
+	echo "<div class=\"alert alert-success\" style=\"text-align:center\"><STRONG>";
+	echo "LEADS TOTAL: ".count($leadSet);
+	echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        echo "PAGE ".$page." of ".$max;
+        echo "</STRONG></div>";
         #echo $query;
         echo "<div class='results'>
-        <table class='table' style='width:90%' border='1' align='center'>
+        <table class='table' style='width:100%'>
         <thead>
         <tr>
         <th>First Name</th>
@@ -97,27 +106,30 @@ include 'navbar.php';
         }
         
         echo "</tbody></table></div>";
+	echo "<nav style=\"text-align:center\"><ul class=\"pagination pagination-lg\">";
         if( $page > 1 && $page < $max )
             {
                $page = $page + 1;
                $last = $page - 2;
-               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$last."'>Previous</a>";
-               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$page."'>Next</a>";
+               echo "<li><a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$last."'>Previous</a></li>";
+               echo "<li><a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$page."'>Next</a></li>";
             }
         else if( $page == 1 )
             {
                $page = $page + 1;
     //           echo "<a href=\"$_PHP_SELF?page=$page\">Next 10 Records</a>";
-               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$page."'>Next</a>";
+               echo "<li><a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$page."'>Next</a></li>";
             }
         else 
             {
                $last = $page - 1;
-               echo "<a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$last."'>Previous</a>";
+               echo "<li><a href='http://sfsuswe.com/~f14g03/views/leads.php?page=".$last."'>Previous</a></li>";
             }
 //        if (!mysqli_query($con,$query)) {
 //            die('Error: ' . mysqli_error($con));
 //        }
+	echo "</ul></nav>";
         ?>
+	</div>
     </body>
 </html>
