@@ -47,8 +47,6 @@ if(isset($_POST['backButton']))
 
         <title>Prime Estate - add listing</title>
 
-        <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
 
     </head>
 <body>
@@ -58,7 +56,7 @@ if(isset($_POST['backButton']))
                 <div class="panel-heading">
                     <h3 class="panel-title">add listing</h3>
                 </div>
-                <div class<="panel-body">
+                <div class="panel-body">
                      <form class="form-horizontal" role="form" action="add_listing.php" method="post" >
                          
                   
@@ -128,7 +126,7 @@ if(isset($_POST['backButton']))
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="pull-right">
                                     <button type="submit" name ="backButton" class="btn btn-default">BACK</button>
-                                    <button type="submit" name = "SubmitButton"class="btn btn-primary">Add listing</button>
+                                    <button type="submit" name = "SubmitButton"class="btn btn-default">Add listing</button>
                                 </div>
                             </div>
                         </div>
