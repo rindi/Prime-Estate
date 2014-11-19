@@ -85,25 +85,40 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 					</tr>
 					<tr>
 					    <td>
-						<h3><?php echo $listing_model->getAddress(); ?></h3>
+						<h3><?php echo $listing_model->getAddress(); ?>
+						    <small><?php echo $listing_model->getCity(); ?>, 
+						    <?php echo $listing_model->getZip(); ?></small>
+						</h3>
+						<h4>
+						    Rooms: <?php echo $listing_model->getRooms(); ?> &nbsp;&nbsp;&nbsp;
+						    Bathrooms: <?php echo $listing_model->getBathrooms(); ?>
+						</h4>
 					    </td>
-					    <td></td>
 					</tr>
 					<tr>
 					    <td>
-						<?php echo $listing_model->getCity(); ?>, <?php echo $listing_model->getZip(); ?>
-					    </td>
-					    <td></td>
-					</tr>
-					<tr>
-					    <td>
-						Bathrooms: <?php echo $listing_model->getBathrooms(); ?>
-					    </td>
-					    <td>
-						Rooms: <?php echo $listing_model->getRooms(); ?>
+						<img class="img-circle pull-left" 
+						     src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
+						     style="width: 140px; height: 140px;">
+						<div style='margin-left: 150px;'>
+						    <h2>Joe Shmack</h2>
+						    <p>Westlake Inc.  </p>
+						    <form>
+							<div class='form-group'>
+							    <input class='form-control' type='textfield' placeholder='Name'>
+							</div>
+							<div class='form-group'>
+							    <input class='form-control' type='email' placeholder='Email'>
+							</div>
+							<div class='form-group'>
+							    <textarea class='form-control' style='resize:none'>I am interested in <?php echo $listing_model->getAddress(); ?>. Please contact me.</textarea>
+							</div>
+						    </form>
+						</div>
 					    </td>
 					</tr>
 				    </table>
+				    
 				    <div class="panel-footer">
 					<div class="clearfix">
 					    <?php if (isset($_SESSION['userid'])): ?>
@@ -126,9 +141,9 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 		</div>
 
 		<!-- 2ND WELL: MAP -->
-		<div class="well">
-		    <div class="row">
-			<div class="col-xs-12">
+		<div class="row">
+		    <div class="col-xs-12 col-sm-6">
+			<div class="well">
 			    <iframe
 				width='100%'
 				height='250'
@@ -137,19 +152,19 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 			    </iframe>
 			</div>
 		    </div>
-		</div>
-
-
-
-		<div class="panel panel-default">
-		    <div class="panel-body">
-			<h2>Description</h2>
-			<p><?php echo $listing_model->getDescription(); ?></p>
+		    
+		    <div class="col-xs-12 col-sm-6">
+			<div class="panel panel-default">
+			    <div class="panel-body">
+				<h2>Description</h2>
+				<p><?php echo $listing_model->getDescription(); ?></p>
+			    </div>
+			    <div class="panel-footer">
+				<strong>Date posted: </strong><?php echo $listing_model->getDateAdded(); ?>
+			    </div>
+			</div>
 		    </div>
-		    <div class="panel-footer">
-			<strong>Date posted: </strong><?php echo $listing_model->getDateAdded(); ?>
-		    </div>
-		</div>
+		</div>		
 	    </div>
 	</div>
     </div>
