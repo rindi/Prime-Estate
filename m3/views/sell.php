@@ -54,7 +54,6 @@ include 'navbar.php';
         }
         }
     </script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
     <body>
         <br/>
         <form align="center" name="sell" action="sellsubmitted.php" method="POST">
