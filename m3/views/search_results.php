@@ -140,6 +140,9 @@ else
 				    <h4>Bedrooms : <?php echo $listingData->getRooms(); ?> Bathrooms : <?php echo $listingData->getBathrooms(); ?></h4>
 				    <a class="btn btn-default" href="listing_page.php?id=<?php echo $houseval; ?>"><strong>View House</strong> <span class="glyphicon glyphicon-chevron-right"></span></a>
 				    <a class="btn btn-default" href="#"><strong>Contact Seller</strong><span class="glyphicon glyphicon-chevron-right"></span></a>
+				    <?php if($usertype == 2): ?>
+					<a class="btn btn-default" href="#"><strong>Edit</strong><span class="glyphicon glyphicon-chevron-right"></span></a>
+				    <?php endif;?>
 				</div>
 			    </div>
 			</div>
