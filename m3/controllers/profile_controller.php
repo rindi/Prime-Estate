@@ -85,7 +85,7 @@ class profile_controller extends controller
             pricemin = :pricemin, 
             pricemax = :pricemax, 
             personalinformation = :personalinformation,
-            city =;city
+            city = :city
             WHERE userid = :userid";
                    
         $stmt = $this->db_connect->prepare($sql);
