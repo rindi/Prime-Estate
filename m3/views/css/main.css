@@ -11,3 +11,11 @@
 .container{
     margin-top: 20px;
 }
+
+.well{
+    border: 2px solid #12cac5;
+}
+
+body{
+    background-image: url('../assets/images/pattern.png');
+}
