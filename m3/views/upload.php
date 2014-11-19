@@ -1,16 +1,21 @@
 <?php
 include 'navbar.php';
+require_once ("../controllers/listings_controller.php");
+
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-session_start();
 
 ?>
 <html>
     <head>
-        <title> Upload Your image </title>    <?php echo $_SESSION['userid'];?>
+        <title> Upload Your image </title>    
+            <?php $listingcont = new listings_controller();
+echo $_SESSION['userid'];echo "House ID " . $listingcont->getNewListing($_SESSION['userid']);
+$list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingcont->getNewListing($_SESSION['userid']).'"';
+?>
 
     </head>
     <body>
@@ -20,15 +25,18 @@ session_start();
                 <div class="panel-heading">
                     <h2 class="panel-title">Step 2: Please select the image you wish to upload</h2>
                 </div>
+                
+		<input class="btn btn-default" type="button" value="Back" onClick="history.go(-1);
+                    return true;">
                 <div class="panel-body">
    
         <!--<span class="glyphicon glyphicon-search"></span>-->
-        </input>
-        </form>
         <form action="uploadcomplete.php" method="post" enctype="multipart/form-data">
             Please choose a file: 
             <input type="file" name="uploadFile" id="uploadFile"><br>
             <input type="submit" value="Upload File">
+             
+            <a href=<?php echo $list_page;?>>I do not want to upload an image, continue to listing Page</a>
         </form>
         
             <script>
