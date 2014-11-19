@@ -2,7 +2,7 @@
 include 'navbar.php';
 if( $_SESSION['type'] != 2 )
 {
-    die("Hey now brown cow! You are not realtor. Can't be here. die()");
+    header('Location: http://sfsuswe.com/~f14g03');
 }
 ?>
 <html>
