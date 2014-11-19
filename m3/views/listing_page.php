@@ -52,122 +52,124 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 </script>
 
 <html>
-    <div class="container">
-	<form>
-	    <input class="btn btn-default" type="button" value="&laquo; Back" onClick="history.go(-1);
+    <body style="padding-bottom: 40px">
+	<div class="container">
+	    <form>
+		<input class="btn btn-default" type="button" value="&laquo; Back" onClick="history.go(-1);
                     return true;">
-	</form>
-        <div id="listing" class="panel panel-default">
-            <!-- contains 3 wells: 1) image/info 2) map 3) description etc. -->
+	    </form>
+	    <div id="listing" class="panel panel-default">
+		<!-- contains 3 wells: 1) image/info 2) map 3) description etc. -->
 
-            <div class="panel-body">
+		<div class="panel-body">
 
-		
-		
-		
-                <!-- 1ST WELL: CAROUSEL AND PRIMARY INFO -->
-                <div class="well">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			    <div class="well">
-				<?php include("houses_carousel.php"); ?>      
-			    </div>                         
-                        </div>
 
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			    <div class="">
 
-				<div class="panel panel-default">
 
-				    <table class="table">
-					<tr>
-					    <td>
-						<h2>$ <?php echo $listing_model->getPrice(); ?></h2>
-					    </td>
-					</tr>
-					<tr>
-					    <td>
-						<h3><?php echo $listing_model->getAddress(); ?>
-						    <small><?php echo $listing_model->getCity(); ?>, 
-						    <?php echo $listing_model->getZip(); ?></small>
-						</h3>
-						<h4>
-						    Rooms: <?php echo $listing_model->getRooms(); ?> &nbsp;&nbsp;&nbsp;
-						    Bathrooms: <?php echo $listing_model->getBathrooms(); ?>
-						</h4>
-					    </td>
-					</tr>
-					<tr>
-					    <td>
-						<img class="img-circle pull-left" 
-						     src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
-						     style="width: 140px; height: 140px;">
-						<div style='margin-left: 150px;'>
-						    <h2>Joe Shmack</h2>
-						    <p>Westlake Inc.  </p>
-						    <form>
-							<div class='form-group'>
-							    <input class='form-control' type='textfield' placeholder='Name'>
-							</div>
-							<div class='form-group'>
-							    <input class='form-control' type='email' placeholder='Email'>
-							</div>
-							<div class='form-group'>
-							    <textarea class='form-control' style='resize:none'>I am interested in <?php echo $listing_model->getAddress(); ?>. Please contact me.</textarea>
-							</div>
-						    </form>
-						</div>
-					    </td>
-					</tr>
-				    </table>
-				    
-				    <div class="panel-footer">
-					<div class="clearfix">
-					    <?php if (isset($_SESSION['userid'])): ?>
-    					    <a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
-    					       class="btn btn-default pull-right" 
-    					       value="Edit listing" type="button">Contact seller
-    					    </a>
-    					</div>
-					<?php else: ?>
-    					<div class="clearfix">
-    					    <a href="newlogin.php" class="btn btn-default pull-right">Contact</a>
-    					</div>   
-					<?php endif ?>
+		    <!-- 1ST WELL: CAROUSEL AND PRIMARY INFO -->
+		    <div class="well">
+			<div class="row">
+			    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<div class="well">
+				    <?php include("houses_carousel.php"); ?>      
+				</div>                         
+			    </div>
+
+			    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<div class="">
+
+				    <div class="panel panel-default">
+
+					<table class="table">
+					    <tr>
+						<td>
+						    <h2>$ <?php echo $listing_model->getPrice(); ?></h2>
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    <h3><?php echo $listing_model->getAddress(); ?>
+							<small><?php echo $listing_model->getCity(); ?>, 
+							    <?php echo $listing_model->getZip(); ?></small>
+						    </h3>
+						    <h4>
+							Rooms: <?php echo $listing_model->getRooms(); ?> &nbsp;&nbsp;&nbsp;
+							Bathrooms: <?php echo $listing_model->getBathrooms(); ?>
+						    </h4>
+						</td>
+					    </tr>
+					    <tr>
+						<td>
+						    <img class="img-circle pull-left" 
+							 src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
+							 style="width: 140px; height: 140px;">
+						    <div style='margin-left: 150px;'>
+							<h2>Joe Shmack</h2>
+							<p>Westlake Inc.  </p>
+							<form>
+							    <div class='form-group'>
+								<input class='form-control' type='textfield' placeholder='Name'>
+							    </div>
+							    <div class='form-group'>
+								<input class='form-control' type='email' placeholder='Email'>
+							    </div>
+							    <div class='form-group'>
+								<textarea class='form-control' style='resize:none'>I am interested in <?php echo $listing_model->getAddress(); ?>. Please contact me.</textarea>
+							    </div>
+							</form>
+						    </div>
+						</td>
+					    </tr>
+					</table>
+
+					<div class="panel-footer">
+					    <div class="clearfix">
+						<?php if (isset($_SESSION['userid'])): ?>
+    						<a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
+    						   class="btn btn-default pull-right" 
+    						   value="Edit listing" type="button">Contact seller
+    						</a>
+    					    </div>
+					    <?php else: ?>
+    					    <div class="clearfix">
+    						<a href="newlogin.php" class="btn btn-default pull-right">Contact</a>
+    					    </div>   
+					    <?php endif ?>
+					</div>
 				    </div>
+
 				</div>
-
 			    </div>
 			</div>
 		    </div>
+
+		    <!-- 2ND WELL: MAP -->
+		    <div class="row">
+			<div class="col-xs-12 col-sm-6">
+			    <div class="well">
+				<iframe
+				    width='100%'
+				    height='250'
+				    frameborder='0' style='border:0'
+				    <?php echo $mapstring; ?>>
+				</iframe>
+			    </div>
+			</div>
+
+			<div class="col-xs-12 col-sm-6">
+			    <div class="panel panel-default">
+				<div class="panel-body">
+				    <h2>Description</h2>
+				    <p><?php echo $listing_model->getDescription(); ?></p>
+				</div>
+				<div class="panel-footer">
+				    <strong>Date posted: </strong><?php echo $listing_model->getDateAdded(); ?>
+				</div>
+			    </div>
+			</div>
+		    </div>		
 		</div>
-
-		<!-- 2ND WELL: MAP -->
-		<div class="row">
-		    <div class="col-xs-12 col-sm-6">
-			<div class="well">
-			    <iframe
-				width='100%'
-				height='250'
-				frameborder='0' style='border:0'
-				<?php echo $mapstring; ?>>
-			    </iframe>
-			</div>
-		    </div>
-		    
-		    <div class="col-xs-12 col-sm-6">
-			<div class="panel panel-default">
-			    <div class="panel-body">
-				<h2>Description</h2>
-				<p><?php echo $listing_model->getDescription(); ?></p>
-			    </div>
-			    <div class="panel-footer">
-				<strong>Date posted: </strong><?php echo $listing_model->getDateAdded(); ?>
-			    </div>
-			</div>
-		    </div>
-		</div>		
 	    </div>
 	</div>
-    </div>
+    </body>
 </html>
