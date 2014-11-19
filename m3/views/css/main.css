@@ -50,3 +50,15 @@ body{
     background: rgba(194,255,182,0.4);
     border: 2px solid green;
 }
+
+.pagination > li > a, .pagination > li > span{
+    background-color: rgba(255,255,255,0.4);
+    border-color: #12cac5;
+    color: #12aca5;
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover{
+    background-color: rgba(18,172,168,0.4);
+    border-color: #12cac5;
+    color: #fff;
+}
