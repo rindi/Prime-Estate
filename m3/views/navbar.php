@@ -23,6 +23,12 @@ else
         background-color: #FFFFFF;
         text-align: center;
         }
+	.navbar{
+	    background: rgba(255,255,255, 0.9);
+	    border-radius: 0px;
+	    border: 0px;
+	    border-bottom: 2px solid #12cac5;
+	}
     </style>
     <body>
         <nav class="navbar" role="navigation" style="margin-bottom:0px;">
