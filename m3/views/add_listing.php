@@ -35,7 +35,7 @@ if(isset($_POST['backButton']))
     header('Location: http://sfsuswe.com/~f14g03/views/upload.php');
 }
 ?>
-<<<<<<< .mine
+
 <html>
  <head>
 
@@ -145,33 +145,3 @@ if(isset($_POST['backButton']))
   
                 
 </html>
-=======
-<div style="text-align:center" >
-    <div class="container-fluid">
-        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Step 1: Adding new listing</h2>
-                </div>
-                <div class="panel-body">
-                    <!--    <h3>Adding new listing:</h3>-->
-                    <!--<h3>Step 1</h3>-->
-                    <form action="add_listing.php" method="post">
-                        <!--<form action="add_listings.php" method="post">-->
-                        <table style="text-align:center; margin: 0px auto">
-                            <tr><td>Address*:</td><td><input type="text" name="address" placeholder="Address" required/></td>
-                            <tr><td>City*:</td><td><input type="text" name="city" placeholder="City" required/></td>
-                            <tr><td>Zip*:</td><td><input type="text" name="zip" placeholder="Zip" required/></td>
-                            <tr><td>Price:</td><td><input type="number" name="price" placeholder="Price" min="0"/></td>
-                            <tr><td>Rooms #:</td><td><input type="number" name="rooms" placeholder="Rooms" min="0"/></td>
-                            <tr><td>Bathrooms #:</td><td><input type="number" name="bathrooms" placeholder="Bathrooms" min="0"/></td>
-                            <tr><td>Description:</td><td><textarea type="textfield" name="description"></textarea></td>
-                        </table>
-
-                    <input type="submit" value="Add listing" name="SubmitButton"/>
-                    </form>
-                </div>
-            </div> 
-        </div>  
-    </div>
->>>>>>> .r574
