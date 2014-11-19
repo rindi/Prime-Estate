@@ -25,6 +25,7 @@ require_once ("../controllers/users_controller.php");
             $dbRow['pricemax']= $_POST["pricemax"];
             $dbRow['pricemin']= $_POST["pricemin"];
             $dbRow['zip']  = $_POST["zip"];
+            $dbRow['city']  = $_POST["city"];
             $dbRow['personalinformation']  = $_POST["info"];
             $dbRow['userid'] =  $_POST["id"];
             $profile = new profile_model($dbRow);
