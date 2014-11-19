@@ -1,12 +1,10 @@
 <?php
-
 include("navbar.php");
 require '../models/listing_model.php';
 require '../controllers/listings_controller.php';
 
 /* check if user is seller aka. allowed to edit listing */
-if(!($_SESSION['type']==2))
-{
+if (!($_SESSION['type'] == 2)) {
     die("Session 'Realtor' is NOT set.");
 }
 
@@ -19,11 +17,17 @@ $image_1 = $images[0];
 ?>
 
 <div class="container">
+
+    <form>
+	<input class="btn btn-default" type="button" value="&laquo; Back" onClick="history.go(-1);
+                return true;">
+    </form>
+
     <div id="listing" class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">
-                <?php echo $listing_model->getAddress(); ?>
-            <a href="http://stackoverflow.com" class="btn btn-danger pull-right" value="Edit Listing" type="button" onclick="return confirm('Are you sure you want to delete this listing?');">Delete Listing</a>
+<?php echo $listing_model->getAddress(); ?>
+		<a href="http://stackoverflow.com" class="btn btn-danger pull-right" value="Edit Listing" type="button" onclick="return confirm('Are you sure you want to delete this listing?');">Delete Listing</a>
             </h3>
             <br>
         </div>
@@ -32,11 +36,11 @@ $image_1 = $images[0];
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4">
                     <div class="row">
                         <div class="col-xs-12">
-                            <a href="<?php echo $images[0];?>" class="thumbnail">
-                                <img src="<?php echo $images[0];?>" alt="..."><br>
+                            <a href="<?php echo $images[0]; ?>" class="thumbnail">
+                                <img src="<?php echo $images[0]; ?>" alt="..."><br>
                             </a>
-                            <?php include("houses_carousel.php"); ?>
-                            <a href="edit_photo.php?id=<?php echo $listing_model->getId();?>&removepath=" class="btn btn-default">Edit photos</a>
+<?php include("houses_carousel.php"); ?>
+                            <a href="edit_photo.php?id=<?php echo $listing_model->getId(); ?>&removepath=" class="btn btn-default">Edit photos</a>
                         </div>
                     </div>
                 </div>
@@ -44,61 +48,61 @@ $image_1 = $images[0];
                     <!-- WHY FOLLOWING LINE WONT WORK ? -->
                     <div id="listing_id" ><?php echo $listing_model->getId(); ?></div>
                     <form id="listing_form">
-                        Address: <input id="address" value="<?php echo $listing_model->getAddress();?>" type="text" disabled><br>
-                        City: <input id="city" value="<?php echo $listing_model->getCity();?>" type="text" disabled><br>
-                        Zip: <input id="zip" value="<?php echo $listing_model->getZip();?>" type="text" disabled><br>
-                        Price: <input id="price" value="<?php echo $listing_model->getPrice();?>" type="text" disabled><br>
-                        Rooms: <input id="rooms" value="<?php echo $listing_model->getRooms();?>" type="text" disabled><br>
-                        Baths: <input id="bathrooms" value="<?php echo $listing_model->getBathrooms();?>" type="text" disabled><br>
-                        Description: <input id="description" value="<?php echo $listing_model->getDescription();?>" type="textarea" disabled><br>
+                        Address: <input id="address" value="<?php echo $listing_model->getAddress(); ?>" type="text" disabled><br>
+                        City: <input id="city" value="<?php echo $listing_model->getCity(); ?>" type="text" disabled><br>
+                        Zip: <input id="zip" value="<?php echo $listing_model->getZip(); ?>" type="text" disabled><br>
+                        Price: <input id="price" value="<?php echo $listing_model->getPrice(); ?>" type="text" disabled><br>
+                        Rooms: <input id="rooms" value="<?php echo $listing_model->getRooms(); ?>" type="text" disabled><br>
+                        Baths: <input id="bathrooms" value="<?php echo $listing_model->getBathrooms(); ?>" type="text" disabled><br>
+                        Description: <input id="description" value="<?php echo $listing_model->getDescription(); ?>" type="textarea" disabled><br>
                         <hr>
                         <input id="edit" class="btn btn-default" type="button" value="Edit Listing"><br>
                     </form>
-                    
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script type="text/javascript">
-    
+
     function updateListing(
             id, address, city, zip, price, rooms, bathrooms, description
             )
     {
         // alert("ID: " + id + " " + address + city + zip + price + rooms + bathrooms + description);
-        if (window.XMLHttpRequest) 
+        if (window.XMLHttpRequest)
         {
             // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp=new XMLHttpRequest();
-        } 
-        else 
-        { 
-            // code for IE6, IE5
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            xmlhttp = new XMLHttpRequest();
         }
-        xmlhttp.onreadystatechange=function() 
+        else
         {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200) 
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function ()
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
             {
-                document.getElementById("listing_form").innerHTML=xmlhttp.responseText;
+                document.getElementById("listing_form").innerHTML = xmlhttp.responseText;
             }
-        } 
-        var valuesToUpdate = "update_listing.php?" + 
-                "address="+address + 
-                "&city="+city + 
-                "&zip="+zip + 
-                "&price="+price + 
-                "&rooms="+rooms + 
-                "&bathrooms="+bathrooms + 
-                "&description="+description +
-                "&id="+id;
-        
+        }
+        var valuesToUpdate = "update_listing.php?" +
+                "address=" + address +
+                "&city=" + city +
+                "&zip=" + zip +
+                "&price=" + price +
+                "&rooms=" + rooms +
+                "&bathrooms=" + bathrooms +
+                "&description=" + description +
+                "&id=" + id;
+
         xmlhttp.open("GET", valuesToUpdate, true);
         xmlhttp.send();
     }
     var id = <?php echo $listing_model->getId(); ?>;
-    var el  = document.getElementById('edit');
+    var el = document.getElementById('edit');
     var address = document.getElementById('address');
     var city = document.getElementById('city');
     var zip = document.getElementById('zip');
@@ -115,7 +119,7 @@ $image_1 = $images[0];
     var prefix = "http://sfsuswe.com/~f14g03/views/edit_listing.php";
     var nextPage = prefix.concat(postfix);
 
-    el.addEventListener('click', function()
+    el.addEventListener('click', function ()
     {
         if (count == 0)
         {
