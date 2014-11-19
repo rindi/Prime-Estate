@@ -123,13 +123,13 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 					<div class="clearfix">
 					    <?php if (isset($_SESSION['userid'])): ?>
     					    <a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
-    					       class="btn btn-success pull-right" 
+    					       class="btn btn-default pull-right" 
     					       value="Edit listing" type="button">Contact seller
     					    </a>
     					</div>
 					<?php else: ?>
     					<div class="clearfix">
-    					    <a href="newlogin.php" class="btn btn-primary pull-right">Login to contact</a>
+    					    <a href="newlogin.php" class="btn btn-default pull-right">Login to contact</a>
     					</div>   
 					<?php endif ?>
 				    </div>
