@@ -45,10 +45,10 @@ include 'views/navbar.php';
 		    <div class="inner cover">
 			<h1 class="cover-heading">Welcome to Prime Estate.</h1>
                         <h3 class="cover-heading">Search for your dream home by City or Zip.</h3>
-			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="views/search_results.php" method="POST">
+			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="views/search_results.php" method="GET">
 			    <div class="form-group">
 				<div class="col-xs-offset-3 col-xs-5">
-				    <input id="search-field" type="search" name="searchvalue" placeholder="Enter a City or Zipcode" class="form-control">
+				    <input id="search-field" type="search" name="search" placeholder="Enter a City or Zipcode" class="form-control">
 				</div>
 				<label for="submit-form" class="btn btn-default col-xs-1"><i class="glyphicon glyphicon-search"></i></label>
 				<input id="submit-form" type="submit" class="btn btn-inverse col-xs-1 hidden">
