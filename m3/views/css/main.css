@@ -62,3 +62,7 @@ body{
     border-color: #12cac5;
     color: #fff;
 }
+
+.well-padding{
+    margin: 10px;
+}
