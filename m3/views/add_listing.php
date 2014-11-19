@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 if ($_SESSION['type'] != 2) {
-    die("Hey now brown cow! You are not realtor. Can't be here. die()");
+    header('Location: http://sfsuswe.com/~f14g03/views/newlogin.php');
 }
 
 //echo $_SESSION['userid'];
