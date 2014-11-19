@@ -123,31 +123,31 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 			    </div>
 			</div>
 		    </div>
+		</div>
 
-		    <!-- 2ND WELL: MAP -->
-		    <div class="well">
-			<div class="row">
-			    <div class="col-xs-12">
-				<iframe
-				    width='100%'
-				    height='250'
-				    frameborder='0' style='border:0'
-				    <?php echo $mapstring; ?>>
-				</iframe>
-			    </div>
+		<!-- 2ND WELL: MAP -->
+		<div class="well">
+		    <div class="row">
+			<div class="col-xs-12">
+			    <iframe
+				width='100%'
+				height='250'
+				frameborder='0' style='border:0'
+				<?php echo $mapstring; ?>>
+			    </iframe>
 			</div>
 		    </div>
+		</div>
 
 
 
-		    <div class="panel panel-default">
-			<div class="panel-body">
-			    <h2>Description</h2>
-			    <p><?php echo $listing_model->getDescription(); ?></p>
-			</div>
-			<div class="panel-footer">
-			    <strong>Date posted: </strong><?php echo $listing_model->getDateAdded(); ?>
-			</div>
+		<div class="panel panel-default">
+		    <div class="panel-body">
+			<h2>Description</h2>
+			<p><?php echo $listing_model->getDescription(); ?></p>
+		    </div>
+		    <div class="panel-footer">
+			<strong>Date posted: </strong><?php echo $listing_model->getDateAdded(); ?>
 		    </div>
 		</div>
 	    </div>
