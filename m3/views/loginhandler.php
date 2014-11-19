@@ -27,7 +27,7 @@ $successflag = 0;
                 if($_SESSION["type"]==1)
                 header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
                 else if ($_SESSION["type"]==2)
-                header('Location: http://sfsuswe.com/~f14g03/views/dashboard.php');
+                header('Location: http://sfsuswe.com/~f14g03/views/search_results.php?search=sa');
                 else if ($_SESSION["type"]==3)
                 header('Location: http://sfsuswe.com/~f14g03/views/admin.php');
                 $loggedin = true;
