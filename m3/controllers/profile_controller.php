@@ -94,9 +94,9 @@ class profile_controller extends controller
         $stmt->bindParam(':bathrooms', $input->getBathrooms(), PDO::PARAM_INT);  
         $stmt->bindParam(':pricemin', $input->getPricemin(), PDO::PARAM_INT);
         $stmt->bindParam(':pricemax', $input->getPricemax(), PDO::PARAM_INT); 
-        $stmt->bindParam(':city', $input->getCity(), PDO::PARAM_INT);
         $stmt->bindParam(':personalinformation', $input->getPersonalInformation(), PDO::PARAM_STR); 
         $stmt->bindParam(':userid', $input->getUserid(), PDO::PARAM_INT);   
+        $stmt->bindParam(':city', $input->getCity(), PDO::PARAM_INT);
 
         $stmt->execute();       
     }

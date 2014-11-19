@@ -6,7 +6,7 @@
 class profile_model
 {
     //fields for userdata class
-    public $bedrooms, $bathrooms, $pricemax, $pricemin, $zip, $personalinformation, $userid,$city;
+    public $bedrooms, $bathrooms, $pricemax, $pricemin, $zip, $personalinformation, $userid, $city;
      public function __construct($dbRow) {
   
             $this->bedrooms = $dbRow['bedrooms'];
@@ -105,11 +105,11 @@ class profile_model
     {
         $this->userid = $input;
     }
-    function getCity() {
+    public function getCity() {
         return $this->city;
     }
 
-    function setCity($city) {
+    public function setCity($city) {
         $this->city = $city;
     }
 
