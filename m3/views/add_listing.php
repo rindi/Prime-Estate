@@ -4,6 +4,7 @@ require '../models/listing_model.php';
 require '../controllers/listings_controller.php';
 if (!isset($_SESSION)) {
     session_start();
+    $userid = $_SESSION['userid'];
 }
 if ($_SESSION['type'] != 2) {
     header('Location: http://sfsuswe.com/~f14g03/views/newlogin.php');
@@ -24,8 +25,6 @@ if (isset($_POST['SubmitButton'])) {
 
     $listing_controller = new listings_controller();
     $listing_controller->addListing($house);
-    echo $input['address'] . ' added';
-
 if(isset($_POST['backButton']))
 {
     header('Location: http://sfsuswe.com/~f14g03/');
@@ -63,7 +62,6 @@ if(isset($_POST['backButton']))
 
                         <!-- Text input-->
                         <div class="form-group">
-                            
                             <label class="col-sm-2 control-label" for="textinput">Price</label>
                             <div class="col-sm-10">
                                 <input type="text" name ="price" placeholder="price">
@@ -117,7 +115,7 @@ if(isset($_POST['backButton']))
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Description</label>
                             <div class="col-sm-10">
-                                <input type="textarea"  name = "info" placeholder="Description" >
+                                <input type="textarea"  name = "description" placeholder="Description" >
                                
                             </div>
                         </div>
