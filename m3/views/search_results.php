@@ -149,7 +149,7 @@ else
 		    <?php
 		}
 		echo "<div class=\"container\">";
-		echo "<nav style=\"text-align: center\"><ul class=\"pagination\">";
+		echo "<nav style=\"text-align: center\"><ul class=\"pagination pagination-lg\">";
 		if ($page > 1 && $page < $max) {
 		    $page = $page + 1;
 		    $last = $page - 2;
