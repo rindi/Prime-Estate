@@ -73,7 +73,8 @@ $profile = $profilecontroller->getProfile(($id));
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">City</label>
                             <div class="col-sm-10">
-                                <input type="text" name ="city" placeholder="City"<?php echo 'value='. $profile->city ?> >
+                                <input type="text" name ="city" placeholder="City" value="<?php
+                                   echo $profile->city;?>">
                             </div>
                         </div>
 
