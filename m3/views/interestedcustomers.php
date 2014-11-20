@@ -24,7 +24,7 @@ $value = $_SESSION['listing_number'];
         <?php
         require_once '../models/listing_model.php';
         require_once '../controllers/listings_controller.php';
-        require_once '../controllers/realtor_controller.php';
+        require_once '../controllers/interest_controller.php';
      
         echo "<div class='results'>
         <table class='table' style='width:90%' border='1' align='center'>

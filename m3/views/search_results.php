@@ -46,10 +46,10 @@ else
 	    <div class="panel panel-default">
 		<div class="well-sm">
 		    <div id="searchbox" class="mainbox" style="padding-top:16px;">
-			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="search_results.php" method="POST">
+			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="search_results.php" method="GET">
 			    <div class="form-group">
 				<div class="col-xs-offset-3 col-xs-5">
-				    <input style="height:39px;" id="search-field" type="search" name="searchvalue" placeholder="Enter a City or Zipcode" class="form-control" value="<?php echo $value; ?>">
+				    <input style="height:39px;" id="search-field" type="search" name="search" placeholder="Enter a City or Zipcode" class="form-control" value="<?php echo $value; ?>">
 				</div>
 				<label for="submit-form" class="btn btn-default col-xs-1"><i class="glyphicon glyphicon-search"></i></label>
 				<input id="submit-form" type="submit" class="btn btn-inverse col-xs-1 hidden">
