@@ -63,7 +63,10 @@ else
 			?>
     		    <li>
     			<a href="http://sfsuswe.com/~f14g03/views/profile.php">My Profile</a>
-    		    </li><?php
+    		    </li>
+                    <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.html">Buyer's Guide</li>
+            
+                        <?php
 		}
 		if ($type == 2) {
 			?>
@@ -109,6 +112,7 @@ else
 		</strong>
             </div>
         </nav>
+        
         <footer>
 	    <div class="footer navbar-fixed-bottom">
 		<a href="http://sfsuswe.com/~f14g03/views/policy.php">San Francisco State University Software Engineering Project, Fall 2014.  For Demonstration Purposes Only</a>
