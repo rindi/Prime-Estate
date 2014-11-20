@@ -6,10 +6,10 @@ $target_dir = "assets/images/";
 $newfilename = "";
 //$target_dir = $target_dir . basename( $_FILES["uploadFile"]["name"]);
 $uploadOk = 1;
-echo $_SESSION['userid'];
+//echo $_SESSION['userid'];
 
 $suffix = substr($_FILES["uploadFile"]["name"], strpos($_FILES["uploadFile"]["name"], ".") + 1);
-echo $suffix;
+//echo $suffix;
 // Check if file already exists
 //if (file_exists($target_dir . $_FILES["uploadFile"]["name"])) 
 //{
@@ -49,7 +49,7 @@ else
     $temp = explode(".",$_FILES["uploadFile"]["name"]);
     $date = date_create();
     $newfilename = rand(1,99999) . date_timestamp_get($date) . '.' .end($temp);
-    echo $target_dir . $newfilename;
+    //echo $target_dir . $newfilename;
     if(move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir . $newfilename))
     //if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir)) 
     {
@@ -81,8 +81,12 @@ $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingco
     <head>
         
 <style>
-            form { 
+        form { 
         margin: 0 auto; 
+        }
+        img
+        {
+        margin:auto;
         }
         ol.progtrckr li {
             display: inline-block;
