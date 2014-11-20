@@ -11,6 +11,7 @@ class interest_controller extends controller
     /**
      * Constructor
      */
+    public $dataSet=0;
     public function __construct( ) 
     {
         parent::__construct();
