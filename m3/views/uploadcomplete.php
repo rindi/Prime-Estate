@@ -133,12 +133,13 @@ ol.progtrckr li.progtrckr-todo {
                             <li class="progtrckr-done">Done!</li>
                         </ol>
                           </div>
-                     </div> 
- <img src="<?php echo $now;?>" alt="img" style="width:304px;height:228px">
- 
- <li><a href="http://sfsuswe.com/~f14g03/views/upload.php">Step 3: Upload Another Image</a></li>
-            <a href="http://sfsuswe.com/~f14g03/views/upload.php"><input class="btn btn-default" style="float: right;" type="button" value=" Uploading another image" align="left"></a>
-            <a href=<?php echo $list_page;?>><input class="btn btn-default" style="float: right;" type="button" value="Skip uploading an image, continue to Listing page" align="right"></a>
+                     </div>                     <div class="row" style="margin:0 auto;">
+
+ <img src="<?php echo $now;?>" alt="img" style="width:304px;height:228px;margin-left: auto;margin-right: auto;">
+                     </div>
+                                         <div class="row">
+            <a href="http://sfsuswe.com/~f14g03/views/upload.php"><input class="btn btn-default" style="float: left;" type="button" value="Upload another image" align="left"></a>
+            <a href=<?php echo $list_page;?>><input class="btn btn-default" style="float: right;" type="button" value="I'm done, continue to Listing page" align="right"></a>
  </div>
             </div> 
         </div>  
