@@ -35,7 +35,7 @@ if ($_SESSION['type'] != 2) {
 			<a href="http://sfsuswe.com/~f14g03/views/add_listing.php" class="btn btn-default">Add Listings</a>
 		    </div>
 		    <div class="col-xs-12">
-			<a href="http://sfsuswe.com/~f14g03/views/search_results.php?search=94132.php" class="btn btn-default">Search Listings</a>
+			<a href="http://sfsuswe.com/~f14g03/views/search_results.php?search=94132" class="btn btn-default">Search Listings</a>
 		    </div>
 		</div>
 		
