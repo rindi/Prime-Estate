@@ -133,7 +133,7 @@ $profile = $profilecontroller->getProfile(($id));
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="pull-right">
-                                    <button type="submit" class="btn btn-default">Cancel</button>
+                                    <button type="submit" formaction="http://sfsuswe.com/~f14g03/index.php"class="btn btn-default" >Cancel</button>
                                     <button type="submit" class="btn btn-primary">Save</button>
                                     <button type="submit" formaction="search_results.php?search=<?php echo "$profile->city $profile->zip"?>"class="btn btn-success">Search</button>
                                 </div>
