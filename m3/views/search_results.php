@@ -8,6 +8,8 @@ if (isset($_GET['search'])) {
 } else {
     $value = $_POST["searchvalue"];
     $_GET['search'] = $_POST["searchvalue"];
+    $value = $_GET['search'];
+
 }
 
 if (isset($_SESSION["type"]))
@@ -62,7 +64,7 @@ else
 
 	    <!--Results-->
 	    <div id="heading" class="mainbox">
-                <h1>Search Results for </h1>
+                <h1>Search Results for <small><?php echo $value;?></small></h1>
             </div>
 	    <?php
 	    require '../models/listing_model.php';
@@ -86,9 +88,9 @@ else
 		echo "<div class=\"row\"><div class=\"col-xs-2\"><strong>";
 		echo count($listingSet);
 		if (count($listingSet) == 1)
-		    echo " RESULT</div> <div class=\"col-xs-10\">PAGE ";
+		    echo " Results</div> <div class=\"col-xs-10\">Page ";
 		else
-		    echo " RESULTS</div> <div class=\"col-xs-10\">PAGE ";
+		    echo " Results</div> <div class=\"col-xs-10\">Page ";
 		echo $page;
 		echo "-";
 		$max = ceil(count($listingSet) / $offset);
