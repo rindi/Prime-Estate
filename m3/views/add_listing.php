@@ -56,23 +56,19 @@ if(isset($_POST['backButton']))
                     <h1 class="panel-title" style="text-align:center"><strong>STEP 1: ADD LISTING INFO</strong></h1>
                 </div>
                 <div class="panel-body">
-                     <form class="form-horizontal" role="form" action="add_listing.php" method="post" >
-                         
-                  
-
+                     <form class="form-horizontal" role="form" action="add_listing.php" method="post">
                         <!-- Text input-->
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Price</label>
                             <div class="col-sm-10">
-                                <input type="text" name ="price" placeholder="price">
-                             
+                                <input type="number" name ="price" placeholder="Price" min="0" required>
                             </div>
                         </div>
                           <!-- Text input-->
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Address</label>
                             <div class="col-sm-10">
-                                <input type="text" name="address" placeholder="Address" >
+                                <input type="text" name="address" placeholder="Address" required/>
                             </div>
                         </div>
 
@@ -80,7 +76,7 @@ if(isset($_POST['backButton']))
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">City</label>
                             <div class="col-sm-10">
-                                <input type="text" name ="city" placeholder="City" >
+                                <input type="text" name ="city" placeholder="City" required/>
                             </div>
                         </div>
 
@@ -89,7 +85,7 @@ if(isset($_POST['backButton']))
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Zip</label>
                             <div class="col-sm-10">
-                                <input type="text" name ="zip" placeholder="Zip">              
+                                <input type="text" name ="zip" placeholder="Zip" required>              
                                
                             </div>
                         </div>
@@ -98,8 +94,7 @@ if(isset($_POST['backButton']))
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Rooms</label>
                             <div class="col-sm-10">
-                                <input type="text" name ="rooms" placeholder="Rooms">
-                               
+                            <input type="number" name="rooms" placeholder="Rooms" min="0" required>
                             </div>
                         </div>
 
@@ -107,23 +102,21 @@ if(isset($_POST['backButton']))
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Bathrooms</label>
                             <div class="col-sm-10">
-                                <input type="text" name ="bathrooms" placeholder="bathrooms">
-                                   
+                            <input type="number" name="bathrooms" placeholder="Bedrooms" min="0" required/>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Description</label>
                             <div class="col-sm-10">
-                                <input type="textarea"  name = "description" placeholder="Description" >
-                               
+                                <input type="textarea"  name = "description" placeholder="Description">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="pull-right">
-                                    <button type="submit" name ="backButton" class="btn btn-default">BACK</button>
+                                    <button type="submit" name ="backButton" class="btn btn-default">Back</button>
                                     <button type="submit" name = "SubmitButton"class="btn btn-default">Add listing</button>
                                 </div>
                             </div>
