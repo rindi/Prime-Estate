@@ -13,10 +13,43 @@ require_once ("../controllers/listings_controller.php");
     <head>
         <title> Upload Your image </title>    
             <?php $listingcont = new listings_controller();
-echo $_SESSION['userid'];echo "House ID " . $listingcont->getNewListing($_SESSION['userid']);
+//echo $_SESSION['userid'];echo "House ID " . $listingcont->getNewListing($_SESSION['userid']);
 $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingcont->getNewListing($_SESSION['userid']).'"';
 ?>
+<style>
+            form { 
+margin: 0 auto; 
+}
+            ol.progtrckr li {
+    display: inline-block;
+    text-align: center;
+    line-height: 3em;
+}
+        ol.progtrckr[data-progtrckr-steps="2"] li { width: 49%; }
+ol.progtrckr[data-progtrckr-steps="3"] li { width: 33%; }
+ol.progtrckr[data-progtrckr-steps="4"] li { width: 24%; }
 
+ol.progtrckr li.progtrckr-active {
+    color: black;
+    border-bottom: 4px solid black;
+}
+            ol.progtrckr li.progtrckr-done {
+    color: black;
+    border-bottom: 4px solid yellowgreen;
+}
+ol.progtrckr li.progtrckr-todo {
+    color: silver; 
+    border-bottom: 4px solid silver;
+}    
+        </style>
+        <script>
+            $(window).load(function(){
+    $("ol.progtrckr").each(function(){
+        $(this).attr("data-progtrckr-steps", 
+                     $(this).children("li").length);
+    });
+})
+</script>
     </head>
     <body>
         <div class="container-fluid">
@@ -25,18 +58,31 @@ $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingco
                 <div class="panel-heading">
                     <h2 class="panel-title">Step 2: Please select the image you wish to upload</h2>
                 </div>
-                
-		<input class="btn btn-default" type="button" value="Back" onClick="history.go(-1);
-                    return true;">
+                <div class="row" style="margin:0 auto;">
+                         <div class="center-block">
+                              
+                        <ol class="progtrckr" data-progtrckr-steps="4">
+                            <li class="progtrckr-done">Start</li>
+                            <li class="progtrckr-done">Enter Details</li>
+                            <li class="progtrckr-active">Upload Images</li>
+                            <li class="progtrckr-todo">Done!</li>
+                        </ol>
+                          </div>
+                     </div> 
                 <div class="panel-body">
-   
+               <div class="center-block">
+
         <!--<span class="glyphicon glyphicon-search"></span>-->
         <form action="uploadcomplete.php" method="post" enctype="multipart/form-data">
-            Please choose a file: 
+                Please choose a file: 
             <input type="file" name="uploadFile" id="uploadFile"><br>
             <input type="submit" value="Upload File">
-             
-            <a href=<?php echo $list_page;?>>I do not want to upload an image, continue to listing Page</a>
+            <br>
+            <br>
+            <br>
+
+            <input class="btn btn-default" style="float: left;" type="button" value="Back to details page" onClick="history.go(-1);return true;">
+            <input class="btn btn-default" style="float: right;" type="button" value="Skip uploading an image, continue to Listing page" align="right">             
         </form>
         
             <script>
