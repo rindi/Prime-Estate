@@ -134,7 +134,7 @@ $profile = $profilecontroller->getProfile(($id));
                                 <div class="pull-right">
                                     <button type="submit" class="btn btn-default">Cancel</button>
                                     <button type="submit" class="btn btn-primary">Save</button>
-                                    <button type="submit" formaction="profile_search.php"class="btn btn-success">Search</button>
+                                    <button type="submit" formaction="search_results.php?search=<?php echo "$profile->city $profile->zip"?>"class="btn btn-success">Search</button>
                                 </div>
                             </div>
                         </div>
