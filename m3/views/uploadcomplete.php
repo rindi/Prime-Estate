@@ -78,7 +78,43 @@ $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingco
 ?>
 
 <html>
+    <head>
+        
+<style>
+            form { 
+margin: 0 auto; 
+}
+            ol.progtrckr li {
+    display: inline-block;
+    text-align: center;
+    line-height: 3em;
+}
+        ol.progtrckr[data-progtrckr-steps="2"] li { width: 49%; }
+ol.progtrckr[data-progtrckr-steps="3"] li { width: 33%; }
+ol.progtrckr[data-progtrckr-steps="4"] li { width: 24%; }
 
+ol.progtrckr li.progtrckr-active {
+    color: black;
+    border-bottom: 4px solid black;
+}
+            ol.progtrckr li.progtrckr-done {
+    color: black;
+    border-bottom: 4px solid yellowgreen;
+}
+ol.progtrckr li.progtrckr-todo {
+    color: silver; 
+    border-bottom: 4px solid silver;
+}    
+        </style>
+        <script>
+            $(window).load(function(){
+    $("ol.progtrckr").each(function(){
+        $(this).attr("data-progtrckr-steps", 
+                     $(this).children("li").length);
+    });
+})
+</script>
+    </head>
 <body>
            <div class="container-fluid">
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
@@ -87,11 +123,22 @@ $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingco
                     <h2 class="panel-title">Image upload <?php echo $result;?></h2>
                 </div>
                 <div class="panel-body">
- 
+                    <div class="row" style="margin:0 auto;">
+                         <div class="center-block">
+                              
+                        <ol class="progtrckr" data-progtrckr-steps="4">
+                            <li class="progtrckr-done">Start</li>
+                            <li class="progtrckr-done">Enter Details</li>
+                            <li class="progtrckr-done">Upload Images</li>
+                            <li class="progtrckr-done">Done!</li>
+                        </ol>
+                          </div>
+                     </div> 
  <img src="<?php echo $now;?>" alt="img" style="width:304px;height:228px">
  
  <li><a href="http://sfsuswe.com/~f14g03/views/upload.php">Step 3: Upload Another Image</a></li>
- <li><a href=<?php echo $list_page;?>>Continue to Listing Page</a></li>
+            <a href="http://sfsuswe.com/~f14g03/views/upload.php"><input class="btn btn-default" style="float: right;" type="button" value=" Uploading another image" align="left"></a>
+            <a href=<?php echo $list_page;?>><input class="btn btn-default" style="float: right;" type="button" value="Skip uploading an image, continue to Listing page" align="right"></a>
  </div>
             </div> 
         </div>  
