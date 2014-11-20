@@ -63,7 +63,7 @@ else
     		    <li>
     			<a href="http://sfsuswe.com/~f14g03/views/profile.php">My Profile</a>
     		    </li>
-                    <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.html">Buyer's Guide</a>
+                    <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.php">Buyer's Guide</a>
                     </li>
             
                         <?php
