@@ -61,15 +61,15 @@ include 'navbar.php';
         }
         $max = round(count($leadSet)/$offset, 0, PHP_ROUND_HALF_DOWN);
 	echo "<div class=\"alert alert-success\" style=\"text-align:center\"><STRONG>";
-	echo "LEADS TOTAL: ".count($leadSet);
+	echo "Total Number of Leads : ".count($leadSet);
 	echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-        echo "PAGE ".$page." of ".$max;
+        echo "Page ".$page." of ".$max;
         echo "</STRONG></div>";
         #echo $query;
         echo "<div class='results'>
-        <table class='table' style='width:100%'>
+        <table class='table table-striped table-bordered table-hover' style='width:100%'>
         <thead>
-        <tr>
+        <tr align='center'>
         <th>First Name</th>
         <th>Last Name</th>
         <th>E-mail</th>
@@ -93,7 +93,7 @@ include 'navbar.php';
             echo "<tbody><tr>";
             echo "<td>" . $leadData->getFirstname() . "</td>";
             echo "<td>" . $leadData->getLastname() . "</td>";
-            echo "<td>" . $leadData->getEmail() . "</td>";
+            echo "<td><a href='mailto:" . $leadData->getEmail() . "'?Subject=Thank%20you%20for%20%20contacting%20Prime%20Estate>". $leadData->getEmail() . "</td>";
             echo "<td>" . $leadData->getPhone() . "</td>";
             echo "<td>" . $leadData->getContactDate() . "</td>";
             
