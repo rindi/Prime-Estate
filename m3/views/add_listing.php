@@ -21,18 +21,17 @@ if (isset($_POST['SubmitButton'])) {
     $input['bathrooms'] = $_POST['bathrooms'];
     $input['description'] = $_POST['description'];
     $input['userid'] = $_SESSION['userid'];
-    $house = new listing_model($input);
-
-    $listing_controller = new listings_controller();
-    $listing_controller->addListing($house);
-if(isset($_POST['backButton']))
-{
-    header('Location: http://sfsuswe.com/~f14g03/');
     
-}
+        $house = new listing_model($input);
+        $listing_controller = new listings_controller();
+        $listing_controller->addListing($house);
+        if(isset($_POST['backButton']))
+        {
+            header('Location: http://sfsuswe.com/~f14g03/');
 
-    header('Location: http://sfsuswe.com/~f14g03/views/upload.php');
-}
+        }
+        header('Location: http://sfsuswe.com/~f14g03/views/upload.php');
+    }
 ?>
 
 <html>
@@ -116,7 +115,7 @@ if(isset($_POST['backButton']))
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="pull-right">
-                                    <button type="submit" name ="backButton" class="btn btn-default">Back</button>
+                                    <input class="btn btn-default" type="button" value="Back" onClick="history.go(-1);return true;">
                                     <button type="submit" name = "SubmitButton"class="btn btn-default">Add listing</button>
                                 </div>
                             </div>
