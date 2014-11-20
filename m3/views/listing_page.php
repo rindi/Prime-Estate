@@ -49,6 +49,10 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
             $("#seepht").attr("id", "photos");
         });
     });
+    
+function alertafterContact() {
+ alert("Thank you for contacting us! We will get in touch with you soon");
+}
 </script>
 
 <html>
@@ -62,9 +66,6 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 		<!-- contains 3 wells: 1) image/info 2) map 3) description etc. -->
 
 		<div class="panel-body">
-
-
-
 
 		    <!-- 1ST WELL: CAROUSEL AND PRIMARY INFO -->
 		    <div class="well">
@@ -100,10 +101,10 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 					    </tr>
 					    <tr>
 						<td>
-						    <img class="img-circle pull-left" 
+<!--						    <img class="img-circle pull-left" 
 							 src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
-							 style="width: 140px; height: 140px;">
-						    <div style='margin-left: 150px;'>
+							 style="width: 140px; height: 140px;">						    <div style='margin-left: 150px;'>-->
+
 							<h2>Joe Shmack</h2>
 							<p>Westlake Inc.  </p>
 							<form>
@@ -127,8 +128,9 @@ $mapstring = $srcstart . $enc . $mapaddress . $end;
 						<?php if (isset($_SESSION['userid'])): ?>
     						<a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
     						   class="btn btn-default pull-right" 
-    						   value="Edit listing" type="button">Contact seller
+    						   value="Contact Seller" type="button" onclick="alertafterContact();">Contact seller
     						</a>
+                                                
     					    </div>
 					    <?php else: ?>
     					    <div class="clearfix">
