@@ -11,7 +11,7 @@ include 'navbar.php';
 
 <div style="margin: auto; width: 90%; max-width: 1000px; background: #FCFCFC; padding: 15px">
 
-<center><h2>knowledge of House Purchasing</h2></center>
+<center><h2>Knowledge of House Purchasing</h2></center>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Most people are looking forward to to have their own dream houses in their live. Also, they usually spend most of their savings in their live to buy their favourite houses. Therefore, it is very important to get everything ready before buying houses.   Especially, When buyers can clearly understand  some the knowledge of house purchasing  which can let buyers likely protect their own  benefits and reduce their  unnecessary money and time lost.</p>
 
@@ -75,13 +75,10 @@ include 'navbar.php';
 
 <p>On the other hand, if you are a first time home buyer, you can get a lower interest rate with first-time home buyer education program.</p>
 
-
-<center><span class="club">&#8962;</span><span class="club">&#8962;</span><span class="club">&#8962;</span></center>
-
 <div style="text-align: center; background: #826B34"><a href=""><img src="" border="0" alt=""></a></div>
             <input class="btn btn-default" style="float: left;" type="button" value="Back" onClick="history.go(-1);return true;">
 </div>
-
+    <br><br><br>
 
 
 </body></html>
