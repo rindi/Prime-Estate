@@ -12,6 +12,9 @@ if (isset($_GET['search'])) {
 
 }
 
+if (isset($_SESSION['userid'])) {
+    $userid = $_SESSION['userid'];
+}
 if (isset($_SESSION["type"]))
     $usertype = $_SESSION["type"];
 else
@@ -141,7 +144,15 @@ else
 				    <h4><?php echo $listingData->getCity() . ' ' . $listingData->getZip(); ?></h4>
 				    <h4>Bedrooms : <?php echo $listingData->getRooms(); ?> Bathrooms : <?php echo $listingData->getBathrooms(); ?></h4>
 				    <a class="btn btn-default" href="listing_page.php?id=<?php echo $houseval; ?>"><strong>View House </strong> <span class="glyphicon glyphicon-chevron-right"></span></a>
-				    <a class="btn btn-default" href="#"><strong>Contact Seller </strong><span class="glyphicon glyphicon-chevron-right"></span></a>
+<!--                                    <a href="listing_page.php?interest=1&id=<?php echo $listingData->getId(); ?>&userid=<?php echo $userid; ?>"-->
+                                    <?php
+                                    if (isset($_SESSION['userid'])) {
+                                    echo '<a class="btn btn-default" href="listing_page.php?interest=1&id='.$listingData->getId().'&userid='.$userid.'"><strong>Contact Seller </strong><span class="glyphicon glyphicon-chevron-right"></span></a>';
+                                    }
+                                    else
+                                    {
+                                        echo '<a class="btn btn-default" href=""><strong>Contact Seller </strong><span class="glyphicon glyphicon-chevron-right"></span></a>';
+                                    }?>
 				    <?php if($usertype == 2): ?>
 				    <a class="btn btn-default" href="edit_listing.php?id=<?php echo $listingData->getId();?>"><strong>Edit </strong><span class="glyphicon glyphicon-chevron-right"></span></a>
 				    <?php endif;?>
