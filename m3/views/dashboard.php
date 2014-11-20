@@ -24,7 +24,7 @@ if ($_SESSION['type'] != 2) {
 		</h1>
 	    </div>
 	    <div class="panel panel-default" style="padding:50px; text-align:center;">
-		<div class="row">
+		<div class="row btn-group">
 		    <div class="col-xs-12">
 			<a href="http://sfsuswe.com/~f14g03/views/registration.php" class="btn btn-default">Add Customer</a>
 		    </div>
@@ -32,10 +32,10 @@ if ($_SESSION['type'] != 2) {
 			<a href="http://sfsuswe.com/~f14g03/views/interestedcustomers.php" class="btn btn-default">View Interested Customers</a>
 		    </div>
 		    <div class="col-xs-12">
-			<a href="http://sfsuswe.com/~f14g03/views/add_listing.php" class="btn btn-default">Add listings</a>
+			<a href="http://sfsuswe.com/~f14g03/views/add_listing.php" class="btn btn-default">Add Listings</a>
 		    </div>
 		    <div class="col-xs-12">
-			
+			<a href="http://sfsuswe.com/~f14g03/views/search_results.php?search=94132.php" class="btn btn-default">Search Listings</a>
 		    </div>
 		</div>
 		
