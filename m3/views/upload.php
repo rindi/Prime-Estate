@@ -82,17 +82,17 @@ ol.progtrckr li.progtrckr-todo {
             <br>
 
             <input class="btn btn-default" style="float: left;" type="button" value="Back to details page" onClick="history.go(-1);return true;">
-            <input class="btn btn-default" style="float: right;" type="button" value="Skip uploading an image, continue to Listing page" align="right">             
+            <a href=<?php echo $list_page;?>><input class="btn btn-default" style="float: right;" type="button" value="Skip uploading an image, continue to Listing page" align="right"></a>
         </form>
         
             <script>
             document.forms[0].addEventListener('submit', function( evt ) {
                 var file = document.getElementById('uploadFile').files[0];
 
-                if(file && file.size < 2621440) { // 10 MB (this size is in bytes)
+                if(file && file.size < 2621440) { // 2.5 MB (this size is in bytes)
                     //Submit form        
                 } else {
-                    window.alert("File size is greater than 2.5 MB");
+                    window.alert("File not found or size larger than 2.5 MB");
                     evt.preventDefault();
                 }
             }, false);
