@@ -43,19 +43,60 @@ if (isset($_POST['SubmitButton'])) {
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Prime Estate - add listing</title>
+        <title>Prime Estate - Add Listing</title>
+        <style>
+            ol.progtrckr li {
+    display: inline-block;
+    text-align: center;
+    line-height: 3em;
+}
+        ol.progtrckr[data-progtrckr-steps="2"] li { width: 49%; }
+ol.progtrckr[data-progtrckr-steps="3"] li { width: 33%; }
+ol.progtrckr[data-progtrckr-steps="4"] li { width: 24%; }
 
-
+ol.progtrckr li.progtrckr-active {
+    color: black;
+    border-bottom: 4px solid black;
+}
+            ol.progtrckr li.progtrckr-done {
+    color: black;
+    border-bottom: 4px solid yellowgreen;
+}
+ol.progtrckr li.progtrckr-todo {
+    color: silver; 
+    border-bottom: 4px solid silver;
+}    
+        </style>
+        <script>
+            $(window).load(function(){
+    $("ol.progtrckr").each(function(){
+        $(this).attr("data-progtrckr-steps", 
+                     $(this).children("li").length);
+    });
+})
+</script>
     </head>
 <body>
  <div class="container-fluid">
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h1 class="panel-title" style="text-align:center"><strong>STEP 1: ADD LISTING INFO</strong></h1>
+                    <h1 class="panel-title" style="text-align:center"><strong>Step 1 of 2 : Add Listing Details</strong></h1>
                 </div>
                 <div class="panel-body">
-                     <form class="form-horizontal" role="form" action="add_listing.php" method="post">
+                    <div class="row" style="margin:0 auto;">
+                         <div class="center-block">
+                              
+                        <ol class="progtrckr" data-progtrckr-steps="4">
+                            <li class="progtrckr-done">Start</li>
+                            <li class="progtrckr-active">Enter Details</li>
+                            <li class="progtrckr-todo">Upload Images</li>
+                            <li class="progtrckr-todo">Done!</li>
+                        </ol>
+                          </div>
+                     </div> 
+                    <div class="row" style="margin:0 auto;">
+                    <form class="form-horizontal" role="form" action="add_listing.php" method="post">
                         <!-- Text input-->
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Price</label>
