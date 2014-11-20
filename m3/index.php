@@ -63,13 +63,13 @@ include 'views/navbar.php';
 			    <h2>Recently added</h2>
 			    <p>House on Ocean Beach has joined our listings. It has beautiful view of the ocean, nice breeze & spacious rooms. 
 				</p>
-                            <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=San Francisco" role="button">View details &raquo;</a></div>
+                            <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=sacramento" role="button">View details &raquo;</a></div>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 			    <img class="img-circle" src="views/assets/images/121951415243587.JPG" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Recently sold</h2>
 			    <p>We are proud to inform we just sold this nice house at the city's heart. </p>
-                            <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=94" role="button">View details &raquo;</a></div>
+                            <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=sacramento" role="button">View details &raquo;</a></div>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 			    <img class="img-circle" src="views/assets/images/121951415243587.JPG" alt="Generic placeholder image" style="width: 140px; height: 140px;">
@@ -77,7 +77,7 @@ include 'views/navbar.php';
 			    <p>"I bought house for my daughter from this website. It is great! Staff are very nice. Website is fully debugged!"</p>
 			</div>
                         <div>
-                            <a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=San" role="button">View details &raquo;</a>
+                            <a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=sacramento" role="button">View details &raquo;</a>
 			</div><!-- /.col-lg-4 -->
 		    </div><!-- /.row -->
 		</div>
