@@ -45,6 +45,10 @@ if (isset($_POST['SubmitButton'])) {
 
         <title>Prime Estate - Add Listing</title>
         <style>
+            form { 
+margin: 0 auto; 
+width:380px;
+}
             ol.progtrckr li {
     display: inline-block;
     text-align: center;
@@ -96,26 +100,28 @@ ol.progtrckr li.progtrckr-todo {
                           </div>
                      </div> 
                     <div class="row" style="margin:0 auto;">
+                        <div class="center-block">
+
                     <form class="form-horizontal" role="form" action="add_listing.php" method="post">
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Price</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-4 control-label" for="textinput">Price</label>
+                            <div class="col-sm-8">
                                 <input type="number" name ="price" placeholder="Price" min="0" required>
                             </div>
                         </div>
                           <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Address</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-4 control-label" for="textinput">Address</label>
+                            <div class="col-sm-8">
                                 <input type="text" name="address" placeholder="Address" required/>
                             </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">City</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-4 control-label" for="textinput">City</label>
+                            <div class="col-sm-8">
                                 <input type="text" name ="city" placeholder="City" required/>
                             </div>
                         </div>
@@ -123,8 +129,8 @@ ol.progtrckr li.progtrckr-todo {
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Zip</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-4 control-label" for="textinput">Zip</label>
+                            <div class="col-sm-8">
                                 <input type="text" name ="zip" placeholder="Zip" required>              
                                
                             </div>
@@ -132,23 +138,23 @@ ol.progtrckr li.progtrckr-todo {
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Rooms</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-4 control-label" for="textinput">Rooms</label>
+                            <div class="col-sm-8">
                             <input type="number" name="rooms" placeholder="Rooms" min="0" required>
                             </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Bathrooms</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-4 control-label" for="textinput">Bathrooms</label>
+                            <div class="col-sm-8">
                             <input type="number" name="bathrooms" placeholder="Bedrooms" min="0" required/>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Description</label>
-                            <div class="col-sm-10">
+                            <label class="col-sm-4 control-label" for="textinput">Description</label>
+                            <div class="col-sm-8">
                                 <input type="textarea"  name = "description" placeholder="Description">
                             </div>
                         </div>
@@ -164,6 +170,7 @@ ol.progtrckr li.progtrckr-todo {
                     </form>
                 </div>
                 
+            </div>
 
             </div>
         </div> 
