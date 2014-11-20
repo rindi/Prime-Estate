@@ -32,7 +32,6 @@ else
     </style>
     <body>
         <nav class="navbar" role="navigation" style="margin-bottom:0px;">
-
             <div class="navbar-header" >
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-collapse">
                     <span class="icon-bar"></span>
@@ -64,7 +63,8 @@ else
     		    <li>
     			<a href="http://sfsuswe.com/~f14g03/views/profile.php">My Profile</a>
     		    </li>
-                    <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.html">Buyer's Guide</li>
+                    <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.html">Buyer's Guide</a>
+                    </li>
             
                         <?php
 		}
