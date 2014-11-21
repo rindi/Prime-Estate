@@ -112,7 +112,7 @@ class listings_controller extends controller {
     public function searchRecent() 
     {
         $past = date("Y/m/d", strtotime("-1 month") );
-        $sql = "SELECT * FROM listings WHERE when_added >= '$past'";
+        $sql = "SELECT * FROM listings ORDER BY id DESC";
 
         $res = $this->db_connect->query($sql);
         foreach ($res as $row) 
