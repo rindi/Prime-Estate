@@ -34,7 +34,10 @@ class interest_controller extends controller
             $tempuser->setContactDate($row['date']);
             $dataSet[] = $tempuser;
         }
-        return $dataSet;
+        if (!empty($dataSet))
+            return $dataSet;
+        else
+            return null;
     }
     /**
      * get all users from the table
