@@ -1,36 +1,23 @@
 <?php
 include 'navbar.php';
+#include 'views/navbar.php';
 #require '../controllers/users_controller.php';
 #require '../models/user_model.php';
-if (1 == count($_GET))
-    $type = $_GET['type'];
-else
-    $type = null;
 ?>
 
-<!-- register form -->
 <html>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-    <body>
-        <br/>
-        <?php
-        if ($type == 2)
-            echo "<form align='center' name='registration' action='confirmregistration.php?type=2' method='POST'>";
-        else
-            echo "<form align='center' name='registration' action='confirmregistration.php' method='POST'>";
-        ?>
-        <div id="paneler" class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Registration</h3>
-            </div>
-            <div class="row">
-                <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-sm-12 ">
-                    <div class="panel panel-primary">
-                        <!--                        <div class="panel-heading">
-                                                    <h3 class="panel-title">Registration</h3>
-                                                </div>-->
-                        <div class="panel-body">
-                            <table style="text-align:center; margin: 0px auto">
+<body style="padding-bottom: 40px">
+        <div class="container">
+	    <div id="paneler" class="panel panel-default" style="text-align: center;color:#12aca5">
+		<h1 class="panel-body"><strong>Registration</strong></h1>
+	    </div>
+
+	    <div class="panel panel-default">
+		<div class="row">
+		    <div class="col-xs-12 col-sm-6">
+			<div class="clearfix" style="padding-bottom: 20px;">
+                            <form method="POST" action="confirmregistration.php">
+                                <table style="text-align:center; margin: 0px auto">
                                 <tr>
 
                                     <td>Username*</td>
@@ -72,8 +59,7 @@ else
                                     <td></td>
 
                                 </tr>
-
-                            </table>
+</table>
                             <?php
                             if ($type == 0) {
                                 ?>
@@ -82,18 +68,18 @@ else
                                         <input type="checkbox" required/> By checking here you agree to our <a href="http://sfsuswe.com/~f14g03/views/policy.php">Terms of Use and Privacy Policy.</a>
                                     </label>
                                 </div>
-                                <input type="submit" value="Register">
+                            <button class="btn btn-default pull-right">Register</button>
+                        </form>
                             <?php } ?>
-                        </div>
-                    </div>
-                </div> 
-                <div id="infobox" style="margin-top:50px;" class="mainbox col-md-6 col-sm-12 ">
-                    <div class="panel panel-next">
-                        <h2>
+			</div>
+		    </div>
+		    <div class="col-xs-12 col-sm-6">
+			<div id="infobox">
+			    <div class="" style="paddingright: 20px">
+				<h2>
                             Why Register?
-                        </h2>
-
-                        <p>
+				</h2>
+ <p>
                             By registering with PrimeEstate we promise to keep your information 
                             safe and only contact you if you chose to contact a realtor about a 
                             home you are interested in.  Other benefits include:
@@ -101,55 +87,42 @@ else
                         <li>Contact realtors quickly without having to enter your contact information more than once</li>
                         <li>Exclusive Home Buyer's Guide </li>
                         </p>
-                    </div>
-                </div>
-            </div>
-            </div>  
-            <!-- Three columns of text below the carousel -->
-            <div class="row" style="padding-top: 60px;">
-                <div class="col-lg-4">
-                    <img class="img-circle" src="http://sfsuswe.com/~f14g03/views/assets/images/2219_525342936910_6216.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-                    <h2>Recently Added</h2>
-                    <p>The beautiful home is located on the water and features and over hanging dock!  Once registered, you can create a profile to find the perfect home for you! 
-                    </p>
-                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <img class="img-circle" src="http://sfsuswe.com/~f14g03/views/assets/images/438_522404375810_2159_n.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-                    <h2>Recently Sold</h2>
-                    <p>A registered customer recently purchased this beautiful home in the heart of the city! </p>
-                    <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <img class="img-circle" src="http://sfsuswe.com/~f14g03/views/assets/images/happy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-                    <h2>Testimony</h2>
-                    <p>Thanks to PrimeEstate's Home Buyer's guide, I was able to buy my first home with confidence!</p>
-                    <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
-                </div><!-- /.col-lg-4 -->
-            </div><!-- /.row -->
-        <!--</div>-->
-        <br/>
-        <script type="text/javascript">
-            window.onload = function ()
-                    document.forms[0].addEventListener('submit', function (evt)
-            {
-                var firstpassword = document.getElementById('login_username');
-                var confirmpassword = document.getElementById('login_username');
-                if (firstpassword != confirmpassword)
-                {
-                    window.alert("Passwords do not match.");
-                    evt.preventDefault();
-                }
-                var checker = document.getElementById('checkterms').value;
-                //if(checker=="unchecked")
-                    //{
-                    //window.alert("Please accept our terms and conditions.");
-                  //  evt.preventDefault();
-                //}
-        }, false)
-        ;
-        </script>    
-    </form>
-</body>
+			    </div>
+			</div>
+		    </div>
+		</div>
+	    </div>
 
+
+
+	    <!-- Three columns of text below the carousel -->
+	    <div class="panel panel-default" style="text-align: center">
+		<div class="well well-padding">
+		    <div class="row" style="padding-top: 60px;">
+			<div class="col-lg-4">
+			    <img class="img-circle" src="http://sfsuswe.com/~f14g03/views/assets/images/121951415243587.JPG" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <h2>Recently Sold</h2>
+			    <p>With the help of a PrimeEstate agent, we can help you sell your current home and find your dream home today! 
+			    </p>
+			<!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+			    <img class="img-circle" src="http://sfsuswe.com/~f14g03/views/assets/images/47567_535437611765_8287192_n.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <h2>Testimony</h2>
+			    <p>Thanks to our PrimeEstate agent we were able to sell our old house and find our dream home!</p>
+			    <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+			    <img class="img-circle" src="http://sfsuswe.com/~f14g03/views/assets/images/438_522404375810_2159_n.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <h2>Recently Sold</h2>
+			    <p>A registered customer recently purchased this beautiful home in the heart of the city! </p>
+			    <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+			</div><!-- /.col-lg-4 -->
+		    </div><!-- /.row -->
+		</div>
+	    </div>
+
+	</div> 
+
+    </body>
 </html>
