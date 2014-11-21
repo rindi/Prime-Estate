@@ -79,7 +79,7 @@ ol.progtrckr li.progtrckr-todo {
                <div class="center-block">
 
         <!--<span class="glyphicon glyphicon-search"></span>-->
-        <form action="uploadcomplete.php" method="post" enctype="multipart/form-data">
+        <form action="uploadcomplete.php<?php echo isset($_GET['id']) ? "?id=".$_GET['id'] : '';?>" method="post" enctype="multipart/form-data">
                 Please choose a file: 
             <input type="file" name="uploadFile" id="uploadFile"><br>
             <input type="submit" value="Upload File">
