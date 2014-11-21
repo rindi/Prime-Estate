@@ -63,7 +63,7 @@ include 'views/navbar.php';
 			    <h2>Recently Added</h2>
 			    <p>House on Ocean Beach has joined our listings. It has beautiful view of the ocean, nice breeze & spacious rooms. 
 				</p>
-                            <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=recent" role="button">View details &raquo;</a></div>
+                            <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=recent" role="button">View Recently Added &raquo;</a></div>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 			    <img class="img-circle" src="views/assets/images/IMG_4588copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
