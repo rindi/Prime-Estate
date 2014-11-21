@@ -1,10 +1,12 @@
 <?php
 require_once ("../controllers/users_controller.php");
+require_once ("../controllers/listings_controller.php");
 include("navbar.php");
 
 $usercontroller = new users_controller();
 $username = $_POST["login_username"];
 $password = $_POST["login_password"];
+
 if ($username == NULL || $password == NULL)
     echo "Login failed, please fill values for all required fields.";
 $encryptedpassword = md5($password);
@@ -20,16 +22,22 @@ $successflag = 0;
                 $_SESSION["username"] = $username;
                 $_SESSION["type"] = $row->getUserType();
                 $_SESSION["userid"] = $row->getUserId();
-
+                
                 echo $_SESSION["username"] . '<br>';
                 echo $_SESSION["type"] . '<br>';
                 echo $_SESSION["userid"] . '<br>';
                 if($_SESSION["type"]==1)
-                header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
+                {
+                    header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
+                }
                 else if ($_SESSION["type"]==2)
-                header('Location: http://sfsuswe.com/~f14g03/views/search_results.php?search=sa');
+                {
+                    header('Location: http://sfsuswe.com/~f14g03/views/search_results.php?rid=1');
+                }
                 else if ($_SESSION["type"]==3)
-                header('Location: http://sfsuswe.com/~f14g03/views/admin.php');
+                {
+                    header('Location: http://sfsuswe.com/~f14g03/views/admin.php');
+                }
                 $loggedin = true;
                 $successflag = 1;
                 //$finalurl = $link . $redirect . $end;
