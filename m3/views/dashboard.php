@@ -6,7 +6,7 @@ if ($_SESSION['type'] != 2) {
 ?>
 <html>
     <head>
-        <title> Realtor </title>
+        <title> PrimeEstate - Realtor's page </title>
 	<style>
 	    h1{
 		color: #12ACA5;

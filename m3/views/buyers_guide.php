@@ -5,7 +5,7 @@ include 'navbar.php';
 <html>
     <head>
         <meta/>
-  <title>Knowledge of House Purchasing</title>
+  <title>PrimeEstate - Guide to purchasing a home</title>
 </head>
 <body>
 

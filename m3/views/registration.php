@@ -6,6 +6,11 @@ include 'navbar.php';
 ?>
 
 <html>
+    <head>
+        <title>
+            PrimeEstate - Registration
+        </title>
+    </head>
 <body style="padding-bottom: 40px">
         <div class="container">
 	    <div id="paneler" class="panel panel-default" style="text-align: center;color:#12aca5">

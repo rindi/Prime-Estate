@@ -27,7 +27,7 @@ include 'navbar.php';
     </style>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>PrimeEstate - List of Leads</title>
     </head>
     <body style="padding-bottom: 40px;">
 	<div class="container">

@@ -83,7 +83,9 @@ $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingid
 
 <html>
     <head>
-        
+        <title>
+            PrimeEstate - Add listing - Image uploaded!
+        </title>
 <style>
         form { 
         margin: 0 auto; 

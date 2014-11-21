@@ -60,7 +60,11 @@ function alertafterContact() {
 </script>
 
 <html>
-    <body style="padding-bottom: 40px">
+    <head>
+        <title>
+            PrimeEstate - View Property <?php echo $listing_model->getAddress();?>
+        </title>
+    </head><body style="padding-bottom: 40px">
 	<div class="container">
 	    <form>
 		<input class="btn btn-default" type="button" value="&laquo; Back" onClick="history.go(-1);

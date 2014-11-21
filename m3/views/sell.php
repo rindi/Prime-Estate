@@ -6,6 +6,9 @@ include 'navbar.php';
 ?>
 
 <html>
+    <head>
+        <title>PrimeEstate - Sell your home with us</title>
+        </head>
     <script>
         $(document).ready(function(e) {
         $('#submitlead').click(function() {

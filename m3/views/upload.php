@@ -20,7 +20,7 @@ else
 ?>
 <html>
     <head>
-        <title> Upload Your image </title>    
+        <title> PrimeEstate - Upload Your image </title>    
           
 <style>
             form { 
