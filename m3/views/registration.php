@@ -79,7 +79,7 @@ else
                                 ?>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox"> By checking here you agree to our <a href="http://sfsuswe.com/~f14g03/views/policy.php">Terms of Use and Privacy Policy.</a>
+                                        <input type="checkbox" required/> By checking here you agree to our <a href="http://sfsuswe.com/~f14g03/views/policy.php">Terms of Use and Privacy Policy.</a>
                                     </label>
                                 </div>
                                 <input type="submit" value="Register">
@@ -135,13 +135,17 @@ else
             {
                 var firstpassword = document.getElementById('login_username');
                 var confirmpassword = document.getElementById('login_username');
-                alert(firstpassword);
-                alert(confirmpassword);
                 if (firstpassword != confirmpassword)
                 {
                     window.alert("Passwords do not match.");
                     evt.preventDefault();
                 }
+                var checker = document.getElementById('checkterms').value;
+                //if(checker=="unchecked")
+                    //{
+                    //window.alert("Please accept our terms and conditions.");
+                  //  evt.preventDefault();
+                //}
         }, false)
         ;
         </script>    
