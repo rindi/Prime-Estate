@@ -8,6 +8,14 @@ require_once '../models/listing_model.php';
 require_once '../controllers/listings_controller.php';
 require_once '../controllers/interest_controller.php';
 $value = $_GET['id'];
+
+$interest_controller = new interest_controller();
+$customerSet = $interest_controller->getInterestedCustomers($value);
+
+    echo "<div class=\"alert alert-success\" style=\"text-align:center\"><STRONG>";
+    echo "Number of customers interested  in this property : ".sizeof($customerSet);
+    echo "</STRONG></div>";
+
 ?>
 
 <html>
@@ -34,9 +42,7 @@ $value = $_GET['id'];
         <th>Date Contacted</th>
         </tr></thead>";
         
-        $interest_controller = new interest_controller();
-        $customerSet = $interest_controller->getInterestedCustomers($value);
-        sizeof($customerSet);
+        //echo sizeof($customerSet);
         foreach((array)$customerSet as $userData) 
         {       
             echo "<tbody><tr>";
