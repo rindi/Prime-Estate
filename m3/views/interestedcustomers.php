@@ -4,7 +4,7 @@
 include 'navbar.php';
 require_once ("../controllers/interest_controller.php");
 require_once ("../models/user_model.php");
-$value = $_SESSION['listing_number'];
+$value = $_GET['id'];
 ?>
 
 <html>
@@ -37,7 +37,7 @@ $value = $_SESSION['listing_number'];
         
         $realtor_controller = new interest_controller();
         $listingSet = $realtor_controller->getInterestedCustomers($value);
-
+        
         foreach((array)$listingSet as $userData) 
         {
             echo "<tbody><tr>";

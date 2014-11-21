@@ -24,7 +24,7 @@ class interest_controller extends controller
     public function getInterestedCustomers($listing)
     {   
         $sql = "SELECT * FROM interestedcustomers WHERE id = '$listing'";
-        foreach($this->db_connect->query($sql) as $row)
+        foreach( parent::$this->db_connect->query($sql) as $row )
         {
             $user_controller = new users_controller();
             $temp = $user_controller->getUserInfo($row['userid']);
@@ -32,8 +32,12 @@ class interest_controller extends controller
             $tempuser->setContactDate($row['date']);
             $dataSet[] = $tempuser;
         }
-        return $dataSet;
+        if (!empty($dataSet))
+            return $dataSet;
+        else
+            return null;    
     }
+    
     /**
      * get all users from the table
      * @return \user_model
