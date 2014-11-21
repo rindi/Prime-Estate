@@ -102,8 +102,8 @@ include 'navbar.php';
 				</h2>
 
 				<p>
-				    Buyers are out there, and with the help of a Prime Estate agent we can help find the right one for your home. 
-				    By listing your home now with a Prime Estate agent you could benefit from:
+				    Buyers are out there, and with the help of a PrimeEstate agent we can help find the right one for your home. 
+				    By listing your home now with a PrimeEstate agent you could benefit from:
 				<li>A quicker home sale - with fewer homes for sale, many homes are selling quickly and yours could be next</li>
 				<li>Experience of a trusted company who helps sell thousands of houses a year</li>
 				<li>A Higher sales price - with hundreds of potential buyers viewing your home on our website the likelyhood

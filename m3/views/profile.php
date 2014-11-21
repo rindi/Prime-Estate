@@ -21,7 +21,7 @@ $profile = $profilecontroller->getProfile(($id));
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Prime Estate - My Profile Results</title>
+        <title>PrimeEstate - My Profile Results</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
