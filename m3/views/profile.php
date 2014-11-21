@@ -45,7 +45,8 @@ $profile = $profilecontroller->getProfile(($id));
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Price</label>
+                            <br><br>
+                            <label class="col-sm-2 control-label" for="textinput">Price Min</label>
                             <div class="col-sm-4">
                                 <input type="text" name ="pricemin"
                                 <?php
@@ -124,8 +125,8 @@ $profile = $profilecontroller->getProfile(($id));
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Details</label>
                             <div class="col-sm-10">
-                                <input type="textarea"  name = "info" placeholder="Please enter your personal preferences here" 
-                                <?php echo 'value=' . $profile->personalinformation ?>>
+                                <input type="textarea"  name = "info" placeholder="Personal Preferences" 
+                                <?php echo 'value=' . $profile->personalinformation; ?>>
                             </div>
                             <input name = "id" type = "hidden"value  =<?php echo $id ?>>
                         </div>
@@ -133,7 +134,7 @@ $profile = $profilecontroller->getProfile(($id));
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="pull-right">
-                                    <button type="submit" formaction="http://sfsuswe.com/~f14g03/index.php"class="btn btn-default" >Cancel</button>
+                                    <input class="btn btn-default" type="button" value="Cancel" onClick="history.go(-1);return true;">
                                     <button type="submit" class="btn btn-primary">Save</button>
                                     <button type="submit" formaction="search_results.php?search=<?php echo "$profile->city $profile->zip"?>"class="btn btn-success">Search</button>
                                 </div>
