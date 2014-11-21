@@ -79,18 +79,7 @@ function alertafterContact() {
 	    require '../models/listing_model.php';
 	    require '../controllers/listings_controller.php';
 	    $list_controller = new listings_controller();
-            switch ($value)
-            {
-                case "recent":
-                    $listingSet = $list_controller->searchRecent();
-                    break;
-                case "sold":
-                    $listingSet = $list_controller->searchListings($value);
-                    break;
-                default:
-                    $listingSet = $list_controller->searchListings($value);
-                    break;
-            }
+	    $listingSet = $list_controller->searchListings($value);
 	    if (count($listingSet) > 0) {
 		$offset = 5;
 		$start = 0;
@@ -174,6 +163,7 @@ function alertafterContact() {
                                     ?>
 				    <?php if($usertype == 2): ?>
 				    <a class="btn btn-default" href="edit_listing.php?id=<?php echo $listingData->getId();?>"><strong>Edit </strong><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                    <a class="btn btn-default" href="interestedcustomers.php?id=<?php echo $listingData->getId();?>"><strong>Interested Customers</strong><span class="glyphicon glyphicon-chevron-right"></span></a>
 				    <?php endif;?>
 				</div>
 			    </div>

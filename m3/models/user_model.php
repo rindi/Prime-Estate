@@ -60,6 +60,10 @@ class user_model
     {
         $this->date = $date;
     }
+    public function getContactDate()
+    {
+        return $this->date;
+    }
 //    public function testAddUser()
 //    {
 //        $this->username = "test_un";
