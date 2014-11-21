@@ -71,7 +71,7 @@ else
 		if ($type == 2) {
 			?>
     		    <li>
-    			<a href="http://sfsuswe.com/~f14g03/views/dashboard.php">Dashboard</a>
+    			<a href="http://sfsuswe.com/~f14g03/views/search_results.php?rid=1">Dashboard</a>
     		    </li><?php
 		}
 		if ($type == 2) {
