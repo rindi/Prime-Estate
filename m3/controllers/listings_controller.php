@@ -37,7 +37,7 @@ class listings_controller extends controller {
         }
 
         if ($check == 1) {
-            $input = str_replace(' ', '', $input);
+      //      $input = str_replace(' ', '', $input);
 
 
             $sql = "SELECT * FROM listings WHERE city like '%$input%'";
@@ -50,34 +50,44 @@ class listings_controller extends controller {
                 $dataSet[] = $newListing;
             }
         }
-
-        if ($check == 0) {
-            $input = str_replace(' ', '', $input);
-            $sql = "SELECT * FROM listings WHERE zip like '%$input%'";
-            $res = $this->db_connect->query($sql);
-
-            foreach ($res as $row) {
+       
+        if($check == 0)
+        {
+     //   $input = str_replace(' ', '', $input);
+        $sql = "SELECT * FROM listings WHERE zip like '%$input%'";
+        $res = $this->db_connect->query($sql);
+      
+         foreach ($res as $row) 
+         {
                 $imgstack = $this->getImages($row['id']);
                 $newListing = new listing_model($row);
                 $newListing->setImages($imgstack);
                 $dataSet[] = $newListing;
             }
         }
-
-
-        if ($check == 3) {
-
-
-            $letters = preg_replace("/[^a-z\s]/i", "", $input);
-            // $letters = preg_replace("/\s\s+/"," ", $letters);
-            $digits = preg_replace("/[^0-9\s]/i", "", $input);
-            $letters = str_replace(' ', '', $letters);
-            $digits = str_replace(' ', '', $digits);
-
-            $sql = "SELECT * FROM listings WHERE zip like '%$digits%' OR city like '%$letters%'  ";
-
-            $res = $this->db_connect->query($sql);
-            foreach ($res as $row) {
+        
+        
+        if($check == 3)
+        {
+            
+            $letters ="";
+            $digits = "";
+            $letters = preg_replace("/[^a-z\s]/i", "", $input); 
+           // $letters = preg_replace("/\s\s+/"," ", $letters);
+           $digits =  preg_replace("/[^0-9\s]/i", "", $input);
+           $letters = str_replace(' ', '', $letters);
+           $digits = str_replace(' ', '', $digits);
+           if(strlen($letters)== 0 && strlen($digits) == 0)
+           {
+               return NULL;
+           }
+           
+           
+        $sql = "SELECT * FROM listings WHERE zip like '%$digits%' OR city like '%$letters%'  ";
+            
+               $res = $this->db_connect->query($sql);
+          foreach ($res as $row) 
+         {
                 $imgstack = $this->getImages($row['id']);
                 $newListing = new listing_model($row);
                 $newListing->setImages($imgstack);
