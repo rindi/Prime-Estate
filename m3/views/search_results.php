@@ -79,7 +79,18 @@ function alertafterContact() {
 	    require '../models/listing_model.php';
 	    require '../controllers/listings_controller.php';
 	    $list_controller = new listings_controller();
-	    $listingSet = $list_controller->searchListings($value);
+            switch ($value)
+            {
+                case "recent":
+                    $listingSet = $list_controller->searchRecent();
+                    break;
+                case "sold":
+                    $listingSet = $list_controller->searchListings($value);
+                    break;
+                default:
+                    $listingSet = $list_controller->searchListings($value);
+                    break;
+            }
 	    if (count($listingSet) > 0) {
 		$offset = 5;
 		$start = 0;
