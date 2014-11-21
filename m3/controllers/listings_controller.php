@@ -1,4 +1,5 @@
 <?php
+
 require_once ("../controllers/controller.php");
 require_once ("../models/listing_model.php");
 require_once ("../models/profile_model.php");
@@ -6,238 +7,163 @@ require_once ("../models/profile_model.php");
 /**
  * Listings Controller class
  */
-class listings_controller extends controller
-{
+class listings_controller extends controller {
+
     /**
      * Constructor
      */
-    public function __construct( ) 
-    {
+    public function __construct() {
         parent::__construct();
     }
-    
+
     /**
      * search2
      */
-    
-    public function searchListings($input)
-    {
+    public function searchListings($input) {
         $check = -1;
         $dataSet = array();
-        if(strlen($input)  == 0)
-        {
-           
+        if (strlen($input) == 0) {
+
             return NULL;
         }
-          if (ctype_alpha(str_replace(' ', '', $input))) 
-        {
-           
+        if (ctype_alpha(str_replace(' ', '', $input))) {
+
             $check = 1;
-            
-        }
-       else if (ctype_digit(str_replace(' ', '', $input))) 
-        {
-           
+        } else if (ctype_digit(str_replace(' ', '', $input))) {
+
             $check = 0;
-        }
-        else
-        {
+        } else {
             $check = 3;
         }
-        
-        if($check == 1)
-        {
+
+        if ($check == 1) {
             $input = str_replace(' ', '', $input);
-            
-            
-        $sql = "SELECT * FROM listings WHERE city like '%$input%'";
-        $res = $this->db_connect->query($sql);
-      
-         foreach ($res as $row) 
-         {
+
+
+            $sql = "SELECT * FROM listings WHERE city like '%$input%'";
+            $res = $this->db_connect->query($sql);
+
+            foreach ($res as $row) {
                 $imgstack = $this->getImages($row['id']);
                 $newListing = new listing_model($row);
                 $newListing->setImages($imgstack);
                 $dataSet[] = $newListing;
-         }
-            
-            
-            
+            }
         }
-       
-        if($check == 0)
-        {
-        $input = str_replace(' ', '', $input);
-        $sql = "SELECT * FROM listings WHERE zip like '%$input%'";
-        $res = $this->db_connect->query($sql);
-      
-         foreach ($res as $row) 
-         {
+
+        if ($check == 0) {
+            $input = str_replace(' ', '', $input);
+            $sql = "SELECT * FROM listings WHERE zip like '%$input%'";
+            $res = $this->db_connect->query($sql);
+
+            foreach ($res as $row) {
                 $imgstack = $this->getImages($row['id']);
                 $newListing = new listing_model($row);
                 $newListing->setImages($imgstack);
                 $dataSet[] = $newListing;
-         }
+            }
         }
-        
-        
-        if($check == 3)
-        {
-            
-            
-            $letters = preg_replace("/[^a-z\s]/i", "", $input); 
-           // $letters = preg_replace("/\s\s+/"," ", $letters);
-           $digits =  preg_replace("/[^0-9\s]/i", "", $input);
-           $letters = str_replace(' ', '', $letters);
-           $digits = str_replace(' ', '', $digits);
-           
-        $sql = "SELECT * FROM listings WHERE zip like '%$digits%' OR city like '%$letters%'  ";
-            
-               $res = $this->db_connect->query($sql);
-          foreach ($res as $row) 
-         {
+
+
+        if ($check == 3) {
+
+
+            $letters = preg_replace("/[^a-z\s]/i", "", $input);
+            // $letters = preg_replace("/\s\s+/"," ", $letters);
+            $digits = preg_replace("/[^0-9\s]/i", "", $input);
+            $letters = str_replace(' ', '', $letters);
+            $digits = str_replace(' ', '', $digits);
+
+            $sql = "SELECT * FROM listings WHERE zip like '%$digits%' OR city like '%$letters%'  ";
+
+            $res = $this->db_connect->query($sql);
+            foreach ($res as $row) {
                 $imgstack = $this->getImages($row['id']);
                 $newListing = new listing_model($row);
                 $newListing->setImages($imgstack);
                 $dataSet[] = $newListing;
-         }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            }
         }
-       //  print_r($dataSet);
-       //  $size = sizeof($dataSet);
-       //  echo "size is $size";
-       
-        
-       
-        
+        //  print_r($dataSet);
+        //  $size = sizeof($dataSet);
+        //  echo "size is $size";
+
+
+
+
         return $dataSet;
     }
+
     /**
      * Search Listings
      * @param type $input
      * @return \ListingData
      */
-    public function searchListings1($input)
+    public function searchRecent() 
     {
-        $check = 0;
-        $option =  array(0=>"zip",1 => "city",2=>"");
-    
-        if (ctype_alpha(str_replace(' ', '', $input))) 
-        {
-           
-            $check = 1;
-            
-        }
-       else if (ctype_digit(str_replace(' ', '', $input))) 
-        {
-           
-            $check = 0;
-        }
-        else
-        {
-            $check = 3;
-        }
-        
-        if($check == 3)
-        {           
-            $sql = "SELECT * FROM listings WHERE * like'%$input%'"; 
-            
-            foreach ((array) $this->db_connect->query($sql) as $row) 
-            {
-                $imgstack = $this->getImages($row['id']);
-                $newListing = new listing_model($row);
-                $newListing->setImages($imgstack);
-                $dataSet[] = $newListing;
-            }
-            if (!empty($dataSet))
-            {
-                return $dataSet;
-            }
-            else
-            {
-                return null;   
-            }
-        }
-        
-        $sql = "SELECT * FROM listings WHERE $option[$check] LIKE'%$input%'"; 
-        
-        foreach ($this->db_connect->query($sql) as $row) 
+        $past = date("Y/m/d", strtotime("-1 month") );
+        $sql = "SELECT * FROM listings WHERE when_added >= '$past'";
+
+        $res = $this->db_connect->query($sql);
+        foreach ($res as $row) 
         {
             $imgstack = $this->getImages($row['id']);
             $newListing = new listing_model($row);
             $newListing->setImages($imgstack);
             $dataSet[] = $newListing;
         }
-        if (!empty($dataSet))
-            return $dataSet;
-        else
-            return null;
+        return $dataSet;
     }
-    
-   /**
+
+    /**
      * Get Realtor's Listings from the Database
      * @return \UserData
      */
-    public function getRealtorListings($realtorId)
-    {
+    public function getRealtorListings($realtorId) {
         $imgstack = array();
         $sql = "SELECT * from listings WHERE userid = '$realtorId'";
-        foreach (parent::$this->db_connect->query($sql) as $row) 
-        {
+        foreach (parent::$this->db_connect->query($sql) as $row) {
             $imgstack = $this->getImages($row['id']);
             $newListing = new listing_model($row);
             $newListing->setImages($imgstack);
             $dataSet[] = $newListing;
-            
         }
         if (!empty($dataSet))
             return $dataSet;
         else
             return null;
     }
-    
+
     /**
      * Add a Listing to the Database
      * @param type $input
      */
-    public function addListing($input)
-    {
+    public function addListing($input) {
         $sql = "INSERT INTO listings(address, city, zip, price, rooms, bathrooms, 
             description, userid, when_added, when_modified) VALUES (
             :address, :city, :zip, :price, :rooms, :bathrooms, 
             :description, :userid, :when_added, :when_modified)";
-                                       
+
         $stmt = $this->db_connect->prepare($sql);
-        $stmt->bindParam(':address', $input->getAddress(), PDO::PARAM_STR);       
-        $stmt->bindParam(':city', $input->getCity(), PDO::PARAM_STR); 
-        $stmt->bindParam(':zip', $input->getZip(), PDO::PARAM_INT);  
-        $stmt->bindParam(':price', $input->getPrice(), PDO::PARAM_INT); 
-        $stmt->bindParam(':rooms', $input->getRooms(), PDO::PARAM_INT);   
-        $stmt->bindParam(':bathrooms', $input->getBathrooms(), PDO::PARAM_INT); 
-        $stmt->bindParam(':description', $input->getDescription(), PDO::PARAM_STR);   
-        $stmt->bindParam(':userid', $input->getUserId(), PDO::PARAM_STR);   
-        $stmt->bindParam(':when_added', date("Y/m/d"), PDO::PARAM_STR); 
-        $stmt->bindParam(':when_modified', date("Y/m/d"), PDO::PARAM_STR);   
-  
-        $stmt->execute();       
+        $stmt->bindParam(':address', $input->getAddress(), PDO::PARAM_STR);
+        $stmt->bindParam(':city', $input->getCity(), PDO::PARAM_STR);
+        $stmt->bindParam(':zip', $input->getZip(), PDO::PARAM_INT);
+        $stmt->bindParam(':price', $input->getPrice(), PDO::PARAM_INT);
+        $stmt->bindParam(':rooms', $input->getRooms(), PDO::PARAM_INT);
+        $stmt->bindParam(':bathrooms', $input->getBathrooms(), PDO::PARAM_INT);
+        $stmt->bindParam(':description', $input->getDescription(), PDO::PARAM_STR);
+        $stmt->bindParam(':userid', $input->getUserId(), PDO::PARAM_STR);
+        $stmt->bindParam(':when_added', date("Y/m/d"), PDO::PARAM_STR);
+        $stmt->bindParam(':when_modified', date("Y/m/d"), PDO::PARAM_STR);
+
+        $stmt->execute();
     }
-    
+
     /**
      * Edit a Listing in the Database
      * @param type $input (id number)
      */
-    public function editListing($input)
-    {
+    public function editListing($input) {
         $sql = "UPDATE listings SET address = :address, 
             city = :city, 
             zip = :zip, 
@@ -247,61 +173,56 @@ class listings_controller extends controller
             description = :description,  
             when_modified = :when_modified
             WHERE id = :id";
-                                          
-        $stmt = $this->db_connect->prepare($sql);
-        
-        $stmt->bindParam(':address', $input[1], PDO::PARAM_STR);       
-        $stmt->bindParam(':city', $input[2], PDO::PARAM_STR); 
-        $stmt->bindParam(':zip', $input[3], PDO::PARAM_INT);  
-        $stmt->bindParam(':price', $input[4], PDO::PARAM_INT); 
-        $stmt->bindParam(':rooms', $input[5], PDO::PARAM_INT);   
-        $stmt->bindParam(':bathrooms', $input[6], PDO::PARAM_INT); 
-        $stmt->bindParam(':description', $input[7], PDO::PARAM_STR);   
-        $stmt->bindParam(':when_modified', date("Y/m/d"), PDO::PARAM_STR);   
-        $stmt->bindParam(':id', $input[0], PDO::PARAM_INT);   
 
-        $stmt->execute();       
+        $stmt = $this->db_connect->prepare($sql);
+
+        $stmt->bindParam(':address', $input[1], PDO::PARAM_STR);
+        $stmt->bindParam(':city', $input[2], PDO::PARAM_STR);
+        $stmt->bindParam(':zip', $input[3], PDO::PARAM_INT);
+        $stmt->bindParam(':price', $input[4], PDO::PARAM_INT);
+        $stmt->bindParam(':rooms', $input[5], PDO::PARAM_INT);
+        $stmt->bindParam(':bathrooms', $input[6], PDO::PARAM_INT);
+        $stmt->bindParam(':description', $input[7], PDO::PARAM_STR);
+        $stmt->bindParam(':when_modified', date("Y/m/d"), PDO::PARAM_STR);
+        $stmt->bindParam(':id', $input[0], PDO::PARAM_INT);
+
+        $stmt->execute();
     }
-    
+
     /**
      * Delete a Listing from the database
      * @param type $id
      */
-    public function deleteListing($id)
-    {
+    public function deleteListing($id) {
         $sql = "DELETE FROM listings WHERE id =  :id";
         $stmt = $this->db_connect->prepare($sql);
         //$stmt->bindParam(':id', $id, PDO::PARAM_STR, 12);   
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);   
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
-    
-   
-    public function setImage($id, $imgName)
+
+    public function setImage($id, $imgName) {
 //    public function setImage()
-    {
         $defaultPath = '/~f14g03/views/assets/images/';
-        $imgName = $defaultPath.$imgName;
+        $imgName = $defaultPath . $imgName;
         $sql = "INSERT INTO images(houseid, path) VALUES (
             :houseid, :path)";
-                                       
+
         $stmt = $this->db_connect->prepare($sql);
-        $stmt->bindParam(':houseid', $id, PDO::PARAM_STR);       
-        $stmt->bindParam(':path', $imgName, PDO::PARAM_STR); 
-  
-        $stmt->execute();  
+        $stmt->bindParam(':houseid', $id, PDO::PARAM_STR);
+        $stmt->bindParam(':path', $imgName, PDO::PARAM_STR);
+
+        $stmt->execute();
     }
-    
+
     /**
      * Get images associated with a listing
      * @param type $listingId
      * @return imgStack
      */
-    public function getImages($listingId)
-    {
+    public function getImages($listingId) {
         $sql = "SELECT * from images WHERE houseid = '$listingId'";
-        foreach (parent::$this->db_connect->query($sql) as $row) 
-        {
+        foreach (parent::$this->db_connect->query($sql) as $row) {
             $imgstack[] = $row['path'];
         }
         if (!empty($imgstack))
@@ -309,64 +230,59 @@ class listings_controller extends controller
         else
             return null;
     }
-    
+
     /**
      * Remove image based on path
      * @param type $imagePath
-    */
-    public function removeImage($imagePath)
-    {
+     */
+    public function removeImage($imagePath) {
         // get pure filename
         $slash_count = 0;
         $filename = "";
-        for( $i=0; $i<strlen($imagePath); $i++ )
-        {
-            if($imagePath[$i] == '/') $slash_count++;
-            if($slash_count == 5){  $slash_count++; continue; }
-            if($slash_count == 6)
-            {
+        for ($i = 0; $i < strlen($imagePath); $i++) {
+            if ($imagePath[$i] == '/')
+                $slash_count++;
+            if ($slash_count == 5) {
+                $slash_count++;
+                continue;
+            }
+            if ($slash_count == 6) {
                 $filename .= $imagePath[$i];
             }
         }
-        
-        
+
+
         // $pathToImageDir = "../views/assets/".$filename;
         // echo $pathToImageDir;
-        
         // delete from dir
-        array_map('unlink', glob("/home/f14g03/public_html/views/assets/images/".$filename));
+        array_map('unlink', glob("/home/f14g03/public_html/views/assets/images/" . $filename));
 
         // delete from db
         $affected_rows = $this->db_connect->exec("DELETE FROM images WHERE path = '$imagePath'");
 
-        
-        
+
+
         // delete from server
-        
     }
-    
-    public function getListing($id)
-    {
+
+    public function getListing($id) {
         $sql = "SELECT * from listings WHERE id = '$id'";
-        foreach (parent::$this->db_connect->query($sql) as $row) 
-        {
+        foreach (parent::$this->db_connect->query($sql) as $row) {
 //            return $row;  
             $listing = new listing_model($row);
 //            $listing.setDateModified($row['when_modified']);
             return $listing;
         }
     }
-    
-    
-    public function getNewListing($userid)
-    {
+
+    public function getNewListing($userid) {
         $sql = "SELECT * from listings WHERE userid = '$userid' ORDER BY id DESC LIMIT 1";
-        foreach (parent::$this->db_connect->query($sql) as $row) 
-        {
+        foreach (parent::$this->db_connect->query($sql) as $row) {
 //            return $row;  
             $listing = new listing_model($row);
 //            $listing.setDateModified($row['when_modified']);
             return $listing->getId();
         }
     }
+
 }
