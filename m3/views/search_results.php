@@ -10,7 +10,15 @@ if (isset($_GET['search']))
     $value = $_GET['search'];
     
     $list_controller = new listings_controller();
-    $listingSet = $list_controller->searchListings($value);
+    switch ($_GET['search'])
+    {
+        case "recent":
+            $listingSet = $list_controller->searchRecent();
+            break;
+        default:
+            $listingSet = $list_controller->searchListings($value);
+            break;
+    }
 }     
 elseif (isset($_POST["searchvalue"]))
 {
