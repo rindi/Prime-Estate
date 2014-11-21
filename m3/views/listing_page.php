@@ -88,7 +88,7 @@ function alertafterContact() {
 					<table class="table">
 					    <tr>
 						<td>
-						    <h2>$ <?php echo $listing_model->getPrice(); ?></h2>
+						    <h2><?php echo '$' . number_format($listing_model->getPrice(), 0, '.', ',');?></h2>
 						</td>
 					    </tr>
 					    <tr>
