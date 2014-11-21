@@ -55,7 +55,7 @@ else
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Prime Estate - Search Results</title>
+	<title>PrimeEstate - Search Results</title>
 	<style>
 	    #search-field{
 		height: 35px;

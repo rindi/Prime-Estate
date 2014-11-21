@@ -43,7 +43,7 @@ if (isset($_POST['SubmitButton'])) {
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Prime Estate - Add Listing</title>
+        <title>PrimeEstate - Add Listing</title>
         <style>
             form { 
 margin: 0 auto; 
