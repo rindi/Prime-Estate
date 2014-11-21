@@ -117,7 +117,7 @@ function alertafterContact() {
 		echo "<div class=\"row\"><div class=\"col-xs-2\"><strong>";
 		echo count($listingSet);
 		if (count($listingSet) == 1)
-		    echo " Results</div> <div class=\"col-xs-10\">Page ";
+		    echo " Result</div> <div class=\"col-xs-10\">Page ";
 		else
 		    echo " Results</div> <div class=\"col-xs-10\">Page ";
 		echo $page;
