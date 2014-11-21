@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 
 <?php
+require_once '../models/listing_model.php';
+require_once '../controllers/listings_controller.php';
 include 'navbar.php';
 
-if (isset($_GET['search'])) {
+if (isset($_GET['search'])) 
+{
     $value = $_GET['search'];
-} else {
+    
+    $list_controller = new listings_controller();
+    $listingSet = $list_controller->searchListings($value);
+}     
+elseif (isset($_POST["searchvalue"]))
+{
     $value = $_POST["searchvalue"];
     $_GET['search'] = $_POST["searchvalue"];
     $value = $_GET['search'];
 
+    $list_controller = new listings_controller();
+    $listingSet = $list_controller->searchListings($value);
+}
+elseif (2==($_SESSION["type"]))
+{
+    
+    $list_controller = new listings_controller();
+    $listingSet = $list_controller->getRealtorListings($_SESSION["userid"]);
 }
 
 if (isset($_SESSION['userid'])) {
@@ -60,7 +76,7 @@ function alertafterContact() {
 			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="search_results.php" method="GET">
 			    <div class="form-group">
 				<div class="col-xs-offset-3 col-xs-5">
-				    <input style="height:39px;" id="search-field" type="search" name="search" placeholder="Enter a City or Zipcode" class="form-control" value="<?php echo $value; ?>">
+				    <input style="height:39px;" id="search-field" type="search" name="search" placeholder="Enter a City or Zipcode" class="form-control" value="<?php echo isset($value) ? $value : ''; ?>">
 				</div>
 				<label for="submit-form" class="btn btn-default col-xs-1"><i class="glyphicon glyphicon-search"></i></label>
 				<input id="submit-form" type="submit" class="btn btn-inverse col-xs-1 hidden">
@@ -73,13 +89,9 @@ function alertafterContact() {
 
 	    <!--Results-->
 	    <div id="heading" class="mainbox">
-                <h1>Search Results for <small><?php echo $value;?></small></h1>
+                <h1><?php echo isset($value) ? "Search Results for <small>".$value."</small>" : $_SESSION["username"].'\'s Listings';?></h1>
             </div>
 	    <?php
-	    require '../models/listing_model.php';
-	    require '../controllers/listings_controller.php';
-	    $list_controller = new listings_controller();
-	    $listingSet = $list_controller->searchListings($value);
 	    if (count($listingSet) > 0) {
 		$offset = 5;
 		$start = 0;
