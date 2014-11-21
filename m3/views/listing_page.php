@@ -1,5 +1,6 @@
 <?php
 require '../models/listing_model.php';
+require_once '../models/user_model.php';
 require '../controllers/listings_controller.php';
 if (!isset($_SESSION)) {
     session_start();
@@ -22,6 +23,9 @@ if (isset($_GET['interest']) && isset($_GET['userid'])) {
 $listing_controller = new listings_controller();
 $listing_model = $listing_controller->getListing($_GET['id']);
 $images = $listing_controller->getImages($_GET['id']);
+$user_controller = new users_controller();
+$realtorid = $listing_model->getUserId();
+$realtor = $user_controller->getUserInfo($realtorid);
 $image_1 = $images[0];
 
 $addressgooglemaps = $listing_model->getAddress();
@@ -90,7 +94,7 @@ function alertafterContact() {
 					    <tr>
 						<td>
 						    <h3><?php echo $listing_model->getAddress(); ?>
-							<small><?php echo $listing_model->getCity(); ?>, 
+							<small><?php echo $listing_model->getCity(); ?>, CA  
 							    <?php echo $listing_model->getZip(); ?></small>
 						    </h3>
 						    <h4>
@@ -105,8 +109,8 @@ function alertafterContact() {
 							 src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
 							 style="width: 140px; height: 140px;">						    <div style='margin-left: 150px;'>-->
 
-							<h2>Joe Shmack</h2>
-							<p>Westlake Inc.  </p>
+							<h2><?php echo $realtor['firstname']. ' '.$realtor['lastname']?></h2>
+							<p>PrimeEstate Inc.</p>
 							<form>
 							    <div class='form-group'>
 								<input class='form-control' type='textfield' placeholder='Name'>
