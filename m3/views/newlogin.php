@@ -28,7 +28,7 @@
 	    <div class="modal-dialog">
 		<div class="modal-content">
 		    <div class="modal-header">
-			<h1 class="text-center">Login</h1>
+			<h1 class="text-center">Sign in to your account</h1>
 		    </div>
 		    <div class="modal-footer">
 			<form class="form col-md-12 center-block" method="post" action="loginhandler.php" name="loginform">
