@@ -1,61 +1,104 @@
 <?php
 
 /**
- * user_model Class
+ * lead_model Class
  */
-class lead_model
-{
+class lead_model {
+
     //fields for userdata class
     public $firstname, $lastname, $phone, $email, $date;
-    
-    public function __construct($input)
-    { 
+
+    /**
+     * lead_model constructor
+     * @param type $input
+     */
+    public function __construct($input) {
         $this->firstname = $input['firstname'];
         $this->lastname = $input['lastname'];
         $this->phone = $input['phone'];
         $this->email = $input['email'];
     }
-    
-    public function getEmail()
-    {
+
+    /**
+     * function to get email address
+     * @return type
+     */
+    public function getEmail() {
         return $this->email;
     }
-    public function setEmail($email)
-    {
+
+    /**
+     * function to set email address
+     * @return type
+     */
+    public function setEmail($email) {
         $this->email = $email;
     }
-    public function setPhone($phone)
-    {
+
+    /**
+     * function to set phone
+     * @return type
+     */
+    public function setPhone($phone) {
         $this->phone = $phone;
-    } 
-    public function setContactDate($date)
-    {
+    }
+
+    /**
+     * function to get contact date
+     * @return type
+     */
+    public function setContactDate($date) {
         $this->date = $date;
     }
-    public function getContactDate()
-    {
+
+    /**
+     * function to set contact date
+     * @return type
+     */
+    public function getContactDate() {
         return $this->date;
     }
-    public function getFirstname()
-    {
+
+    /**
+     * function to get first name
+     * @return type
+     */
+    public function getFirstname() {
         return $this->firstname;
     }
-    public function getLastname()
-    {
+
+    /**
+     * function to get last name
+     * @return type
+     */
+    public function getLastname() {
         return $this->lastname;
     }
-    public function getPhone()
-    {
+
+    /**
+     * function to get phone
+     * @return type
+     */
+    public function getPhone() {
         return $this->phone;
     }
-    public function setFirstname($firstname)
-    {
+
+    /**
+     * function to set first name
+     * @return type
+     */
+    public function setFirstname($firstname) {
         $this->firstname = $firstname;
     }
-    public function setLastname($lastname)
-    {
+
+    /**
+     * function to set last name
+     * @return type
+     */
+    public function setLastname($lastname) {
         $this->lastname = $lastname;
-    }   
+    }
+
 }
 
 ?>

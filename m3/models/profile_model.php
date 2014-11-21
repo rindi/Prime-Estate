@@ -3,29 +3,13 @@
 /**
  * user_model Class
  */
-class profile_model
-{
+class profile_model {
+
     //fields for userdata class
     public $bedrooms, $bathrooms, $pricemax, $pricemin, $zip, $personalinformation, $userid, $city;
-     public function __construct($dbRow) {
-  
-            $this->bedrooms = $dbRow['bedrooms'];
-            $this->bathrooms = $dbRow['bathrooms'];
-            $this->pricemax = $dbRow['pricemax'];
-            $this->pricemin = $dbRow['pricemin'];
-            $this->zip = $dbRow['zip'];
-            $this->personalinformation = $dbRow['personalinformation'];
-            $this->userid = $dbRow['userid'];
-            $this->city = $dbRow['city'];
-            
-            
-         
-      
-         
-     }
-    /**
-    public function __construct($dbRow)
-    { 
+
+    public function __construct($dbRow) {
+
         $this->bedrooms = $dbRow['bedrooms'];
         $this->bathrooms = $dbRow['bathrooms'];
         $this->pricemax = $dbRow['pricemax'];
@@ -33,12 +17,10 @@ class profile_model
         $this->zip = $dbRow['zip'];
         $this->personalinformation = $dbRow['personalinformation'];
         $this->userid = $dbRow['userid'];
-    
+        $this->city = $dbRow['city'];
     }
-     * 
-     */
-    public function info()
-    {
+
+    public function info() {
         echo"profile_model begin \n";
         echo "$this->bedrooms\n";
         echo "$this->bathrooms\n";
@@ -48,63 +30,63 @@ class profile_model
         echo "$this->personalinformation\n";
         echo "profile_model end\n";
     }
-    public function getBathrooms()
-    {
+
+    public function getBathrooms() {
         return $this->bathrooms;
     }
-    public function getBedrooms()
-    {
+
+    public function getBedrooms() {
         return $this->bedrooms;
     }
-    public function getPricemin()
-    {
+
+    public function getPricemin() {
         return $this->pricemin;
     }
-    public function getPricemax()
-    {
+
+    public function getPricemax() {
         return $this->pricemax;
     }
-    public function getZip()
-    {
+
+    public function getZip() {
         return $this->zip;
     }
-    public function getPersonalInformation()
-    {
+
+    public function getPersonalInformation() {
         return $this->personalinformation;
     }
-    public function getUserid()
-    {
+
+    public function getUserid() {
         return $this->userid;
     }
-    public function setBathrooms($bathrooms)
-    {
+
+    public function setBathrooms($bathrooms) {
         $this->bathrooms = $bathrooms;
     }
-    public function setBedrooms($input)
-    {
+
+    public function setBedrooms($input) {
         $this->bedrooms = $input;
     }
-    public function setPricemin($input)
-    {
+
+    public function setPricemin($input) {
         $this->pricemin = $input;
-    }    
-    public function setPricemax($input)
-    {
+    }
+
+    public function setPricemax($input) {
         $this->pricemax = $input;
     }
-    public function setZip($input)
-    {
+
+    public function setZip($input) {
         $this->zip = $input;
     }
-    public function setPersonalInformation($input)
-    {
+
+    public function setPersonalInformation($input) {
         $this->personalinformation = $input;
     }
-    
-    public function setUserid($input)
-    {
+
+    public function setUserid($input) {
         $this->userid = $input;
     }
+
     public function getCity() {
         return $this->city;
     }
@@ -112,11 +94,6 @@ class profile_model
     public function setCity($city) {
         $this->city = $city;
     }
-
-
-    
-
-    
 
 }
 
