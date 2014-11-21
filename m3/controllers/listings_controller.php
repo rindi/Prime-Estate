@@ -17,7 +17,9 @@ class listings_controller extends controller {
     }
 
     /**
-     * search2
+     * Search listings
+     * @param type $input
+     * @return \listing_model
      */
     public function searchListings($input) {
         $check = -1;
@@ -37,9 +39,6 @@ class listings_controller extends controller {
         }
 
         if ($check == 1) {
-      //      $input = str_replace(' ', '', $input);
-
-
             $sql = "SELECT * FROM listings WHERE city like '%$input%'";
             $res = $this->db_connect->query($sql);
 
@@ -50,73 +49,54 @@ class listings_controller extends controller {
                 $dataSet[] = $newListing;
             }
         }
-       
-        if($check == 0)
-        {
-     //   $input = str_replace(' ', '', $input);
-        $sql = "SELECT * FROM listings WHERE zip like '%$input%'";
-        $res = $this->db_connect->query($sql);
-      
-         foreach ($res as $row) 
-         {
+
+        if ($check == 0) {
+            $sql = "SELECT * FROM listings WHERE zip like '%$input%'";
+            $res = $this->db_connect->query($sql);
+
+            foreach ($res as $row) {
                 $imgstack = $this->getImages($row['id']);
                 $newListing = new listing_model($row);
                 $newListing->setImages($imgstack);
                 $dataSet[] = $newListing;
             }
         }
-        
-        
-        if($check == 3)
-        {
-            
-            $letters ="";
+
+        if ($check == 3) {
+
+            $letters = "";
             $digits = "";
-            $letters = preg_replace("/[^a-z\s]/i", "", $input); 
-           // $letters = preg_replace("/\s\s+/"," ", $letters);
-           $digits =  preg_replace("/[^0-9\s]/i", "", $input);
-           $letters = str_replace(' ', '', $letters);
-           $digits = str_replace(' ', '', $digits);
-           if(strlen($letters)== 0 && strlen($digits) == 0)
-           {
-               return NULL;
-           }
-           
-           
-        $sql = "SELECT * FROM listings WHERE zip like '%$digits%' OR city like '%$letters%'  ";
-            
-               $res = $this->db_connect->query($sql);
-          foreach ($res as $row) 
-         {
+            $letters = preg_replace("/[^a-z\s]/i", "", $input);
+            $digits = preg_replace("/[^0-9\s]/i", "", $input);
+            $letters = str_replace(' ', '', $letters);
+            $digits = str_replace(' ', '', $digits);
+            if (strlen($letters) == 0 && strlen($digits) == 0) {
+                return NULL;
+            }
+
+            $sql = "SELECT * FROM listings WHERE zip like '%$digits%' OR city like '%$letters%'  ";
+
+            $res = $this->db_connect->query($sql);
+            foreach ($res as $row) {
                 $imgstack = $this->getImages($row['id']);
                 $newListing = new listing_model($row);
                 $newListing->setImages($imgstack);
                 $dataSet[] = $newListing;
             }
         }
-        //  print_r($dataSet);
-        //  $size = sizeof($dataSet);
-        //  echo "size is $size";
-
-
-
-
         return $dataSet;
     }
 
     /**
-     * Search Listings
-     * @param type $input
-     * @return \ListingData
+     * Search Recent listings function
+     * @return \listing_model
      */
-    public function searchRecent() 
-    {
-        $past = date("Y/m/d", strtotime("-1 month") );
+    public function searchRecent() {
+        $past = date("Y/m/d", strtotime("-1 month"));
         $sql = "SELECT * FROM listings ORDER BY id DESC";
 
         $res = $this->db_connect->query($sql);
-        foreach ($res as $row) 
-        {
+        foreach ($res as $row) {
             $imgstack = $this->getImages($row['id']);
             $newListing = new listing_model($row);
             $newListing->setImages($imgstack);
@@ -211,8 +191,12 @@ class listings_controller extends controller {
         $stmt->execute();
     }
 
+    /**
+     * Set a listings image
+     * @param type $id
+     * @param string $imgName
+     */
     public function setImage($id, $imgName) {
-//    public function setImage()
         $defaultPath = '/~f14g03/views/assets/images/';
         $imgName = $defaultPath . $imgName;
         $sql = "INSERT INTO images(houseid, path) VALUES (
@@ -246,7 +230,6 @@ class listings_controller extends controller {
      * @param type $imagePath
      */
     public function removeImage($imagePath) {
-        // get pure filename
         $slash_count = 0;
         $filename = "";
         for ($i = 0; $i < strlen($imagePath); $i++) {
@@ -261,36 +244,35 @@ class listings_controller extends controller {
             }
         }
 
-
-        // $pathToImageDir = "../views/assets/".$filename;
-        // echo $pathToImageDir;
         // delete from dir
         array_map('unlink', glob("/home/f14g03/public_html/views/assets/images/" . $filename));
 
         // delete from db
         $affected_rows = $this->db_connect->exec("DELETE FROM images WHERE path = '$imagePath'");
-
-
-
-        // delete from server
     }
 
+    /**
+     * Get a listing function
+     * @param type $id
+     * @return \listing_model
+     */
     public function getListing($id) {
         $sql = "SELECT * from listings WHERE id = '$id'";
         foreach (parent::$this->db_connect->query($sql) as $row) {
-//            return $row;  
             $listing = new listing_model($row);
-//            $listing.setDateModified($row['when_modified']);
             return $listing;
         }
     }
 
+    /**
+     * Get a users most recent listing function
+     * @param type $userid
+     * @return type
+     */
     public function getNewListing($userid) {
         $sql = "SELECT * from listings WHERE userid = '$userid' ORDER BY id DESC LIMIT 1";
         foreach (parent::$this->db_connect->query($sql) as $row) {
-//            return $row;  
             $listing = new listing_model($row);
-//            $listing.setDateModified($row['when_modified']);
             return $listing->getId();
         }
     }
