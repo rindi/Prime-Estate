@@ -7,15 +7,21 @@ require_once ("../controllers/listings_controller.php");
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+$listingcont = new listings_controller();
+//echo $_SESSION['userid'];echo "House ID " . $listingcont->getNewListing($_SESSION['userid']);
+if(isset($_GET['id']))
+{
+    $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$_GET['id'].'"';
+}    
+else
+{
+    $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingcont->getNewListing($_SESSION['userid']).'"';
+}
 ?>
 <html>
     <head>
         <title> Upload Your image </title>    
-            <?php $listingcont = new listings_controller();
-//echo $_SESSION['userid'];echo "House ID " . $listingcont->getNewListing($_SESSION['userid']);
-$list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingcont->getNewListing($_SESSION['userid']).'"';
-?>
+          
 <style>
             form { 
 margin: 0 auto; 
