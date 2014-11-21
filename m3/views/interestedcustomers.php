@@ -4,6 +4,9 @@
 include 'navbar.php';
 require_once ("../controllers/interest_controller.php");
 require_once ("../models/user_model.php");
+require_once '../models/listing_model.php';
+require_once '../controllers/listings_controller.php';
+require_once '../controllers/interest_controller.php';
 $value = $_GET['id'];
 ?>
 
@@ -22,10 +25,6 @@ $value = $_GET['id'];
         <h2> Interested Customers </h2>
         
         <?php
-        require_once '../models/listing_model.php';
-        require_once '../controllers/listings_controller.php';
-        require_once '../controllers/interest_controller.php';
-     
         echo "<div class='results'>
         <table class='table' style='width:90%' border='1' align='center'>
         <thead>
@@ -35,10 +34,10 @@ $value = $_GET['id'];
         <th>Date Contacted</th>
         </tr></thead>";
         
-        $realtor_controller = new interest_controller();
-        $listingSet = $realtor_controller->getInterestedCustomers($value);
-        
-        foreach((array)$listingSet as $userData) 
+        $interest_controller = new interest_controller();
+        $customerSet = $interest_controller->getInterestedCustomers($value);
+        sizeof($customerSet);
+        foreach((array)$customerSet as $userData) 
         {
             echo "<tbody><tr>";
             echo "<td>" . $userData->getUserName() . "</td>";

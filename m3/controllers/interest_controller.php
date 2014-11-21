@@ -11,7 +11,6 @@ class interest_controller extends controller
     /**
      * Constructor
      */
-    public $dataSet=0;
     public function __construct( ) 
     {
         parent::__construct();
@@ -24,20 +23,19 @@ class interest_controller extends controller
     public function getInterestedCustomers($listing)
     {   
         $sql = "SELECT * FROM interestedcustomers WHERE id = '$listing'";
-        foreach( parent::$this->db_connect->query($sql) as $row )
+        $res = $this->db_connect->query($sql);
+        foreach($res as $row)
         {
+            
             $user_controller = new users_controller();
             $temp = $user_controller->getUserInfo($row['userid']);
+            
             $tempuser = new user_model($temp);
             $tempuser->setContactDate($row['date']);
             $dataSet[] = $tempuser;
         }
-        if (!empty($dataSet))
-            return $dataSet;
-        else
-            return null;    
+        return $dataSet;
     }
-    
     /**
      * get all users from the table
      * @return \user_model
