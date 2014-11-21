@@ -26,7 +26,7 @@ $value = $_GET['id'];
         
         <?php
         echo "<div class='results'>
-        <table class='table' style='width:90%' border='1' align='center'>
+        <table class='table table-striped table-bordered table-hover' style='width:80%;text-align: center;' align='center'>
         <thead>
         <tr>
         <th>UserName</th>
@@ -38,10 +38,10 @@ $value = $_GET['id'];
         $customerSet = $interest_controller->getInterestedCustomers($value);
         sizeof($customerSet);
         foreach((array)$customerSet as $userData) 
-        {
+        {       
             echo "<tbody><tr>";
             echo "<td>" . $userData->getUserName() . "</td>";
-            echo "<td>" . $userData->getUserEmail() . "</td>";
+            echo "<td><a href='mailto:" . $userData->getUserEmail() . "'?Subject=Greetings%20from%20Prime%20Estate>". $userData->getUserEmail() . "</td>";
             echo "<td>" . $userData->getContactDate() . "</td>";
 //            echo "<td>" . "11/5/2014" . "</td>";
         }
