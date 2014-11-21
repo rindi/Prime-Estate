@@ -19,6 +19,13 @@ if( $_GET['removepath'] )
                 <a class="thumbnail">
                     <img src="<?php echo $all_images[$i]; ?>" alt="...">
                 </a>
+                
+                <a href="http://sfsuswe.com/~f14g03/views/edit_listing.php?id=<?php echo $_GET['id'];?>">
+                    <button class="btn btn-default" value="&laquo; Back">Back to Listing</button>
+                </a>
+                <a href="http://sfsuswe.com/~f14g03/views/upload.php?id=<?php echo $_GET['id'];?>">
+                    <button class="btn btn-default" value="&laquo; Back">Add a Photo</button>
+                </a>
                 <a href="edit_photo.php?id=<?php echo $_GET['id'];?>&removepath=<?php echo $all_images[$i];?>">
                     <button class="btn btn-danger" value="Remove">Remove</button>
                 </a>
