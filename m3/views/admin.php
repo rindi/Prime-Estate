@@ -18,7 +18,7 @@ else if($usertype != 3)
 <?php if ($usertype == 3): ?>
 <html>
     <head>
-	<title> Administrator </title>
+	<title> PrimeEstate - Administrator's page </title>
 	<style>
 	    .panel-heading{
 		background-color: rgba(18,172,168,0.3);

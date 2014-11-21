@@ -26,7 +26,7 @@ $customerSet = $interest_controller->getInterestedCustomers($value);
     </style>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>PrimeEstate - Interested Customers list</title>
     </head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <body>
