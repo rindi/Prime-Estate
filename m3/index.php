@@ -43,7 +43,7 @@ include 'views/navbar.php';
 	    <div class="site-wrapper-inner">
 		<div class="cover-container">
 		    <div class="inner cover">
-			<h1 class="cover-heading">Welcome to Prime Estate.</h1>
+			<h1 class="cover-heading">Welcome to PrimeEstate.</h1>
                         <h3 class="cover-heading">Search for your dream home by City or Zip.</h3>
 			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="views/search_results.php" method="GET">
 			    <div class="form-group">
