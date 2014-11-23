@@ -8,6 +8,8 @@ else
     $type = 0;
 ?>
 <html>
+    <link rel="shortcut icon" href="http://sfsuswe.com/~f14g03/views/assets/logo/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://sfsuswe.com/~f14g03/views/assets/logo/favicon.ico" type="image/x-icon">
     <head>
     </head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -16,19 +18,19 @@ else
     <link rel="stylesheet" href="http://sfsuswe.com/~f14g03/views/css/bootstrap.css" />
     <link rel="stylesheet" href="css/main.css" />
     <style>
-	.navbar{
-	    margin-bottom: 0px;
-	}
-        .footer {
-	    background-color: #FFFFFF;
-	    text-align: center;
+        .navbar{
+            margin-bottom: 0px;
         }
-	.navbar{
-	    background: rgba(255,255,255, 0.9);
-	    border-radius: 0px;
-	    border: 0px;
-	    border-bottom: 2px solid #12cac5;
-	}
+        .footer {
+            background-color: #FFFFFF;
+            text-align: center;
+        }
+        .navbar{
+            background: rgba(255,255,255, 0.9);
+            border-radius: 0px;
+            border: 0px;
+            border-bottom: 2px solid #12cac5;
+        }
     </style>
     <body>
         <nav class="navbar" role="navigation" style="margin-bottom:0px;">
@@ -40,83 +42,83 @@ else
                 </button>    
             </div>
             <a class="navbar-brand" href="http://sfsuswe.com/~f14g03/index.php">
-		<img style="max-width:100px; margin-top: -7px;" src="http://sfsuswe.com/~f14g03/views/assets/logo/PrimeEstate_Logo_Menu.png">
-	    </a>
+                <img style="max-width:100px; margin-top: -7px;" src="http://sfsuswe.com/~f14g03/views/assets/logo/PrimeEstate_Logo_Menu.png">
+            </a>
             <div id="navbar-collapse" class="navbar-collapse collapse">
-		<strong>
-		<ul class="nav navbar-nav navbar-left"> 
-		    <?php
-		    if ($type == 0 || $type == 1) {
-			?>
-    		    <li> 
-    			<a href="http://sfsuswe.com/~f14g03/views/sell.php">Sell Your Home Today!</a>
-    		    </li><?php
-		}
-		if ($type == 2) {
-			?>
-    		    <li>
-    			<a href="http://sfsuswe.com/~f14g03/views/leads.php">Leads</a>
-    		    </li><?php
-		}
-		if ($type == 1) {
-			?>
-    		    <li>
-    			<a href="http://sfsuswe.com/~f14g03/views/profile.php">My Profile</a>
-    		    </li>
-                    <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.php">Buyer's Guide</a>
-                    </li>
-            
+                <strong>
+                    <ul class="nav navbar-nav navbar-left"> 
                         <?php
-		}
-		if ($type == 2) {
-			?>
-    		    <li>
-    			<a href="http://sfsuswe.com/~f14g03/views/search_results.php?rid=1">Dashboard</a>
-    		    </li><?php
-		}
-		if ($type == 2) {
-			?>
-    		    <li>
-    			<a href="http://sfsuswe.com/~f14g03/views/add_listing.php">Add Listing</a>
-    		    </li><?php
-		}
-		if ($type == 3) {
-			?>
-    		    <li>
-    			<a href="http://sfsuswe.com/~f14g03/views/admin.php">Admin</a>
-    		    </li><?php }
-		    ?>
-		</ul>
-		<ul     class="nav navbar-nav navbar-right">
-		    <?php
-		    if ($type == 1 || $type == 2 || $type == 3) {
-			?>
-    		    <li> 
-    			<a href="http://sfsuswe.com/~f14g03/views/logout.php">Logout</a>
-    		    </li><?php } ?>
-		    <?php
-		    if ($type == 0) {
-			?>
-    		    <li>
-    			<a href="http://sfsuswe.com/~f14g03/views/registration.php">Sign Up</a>
-    		    </li>
+                        if ($type == 0 || $type == 1) {
+                            ?>
+                            <li> 
+                                <a href="http://sfsuswe.com/~f14g03/views/sell.php">Sell Your Home Today!</a>
+                            </li><?php
+                    }
+                    if ($type == 2) {
+                            ?>
+                            <li>
+                                <a href="http://sfsuswe.com/~f14g03/views/leads.php">Leads</a>
+                            </li><?php
+                    }
+                    if ($type == 1) {
+                            ?>
+                            <li>
+                                <a href="http://sfsuswe.com/~f14g03/views/profile.php">My Profile</a>
+                            </li>
+                            <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.php">Buyer's Guide</a>
+                            </li>
 
-		    <?php
-		    }
-		    if ($type == 0) {
-			?>
-    		    <li>
-    			<a href="http://sfsuswe.com/~f14g03/views/newlogin.php">Login</a>
-    		    </li>
-		    <?php } ?></ul>
-		</strong>
+                            <?php
+                        }
+                        if ($type == 2) {
+                            ?>
+                            <li>
+                                <a href="http://sfsuswe.com/~f14g03/views/search_results.php?rid=1">Dashboard</a>
+                            </li><?php
+                    }
+                    if ($type == 2) {
+                            ?>
+                            <li>
+                                <a href="http://sfsuswe.com/~f14g03/views/add_listing.php">Add Listing</a>
+                            </li><?php
+                    }
+                    if ($type == 3) {
+                            ?>
+                            <li>
+                                <a href="http://sfsuswe.com/~f14g03/views/admin.php">Admin</a>
+                            </li><?php }
+                        ?>
+                    </ul>
+                    <ul     class="nav navbar-nav navbar-right">
+                        <?php
+                        if ($type == 1 || $type == 2 || $type == 3) {
+                            ?>
+                            <li> 
+                                <a href="http://sfsuswe.com/~f14g03/views/logout.php">Logout</a>
+                            </li><?php } ?>
+                        <?php
+                        if ($type == 0) {
+                            ?>
+                            <li>
+                                <a href="http://sfsuswe.com/~f14g03/views/registration.php">Sign Up</a>
+                            </li>
+
+                            <?php
+                        }
+                        if ($type == 0) {
+                            ?>
+                            <li>
+                                <a href="http://sfsuswe.com/~f14g03/views/newlogin.php">Login</a>
+                            </li>
+                        <?php } ?></ul>
+                </strong>
             </div>
         </nav>
-        
+
         <footer>
-	    <div class="footer navbar-fixed-bottom">
-		<a href="http://sfsuswe.com/~f14g03/views/policy.php">San Francisco State University Software Engineering Project, Fall 2014.  For Demonstration Purposes Only</a>
-	    </div>
+            <div class="footer navbar-fixed-bottom">
+                <a href="http://sfsuswe.com/~f14g03/views/policy.php">San Francisco State University Software Engineering Project, Fall 2014.  For Demonstration Purposes Only</a>
+            </div>
         </footer>
     </body>
 </html>
