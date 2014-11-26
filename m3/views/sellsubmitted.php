@@ -31,6 +31,18 @@ if($flag == 'true')
     $user = new lead_model($input);
     $lead_controller = new leads_controller();
     $lead_controller->addLead($user);
+    
+    //Register the user
+    $reginput['username'] = $email;
+    $reginput['password'] = md5($phone);
+    $reginput['type'] = 1;
+    $reginput['email'] = $email;
+    $reginput['firstname'] = $firstname;
+    $reginput['lastname'] = $lastname;
+    $newuser = new user_model($reginput);
+    $registration_controller = new users_controller();
+    $registration_controller->addUser($newuser);
+
 }
 
 ?>
