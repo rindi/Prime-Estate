@@ -60,7 +60,7 @@ include 'navbar.php';
     <body style="padding-bottom: 40px">
         <div class="container">
 	    <div id="paneler" class="panel panel-default" style="text-align: center;color:#12aca5">
-		<h1 class="panel-body"><strong>SELL YOUR HOME</strong></h1>
+		<h1 class="panel-body"><strong>Sell your home with PrimeEstate</strong></h1>
 	    </div>
 
 	    <div class="panel panel-default">
@@ -68,7 +68,9 @@ include 'navbar.php';
 		    <div class="col-xs-12 col-sm-6">
 			<div class="clearfix" style="padding-bottom: 20px;">
 			    <form style="margin: 20px" class="form-horizontal" name="sell" action="sellsubmitted.php" method="POST">
-				<div class="form-group">
+                                <h4>
+                                    Fill out the form to contact us and sell your home!
+                                </h4><div class="form-group">
 				    <label for="" class="col-sm-3 control-label">First name</label>
 				    <div class="col-sm-9">
 					<input type="text" class="form-control" id="fname" placeholder="First name">
