@@ -59,6 +59,9 @@ else
                             </li>
                             <li> 
                                 <a href="http://sfsuswe.com/~f14g03/views/sell.php">Sell Your Home Today!</a>
+                            </li>
+                            <li> 
+                                <a href="http://sfsuswe.com/~f14g03/views/contactus.php">Contact Us</a>
                             </li><?php
                     }
                     if ($type == 2) {

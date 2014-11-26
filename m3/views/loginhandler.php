@@ -2,7 +2,7 @@
 require_once ("../controllers/users_controller.php");
 require_once ("../controllers/listings_controller.php");
 include("navbar.php");
-
+ob_start();
 $usercontroller = new users_controller();
 $username = $_POST["login_username"];
 $password = $_POST["login_password"];
