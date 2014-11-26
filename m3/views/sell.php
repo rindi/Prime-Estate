@@ -67,40 +67,38 @@ include 'navbar.php';
 		<div class="row">
 		    <div class="col-xs-12 col-sm-6">
 			<div class="clearfix" style="padding-bottom: 20px;">
-                                <h4>
-                                    Fill out the form to contact us and sell your home!
-                                </h4>
-                                
-                                <form style="margin: 20px" class="form-horizontal" name="sell" action="sellsubmitted.php" method="POST">
-      <table style="text-align:center; margin: 0px auto">
-      <tr>
-        <td>First Name*</td>
-        <td>
-          <input type="text" name="firstname" required/>
-        </td>
-      </tr> 
-      <tr>
-        <td>Last Name*</td>
-        <td>
-            <input type="text" name="lastname" required/>
-        </td>
-      </tr>
-      <tr>
-        <td>Phone Number*</td>
-        <td>
-            <input type="text" name="phone"  id="phone" maxlength="10" required/>
-        </td>
-      </tr>
-      <tr>
-        <td>Email*</td>
-        <td>
-            <input type="email" name="email" id="email" placeholder="me@example.com" required/>
-        </td>
-      </tr>
-     </table>
-       <br/>
-     <input type="submit" value="Submit" id="submitlead">   
-      </form>
+                            <h4>
+                                Fill out the form to contact us and sell your home!
+                            </h4>
+
+                            <form style="margin: 20px" class="form-horizontal" name="sell" action="sellsubmitted.php" method="POST">
+                            <div class="form-group"> 
+                                <label for="" class="col-sm-3 control-label">First name</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="text" name="firstname" placeholder="First name" required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">Last name</label>
+                                <div class="col-sm-9">
+                                  <input class="form-control" type="text" name="lastname" placeholder="Last name" required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-sm-3 control-label">Phone Number</label>
+                                <div class="col-sm-9">
+                                  <input class="form-control" type="text" name="phone" placeholder="Phone Number" maxlength="10" required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                            <label for="" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-9">
+                              <input class="form-control" type="email" name="email" placeholder="me@example.com"required/>
+                            </div>
+                            </div>
+                            <button class="btn btn-default pull-right">Submit</button>
+                            <!--<input type="submit" value="Submit" id="submitlead">   -->
+                            </form>
 			</div>
 		    </div>
 		    <div class="col-xs-12 col-sm-6">
