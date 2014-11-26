@@ -14,10 +14,10 @@ if (isset($_POST['SubmitButton'])) {
     $currentPassword = $_POST['currentPassword'];
     $newPassword = $_POST['newPassword'];
     $confirmPassword = $_POST['confirmPassword'];
-
-    
+    $md5newpassword = md5($newPassword);
     $input['username'] = $_SESSION['username'];
-    $input['password'] = $_POST['newPassword'];
+    $input['password'] = $md5newpassword;
+
 //    $input['bathrooms'] = $_POST['bathrooms'];
 //    $input['description'] = $_POST['description'];
 //    $input['userid'] = $_SESSION['userid'];
@@ -26,38 +26,29 @@ if (isset($_POST['SubmitButton'])) {
     $usercontroller = new users_controller();
     $encryptedpassword = md5($currentPassword);
     $userlist = $usercontroller->getUsers();
+    $flag = 0;
     if($newPassword==$confirmPassword)
     {
         foreach ($userlist as $row) 
         {
             if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
             {
-                $row->changePassword($input);
+                $flag = 1;
+                $usercontroller->changePassword($input);
+                echo '<script language="javascript"> alert("Password is changed");</script>';
+                header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
             }
         }
+        if ($flag==0)
+            echo '<script language="javascript"> alert("Current Password is incorrect");</script>';
     }
     else
-        echo "Current Password is incorrect or Passwords did not match";
+        echo '<script language="javascript"> alert("Passwords did not match");</script>';
     }
 ?>
-
-<form>
-<div class="form-group">
-    <input type="password" class="form-control input-lg" name="currentPassword" placeholder="Current Password" required>
-</div>
-
-<div class="form-group">
-    <input type="password" class="form-control input-lg" name="newPassword" placeholder="New Password" required>
-</div>
-
-<div class="form-group">
-    <input type="password" class="form-control input-lg" name="confirmPassword" placeholder="Confirm New Password" required>
-</div>
-
-<div class="form-group" style="margin-bottom: 10px">
-    <button class="btn btn-default btn-lg btn-block" type="submit" name = "SubmitButton" ><strong>Change Password</strong></button>
-</div>
-</form>
+<html>
+<head>
+<title>Change Password</title>
 
 <script>
 function validatePassword() {
@@ -92,3 +83,25 @@ output = false;
 return output;
 }
 </script>    
+</head>
+<body>
+    <form action="changepassword.php" method="post">
+    <div class="form-group">
+        <input type="password" class="form-control input-lg" name="currentPassword" placeholder="Current Password" required>
+    </div>
+
+    <div class="form-group">
+        <input type="password" class="form-control input-lg" name="newPassword" placeholder="New Password" required>
+    </div>
+
+    <div class="form-group">
+        <input type="password" class="form-control input-lg" name="confirmPassword" placeholder="Confirm New Password" required>
+    </div>
+
+    <div class="form-group" style="margin-bottom: 10px">
+        <input type="submit" name = "SubmitButton" class="btn btn-default" value="Change Password">
+    </div>
+    </form>
+
+</body>
+</html>
