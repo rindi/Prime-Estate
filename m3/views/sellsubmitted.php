@@ -5,6 +5,9 @@ require_once '../models/user_model.php';
 require_once '../models/lead_model.php';
 
 $flag = 'true';
+echo $_POST['firstname'];
+echo $_POST['lastname'];
+echo $_POST['phone'];
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $phone = preg_replace("/[^0-9]/", '', $_POST['phone']);
@@ -54,5 +57,5 @@ if($flag == 'true')
     {
         alert("Thank you for contacting us, we will get in touch with you soon!");
     }
-window.location = 'http://sfsuswe.com/~f14g03/index.php';
+//window.location = 'http://sfsuswe.com/~f14g03/index.php';
 </script>

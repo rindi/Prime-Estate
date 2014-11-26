@@ -67,36 +67,40 @@ include 'navbar.php';
 		<div class="row">
 		    <div class="col-xs-12 col-sm-6">
 			<div class="clearfix" style="padding-bottom: 20px;">
-			    <form style="margin: 20px" class="form-horizontal" name="sell" action="sellsubmitted.php" method="POST">
                                 <h4>
                                     Fill out the form to contact us and sell your home!
-                                </h4><div class="form-group">
-				    <label for="" class="col-sm-3 control-label">First name</label>
-				    <div class="col-sm-9">
-					<input type="text" class="form-control" id="fname" placeholder="First name">
-				    </div>
-				</div>
-				<div class="form-group">
-				    <label for="" class="col-sm-3 control-label">Second name</label>
-				    <div class="col-sm-9">
-					<input type="text" class="form-control" id="fname" placeholder="Second name">
-				    </div>
-				</div>
-				<div class="form-group">
-				    <label for="" class="col-sm-3 control-label">Phone number</label>
-				    <div class="col-sm-9">
-					<input type="tel" class="form-control" id="fname" placeholder="Phone number">
-				    </div>
-				</div>
-				<div class="form-group">
-				    <label for="" class="col-sm-3 control-label">Email</label>
-				    <div class="col-sm-9">
-					<input type="text" class="form-control" id="fname" placeholder="Email">
-				    </div>
-				</div>
-				<button class="btn btn-default pull-right">Submit</button>
-			    </form>
-
+                                </h4>
+                                
+                                <form style="margin: 20px" class="form-horizontal" name="sell" action="sellsubmitted.php" method="POST">
+      <table style="text-align:center; margin: 0px auto">
+      <tr>
+        <td>First Name*</td>
+        <td>
+          <input type="text" name="firstname" required/>
+        </td>
+      </tr> 
+      <tr>
+        <td>Last Name*</td>
+        <td>
+            <input type="text" name="lastname" required/>
+        </td>
+      </tr>
+      <tr>
+        <td>Phone Number*</td>
+        <td>
+            <input type="text" name="phone"  id="phone" maxlength="10" required/>
+        </td>
+      </tr>
+      <tr>
+        <td>Email*</td>
+        <td>
+            <input type="email" name="email" id="email" placeholder="me@example.com" required/>
+        </td>
+      </tr>
+     </table>
+       <br/>
+     <input type="submit" value="Submit" id="submitlead">   
+      </form>
 			</div>
 		    </div>
 		    <div class="col-xs-12 col-sm-6">
