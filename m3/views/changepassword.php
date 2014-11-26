@@ -16,8 +16,8 @@ if (isset($_POST['SubmitButton'])) {
     $confirmPassword = $_POST['confirmPassword'];
 
     
-//    $input['price'] = $_POST['price'];
-//    $input['rooms'] = $_POST['rooms'];
+    $input['username'] = $_SESSION['username'];
+    $input['password'] = $_POST['newPassword'];
 //    $input['bathrooms'] = $_POST['bathrooms'];
 //    $input['description'] = $_POST['description'];
 //    $input['userid'] = $_SESSION['userid'];
@@ -25,13 +25,14 @@ if (isset($_POST['SubmitButton'])) {
     
     $usercontroller = new users_controller();
     $encryptedpassword = md5($currentPassword);
+    $userlist = $usercontroller->getUsers();
     if($newPassword==$confirmPassword)
     {
         foreach ($userlist as $row) 
         {
             if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
             {
-                echo 'Hi!';
+                $row->changePassword($input);
             }
         }
     }
