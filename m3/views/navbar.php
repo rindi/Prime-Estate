@@ -3,7 +3,11 @@ if (!isset($_SESSION)) {
     session_start();
 }
 if (isset($_SESSION['type']))
+{
     $type = $_SESSION['type'];
+    $username = $_SESSION['username'];
+    
+}
 else
     $type = 0;
 ?>
@@ -66,7 +70,15 @@ else
                     if ($type == 1) {
                             ?>
                             <li>
-                                <a href="http://sfsuswe.com/~f14g03/views/profile.php">My Profile</a>
+                                <li class="dropdown">
+                                <a href="http://sfsuswe.com/~f14g03/views/profile.php" class="dropdown-toggle" data-toggle="dropdown"><?php echo $username;?> <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="http://sfsuswe.com/~f14g03/views/profile.php">My Profile</a></li>
+                                    <li><a href="#">Change password</a></li>
+<!--                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>-->
+                                </ul>
+                                </li>
                             </li>
                             <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.php">Buyer's Guide</a>
                             </li>
