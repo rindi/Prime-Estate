@@ -42,7 +42,7 @@ else
                 </button>    
             </div>
             <a class="navbar-brand" href="http://sfsuswe.com/~f14g03/index.php">
-                <img style="max-width:100px; margin-top: -7px;" src="http://sfsuswe.com/~f14g03/views/assets/logo/PrimeEstate_Logo_Menu.png">
+                <img style="max-width:100px; margin-top: -7px;margin-right: 90px;" src="http://sfsuswe.com/~f14g03/views/assets/logo/PrimeEstate_Logo_Menu.png">
             </a>
             <div id="navbar-collapse" class="navbar-collapse collapse">
                 <strong>
@@ -50,6 +50,9 @@ else
                         <?php
                         if ($type == 0 || $type == 1) {
                             ?>
+                            <li> 
+                                <a href="http://sfsuswe.com/~f14g03/index.php">Buy Your New Home</a>
+                            </li>
                             <li> 
                                 <a href="http://sfsuswe.com/~f14g03/views/sell.php">Sell Your Home Today!</a>
                             </li><?php
