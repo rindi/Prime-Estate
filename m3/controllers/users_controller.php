@@ -148,4 +148,21 @@ class users_controller extends controller {
         $stmt->execute();
     }
 
+    /**
+     * change a password for a user
+     * @return \user_model
+     */
+    public function changePassword($input) {
+        $sql = "UPDATE usertable 
+                SET password = :password
+                WHERE username = :username";
+
+        $stmt = $this->db_connect->prepare($sql);
+        $stmt->bindParam(':password', $input->getUserPassword(), PDO::PARAM_STR);
+        $stmt->bindParam(':username', $input->getUserName(), PDO::PARAM_STR);
+
+        $stmt->execute();
+        echo 'Password changed.';
+    }
+    
 }
