@@ -160,7 +160,6 @@ class users_controller extends controller {
         $stmt = $this->db_connect->prepare($sql);
         $stmt->bindParam(':password', $input->getUserPassword(), PDO::PARAM_STR);
         $stmt->bindParam(':username', $input->getUserName(), PDO::PARAM_STR);
-
         $stmt->execute();
         echo 'Password changed.';
     }
