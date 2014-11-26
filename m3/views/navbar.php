@@ -72,17 +72,15 @@ else
                     }
                     if ($type == 1) {
                             ?>
-                            <li>
                                 <li class="dropdown">
-                                <a href="http://sfsuswe.com/~f14g03/views/profile.php" class="dropdown-toggle" data-toggle="dropdown"><?php echo $username;?> <span class="caret"></span></a>
+                                <a class="dropdown-toggle" data-toggle="dropdown">My Profile<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="http://sfsuswe.com/~f14g03/views/profile.php">My Profile</a></li>
+                                    <li><a href="http://sfsuswe.com/~f14g03/views/profile.php">Profile</a></li>
                                     <li><a href="http://sfsuswe.com/~f14g03/views/changepassword.php">Change password</a></li>
 <!--                                    <li class="divider"></li>
                                     <li><a href="#">Separated link</a></li>-->
                                 </ul>
                                 </li>
-                            </li>
                             <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.php">Buyer's Guide</a>
                             </li>
 
