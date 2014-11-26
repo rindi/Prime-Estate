@@ -1,7 +1,6 @@
 <?php
 require_once ("../controllers/users_controller.php");
 include("navbar.php");
-ob_start();
 /**
  * Description of changepassword
  *
@@ -36,7 +35,6 @@ if (isset($_POST['SubmitButton'])) {
                 $flag = 1;
                 $usercontroller->changePassword($input);
                 echo '<script language="javascript"> alert("Password is changed");</script>';
-                header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
             }
         }
         if ($flag==0)

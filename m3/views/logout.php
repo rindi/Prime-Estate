@@ -9,7 +9,6 @@ include 'navbar.php';
 session_unset(); 
 session_destroy();
 header('Location: http://sfsuswe.com/~f14g03/index.php');
-
 ?>
 
 </body>
