@@ -15,6 +15,11 @@ if (isset($_GET['search']))
         case "recent":
             $listingSet = $list_controller->searchRecent();
             break;
+        
+        case "sold":
+            $listingSet = $list_controller->searchSold();
+            break;
+        
         default:
             $listingSet = $list_controller->searchListings($value);
             break;
