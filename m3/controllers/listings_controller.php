@@ -104,6 +104,22 @@ class listings_controller extends controller {
         }
         return $dataSet;
     }
+/**
+     * Search Recent listings function
+     * @return \listing_model
+     */
+    public function searchSold() {
+        $sql = "SELECT * FROM listings WHERE sold = 1";
+
+        $res = $this->db_connect->query($sql);
+        foreach ($res as $row) {
+            $imgstack = $this->getImages($row['id']);
+            $newListing = new listing_model($row);
+            $newListing->setImages($imgstack);
+            $dataSet[] = $newListing;
+        }
+        return $dataSet;
+    }
 
     /**
      * Get Realtor's Listings from the Database
