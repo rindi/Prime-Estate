@@ -78,7 +78,7 @@ include 'views/navbar.php';
 			    <img class="img-circle" src="views/assets/images/IMG_4592copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Recently Sold</h2>
 			    <p>We are proud to inform we just sold this nice house at the city's heart. </p>
-                            <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=sold" role="button">View details &raquo;</a></div>
+                            <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=sold" role="button">View Recently Sold &raquo;</a></div>
 			</div><!-- /.col-lg-4 -->
 		    </div><!-- /.row -->
 		</div>
