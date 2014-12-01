@@ -51,10 +51,28 @@ include 'navbar.php';
                             the website's project specifications, and you will be able 
                             to review each of the five milestones we have released.  
                         </p>
+                        <li>
+                            <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone1Group3.pdf">Milestone #1</a>
+                        </li>
+                        <li>
+                            <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone2Group3.pdf">Milestone #2</a>
+                        </li>
+                        <li>
+                            <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone3Group3.pdf">Milestone #3</a>
+                        </li>
+                        <li>
+                            Milestone #4
+                            <!--<a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone4Group3.pdf">Milestone #4</a>-->
+                        </li>
+                        <li>
+                            Milestone #5
+                            <!--<a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone5Group3.pdf">Milestone #5</a>-->
+                        </li>
 		    </div>
 		    <hr>
 		    <!-- Three columns of text below the carousel -->
 		    <div class="row" style="padding-top: 40px;">
+                        <h1 >The Team</h1>
 			<div class="col-lg-2">
 			    <img class="img-circle" src="assets/images/foralex.gif" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Dong</h2>
