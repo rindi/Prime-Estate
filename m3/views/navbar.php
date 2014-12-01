@@ -2,13 +2,10 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-if (isset($_SESSION['type']))
-{
+if (isset($_SESSION['type'])) {
     $type = $_SESSION['type'];
     $username = $_SESSION['username'];
-    
-}
-else
+} else
     $type = 0;
 ?>
 <html>
@@ -51,9 +48,25 @@ else
             <div id="navbar-collapse" class="navbar-collapse collapse">
                 <strong>
                     <ul class="nav navbar-nav navbar-left"> 
-                        <?php
-                        if ($type == 0 || $type == 1) {
-                            ?>
+<?php
+if ($type == 1) {
+    ?>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">My Profile<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="http://sfsuswe.com/~f14g03/views/profile.php">Profile</a></li>
+                                    <li><a href="http://sfsuswe.com/~f14g03/views/changepassword.php">Change password</a></li>
+                                    <!--                                    <li class="divider"></li>
+                                                                        <li><a href="#">Separated link</a></li>-->
+                                </ul>
+                            </li>
+                            <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.php">Buyer's Guide</a>
+                            </li>
+
+    <?php
+}
+if ($type == 0 || $type == 1) {
+    ?>
                             <li> 
                                 <a href="http://sfsuswe.com/~f14g03/index.php">Buy Your New Home</a>
                             </li>
@@ -63,47 +76,31 @@ else
                             <li> 
                                 <a href="http://sfsuswe.com/~f14g03/views/contactus.php">Contact Us</a>
                             </li><?php
-                    }
-                    if ($type == 2) {
-                            ?>
+}
+if ($type == 2) {
+    ?>
                             <li>
                                 <a href="http://sfsuswe.com/~f14g03/views/leads.php">Leads</a>
                             </li><?php
-                    }
-                    if ($type == 1) {
-                            ?>
-                                <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown">My Profile<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="http://sfsuswe.com/~f14g03/views/profile.php">Profile</a></li>
-                                    <li><a href="http://sfsuswe.com/~f14g03/views/changepassword.php">Change password</a></li>
-<!--                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>-->
-                                </ul>
-                                </li>
-                            <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.php">Buyer's Guide</a>
-                            </li>
-
-                            <?php
-                        }
-                        if ($type == 2) {
-                            ?>
+}
+if ($type == 2) {
+    ?>
                             <li>
                                 <a href="http://sfsuswe.com/~f14g03/views/search_results.php?rid=1">Dashboard</a>
                             </li><?php
                     }
                     if ($type == 2) {
-                            ?>
+                        ?>
                             <li>
                                 <a href="http://sfsuswe.com/~f14g03/views/add_listing.php">Add Listing</a>
                             </li><?php
                     }
                     if ($type == 3) {
-                            ?>
+                        ?>
                             <li>
                                 <a href="http://sfsuswe.com/~f14g03/views/admin.php">Admin</a>
                             </li><?php }
-                        ?>
+?>
                     </ul>
                     <ul     class="nav navbar-nav navbar-right">
                         <?php
@@ -112,21 +109,21 @@ else
                             <li> 
                                 <a href="http://sfsuswe.com/~f14g03/views/logout.php">Logout</a>
                             </li><?php } ?>
-                        <?php
-                        if ($type == 0) {
-                            ?>
+<?php
+if ($type == 0) {
+    ?>
                             <li>
                                 <a href="http://sfsuswe.com/~f14g03/views/registration.php">Sign Up</a>
                             </li>
 
-                            <?php
-                        }
-                        if ($type == 0) {
-                            ?>
+    <?php
+}
+if ($type == 0) {
+    ?>
                             <li>
                                 <a href="http://sfsuswe.com/~f14g03/views/newlogin.php">Login</a>
                             </li>
-                        <?php } ?></ul>
+<?php } ?></ul>
                 </strong>
             </div>
         </nav>
