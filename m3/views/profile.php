@@ -11,6 +11,8 @@ $usercontroller = new users_controller();
 $id = $usercontroller->getUserId($userid);
 
 $profile = $profilecontroller->getProfile(($id));
+
+
 ?>
 <html>
     <head>
@@ -30,6 +32,7 @@ $profile = $profilecontroller->getProfile(($id));
 
     <!--<div class="row">-->
     <!--<div class="col-md-4 col-md-offset-4">-->
+   
     <div class="container-fluid">
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
             <div class="panel panel-primary">
@@ -126,8 +129,9 @@ $profile = $profilecontroller->getProfile(($id));
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Details</label>
                             <div class="col-sm-10">
-                                <input type="textarea"  name = "info" placeholder="Personal Preferences" 
-                                <?php echo 'value=' . $profile->personalinformation; ?>>
+                                <input type="text"  name = "info" placeholder="Personal Preferences" 
+                               value= "<?php echo  $profile->personalinformation?>">
+                                
                             </div>
                             <input name = "id" type = "hidden"value  =<?php echo $id ?>>
                         </div>
