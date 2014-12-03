@@ -86,7 +86,15 @@ class listings_controller extends controller {
         }
         return $dataSet;
     }
-
+    
+    
+    /**
+     *  
+     */
+    public function advanceSearch($input)
+    {
+        return NULL;
+    }
     /**
      * Search Recent listings function
      * @return \listing_model
