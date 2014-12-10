@@ -40,7 +40,7 @@ else
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) 
 {
-    echo "Sorry, your file was not uploaded.";
+    echo "<br/>Sorry, your file was not uploaded.";
     $result = 'failure!';
 // if everything is ok, try to upload file
 } 
@@ -150,9 +150,11 @@ $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingid
                           </div>
                      </div>                     
                     <div class="row" style="margin:0 auto;">
-                         <label>
-                         Image uploaded successfully!
-                         </label>
+                         <?php if($result=='success') 
+                echo "<label>Image uploaded successfully!</label>";
+            else
+                echo "<label>Image not uploaded!</label>";
+            ?>
                         <br>
                         <img src="<?php echo $now;?>" alt="img" style="width:304px;height:228px;vertical-align:middle;" >
                     </div>
