@@ -25,8 +25,6 @@ $profile = $profilecontroller->getProfile(($id));
 
         <title>PrimeEstate - My Profile Page</title>
 
-        <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
 
     </head>
 
