@@ -84,7 +84,12 @@ $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingid
 <html>
     <head>
         <title>
-            PrimeEstate - Add listing - Image uploaded!
+            <?php if($result=='success') 
+                echo "PrimeEstate - Add listing - Image uploaded!";
+            else
+                echo "PrimeEstate - Add listing - Image upload failure!";
+            ?>
+            
         </title>
 <style>
         form { 
