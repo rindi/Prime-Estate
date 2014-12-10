@@ -178,12 +178,12 @@ function alertafterContact() {
 <!--                                    <a href="listing_page.php?interest=1&id=<?php echo $listingData->getId(); ?>&userid=<?php echo $userid; ?>"-->
                                     <?php
                                     if (isset($_SESSION['userid'])) {
-                                    echo '<a class="btn btn-default" style="background-color: #12ACA5;" onclick="alertafterContact();" href="listing_page.php?interest=1&id='.$listingData->getId().'&userid='.$userid.'"><strong>Contact Seller </strong><span class="glyphicon glyphicon-chevron-right"></span></a>';
+                                    echo '<a class="btn btn-default" id="contact-seller" onclick="alertafterContact();" href="listing_page.php?interest=1&id='.$listingData->getId().'&userid='.$userid.'"><strong>Contact Seller </strong><span class="glyphicon glyphicon-chevron-right"></span></a>';
                                     
                                     }
                                     else
                                     {
-                                        echo '<a class="btn btn-default" style="color: white;background-color: #12ACA5;" href="newlogin.php"><strong>Contact Seller </strong><span class="glyphicon glyphicon-chevron-right"></span></a>';
+                                        echo '<a class="btn btn-default" id="contact-seller" href="newlogin.php"><strong>Contact Seller </strong><span class="glyphicon glyphicon-chevron-right"></span></a>';
                                     }
                                     ?>
 				    <?php if($usertype == 2): ?>

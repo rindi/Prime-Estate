@@ -86,3 +86,14 @@ body{
 .nav>li>a:hover{
     background-color: rgba(18,172,168, 0.2);
 }
+
+#contact-seller
+{
+    background-color: rgba(20, 255, 255, 0.3);
+}
+#contact-seller:hover
+{
+    color: #3c763d;
+    background: rgba(194,255,182,0.6);
+    border: 2px solid green;
+}
