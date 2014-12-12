@@ -46,7 +46,7 @@ $image_1 = $images[0];
                 </div>
                 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
                     <!-- WHY FOLLOWING LINE WONT WORK ? -->
-                    <div id="listing_id" ><?php echo $listing_model->getId(); ?></div>
+<!--                    <div id="listing_id" ><?php echo $listing_model->getId(); ?></div>-->
                     <form id="listing_form">
                         Address: <input id="address" value="<?php echo $listing_model->getAddress(); ?>" type="text" disabled><br>
                         City: <input id="city" value="<?php echo $listing_model->getCity(); ?>" type="text" disabled><br>
