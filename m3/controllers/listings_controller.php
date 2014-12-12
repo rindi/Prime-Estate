@@ -126,7 +126,10 @@ class listings_controller extends controller {
             $newListing->setImages($imgstack);
             $dataSet[] = $newListing;
         }
-        return $dataSet;
+        if (!empty($dataSet))
+            return $dataSet;
+        else
+            return null;
     }
 
     /**
