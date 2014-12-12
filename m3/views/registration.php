@@ -68,7 +68,7 @@ include 'navbar.php';
                             <?php
                             if ($type == 0) {
                                 ?>
-                                <div class="checkbox">
+                                <div class="checkbox" style="text-align:center;">
                                     <label>
                                         <input type="checkbox" required/> By checking here you agree to our <a href="http://sfsuswe.com/~f14g03/views/policy.php">Terms of Use and Privacy Policy.</a>
                                     </label>
