@@ -18,15 +18,9 @@ if (isset($_GET['id']))
 
     if (isset($_SESSION["userid"]) && ($_SESSION["userid"]==($listing->getUserId())))
     {
-        $list_controller->deleteListing($_GET['id']);
+        $list_controller->deleteListing($listingid);
     }
 }
-
-//echo $firstname;
-//echo $lastname;
-//echo $email;
-//echo $phone;
-
 
 
 ?>
