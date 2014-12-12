@@ -27,7 +27,7 @@ $image_1 = $images[0];
         <div class="panel-heading">
             <h3 class="panel-title">
 <?php echo $listing_model->getAddress(); ?>
-		<a href="http://sfsuswe.com/~f14g03/" class="btn btn-danger pull-right" value="Edit Listing" type="button" onclick="return confirm('Are you sure you want to delete this listing?');">Delete Listing</a>
+		<a href="http://sfsuswe.com/~f14g03/views/delete_listing.php?id=<?php echo $_GET['id']?>" class="btn btn-danger pull-right" value="Edit Listing" type="button" onclick="return confirm('Are you sure you want to delete this listing?');">Delete Listing</a>
             </h3>
             <br>
         </div>
