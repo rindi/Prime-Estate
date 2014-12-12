@@ -86,15 +86,14 @@ class listings_controller extends controller {
         }
         return $dataSet;
     }
-    
-    
+
     /**
      *  
      */
-    public function advanceSearch($input)
-    {
+    public function advanceSearch($input) {
         return NULL;
     }
+
     /**
      * Search Recent listings function
      * @return \listing_model
@@ -112,7 +111,8 @@ class listings_controller extends controller {
         }
         return $dataSet;
     }
-/**
+
+    /**
      * Search Recent listings function
      * @return \listing_model
      */
@@ -208,7 +208,7 @@ class listings_controller extends controller {
      * @param type $id
      */
     public function deleteListing($id) {
-        $sql = "DELETE FROM listings WHERE id =  :id";
+        $sql = "DELETE FROM listings WHERE id = :id";
         $stmt = $this->db_connect->prepare($sql);
         //$stmt->bindParam(':id', $id, PDO::PARAM_STR, 12);   
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
