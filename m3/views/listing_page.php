@@ -115,6 +115,7 @@ function alertafterContact() {
 
 							<h2><?php echo $realtor['firstname']. ' '.$realtor['lastname']?></h2>
 							<p>PrimeEstate Inc.</p>
+                                                        <?php if (!isset($_SESSION["type"])): ?>
 							<form>
 							    <div class='form-group'>
 								<input class='form-control' type='textfield' placeholder='Name'>
@@ -126,6 +127,7 @@ function alertafterContact() {
 								<textarea class='form-control' style='resize:none'>I am interested in <?php echo $listing_model->getAddress(); ?>. Please contact me.</textarea>
 							    </div>
 							</form>
+                                                        <?php endif ?>
 						    </div>
 						</td>
 					    </tr>
@@ -133,14 +135,14 @@ function alertafterContact() {
 
 					<div class="panel-footer">
 					    <div class="clearfix">
-						<?php if (isset($_SESSION['userid'])): ?>
+						<?php if (isset($_SESSION['userid']) && (2 != ($_SESSION["type"]))): ?>
     						<a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
     						   class="btn btn-default pull-right" 
     						   value="Contact Seller" type="button" onclick="alertafterContact();">Contact seller
     						</a>
                                                 
     					    </div>
-					    <?php else: ?>
+					    <?php elseif (!isset($_SESSION["type"])): ?>
     					    <div class="clearfix">
     						<a href="newlogin.php" class="btn btn-default pull-right">Contact</a>
     					    </div>   
