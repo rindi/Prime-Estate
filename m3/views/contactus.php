@@ -20,7 +20,7 @@ and open the template in the editor.
         <div class="panel panel-default" style="padding: 20px">
             <div class="row">
                 <form role="form" action="" method="post" >
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 clearfix">
                         <div class="form-group">
                             <label for="InputName">Your Name</label>
                             <div class="input-group col-xs-12">
@@ -48,7 +48,7 @@ and open the template in the editor.
                         <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
                     </div>
                 </form>
-                <hr class="featurette-divider hidden-lg">
+                <hr class="featurette-divider hidden-lg" style="border-color: #12cac5;">
                 <div class="col-lg-5 col-md-push-1">
                     <address>
                         <h3>Office Location</h3>
