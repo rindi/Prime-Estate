@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Listing Page
+@(#)Purpose:        Listing Information
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require '../models/listing_model.php';
 require_once '../models/user_model.php';
 require '../controllers/listings_controller.php';

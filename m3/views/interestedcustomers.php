@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 
 <?php
+
+/*
+@(#)File:           Interested Cusomters
+@(#)Purpose:        Listings interested Customers 
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include 'navbar.php';
 require_once ("../controllers/interest_controller.php");
 require_once ("../models/user_model.php");

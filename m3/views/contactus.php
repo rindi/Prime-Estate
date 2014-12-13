@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Contact Us
+@(#)Purpose:        Contact PrimeEstate
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include("navbar.php");
 ?><!DOCTYPE html>
 <!--

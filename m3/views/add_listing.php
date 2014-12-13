@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Add Listing
+@(#)Purpose:        View Add Listings
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include("navbar.php");
 require '../models/listing_model.php';
 require '../controllers/listings_controller.php';

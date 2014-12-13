@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Confirm Registration
+@(#)Purpose:        Confirms User Registration
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include 'navbar.php';
 require_once '../controllers/users_controller.php';
 require_once '../models/user_model.php';
