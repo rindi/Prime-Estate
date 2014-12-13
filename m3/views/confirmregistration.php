@@ -24,6 +24,7 @@ else
     $input['username'] = $username;
     $input['password'] = $password;
     $input['type'] = $type;
+    echo $type . "<br/>";
     $input['email'] = $email;
     $input['firstname'] = $first_name;
     $input['lastname'] = $last_name;
@@ -36,10 +37,10 @@ else
         #echo $password;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
         echo "<h2>Registration failed, email ID is not valid.</h2>";
-    //alphanumeric characters and underscores, 2 to 16 characters long.
-//    $allowed = array(".", "-", "_");
-//    if(ctype_alnum( str_replace($allowed, '', username )))
-//        echo "Registration failed, username is not valid.";
+    //  alphanumeric characters and underscores, 2 to 16 characters long.
+    //    $allowed = array(".", "-", "_");
+    //    if(ctype_alnum( str_replace($allowed, '', username )))
+    //        echo "Registration failed, username is not valid.";
     else
     {
         $_SESSION["username"] = $username;
@@ -48,7 +49,15 @@ else
         if($registration_controller->getUserNameInfo($username)==NULL)
         {
             $registration_controller->addUser($user);
-            header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
+            $userid = $registration_controller->getUserId($username);
+            if ($_SESSION["type"] == 1)
+            {
+                header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
+            }
+            else
+            {
+                header('Location: http://sfsuswe.com/~f14g03/views/search_results?rid='.$userid.'.php');
+            }
         }
         else
         {
