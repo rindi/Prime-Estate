@@ -167,4 +167,19 @@ class users_controller extends controller {
         $stmt->execute();
     }
     
+    
+    /**
+     * Get a users forgot password question from their username
+     * @param type $username
+     * @return type
+     */
+    public function getUserQuestion($username) {
+        $sql = "SELECT * FROM usertable WHERE username = '$username'";
+        $data;
+        foreach (parent::$this->db_connect->query($sql) as $row) {
+            $data = $row;
+        }
+        return $data["question"];
+    }
+
 }
