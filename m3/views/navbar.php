@@ -5,7 +5,8 @@ if (!isset($_SESSION)) {
 if (isset($_SESSION['type'])) {
     $type = $_SESSION['type'];
     $username = $_SESSION['username'];
-} else
+    }
+else
     $type = 0;
 ?>
 <html>
@@ -28,7 +29,7 @@ if (isset($_SESSION['type'])) {
             ga('create', 'UA-57497318-1', 'auto');
             ga('send', 'pageview');
         </script>
-        
+
         <style>
             .navbar{
                 margin-bottom: 0px;
@@ -44,9 +45,8 @@ if (isset($_SESSION['type'])) {
                 border-bottom: 2px solid #12cac5;
             }
         </style>
-        
     </head>
-    <body>
+<body>  
         <nav class="navbar" role="navigation" style="margin-bottom:0px;">
             <div class="navbar-header" >
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-collapse">
@@ -73,8 +73,7 @@ if (isset($_SESSION['type'])) {
                             </ul>
                         </li>
                         <li><a href="http://sfsuswe.com/~f14g03/views/buyers_guide.php">Buyer's Guide</a></li>
-                        <?php
-                            }
+                        <?php }
                             if ($type == 0 || $type == 1) {?>
                         <li> 
                             <a href="http://sfsuswe.com/~f14g03/index.php">Buy Your New Home</a>
@@ -85,8 +84,7 @@ if (isset($_SESSION['type'])) {
                         <li> 
                             <a href="http://sfsuswe.com/~f14g03/views/contactus.php">Contact Us</a>
                         </li>
-                            <?php
-                            }
+                            <?php }
                             if ($type == 2) { ?>
                         <li>
                             <a href="http://sfsuswe.com/~f14g03/views/leads.php">Leads</a>
@@ -98,26 +96,26 @@ if (isset($_SESSION['type'])) {
                             <a href="http://sfsuswe.com/~f14g03/views/search_results.php?rid=1">Dashboard</a>
                         </li><?php
                         }
-                        if ($type == 2) { ?>
+                        if ($type == 2) {?>
                         <li>
                             <a href="http://sfsuswe.com/~f14g03/views/add_listing.php">Add Listing</a>
                         </li>
-                            <?php
-                            }
+                            <?php }
                             if ($type == 3) { ?>
                         <li>
                             <a href="http://sfsuswe.com/~f14g03/views/admin.php">Admin</a>
                         </li>
-                            <?php } ?>
+                            <?php }?>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <?php
-                        if ($type == 1 || $type == 2 || $type == 3) {
-                            ?>
+                        if ($type == 1 || $type == 2 || $type == 3) 
+                            { ?>
                             <li> 
                                 <a href="http://sfsuswe.com/~f14g03/views/logout.php">Logout</a>
                             </li>
-                        <?php } ?>
+                        <?php }
+                        ?>
                         <?php
                         if ($type == 0) {
                         ?>
@@ -131,7 +129,8 @@ if (isset($_SESSION['type'])) {
                         <li>
                             <a href="http://sfsuswe.com/~f14g03/views/newlogin.php">Login</a>
                         </li>
-                        <?php }?>
+                        <?php }
+                        ?>
                     </ul>
                 </strong>
             </div>
