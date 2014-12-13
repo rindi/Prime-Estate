@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Dashboard
+@(#)Purpose:        Realtor's Dashboard
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include 'navbar.php';
 if ($_SESSION['type'] != 2) {
     header('Location: http://sfsuswe.com/~f14g03');

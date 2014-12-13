@@ -1,11 +1,14 @@
 <?php
+
+/*
+@(#)File:           Change Password
+@(#)Purpose:        Change User's Password
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require_once ("../controllers/users_controller.php");
 include("navbar.php");
-/**
- * Description of changepassword
- *
- * @author rushabindi
- */
 
 if (isset($_POST['SubmitButton'])) {
 

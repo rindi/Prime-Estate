@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Delete Listing
+@(#)Purpose:        Delete Listing
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include("navbar.php");
 require_once '../models/listing_model.php';
 require_once '../controllers/listings_controller.php';

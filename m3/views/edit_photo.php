@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Edit Photo
+@(#)Purpose:        Edit Listing's Photo
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require '../controllers/listings_controller.php';
 
 $images_controller = new listings_controller();

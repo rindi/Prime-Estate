@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 
 <?php
+
+/*
+@(#)File:           Leads
+@(#)Purpose:        House Sales Leads 
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include 'navbar.php';
 //$value=$_POST["searchvalue"];
 

@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Edit Listing
+@(#)Purpose:        Edit Realtor's Listing
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include("navbar.php");
 require '../models/listing_model.php';
 require '../controllers/listings_controller.php';

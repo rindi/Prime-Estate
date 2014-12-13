@@ -1,5 +1,14 @@
  <!-- CARUSEL: DYNAMIC IMAGES SCROLLING -->
- <?php if(count($images) >= 1):?>
+ <?php
+
+/*
+@(#)File:           Houses Carousel
+@(#)Purpose:        Listing's photo Carousel
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
+if(count($images) >= 1):?>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <?php if(count($images) >= 2):?>

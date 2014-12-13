@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <?php
+
+/*
+@(#)File:           Buyers Guide
+@(#)Purpose:        Buyers Guide Information
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include 'navbar.php';
 ?>
 <html>
