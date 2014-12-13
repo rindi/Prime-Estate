@@ -6,16 +6,20 @@ include("navbar.php");
  *
  * @author rushabindi
  */
-if(!isset($_POST['login_username']))
-{$username = $_POST['login_username'];}
+if(isset($_POST['login_username']))
+$username = $_POST['login_username'];
+$temppass = base64_encode($username);
+$temppassdb = md5($temppass);
 $usercontroller = new users_controller();
 $userquestion = $usercontroller->getUserQuestion($username);
+$reganswer = $usercontroller->getUserAnswer($username);
 
 if (isset($_POST['SubmitButton'])) {
     $answer = $_POST['answer'];
-    $reganswer = $usercontroller->getUserNameInfo($username['answer']);
-    echo $reganswer;
-    
+    if($answer==$reganswer)
+    {
+        $usercontroller->changePassword($input);
+    }
 }
 ?>
 <html>
@@ -26,14 +30,15 @@ if (isset($_POST['SubmitButton'])) {
         <h3 class="panel-title" style="color: fff;"></h3>
     </div>
     <div class="panel-body" style="border: 1px solid;border-color:#12ACA5;">
-        <form action="forgotpassword.php" method="post">
+        <form action="forgotpasswordchanger.php" method="post">
     <div class="form-group">
+        <span><h2>Username : </h2><input type="text" class="form-control input-lg" name="username" value="<?php echo $username;?>" required></span>
         <span>
             <h2>
                 Question : <?php echo $userquestion;?>
             </h2>
         </span>
-        <input type="text" class="form-control input-lg" name="answer" placeholder="Your answer" required>
+        <h2>Answer : </h2><input type="text" class="form-control input-lg" name="answer" placeholder="Your answer" required>
     </div>
 
     <div class="form-group" align="center" style="margin-bottom: 10px">
