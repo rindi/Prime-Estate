@@ -53,7 +53,7 @@ class user_model {
         return $this->email;
     }
 
-    public function getUserQuesiton() {
+    public function getUserQuestion() {
         return $this->question;
     }
     public function getUserAnswer() {
