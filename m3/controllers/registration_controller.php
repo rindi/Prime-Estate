@@ -1,12 +1,16 @@
 <?php
 
+/*
+@(#)File:           Registration Controller Class
+@(#)Purpose:        Controller for User Registration
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require_once ("../controllers/controller.php");
 require_once ("../controllers/realtor_controller.php");
 require_once ("../models/user_model.php");
 
-/**
- * User Controller Class
- */
 class users_controller extends controller {
 
     /**

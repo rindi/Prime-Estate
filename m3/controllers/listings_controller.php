@@ -1,12 +1,16 @@
 <?php
 
+/*
+@(#)File:           Listings Controller Class
+@(#)Purpose:        Controller for Listings
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require_once ("../controllers/controller.php");
 require_once ("../models/listing_model.php");
 require_once ("../models/profile_model.php");
 
-/**
- * Listings Controller class
- */
 class listings_controller extends controller {
 
     /**

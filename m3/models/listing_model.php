@@ -1,8 +1,12 @@
 <?php
 
-/**
- * listing_model class
- */
+/*
+@(#)File:           Listing_Model Class
+@(#)Purpose:        Model for House Listings
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 class listing_model {
 
     //fields for userdata class

@@ -1,8 +1,12 @@
 <?php
 
-/**
- * user_model Class
- */
+/*
+@(#)File:           Profile_Model Class
+@(#)Purpose:        Model for Customer Profile
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 class profile_model {
 
     //fields for userdata class

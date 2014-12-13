@@ -1,13 +1,17 @@
 <?php
 
+/*
+@(#)File:           Leads Controller Class
+@(#)Purpose:        Controller for house sales leads
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require_once ("../controllers/controller.php");
 require_once ("../controllers/interest_controller.php");
 require_once ("../controllers/profile_controller.php");
 require_once ("../models/user_model.php");
 
-/**
- * Leads Controller class
- */
 class leads_controller extends controller {
 
     /**

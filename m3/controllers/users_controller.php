@@ -1,5 +1,12 @@
 <?php
 
+/*
+@(#)File:           User Controller Class
+@(#)Purpose:        Controller for User Data
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require_once ("../controllers/controller.php");
 require_once ("../controllers/interest_controller.php");
 require_once ("../controllers/profile_controller.php");
@@ -12,9 +19,6 @@ if (isset($_COOKIE['username'])) {
     $loggedin = false;
 }
 
-/**
- * User Controller Class
- */
 class users_controller extends controller {
 
     /**
