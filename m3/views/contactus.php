@@ -17,33 +17,33 @@ and open the template in the editor.
 	    <div id="paneler" class="panel panel-default" style="text-align: center;color:#12aca5">
 		<h1 class="panel-body"><strong>Contact PrimeEstate</strong></h1>
 	    </div>
-        <div class="panel panel-default">
+        <div class="panel panel-default" style="padding: 20px">
             <div class="row">
                 <form role="form" action="" method="post" >
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="InputName">Your Name</label>
-                            <div class="input-group">
+                            <div class="input-group col-xs-12">
                                 <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
-                                <span class="input-group-addon"></span></div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail">Your Email</label>
-                            <div class="input-group">
+                            <div class="input-group col-xs-12">
                                 <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required  >
-                                <span class="input-group-addon"></span></div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="InputMessage">Message</label>
-                            <div class="input-group">
+                            <div class="input-group col-xs-12">
                                 <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
-                                <span class="input-group-addon"></span></div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="InputReal">What is 4+3? (Simple Spam Checker)</label>
-                            <div class="input-group">
+                            <div class="input-group col-xs-12">
                                 <input type="text" class="form-control" name="InputReal" id="InputReal" required>
-                                <span class="input-group-addon"></span></div>
+                            </div>
                         </div>
                         <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
                     </div>
