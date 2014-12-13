@@ -32,6 +32,7 @@ include 'navbar.php';
             body, html { 
                 overflow-x: hidden; 
                 overflow-y: auto;
+                padding-bottom: 70px;
             }
         </style>
 
