@@ -29,7 +29,13 @@
 		font-weight: bold;
 	    }
 	</style>
-
+        <script>
+            function submitForm(action)
+            {
+                document.getElementById('logform').action = action;
+                document.getElementById('logform').submit();
+            }
+        </script>    
     </head>
     <body>
 	<!--login modal-->
@@ -40,7 +46,7 @@
 			<h1 class="text-center">Sign in to your account</h1>
 		    </div>
 		    <div class="modal-footer">
-			<form class="form col-md-12 center-block" method="post" action="loginhandler.php" name="loginform">
+			<form class="form col-md-12 center-block" id="logform" method="post" action="loginhandler.php" name="loginform">
 			    <div class="form-group">
 				<input type="text" class="form-control input-lg" name="login_username" placeholder="Username" required>
 			    </div>
@@ -49,8 +55,16 @@
 			    </div>
 			    <div class="form-group" style="margin-bottom: 10px">
 				<button class="btn btn-default btn-lg btn-block"><strong>LOGIN</strong></button>
-				<span class="pull-left">
-				    Not registered? <a href="http://sfsuswe.com/~f14g03/views/registration.php">Click here to sign up!</a>
+				<br/>
+                                <span class="pull-left">
+                                    <button class="btn btn-default btn-lg" onclick="submitForm('registration.php')" >
+                                        <strong>Not registered? Sign up! </strong>
+                                    </button>
+				</span>
+                                <span class="pull-right">
+                                    <button class="btn btn-default btn-lg" onclick="submitForm('forgotpassword.php')" >
+                                        <strong>Forgot Password? </strong>
+                                    </button>
 				</span>
 			    </div>
 			</form>
