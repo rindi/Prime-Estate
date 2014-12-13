@@ -72,10 +72,11 @@ include 'navbar.php';
                                     <label>
                                         <input type="checkbox" required/> By checking here you agree to our <a href="http://sfsuswe.com/~f14g03/views/policy.php">Terms of Use and Privacy Policy.</a>
                                     </label>
-                                </div>
+                                </div>                            
+                                    <?php } ?>
+
                             <button class="btn btn-default pull-right">Register</button>
                         </form>
-                            <?php } ?>
 			</div>
 		    </div>
 		    <div class="col-xs-12 col-sm-6">
@@ -119,7 +120,7 @@ include 'navbar.php';
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 			    <img class="img-circle" src="http://sfsuswe.com/~f14g03/views/assets/images/438_522404375810_2159_n.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-			    <h2>Recently Sold</h2>
+			    <h2>Recently Added</h2>
 			    <p>A registered customer recently purchased this beautiful home in the heart of the city! </p>
 			    <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
 			</div><!-- /.col-lg-4 -->
