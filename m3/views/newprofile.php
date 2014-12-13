@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <?php
+
+/*
+@(#)File:           New Profile
+@(#)Purpose:        New Customer Profile Page
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include 'navbar.php';
 require_once ("../controllers/profile_controller.php");
 require_once ("../models/profile_model.php");

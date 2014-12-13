@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Logout
+@(#)Purpose:        Controls User Logging out
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include 'navbar.php';
 ?>
 <!DOCTYPE html>

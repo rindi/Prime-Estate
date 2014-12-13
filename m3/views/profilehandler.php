@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     
       <?php
+
+/*
+@(#)File:           Profile Handler
+@(#)Purpose:        Controls the User Profile
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require_once ("../controllers/profile_controller.php");
 require_once ("../models/profile_model.php");
 require_once ("../controllers/users_controller.php");

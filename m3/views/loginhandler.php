@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Login Handler
+@(#)Purpose:        Controls User Login 
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require_once ("../controllers/users_controller.php");
 require_once ("../controllers/listings_controller.php");
 include("navbar.php");

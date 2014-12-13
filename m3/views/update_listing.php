@@ -1,5 +1,12 @@
 <?php
 
+/*
+@(#)File:           Update Listing
+@(#)Purpose:        Realtor Update Listing
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include("../models/listing_model.php");
 include("../controllers/listings_controller.php");
 

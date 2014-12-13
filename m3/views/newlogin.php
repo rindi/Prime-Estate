@@ -1,4 +1,13 @@
-<?php ?>
+<?php 
+
+/*
+@(#)File:           New Login
+@(#)Purpose:        New User Login
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

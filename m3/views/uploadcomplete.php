@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Upload Complete
+@(#)Purpose:        Photo Upload Complete
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 //houseid_nameofimg_timestampofupload.jpg
 require_once ("../controllers/listings_controller.php");
 include 'navbar.php';
