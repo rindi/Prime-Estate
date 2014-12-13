@@ -106,7 +106,7 @@ include 'navbar.php';
                                                     </p>
                                                 </div><!-- /.col-lg-4 -->
                                                 <div class="col-lg-2">
-                                                    <img class="img-circle" src="assets/images/foralex.gif" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                                                    <img class="img-circle" src="assets/images/alex_1.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                                                     <h2>Alex</h2>
                                                     <p>
                                                         Backend Lead/Database Specialist
