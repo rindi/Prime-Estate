@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 
 <?php
+
+/*
+@(#)File:           Search Results
+@(#)Purpose:        Displays Search Results
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require_once '../models/listing_model.php';
 require_once '../controllers/listings_controller.php';
 include 'navbar.php';

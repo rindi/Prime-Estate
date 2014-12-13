@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Sell Submitted
+@(#)Purpose:        User Submit Lead Confirmation
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require_once '../controllers/users_controller.php';
 require_once '../controllers/leads_controller.php';
 require_once '../models/user_model.php';

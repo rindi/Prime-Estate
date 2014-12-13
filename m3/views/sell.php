@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Sell
+@(#)Purpose:        User Sell House
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include 'navbar.php';
 #include 'views/navbar.php';
 #require '../controllers/users_controller.php';

@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Upload 
+@(#)Purpose:        Upload Photo to Listing
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include 'navbar.php';
 require_once ("../controllers/listings_controller.php");
 
