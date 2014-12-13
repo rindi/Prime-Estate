@@ -1,8 +1,11 @@
 <?php
+/*
+@(#)File:           Controller Class
+@(#)Purpose:        Parent Controller Class
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
 
-/**
- * Parent Controller class
- */
 class controller {
 
     protected $db_connect;

@@ -1,14 +1,18 @@
 <?php
 
+/*
+@(#)File:           Profile Controller Class
+@(#)Purpose:        Controller for Customer Profile 
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 require_once ("../controllers/controller.php");
 require_once ("../controllers/users_controller.php");
 require_once ("../controllers/listings_controller.php");
 require_once ("../models/user_model.php");
 require_once ("../models/profile_model.php");
 
-/**
- * User Controller Class
- */
 class profile_controller extends controller {
 
     /**

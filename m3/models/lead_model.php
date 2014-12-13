@@ -1,8 +1,11 @@
 <?php
+/*
+@(#)File:           Lead_Model Class
+@(#)Purpose:        Model for Sales Leads
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
 
-/**
- * lead_model Class
- */
 class lead_model {
 
     //fields for userdata class
