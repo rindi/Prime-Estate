@@ -39,6 +39,11 @@ if($answer==$reganswer)
             else
                 echo"<h2>Your answer is incorrect</h2>";
             ?>
+            <a href="http://sfsuswe.com/~f14g03/views/newlogin.php">
+                <h3>
+                    Click here to go to login page
+                </h3>
+            </a>
         </h2>
     </div>
     </div>    
