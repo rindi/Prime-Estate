@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Index
+@(#)Purpose:        PrimeEstate Homepage
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 include 'views/navbar.php';
 ?>
 <!DOCTYPE html>
