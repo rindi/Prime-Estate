@@ -27,7 +27,7 @@ and open the template in the editor.
 	    </div>
         <div class="panel panel-default" style="padding: 20px">
             <div class="row">
-                <form role="form" action="" method="post" >
+                <form role="form" action="contactus_submitted.php" method="post" >
                     <div class="col-lg-6 clearfix">
                         <div class="form-group">
                             <label for="InputName">Your Name</label>
