@@ -95,21 +95,32 @@ class listings_controller extends controller {
      *  
      */
     public function advanceSearch($input) {
- 
+         $dataSet = array();
           $city = $input["city"];
           $min =  $input["pricemin"];
           $max = $input["pricemax"];
-          $bed = $input["bed"];
-          $bath = $input["bathroom"];
+          $bed = $input["bedrooms"];
+          $bath = $input["bathrooms"];
           $zip = $input["zip"];
           
+         
           
+          $sql = "SELECT * FROM listings WHERE city like '%$city%' AND zip like '%$zip%' AND rooms like '%$bed%' AND bathrooms like '%$bath%'";
+            $res = $this->db_connect->query($sql);
+            foreach ($res as $row) {
+                $imgstack = $this->getImages($row['id']);
+                $newListing = new listing_model($row);
+                $newListing->setImages($imgstack);
+                if($newListing->getPrice() > $min && $newListing->getPrice() < $max)
+                $dataSet[] = $newListing;
+            }
+            $size = count($dataSet);
+              
           
-          $sql = "SELECT * FROM listings WHERE city like '%city%'AND zip like '%$zip$%'";
         
         
     
-        return Array();
+        return $dataSet;
         
         
     }
