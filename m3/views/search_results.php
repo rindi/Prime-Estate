@@ -46,6 +46,7 @@ if (isset($_GET['search'])) {
             $dbRow['city']  = $_POST["city"];
             $list_controller = new listings_controller();
             $listingSet = $list_controller->advanceSearch($dbRow);
+            
     
 }
 elseif (2 == ($_SESSION["type"])) {
