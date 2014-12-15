@@ -27,7 +27,9 @@ if (isset($_GET['search'])) {
             break;
 
         default:
+        
             $listingSet = $list_controller->searchListings($value);
+            
             break;
     }
 } elseif (isset($_POST["searchvalue"])) {
@@ -44,9 +46,9 @@ if (isset($_GET['search'])) {
             $dbRow['pricemin']= $_POST["pricemin"];
             $dbRow['zip']  = $_POST["zip"];
             $dbRow['city']  = $_POST["city"];
+            //$value = ( "&" + $_POST["bed"] + "&"+ $_POST["bathroom"] +"&"+ $_POST["pricemax"] +"&"+ $_POST["pricemin"] + "&" + $_POST["zip"] +  "&"+$_POST["city"]);
             $list_controller = new listings_controller();
-            $listingSet = $list_controller->advanceSearch($dbRow);
-            
+            $listingSet = $list_controller->advanceSearch($dbRow);          
     
 }
 elseif (2 == ($_SESSION["type"])) {
