@@ -95,14 +95,21 @@ class listings_controller extends controller {
      *  
      */
     public function advanceSearch($input) {
-        
-        
-        
-        
+ 
+          $city = $input["city"];
+          $min =  $input["pricemin"];
+          $max = $input["pricemax"];
+          $bed = $input["bed"];
+          $bath = $input["bathroom"];
+          $zip = $input["zip"];
+          
+          
+          
+          $sql = "SELECT * FROM listings WHERE city like '%city%'AND zip like '%$zip$%'";
         
         
     
-        return NULL;
+        return Array();
         
         
     }
