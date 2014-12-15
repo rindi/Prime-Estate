@@ -95,7 +95,16 @@ class listings_controller extends controller {
      *  
      */
     public function advanceSearch($input) {
+        
+        
+        
+        
+        
+        
+    
         return NULL;
+        
+        
     }
 
     /**
