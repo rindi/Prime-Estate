@@ -37,7 +37,18 @@ if (isset($_GET['search'])) {
 
     $list_controller = new listings_controller();
     $listingSet = $list_controller->searchListings($value);
-} elseif (2 == ($_SESSION["type"])) {
+} elseif(isset($_POST["bed"]) || isset( $_POST["bathroom"]) || isset($_POST["pricemax"])|| isset($_POST["pricemin"]) || isset($_POST["zip"]) || isset($_POST["city"])) {
+            $dbRow['bedrooms'] = $_POST["bed"];
+            $dbRow['bathrooms'] = $_POST["bathroom"];
+            $dbRow['pricemax']= $_POST["pricemax"];
+            $dbRow['pricemin']= $_POST["pricemin"];
+            $dbRow['zip']  = $_POST["zip"];
+            $dbRow['city']  = $_POST["city"];
+            $list_controller = new listings_controller();
+            $listingSet = $list_controller->advanceSearch($dbRow);
+    
+}
+elseif (2 == ($_SESSION["type"])) {
 
     $list_controller = new listings_controller();
     $listingSet = $list_controller->getRealtorListings($_SESSION["userid"]);
