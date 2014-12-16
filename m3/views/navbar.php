@@ -91,6 +91,9 @@ if (isset($_SESSION['type'])) {
                           <li> 
                               <a href="http://sfsuswe.com/~f14g03/views/contactus.php">Contact Us</a>
                           </li>
+                          <li> 
+                              <a href="http://sfsuswe.com/~f14g03/views/aboutus.php">About Us</a>
+                          </li>
                           <?php
                         endif;
                         if ($type == 2) :
