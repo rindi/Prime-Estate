@@ -240,10 +240,6 @@ if (count($listingSet) > 0) {
         </div>
         <!-- /.container -->
 
-        <!-- jQuery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <!-- Bootstrap Core JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     </body>
 
