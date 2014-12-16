@@ -83,7 +83,7 @@ if (isset($_SESSION['type'])) {
                         if ($type == 0 || $type == 1) :
                           ?>
                           <li> 
-                              <a href="http://sfsuswe.com/~f14g03/index.php">Buy Your New Home</a>
+                              <a href="http://sfsuswe.com/~f14g03/views/buy.php">Buy Your New Home</a>
                           </li>
                           <li> 
                               <a href="http://sfsuswe.com/~f14g03/views/sell.php">Sell Your Home Today!</a>
