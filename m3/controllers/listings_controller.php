@@ -43,7 +43,7 @@ class listings_controller extends controller {
         }
 
         if ($check == 1) {
-            $sql = "SELECT * FROM listings WHERE city like '%$input%'";
+            $sql = "SELECT * FROM listings WHERE city like '%$input%' and sold = 0";
             $res = $this->db_connect->query($sql);
 
             foreach ($res as $row) {
@@ -55,7 +55,7 @@ class listings_controller extends controller {
         }
 
         if ($check == 0) {
-            $sql = "SELECT * FROM listings WHERE zip like '%$input%'";
+            $sql = "SELECT * FROM listings WHERE zip like '%$input%' and sold = 0";
             $res = $this->db_connect->query($sql);
 
             foreach ($res as $row) {
@@ -78,7 +78,7 @@ class listings_controller extends controller {
                 return NULL;
             }
 
-            $sql = "SELECT * FROM listings WHERE zip like '%$digits%' OR city like '%$letters%'  ";
+            $sql = "SELECT * FROM listings WHERE zip like '%$digits%' OR city like '%$letters%' and sold = 0 ";
 
             $res = $this->db_connect->query($sql);
             foreach ($res as $row) {
@@ -105,7 +105,7 @@ class listings_controller extends controller {
           
          
           
-          $sql = "SELECT * FROM listings WHERE city like '%$city%' AND zip like '%$zip%' AND rooms like '%$bed%' AND bathrooms like '%$bath%'";
+          $sql = "SELECT * FROM listings WHERE city like '%$city%' AND zip like '%$zip%' AND rooms like '%$bed%' AND bathrooms like '%$bath%' and sold = 0";
             $res = $this->db_connect->query($sql);
             foreach ($res as $row) {
                 $imgstack = $this->getImages($row['id']);
@@ -149,7 +149,7 @@ class listings_controller extends controller {
      */
     public function searchRecent() {
         $past = date("Y/m/d", strtotime("-1 month"));
-        $sql = "SELECT * FROM listings ORDER BY id DESC";
+        $sql = "SELECT * FROM listings where sold = 0 ORDER BY id DESC";
 
         $res = $this->db_connect->query($sql);
         foreach ($res as $row) {
