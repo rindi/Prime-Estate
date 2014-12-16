@@ -51,7 +51,7 @@ include 'views/navbar.php';
 	    <div class="site-wrapper-inner">
 		<div class="cover-container">
 		    <div class="inner cover">
-			<h1 class="cover-heading">Welcome to PrimeEstate.</h1>
+			<h1 class="cover-heading">Welcome to PrimeEstate</h1>
                         <h3 class="cover-heading">Search for your dream home by City or Zip.</h3>
 			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="views/search_results.php" method="GET">
 			    <div class="form-group">
@@ -76,7 +76,7 @@ include 'views/navbar.php';
 			<div class="col-lg-4">
 			    <img class="img-circle" src="views/assets/images/IMG_4588copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Testimony</h2>
-			    <p>"I bought house for my daughter from this website. It is great! Staff are very nice. Website is fully debugged!"
+			    <p>"I bought house for my daughter from this website. It is great! Staff are very nice."
                             </p>
 			</div>
                         <div>
