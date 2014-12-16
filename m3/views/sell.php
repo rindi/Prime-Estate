@@ -73,7 +73,7 @@ include 'navbar.php';
 
 	    <div class="panel panel-default">
 		<div class="row">
-		    <div class="col-xs-12 col-sm-6">
+		    <div class="col-xs-12 col-sm-6" style="padding: 20px 0 0 40px;border-right: 1px solid #12cac5;">
 			<div class="clearfix" style="padding-bottom: 20px;">
                             <h4>
                                 Fill out the form to contact us and sell your home!
@@ -104,14 +104,20 @@ include 'navbar.php';
                               <input class="form-control" type="email" name="email" placeholder="me@example.com"required/>
                             </div>
                             </div>
+                            <div class="form-group">
+                            <label for="" class="col-sm-3 control-label">Comments</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" style="resize: none;" name="comments" placeholder=""></textarea>
+                            </div>
+                            </div>
                             <button class="btn btn-default pull-right">Submit</button>
                             <!--<input type="submit" value="Submit" id="submitlead">   -->
                             </form>
 			</div>
 		    </div>
-		    <div class="col-xs-12 col-sm-6">
+		    <div class="col-xs-12 col-sm-6" style="padding: 0 40px 0 20px;">
 			<div id="infobox">
-			    <div class="" style="paddingright: 20px">
+			    <div>
 				<h2>
 				    Why Sell with PrimeEstate?
 				</h2>
