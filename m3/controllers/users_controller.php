@@ -99,7 +99,7 @@ class users_controller extends controller {
         $stmt->bindParam(':lastname', $input->getLastname(), PDO::PARAM_STR);
 
         $stmt->execute();
-        echo 'User Registered.';
+//        echo 'User Registered.';
 
         $username = $input->getUserName();
         $sql = "SELECT * FROM usertable WHERE username = '$username'";

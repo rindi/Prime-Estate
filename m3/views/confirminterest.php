@@ -9,10 +9,28 @@
 
 include 'navbar.php';
 #include 'views/navbar.php';
-#require '../controllers/users_controller.php';
-#require '../models/user_model.php';
+require_once '../controllers/users_controller.php';
+require_once '../models/user_model.php';
 $email = $_POST['login_email'];
 $first = $_POST['first_name'];
+
+$date = date_create();
+$unique = rand(1,99999) . date_timestamp_get($date);
+    
+$input['username'] = $unique;
+$input['password'] = $unique;
+$input['email'] = $email;
+$input['type'] = 4;
+$input['firstname'] = $first;
+$input['lastname'] = "anon";
+
+//Create a temporary user
+$registration_controller = new users_controller();
+$user = new user_model($input);
+$registration_controller->addUser($user);
+$userid = $registration_controller->getUserId($unique);
+$interest = new interest_controller();
+$interest->expressInterest($userid, $_GET['id']);
 ?>
 
 <html>
