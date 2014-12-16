@@ -53,7 +53,7 @@ include 'navbar.php';
 		    <div class="inner cover">
 			<h1 class="cover-heading">Find your dream home with PrimeEstate</h1>
                         <h3 class="cover-heading">Search by City or Zip.</h3>
-			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="views/search_results.php" method="GET">
+			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="search_results.php" method="GET">
 			    <div class="form-group">
 				<div class="col-xs-offset-3 col-xs-5">
 				    <input id="search-field" type="search" name="search" placeholder="Enter a City or Zipcode" class="form-control">
