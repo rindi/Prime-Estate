@@ -1,4 +1,12 @@
 <?php
+
+/*
+@(#)File:           Navbar
+@(#)Purpose:        PrimeEstate Navbar
+@(#)Author:         PrimeEstate
+@(#)Product:        PrimeEstate Website 2014
+*/
+
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -83,6 +91,9 @@ else
                         </li>
                         <li> 
                             <a href="http://sfsuswe.com/~f14g03/views/contactus.php">Contact Us</a>
+                        </li>                        
+                        <li> 
+                            <a href="http://sfsuswe.com/~f14g03/views/aboutus.php">About Us</a>
                         </li>
                             <?php }
                             if ($type == 2) { ?>
