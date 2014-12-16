@@ -93,7 +93,7 @@ include 'navbar.php';
                                             <!--<div class="row" style="padding-top: 60px;">-->
                                             <div class="row" style="text-align: center;">
                                                 <h1 >The Team</h1>
-                                                <div class="col-lg-2">
+                                                <div class="col-lg-2 col-xs-offset-1">
                                                     <img class="img-circle" src="assets/images/foralex.gif" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                                                     <h2>Dong</h2>
                                                     <p>
