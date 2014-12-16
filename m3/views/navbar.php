@@ -55,8 +55,8 @@ else
                     <span class="icon-bar"></span>
                 </button>    
             </div>
-            <a class="navbar-brand" href="http://sfsuswe.com/~f14g03/index.php">
-                <img style="max-width:100px; margin-top: -7px;margin-right: 90px;" src="http://sfsuswe.com/~f14g03/views/assets/logo/PrimeEstate_Logo_Menu.png">
+            <a class="navbar-brand" style="border-right: 2px solid #12cac5;" href="http://sfsuswe.com/~f14g03/index.php">
+                <img style="max-width:100px; margin-top: -7px;margin-right: 0px;" src="http://sfsuswe.com/~f14g03/views/assets/logo/PrimeEstate_Logo_Menu.png">
             </a>
             <div id="navbar-collapse" class="navbar-collapse collapse">
                 <strong>
