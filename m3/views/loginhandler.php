@@ -9,7 +9,7 @@
 
 require_once ("../controllers/users_controller.php");
 require_once ("../controllers/listings_controller.php");
-include("navbar.php");
+//include("navbar.php");
 $usercontroller = new users_controller();
 $username = $_POST["login_username"];
 $password = $_POST["login_password"];
@@ -25,6 +25,18 @@ $successflag = 0;
         {
             if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
             {
+                if($_SESSION["type"]==1)
+                {
+                    header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
+                }
+                else if ($_SESSION["type"]==2)
+                {
+                    header('Location: http://sfsuswe.com/~f14g03/views/search_results.php?rid=1');
+                }
+                else if ($_SESSION["type"]==3)
+                {
+                    header('Location: http://sfsuswe.com/~f14g03/views/admin.php');
+                }
                 session_start();
                 $_SESSION["username"] = $username;
                 $_SESSION["type"] = $row->getUserType();
