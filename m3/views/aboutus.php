@@ -94,21 +94,21 @@ include 'navbar.php';
                                             <div class="row" style="text-align: center;">
                                                 <h1 >The Team</h1>
                                                 <div class="col-lg-2 col-xs-offset-1">
-                                                    <img class="img-circle" src="assets/images/foralex.gif" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                                                    <img class="img-circle" src="assets/images/dong.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                                                     <h2>Dong</h2>
                                                     <p>
                                                         Frontend/Scripting 
                                                     </p>
                                                 </div><!-- /.col-lg-4 -->
                                                 <div class="col-lg-2">
-                                                    <img class="img-circle" src="assets/images/foralex.gif" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                                                    <img class="img-circle" src="assets/images/rushab.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                                                     <h2>Rushab</h2>
                                                     <p>
                                                         Frontend Lead/Subversion Administrator  
                                                     </p>
                                                 </div><!-- /.col-lg-4 -->
                                                 <div class="col-lg-2">
-                                                    <img class="img-circle" src="assets/images/foralex.gif" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                                                    <img class="img-circle" src="assets/images/raymond.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                                                     <h2>Yi-Hsien</h2>
                                                     <p>
                                                         Frontend/User Experience 
