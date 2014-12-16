@@ -31,17 +31,19 @@ if ($_FILES["uploadFile"]["size"] > 26214400)
     echo $_FILES["uploadFile"]["size"];
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
+    $check=0;
 }
 
 // Only GIF files allowed 
 if (($_FILES["uploadFile"]["type"] == "image/gif") || ($_FILES["uploadFile"]["type"] == "image/jpeg") || ($_FILES["uploadFile"]["type"] == "image/png")) 
 {
-    $result = 'success!';
+    $check = 1;
 }
 else
 {
     echo "Upload failed, not an image";
     $uploadOk = 0;
+    $check = 0;
     $result = 'failure';
 }
 
@@ -50,6 +52,7 @@ if ($uploadOk == 0)
 {
     echo "<br/>Sorry, your file was not uploaded.";
     $result = 'failure!';
+    $check = 0;
 // if everything is ok, try to upload file
 } 
 else 
@@ -58,7 +61,7 @@ else
     $date = date_create();
     $newfilename = rand(1,99999) . date_timestamp_get($date) . '.' .end($temp);
     //echo $target_dir . $newfilename;
-    if(move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir . $newfilename))
+    if(move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir . $newfilename)&&$check==1)
     //if (move_uploaded_file($_FILES["uploadFile"]["tmp_name"], $target_dir)) 
     {
 //        echo "The file ". basename( $_FILES["uploadFile"]["name"]). " has been uploaded.";
@@ -158,10 +161,10 @@ $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingid
                           </div>
                      </div>                     
                     <div class="row" style="margin:0 auto;">
-                         <?php if($result=='success') 
-                echo "<label>Image uploaded successfully!</label>";
-            else
-                echo "<label>Image not uploaded!</label>";
+            <?php if($check==1) 
+                        echo "<label>Image uploaded successfully!</label>";
+                    else
+                        echo "<label>Image not uploaded!</label>";
             ?>
                         <br>
                         <img src="<?php echo $now;?>" alt="img" style="width:304px;height:228px;vertical-align:middle;" >
