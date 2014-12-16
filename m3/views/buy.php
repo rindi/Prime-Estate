@@ -51,8 +51,8 @@ include 'navbar.php';
 	    <div class="site-wrapper-inner">
 		<div class="cover-container">
 		    <div class="inner cover">
-			<h1 class="cover-heading">Welcome to PrimeEstate.</h1>
-                        <h3 class="cover-heading">Search for your dream home by City or Zip.</h3>
+			<h1 class="cover-heading">Find your dream home with PrimeEstate</h1>
+                        <h3 class="cover-heading">Search by City or Zip.</h3>
 			<form class="form-horizontal" style="text-align:center; margin: 0px auto" action="views/search_results.php" method="GET">
 			    <div class="form-group">
 				<div class="col-xs-offset-3 col-xs-5">
@@ -66,27 +66,29 @@ include 'navbar.php';
 		    <hr>
 		    <!-- Three columns of text below the carousel -->
 		    <div class="row" style="padding-top: 40px;">
-			<div class="col-lg-4">
+                        <div class="col-lg-4">
+			    <img class="img-circle" src="assets/images/IMG_4592copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <h2>Recently Sold</h2>
+			    <p>We are proud to inform we just sold this nice house at the city's heart. </p>
+                            <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=sold" role="button">View Recently Sold &raquo;</a></div>
+			</div><!-- /.col-lg-4 -->
+                        
+                        <div class="col-lg-4">
+			    <img class="img-circle" src="assets/images/IMG_4588copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <h2>Testimony</h2>
+			    <p>"I bought house for my daughter from this website. It is great! Staff are very nice. Website is fully debugged!"
+                            </p>
+			</div>
+                        <div class="col-lg-4">
 			    <img class="img-circle" src="assets/images/IMG_4583copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Recently Added</h2>
 			    <p>House on Ocean Beach has joined our listings. It has beautiful view of the ocean, nice breeze & spacious rooms. 
 				</p>
                             <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=recent" role="button">View Recently Added &raquo;</a></div>
 			</div><!-- /.col-lg-4 -->
-			<div class="col-lg-4">
-			    <img class="img-circle" src="assets/images/IMG_4588copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-			    <h2>Testimony</h2>
-			    <p>"I bought house for my daughter from this website. It is great! Staff are very nice. Website is fully debugged!"
-                            </p>
-			</div>
+
                         <div>
                             <!--<a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=sacramento" role="button">View details &raquo;</a>-->
-			</div><!-- /.col-lg-4 -->
-                        <div class="col-lg-4">
-			    <img class="img-circle" src="assets/images/IMG_4592copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-			    <h2>Recently Sold</h2>
-			    <p>We are proud to inform we just sold this nice house at the city's heart. </p>
-                            <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=sold" role="button">View Recently Sold &raquo;</a></div>
 			</div><!-- /.col-lg-4 -->
 		    </div><!-- /.row -->
 		</div>
