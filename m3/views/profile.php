@@ -17,9 +17,8 @@ $userid = $_SESSION["username"];
 $profilecontroller = new profile_controller();
 $usercontroller = new users_controller();
 $id = $usercontroller->getUserId($userid);
-
+$info = $usercontroller->getUserInfo($id);
 $profile = $profilecontroller->getProfile(($id));
-
 
 ?>
 <html>
@@ -38,7 +37,7 @@ $profile = $profilecontroller->getProfile(($id));
 
     <!--<div class="row">-->
     <!--<div class="col-md-4 col-md-offset-4">-->
-   
+    <label><center><?php echo "hello " ;echo $info["firstname"]; echo " "; echo $info["lastname"]?></center></label>
     <div class="container-fluid">
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
             <div class="panel panel-primary">
@@ -52,7 +51,7 @@ $profile = $profilecontroller->getProfile(($id));
                         <!-- Form Name -->
                         <!--<legend>Home Preferences</legend>-->
 
-
+                        
                         <!-- Text input-->
                         <div class="form-group">
                             <br><br>
@@ -67,8 +66,12 @@ $profile = $profilecontroller->getProfile(($id));
                                 ?>>
                             </div>
 
+                          
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
                             <label class="col-sm-2 control-label" for="textinput">Maximum</label>
-                            <div class="col-sm-4">
+                            <div class="col-sm-10">
                                 <input type="text" name ="pricemax"
                                 <?php
                                 if ($profile->pricemax == 0)
@@ -78,7 +81,10 @@ $profile = $profilecontroller->getProfile(($id));
                                 ?>>
 
                             </div>
+                           
                         </div>
+                        
+                        
 
                         <!-- Text input-->
                         <div class="form-group">
@@ -87,7 +93,9 @@ $profile = $profilecontroller->getProfile(($id));
                                 <input type="text" name ="city" placeholder="City" value="<?php
                                    echo $profile->city;?>">
                             </div>
+                           
                         </div>
+                        
 
 
                         <!-- Text input-->
