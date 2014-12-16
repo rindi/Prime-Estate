@@ -194,9 +194,9 @@ if (count($listingSet) > 0) {
         <!--                                    <a href="listing_page.php?interest=1&id=<?php echo $listingData->getId(); ?>&userid=<?php echo $userid; ?>"-->
         <?php
         if (isset($_SESSION['userid']) && (2 != ($_SESSION["type"]))) {
-            echo '<a class="btn btn-default" id="contact-seller" onclick="alertafterContact();" href="listing_page.php?interest=1&id=' . $listingData->getId() . '&userid=' . $userid . '"><strong>Contact Seller </strong><span class="glyphicon glyphicon-chevron-right"></span></a>';
+            echo '<a class="btn btn-default" id="contact-seller" onclick="alertafterContact();" href="listing_page.php?interest=1&id=' . $listingData->getId() . '&userid=' . $userid . '"><strong>Contact Realtor </strong><span class="glyphicon glyphicon-chevron-right"></span></a>';
         } elseif (!isset($_SESSION["type"])) {
-            echo '<a class="btn btn-default" id="contact-seller" href="newlogin.php"><strong>Contact Seller </strong><span class="glyphicon glyphicon-chevron-right"></span></a>';
+            echo '<a class="btn btn-default" id="contact-seller" href="newlogin.php"><strong>Contact Realtor </strong><span class="glyphicon glyphicon-chevron-right"></span></a>';
         }
         ?>
                                         <?php if ($usertype == 2): ?>
