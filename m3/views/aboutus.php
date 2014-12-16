@@ -109,35 +109,35 @@ include 'navbar.php';
                                             <!--<div class="row" style="padding-top: 60px;">-->
                                             <div class="row" style="text-align: center;">
                                                 <h1 >The Team</h1>
-                                                <div class="col-lg-2 col-xs-offset-1">
+                                                <div class="col-md-2 col-xs-offset-1 man">
                                                     <img class="img-circle" src="assets/images/dong.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                                                     <h2>Dong</h2>
                                                     <p>
                                                         Frontend/Scripting 
                                                     </p>
                                                 </div><!-- /.col-lg-4 -->
-                                                <div class="col-lg-2">
+                                                <div class="col-md-2 man">
                                                     <img class="img-circle" src="assets/images/rushab.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                                                     <h2>Rushab</h2>
                                                     <p>
                                                         Frontend Lead/Subversion Administrator  
                                                     </p>
                                                 </div><!-- /.col-lg-4 -->
-                                                <div class="col-lg-2">
+                                                <div class="col-md-2 man">
                                                     <img class="img-circle" src="assets/images/raymond.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                                                     <h2>Yi-Hsien</h2>
                                                     <p>
                                                         Frontend/User Experience 
                                                     </p>
                                                 </div><!-- /.col-lg-4 -->
-                                                <div class="col-lg-2">
+                                                <div class="col-md-2 man">
                                                     <img class="img-circle" src="assets/images/alex_1.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                                                     <h2>Alex</h2>
                                                     <p>
                                                         Backend Lead/Database Specialist
                                                     </p>
                                                 </div><!-- /.col-lg-4 -->
-                                                <div class="col-lg-2">
+                                                <div class="col-md-2 man">
                                                     <img class="img-circle" src="assets/images/jon.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                                                     <h2>Jonathan</h2>
                                                     <p>
