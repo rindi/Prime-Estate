@@ -121,19 +121,21 @@ function alertafterContact() {
 							 src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" 
 							 style="width: 140px; height: 140px;">						    <div style='margin-left: 150px;'>-->
 
-							<h2><?php echo $realtor['firstname']. ' '.$realtor['lastname']?></h2>
+							<h2><?php echo 'Realtor: '.$realtor['firstname']. ' '.$realtor['lastname']?></h2>
 							<p>PrimeEstate Inc.</p>
                                                         <?php if (!isset($_SESSION["type"])): ?>
-							<form>
+							<form method="POST" action="confirminterest.php">
 							    <div class='form-group'>
-								<input class='form-control' type='textfield' placeholder='Name'>
+								<input class='form-control' type='textfield' name="first_name" placeholder='First Name' required>
 							    </div>
 							    <div class='form-group'>
-								<input class='form-control' type='email' placeholder='Email'>
+								<input class='form-control' type='email' name="login_email" placeholder='Email' required>
 							    </div>
 							    <div class='form-group'>
 								<textarea class='form-control' style='resize:none'>I am interested in <?php echo $listing_model->getAddress(); ?>. Please contact me.</textarea>
 							    </div>
+                                                            <button class="btn btn-default pull-right">Contact Realtor</button>
+                        
 							</form>
                                                         <?php endif ?>
 						    </div>
@@ -146,14 +148,11 @@ function alertafterContact() {
 						<?php if (isset($_SESSION['userid']) && (2 != ($_SESSION["type"]))): ?>
     						<a href="listing_page.php?interest=<?php echo $interested; ?>&id=<?php echo $_GET['id']; ?>&userid=<?php echo $userid; ?>"
     						   class="btn btn-default pull-right" 
-    						   value="Contact Seller" type="button" onclick="alertafterContact();">Contact seller
+    						   value="Contact Seller" type="button" onclick="alertafterContact();">Contact Realtor
     						</a>
                                                 
     					    </div>
-					    <?php elseif (!isset($_SESSION["type"])): ?>
-    					    <div class="clearfix">
-    						<a href="newlogin.php" class="btn btn-default pull-right">Contact</a>
-    					    </div>   
+					
 					    <?php endif ?>
 					</div>
 				    </div>
