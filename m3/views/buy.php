@@ -76,7 +76,7 @@ include 'navbar.php';
                         <div class="col-lg-4">
 			    <img class="img-circle" src="assets/images/IMG_4588copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Testimony</h2>
-			    <p>"I bought house for my daughter from this website. It is great! Staff are very nice. Website is fully debugged!"
+			    <p>"I bought house for my daughter from this website. It is great! Staff are very nice."
                             </p>
 			</div>
                         <div class="col-lg-4">
