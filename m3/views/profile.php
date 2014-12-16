@@ -146,7 +146,7 @@ $profile = $profilecontroller->getProfile(($id));
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="pull-right">
                                     <input class="btn btn-default" type="button" value="Cancel" onClick="history.go(-1);return true;">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="submit" class="btn btn-success">Save</button>
                                     <button type="submit" formaction="search_results.php"class="btn btn-success">Search</button>
                                 </div>
                             </div>
