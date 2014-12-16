@@ -7,7 +7,7 @@
 @(#)Product:        PrimeEstate Website 2014
 */
 
-include 'views/navbar.php';
+include 'navbar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@ include 'views/navbar.php';
 	<![endif]-->
 
 	<link rel="stylesheet" href="http://sfsuswe.com/~f14g03/views/css/index.css" />
-	<link rel="stylesheet" href="./views/css/cover.css" />
+	<link rel="stylesheet" href="./css/cover.css" />
 	<style>
 	    body, html { 
 		overflow-x: hidden; 
@@ -67,14 +67,14 @@ include 'views/navbar.php';
 		    <!-- Three columns of text below the carousel -->
 		    <div class="row" style="padding-top: 40px;">
 			<div class="col-lg-4">
-			    <img class="img-circle" src="views/assets/images/IMG_4583copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <img class="img-circle" src="assets/images/IMG_4583copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Recently Added</h2>
 			    <p>House on Ocean Beach has joined our listings. It has beautiful view of the ocean, nice breeze & spacious rooms. 
 				</p>
                             <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=recent" role="button">View Recently Added &raquo;</a></div>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
-			    <img class="img-circle" src="views/assets/images/IMG_4588copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <img class="img-circle" src="assets/images/IMG_4588copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Testimony</h2>
 			    <p>"I bought house for my daughter from this website. It is great! Staff are very nice. Website is fully debugged!"
                             </p>
@@ -83,7 +83,7 @@ include 'views/navbar.php';
                             <!--<a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=sacramento" role="button">View details &raquo;</a>-->
 			</div><!-- /.col-lg-4 -->
                         <div class="col-lg-4">
-			    <img class="img-circle" src="views/assets/images/IMG_4592copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <img class="img-circle" src="assets/images/IMG_4592copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Recently Sold</h2>
 			    <p>We are proud to inform we just sold this nice house at the city's heart. </p>
                             <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=sold" role="button">View Recently Sold &raquo;</a></div>
