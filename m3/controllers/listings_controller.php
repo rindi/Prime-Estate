@@ -115,6 +115,24 @@ class listings_controller extends controller {
                 $dataSet[] = $newListing;
             }
             $size = count($dataSet);
+            if($size == 0 )
+            {
+                
+            $sql = "SELECT * FROM listings WHERE city like '%$city%' OR zip like '%$zip%' OR rooms like '%$bed%' OR bathrooms like '%$bath%'";
+            $res = $this->db_connect->query($sql);
+            foreach ($res as $row) {
+                $imgstack = $this->getImages($row['id']);
+                $newListing = new listing_model($row);
+                $newListing->setImages($imgstack);
+                if($newListing->getPrice() > $min && $newListing->getPrice() < $max)
+                $dataSet[] = $newListing;
+            }
+                
+                
+                
+                
+                
+            }
               
           
         
