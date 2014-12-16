@@ -86,7 +86,8 @@ $curlisting = new listing_model($listingid);
 //Sets the image in the database
 //$listingcont->setImage($curlisting->getId(), $_FILES["uploadFile"]["name"])
 //$listingcont->setImage($curlisting->getId(), $newfilename);
-$listingcont->setImage($listingid, $newfilename);
+if($check==1)
+    $listingcont->setImage($listingid, $newfilename);
 
 $list_page = '"http://sfsuswe.com/~f14g03/views/listing_page.php?id='.$listingid.'"';
 //echo $list_page;
