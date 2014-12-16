@@ -45,7 +45,7 @@ $customerSet = $interest_controller->getInterestedCustomers($value);
         <table class='table table-striped table-bordered table-hover' style='width:80%;text-align: center;' align='center'>
         <thead>
         <tr>
-        <th>UserName</th>
+        <th>First Name</th>
         <th>E-mail</th>
         <th>Date Contacted</th>
         </tr></thead>";
@@ -54,7 +54,7 @@ $customerSet = $interest_controller->getInterestedCustomers($value);
         foreach((array)$customerSet as $userData) 
         {       
             echo "<tbody><tr>";
-            echo "<td>" . $userData->getUserName() . "</td>";
+            echo "<td>" . $userData->getFirstName() . "</td>";
             echo "<td><a href='mailto:" . $userData->getUserEmail() . "'?Subject=Greetings%20from%20Prime%20Estate>". $userData->getUserEmail() . "</td>";
             echo "<td>" . $userData->getContactDate() . "</td>";
 //            echo "<td>" . "11/5/2014" . "</td>";

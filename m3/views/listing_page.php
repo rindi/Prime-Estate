@@ -124,7 +124,7 @@ function alertafterContact() {
 							<h2><?php echo 'Realtor: '.$realtor['firstname']. ' '.$realtor['lastname']?></h2>
 							<p>PrimeEstate Inc.</p>
                                                         <?php if (!isset($_SESSION["type"])): ?>
-							<form method="POST" action="confirminterest.php">
+							<form method="POST" action="confirminterest.php<?php echo '?id='.$_GET['id'];?>">
 							    <div class='form-group'>
 								<input class='form-control' type='textfield' name="first_name" placeholder='First Name' required>
 							    </div>
