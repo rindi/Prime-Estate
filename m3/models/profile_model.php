@@ -25,14 +25,12 @@ class profile_model {
     }
 
     public function info() {
-        echo"profile_model begin \n";
         echo "$this->bedrooms\n";
         echo "$this->bathrooms\n";
         echo "$this->pricemax\n";
         echo "$this->pricemin\n";
         echo "$this->zip\n";
         echo "$this->personalinformation\n";
-        echo "profile_model end\n";
     }
 
     public function getBathrooms() {
