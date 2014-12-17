@@ -6,6 +6,7 @@ include("navbar.php");
  *
  * @author rushabindi
  */
+
 if(isset($_POST['login_username']))
 $username = $_POST['login_username'];
 $temppass = base64_encode($username);
@@ -40,7 +41,6 @@ if (isset($_POST['SubmitButton'])) {
         </span>
         <h2>Answer : </h2><input type="text" class="form-control input-lg" name="answer" placeholder="Your answer" required>
     </div>
-
     <div class="form-group" align="center" style="margin-bottom: 10px">
         <input type="submit" name = "SubmitButton" class="btn btn-default" value="Verify answer" align="center">
     </div>
