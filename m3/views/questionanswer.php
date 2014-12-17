@@ -17,10 +17,13 @@ if (isset($_POST['SubmitButton'])) {
     $question = $_POST['question'];
     $encryptedpassword = md5($currentPassword);
     $answer = $_POST['answer'];
-    
+    print_r($_POST);
     $usercontroller = new users_controller();
     $userlist = $usercontroller->getUsers();
     $flag = 0;
+    echo $question;
+    echo $answer;
+    
         foreach ($userlist as $row) 
         {
             if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
@@ -28,6 +31,7 @@ if (isset($_POST['SubmitButton'])) {
                 $flag = 1;
                 $row->setUserQuestion($question);
                 $row->setUserAnswer($answer);
+                print_r($row);
             }
         }
         if ($flag==0)
