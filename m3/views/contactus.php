@@ -8,6 +8,14 @@
 */
 
 include("navbar.php");
+
+require_once ("../controllers/users_controller.php");
+
+$username = $_SESSION["username"];
+$usercontroller = new users_controller();
+$id = $usercontroller->getUserId($username);
+$info = $usercontroller->getUserInfo($id);
+$user = new user_model($info);
 ?><!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -32,13 +40,23 @@ and open the template in the editor.
                         <div class="form-group">
                             <label for="InputName">Your Name</label>
                             <div class="input-group col-xs-12">
-                                <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
+                                <input type="text" class="form-control" name="InputName" id="InputName" 
+                                    <?php if ($id!=NULL)
+                                    echo 'value = "' . $user->getFirstname().' '.$user->getLastname().'"';
+                                else
+                                    echo 'placeholder="Enter name"';
+                                ?> required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="InputEmail">Your Email</label>
                             <div class="input-group col-xs-12">
-                                <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required  >
+                                <input type="email" class="form-control" id="InputEmail" name="InputEmail" 
+                                    <?php if ($id!=NULL)
+                                    echo 'value = "' . $user->getUserEmail(). '"';
+                                else
+                                    echo 'placeholder="Enter email"';
+                                ?> required  >
                             </div>
                         </div>
                         <div class="form-group">
@@ -48,7 +66,7 @@ and open the template in the editor.
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="InputReal">What is 4+3? (Simple Spam Checker)</label>
+                            <label for="InputReal">What is 5+2? (Simple Spam Checker)</label>
                             <div class="input-group col-xs-12">
                                 <input type="text" class="form-control" name="InputReal" id="InputReal" required>
                             </div>
