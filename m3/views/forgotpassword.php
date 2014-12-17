@@ -6,7 +6,7 @@ include("navbar.php");
  *
  * @author rushabindi
  */
-if(isset($_POST['username']))
+
 $username = $_POST['username'];
 $temppass = base64_encode($username);
 $temppassdb = md5($temppass);
@@ -14,6 +14,7 @@ $usercontroller = new users_controller();
 $userquestion = $usercontroller->getUserQuestion($username);
 $reganswer = $usercontroller->getUserAnswer($username);
 
+echo $userquestion;
 if (isset($_POST['SubmitButton'])) {
     $answer = $_POST['answer'];
     if($answer==$reganswer)
@@ -31,7 +32,7 @@ if (isset($_POST['SubmitButton'])) {
     </div>
     <div class="panel-body" style="border: 1px solid;border-color:#12ACA5;">
         <form action="forgotpasswordchanger.php" method="post">
-    <div class="form-group">
+    <div>
         <span><h2>Username : </h2><input type="text" class="form-control input-lg" name="username" value="<?php echo $username;?>" required></span>
         <span>
             <h2>
@@ -40,10 +41,9 @@ if (isset($_POST['SubmitButton'])) {
         </span>
         <h2>Answer : </h2><input type="text" class="form-control input-lg" name="answer" placeholder="Your answer" required>
     </div>
-    <div class="form-group" align="center" style="margin-bottom: 10px">
         <input type="submit" name = "SubmitButton" class="btn btn-default" value="Verify answer" align="center">
-    </div>
     </form>
+    </div>
     </div>
     </div>    
     </div>

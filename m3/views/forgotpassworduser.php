@@ -22,7 +22,7 @@ include("navbar.php");
             </div>
             <br/>
             <div style="float:right;">
-                <input type="submit" name = "SubmitButton" class="btn btn-default" value="Enter username">
+                <input type="submit" name = "Submit" class="btn btn-default" value="Enter username">
             </div>
         </form>
     </div>
