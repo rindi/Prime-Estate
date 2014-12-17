@@ -62,7 +62,7 @@
                                     </button>
 				</span>
                                 <span class="pull-right">
-                                    <button class="btn btn-default btn-lg" onclick="submitForm('forgotpassword.php')" >
+                                    <button class="btn btn-default btn-lg" onclick="submitForm('forgotpassworduser.php')" >
                                         <strong>Forgot Password? </strong>
                                     </button>
 				</span>
