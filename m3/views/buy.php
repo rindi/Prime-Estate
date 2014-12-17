@@ -69,20 +69,20 @@ include 'navbar.php';
                         <div class="col-lg-4">
 			    <img class="img-circle" src="assets/images/IMG_4592copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Recently Sold</h2>
-			    <p>We are proud to inform we just sold this nice house at the city's heart. </p>
+			    <p>We recently sold this cozy house located in the heart of San Francisco. </p>
                             <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=sold" role="button">View Recently Sold &raquo;</a></div>
 			</div><!-- /.col-lg-4 -->
                         
                         <div class="col-lg-4">
 			    <img class="img-circle" src="assets/images/IMG_4588copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Testimony</h2>
-			    <p>"I bought house for my daughter from this website. It is great! Staff are very nice."
+			    <p>"I bought a house for my daughter with PrimeEstate. The staff are helpful and friendly, and my daughter absolutely loves her new home!"
                             </p>
 			</div>
                         <div class="col-lg-4">
 			    <img class="img-circle" src="assets/images/IMG_4583copy.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
 			    <h2>Recently Added</h2>
-			    <p>House on Ocean Beach has joined our listings. It has beautiful view of the ocean, nice breeze & spacious rooms. 
+			    <p>A lovely house on Ocean Beach has been added to our listings. It has a beautiful view of the ocean, nice breeze, and spacious rooms.
 				</p>
                             <div><a class="btn btn-default" href="http://sfsuswe.com/~f14g03/views/search_results.php?search=recent" role="button">View Recently Added &raquo;</a></div>
 			</div><!-- /.col-lg-4 -->
