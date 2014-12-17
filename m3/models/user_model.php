@@ -10,7 +10,7 @@
 class user_model {
 
     //fields for userdata class
-    public $username, $password, $userid, $type, $email, $date, $firstname, $lastname, $question, $answer;
+    public $username, $password, $userid, $type, $email, $date, $firstname, $lastname, $question, $answer, $phone;
 
     /**
      * 
@@ -56,9 +56,15 @@ class user_model {
     public function getUserQuestion() {
         return $this->question;
     }
+    
     public function getUserAnswer() {
         return $this->answer;
     }
+    
+    public function getPhone() {
+        return $this->phone;
+    }
+    
     public function setUserEmail($email) {
         $this->email = $email;
     }
@@ -97,6 +103,11 @@ class user_model {
 
     public function setLastname($lastname) {
         $this->lastname = $lastname;
+    }
+
+    
+    public function setPhone($phone) {
+        $this->phone = $phone;
     }
 
 }
