@@ -21,17 +21,15 @@ if (isset($_POST['SubmitButton'])) {
     $usercontroller = new users_controller();
     $userlist = $usercontroller->getUsers();
     $flag = 0;
-    echo $question;
-    echo $answer;
+    $input['question'] = $question;
+    $input['answer'] = $answer;
     
         foreach ($userlist as $row) 
         {
             if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
             {
                 $flag = 1;
-                $row->setUserQuestion($question);
-                $row->setUserAnswer($answer);
-                print_r($row);
+                $row->addqa($input);
             }
         }
         if ($flag==0)

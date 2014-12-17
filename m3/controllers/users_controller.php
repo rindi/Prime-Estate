@@ -189,4 +189,21 @@ class users_controller extends controller {
         return $data["answer"];
     }
 
+     /**
+     * Add question and answer for a user
+     * @return \user_model
+     */
+    public function addqa($input) {
+        $sql = "UPDATE usertable 
+                SET question = :question,
+                answer = :answer
+                WHERE username = :username";
+
+        $stmt = $this->db_connect->prepare($sql);
+        $stmt->bindParam(':question', $input['question'], PDO::PARAM_STR);
+        $stmt->bindParam(':answer', $input['answer'], PDO::PARAM_STR);
+        $stmt->bindParam(':username', $input['username'], PDO::PARAM_STR);
+        $stmt->execute();
+    }
+    
 }
