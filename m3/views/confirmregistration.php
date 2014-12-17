@@ -69,6 +69,7 @@ else
         else
         {
             echo '<h2 align="center">Registration failed, user already exists.</h2>';
+            $_SESSION["type"]=0;
             //header('Location: http://sfsuswe.com/~f14g03/views/login.php');
         }
     }
