@@ -97,8 +97,8 @@ include 'navbar.php';
                                                 <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone4Group3.pdf">Milestone #4</a>
                                             </li>
                                             <li>
-                                                Milestone #5
-                                                <!--<a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone5Group3.pdf">Milestone #5</a>-->
+                                                <!--Milestone #5-->
+                                                <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone5Group3.pdf">Milestone #5</a>
                                             </li>
                                             </div>
                                         </div>
