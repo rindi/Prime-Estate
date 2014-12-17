@@ -60,7 +60,7 @@ if (isset($_POST['SubmitButton'])) {
     </div>
 
     <div class="form-group" align="center" style="margin-bottom: 10px">
-        <input type="submit" name = "SubmitButton" class="btn btn-default" value="Change Password" align="center">
+        <input type="submit" name = "SubmitButton" class="btn btn-default" value="Save question and answer" align="center">
     </div>
     </form>
     </div>
