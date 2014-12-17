@@ -32,7 +32,6 @@ else
     $input['username'] = $username;
     $input['password'] = $password;
     $input['type'] = $type;
-    echo $type . "<br/>";
     $input['email'] = $email;
     $input['firstname'] = $first_name;
     $input['lastname'] = $last_name;
@@ -60,11 +59,11 @@ else
             $userid = $registration_controller->getUserId($username);
             if ($_SESSION["type"] == 1)
             {
-                header('Location: http://sfsuswe.com/~f14g03/views/profile.php');
+                echo '<meta http-equiv="refresh" content="0; url=http://sfsuswe.com/~f14g03/views/profile.php" />';
             }
             else
             {
-                header('Location: http://sfsuswe.com/~f14g03/views/search_results?rid='.$userid.'.php');
+                echo '<meta http-equiv="refresh" content="0; url="http://sfsuswe.com/~f14g03/views/search_results?rid='.$userid.'.php" />';
             }
         }
         else
