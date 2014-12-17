@@ -8,9 +8,17 @@
 */
 
 include 'navbar.php';
-#include 'views/navbar.php';
-#require '../controllers/users_controller.php';
-#require '../models/user_model.php';
+require_once ("../controllers/users_controller.php");
+$flag = 0;
+if(isset($_SESSION['type']))
+{
+    $username = $_SESSION["username"];
+    $usercontroller = new users_controller();
+    $id = $usercontroller->getUserId($username);
+    $info = $usercontroller->getUserInfo($id);
+    $user = new user_model($info);
+    $flag = 1;
+}
 ?>
 
 <html>
@@ -83,25 +91,63 @@ include 'navbar.php';
                             <div class="form-group"> 
                                 <label for="" class="col-sm-3 control-label">First name</label>
                                 <div class="col-sm-9">
-                                    <input class="form-control" type="text" name="firstname" placeholder="First name" required/>
+                                    <input class="form-control" type="text" name="firstname"
+                                        <?php if ($flag==1)
+                                    {
+                                        if($id!=NULL)
+                                        {
+                                            echo 'value = "' . $user->getFirstname(). '"';
+                                        }
+                                        else
+                                            echo 'placeholder="First Name"';
+                                    }
+                                ?> required  >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="" class="col-sm-3 control-label">Last name</label>
                                 <div class="col-sm-9">
-                                  <input class="form-control" type="text" name="lastname" placeholder="Last name" required/>
+                                  <input class="form-control" type="text" name="lastname" 
+                                      <?php if ($flag==1)
+                                    {
+                                        if($id!=NULL)
+                                        {
+                                            echo 'value = "' . $user->getLastname(). '"';
+                                        }
+                                        else
+                                            echo 'placeholder="Last Name"';
+                                    }
+                                ?> required  >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="" class="col-sm-3 control-label">Phone Number</label>
                                 <div class="col-sm-9">
-                                  <input class="form-control" type="text" name="phone" placeholder="Phone Number" maxlength="10" required/>
+                                  <input class="form-control" type="text" name="phone" <?php if ($flag==1)
+                                    {
+                                        if($id!=NULL)
+                                        {
+                                            echo 'value = "' . $user->getPhone(). '"';
+                                        }
+                                        else
+                                            echo 'placeholder="Phone Number"';
+                                    }
+                                ?> maxlength="10" required/>
                                 </div>
                             </div>
                             <div class="form-group">
                             <label for="" class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-9">
-                              <input class="form-control" type="email" name="email" placeholder="me@example.com"required/>
+                              <input class="form-control" type="email" name="email"  <?php if ($flag==1)
+                                    {
+                                        if($id!=NULL)
+                                        {
+                                            echo 'value = "' . $user->getUserEmail(). '"';
+                                        }
+                                        else
+                                            echo 'placeholder="Email"';
+                                    }
+                                ?> required  >
                             </div>
                             </div>
                             <div class="form-group">
