@@ -6,9 +6,8 @@ include("navbar.php");
  *
  * @author rushabindi
  */
-
-if(isset($_POST['login_username']))
-$username = $_POST['login_username'];
+if(isset($_POST['username']))
+$username = $_POST['username'];
 $temppass = base64_encode($username);
 $temppassdb = md5($temppass);
 $usercontroller = new users_controller();
