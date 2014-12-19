@@ -73,6 +73,7 @@ if (isset($_SESSION['type'])) {
                               <ul class="dropdown-menu" role="menu">
                                   <li><a href="http://sfsuswe.com/~f14g03/views/profile.php">Profile</a></li>
                                   <li><a href="http://sfsuswe.com/~f14g03/views/changepassword.php">Change password</a></li>
+                                  <li><a href="http://sfsuswe.com/~f14g03/views/questionanswer.php">Security Question</a></li>
                                   <!--                                    <li class="divider"></li>
                                                                       <li><a href="#">Separated link</a></li>-->
                               </ul>
