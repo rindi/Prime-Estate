@@ -1,15 +1,16 @@
 <?php
 
 /*
-@(#)File:           Listings Controller Class
-@(#)Purpose:        Controller for Listings
-@(#)Author:         PrimeEstate
-@(#)Product:        PrimeEstate Website 2014
-*/
+  @(#)File:           Listings Controller Class
+  @(#)Purpose:        Controller for Listings
+  @(#)Author:         PrimeEstate
+  @(#)Product:        PrimeEstate Website 2014
+ */
 
 require_once ("../controllers/controller.php");
 require_once ("../models/listing_model.php");
 require_once ("../models/profile_model.php");
+
 class listings_controller extends controller {
 
     /**
@@ -94,52 +95,44 @@ class listings_controller extends controller {
      *  
      */
     public function advanceSearch($input) {
-         $dataSet = array();
-          $city = $input["city"];
-          $min =  $input["pricemin"];
-          $max = $input["pricemax"];
-          $bed = $input["bedrooms"];
-          $bath = $input["bathrooms"];
-          $zip = $input["zip"];
-          
-         
-          
-          $sql = "SELECT * FROM listings WHERE city like '%$city%' AND zip like '%$zip%' AND rooms like '%$bed%' AND bathrooms like '%$bath%' and sold = 0";
-            $res = $this->db_connect->query($sql);
-            foreach ($res as $row) {
-                $imgstack = $this->getImages($row['id']);
-                $newListing = new listing_model($row);
-                $newListing->setImages($imgstack);
-                if($newListing->getPrice() > $min && $newListing->getPrice() < $max)
+        $dataSet = array();
+        $city = $input["city"];
+        $min = $input["pricemin"];
+        $max = $input["pricemax"];
+        $bed = $input["bedrooms"];
+        $bath = $input["bathrooms"];
+        $zip = $input["zip"];
+
+
+
+        $sql = "SELECT * FROM listings WHERE city like '%$city%' AND zip like '%$zip%' AND rooms like '%$bed%' AND bathrooms like '%$bath%' and sold = 0";
+        $res = $this->db_connect->query($sql);
+        foreach ($res as $row) {
+            $imgstack = $this->getImages($row['id']);
+            $newListing = new listing_model($row);
+            $newListing->setImages($imgstack);
+            if ($newListing->getPrice() > $min && $newListing->getPrice() < $max)
                 $dataSet[] = $newListing;
-            }
-            $size = count($dataSet);
-            if($size == 0 )
-            {
-                
+        }
+        $size = count($dataSet);
+        if ($size == 0) {
+
             $sql = "SELECT * FROM listings WHERE city like '%$city%' OR zip like '%$zip%' OR rooms like '%$bed%' OR bathrooms like '%$bath%'";
             $res = $this->db_connect->query($sql);
             foreach ($res as $row) {
                 $imgstack = $this->getImages($row['id']);
                 $newListing = new listing_model($row);
                 $newListing->setImages($imgstack);
-                if($newListing->getPrice() > $min && $newListing->getPrice() < $max)
-                $dataSet[] = $newListing;
+                if ($newListing->getPrice() > $min && $newListing->getPrice() < $max)
+                    $dataSet[] = $newListing;
             }
-                
-                
-                
-                
-                
-            }
-              
-          
-        
-        
-    
+        }
+
+
+
+
+
         return $dataSet;
-        
-        
     }
 
     /**
@@ -264,14 +257,14 @@ class listings_controller extends controller {
         //$stmt->bindParam(':id', $id, PDO::PARAM_STR, 12);   
         $imgstmt->bindParam(':id', $id, PDO::PARAM_INT);
         $imgstmt->execute();
-        
+
         $sql = "DELETE FROM listings WHERE id = :id";
         $stmt = $this->db_connect->prepare($sql);
         //$stmt->bindParam(':id', $id, PDO::PARAM_STR, 12);   
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
-    
+
     /**
      * Delete a Listing from the database
      * @param type $id
@@ -389,16 +382,18 @@ class listings_controller extends controller {
         echo json_encode($dataSet);
         $string = ob_get_contents(); //Get output
         ob_end_clean(); //Discard output buffer
-        $string = trim($string,'[]');
-        $sql2 = "SELECT * FROM listings WHERE id in (".$string.")";
+        $string = trim($string, '[]');
+        $sql2 = "SELECT * FROM listings WHERE id in (" . $string . ")";
         $res = $this->db_connect->query($sql2);
-        foreach ($res as $row2) {
-            $imgstack = $this->getImages($row2['id']);
-            $newListing = new listing_model($row2);
-            $newListing->setImages($imgstack);
-            $dataSet2[] = $newListing;
+        if (!empty($dataSet2)) {
+            foreach ($res as $row2) {
+                $imgstack = $this->getImages($row2['id']);
+                $newListing = new listing_model($row2);
+                $newListing->setImages($imgstack);
+                $dataSet2[] = $newListing;
+            }
         }
-        
+
         if (!empty($dataSet2))
             return $dataSet2;
         else
