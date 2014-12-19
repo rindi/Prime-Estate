@@ -165,7 +165,7 @@ class listings_controller extends controller {
      * @return \listing_model
      */
     public function searchSold() {
-        $sql = "SELECT * FROM listings WHERE sold = 1";
+        $sql = "SELECT * FROM listings WHERE sold = 1 order by when_sold desc";
 
         $res = $this->db_connect->query($sql);
         foreach ($res as $row) {
