@@ -10,7 +10,6 @@
 require_once ("../controllers/controller.php");
 require_once ("../models/listing_model.php");
 require_once ("../models/profile_model.php");
-
 class listings_controller extends controller {
 
     /**
@@ -351,6 +350,41 @@ class listings_controller extends controller {
             $listing = new listing_model($row);
             return $listing->getId();
         }
+    }
+
+    /**
+     * Show list of user's favorited houses 
+     * @param type $array
+     * @return type
+     */
+    public function getFavorites($userid) {
+        $sql = "SELECT * FROM interestedcustomers WHERE userid = '$userid'";
+        $results = $this->db_connect->query($sql);
+        $dataset = array();
+        $i = 0;
+        foreach ($results as $row) {
+            $value = $row[1];
+            $dataSet[] = $value;
+        }
+        ob_start(); //Start output buffer
+        echo json_encode($dataSet);
+        $string = ob_get_contents(); //Get output
+        ob_end_clean(); //Discard output buffer
+        $string = trim($string,'[]');
+        $sql2 = "SELECT * FROM listings WHERE id in (".$string.")";
+        echo $sql2;
+        $res = $this->db_connect->query($sql2);
+        foreach ($res as $row2) {
+            $imgstack = $this->getImages($row2['id']);
+            $newListing = new listing_model($row2);
+            $newListing->setImages($imgstack);
+            $dataSet2[] = $newListing;
+        }
+        
+        if (!empty($dataSet2))
+            return $dataSet2;
+        else
+            return null;
     }
 
 }

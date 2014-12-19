@@ -1,11 +1,11 @@
 <?php
 
 /*
-@(#)File:           Interest Controller Class
-@(#)Purpose:        Controller for customer interest
-@(#)Author:         PrimeEstate
-@(#)Product:        PrimeEstate Website 2014
-*/
+  @(#)File:           Interest Controller Class
+  @(#)Purpose:        Controller for customer interest
+  @(#)Author:         PrimeEstate
+  @(#)Product:        PrimeEstate Website 2014
+ */
 
 require_once ("../controllers/controller.php");
 require_once ("../controllers/users_controller.php");
@@ -58,6 +58,26 @@ class interest_controller extends controller {
         $stmt->bindParam(':date', date("Y/m/d"), PDO::PARAM_STR);
 
         $stmt->execute();
+    }
+
+    /**
+     * Get list of houses interested in
+     * @param type $userid
+     * @return $listing
+     */
+    public function getInterestedHouses($userid) {
+        $sql = "SELECT * FROM interestedcustomers WHERE userid = '$userid'";
+        $results = $this->db_connect->query($sql);
+        $dataset = array();
+        $i = 0;
+        foreach ($results as $row) {
+            $value = $row[1];
+            $dataSet[]=$value;
+            }
+        if (!empty($dataSet))
+            return $dataSet;
+        else
+            return null;
     }
 
 }
