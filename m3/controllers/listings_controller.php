@@ -259,9 +259,28 @@ class listings_controller extends controller {
      * @param type $id
      */
     public function deleteListing($id) {
+        $imgsql = "DELETE FROM images WHERE houseid = :id";
+        $imgstmt = $this->db_connect->prepare($imgsql);
+        //$stmt->bindParam(':id', $id, PDO::PARAM_STR, 12);   
+        $imgstmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $imgstmt->execute();
+        
         $sql = "DELETE FROM listings WHERE id = :id";
         $stmt = $this->db_connect->prepare($sql);
         //$stmt->bindParam(':id', $id, PDO::PARAM_STR, 12);   
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+    
+    /**
+     * Delete a Listing from the database
+     * @param type $id
+     */
+    public function sellListing($id) {
+        $sql = "UPDATE listings SET when_sold=:when_sold, sold = 1 WHERE id = :id";
+        $stmt = $this->db_connect->prepare($sql);
+        //$stmt->bindParam(':id', $id, PDO::PARAM_STR, 12);   
+        $stmt->bindParam(':when_sold', date("Y/m/d"), PDO::PARAM_STR);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
