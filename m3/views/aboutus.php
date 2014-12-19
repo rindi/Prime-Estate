@@ -1,11 +1,10 @@
 <?php
-
 /*
-@(#)File:           About Us 
-@(#)Purpose:        Information about PrimeEstate
-@(#)Author:         PrimeEstate
-@(#)Product:        PrimeEstate Website 2014
-*/
+  @(#)File:           About Us
+  @(#)Purpose:        Information about PrimeEstate
+  @(#)Author:         PrimeEstate
+  @(#)Product:        PrimeEstate Website 2014
+ */
 
 include 'navbar.php';
 ?>
@@ -42,7 +41,7 @@ include 'navbar.php';
                 overflow-y: auto;
                 padding-bottom: 70px;
             }
-            
+
             #mslinks li{
                 width: 100%;
                 list-style: none;
@@ -52,7 +51,7 @@ include 'navbar.php';
                 border: 2px solid #12cac5;
                 text-align: center;
             }
-            
+
             hr{
                 border-color: #12cac5;
             }
@@ -74,7 +73,7 @@ include 'navbar.php';
                             <div class="panel panel-default">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12">
-                                        <div class="clearfix" style="margin: 20px; text-align: center;">
+                                        <div class="clearfix" style="margin: 20px;">
                                             <p>
                                                 PrimeEstate is a demo website created for San Francisco State University 
                                                 Computer Science's Fall 2014 Section of Software Engineering.  
@@ -82,25 +81,7 @@ include 'navbar.php';
                                                 the website's project specifications, and you will be able 
                                                 to review each of the five milestones we have released.  
                                             </p>
-                                            <div id="mslinks" class="clearfix">
-                                            <li>
-                                                <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone1Group3.pdf">Milestone #1</a>
-                                            </li>
-                                            <li>
-                                                <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone2Group3.pdf">Milestone #2</a>
-                                            </li>
-                                            <li>
-                                                <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone3Group3.pdf">Milestone #3</a>
-                                            </li>
-                                            <li>
-                                                <!--Milestone #4-->
-                                                <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone4Group3.pdf">Milestone #4</a>
-                                            </li>
-                                            <li>
-                                                <!--Milestone #5-->
-                                                <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone5Group3.pdf">Milestone #5</a>
-                                            </li>
-                                            </div>
+
                                         </div>
                                         <hr>
                                         <!-- Three columns of text below the carousel -->
@@ -143,10 +124,29 @@ include 'navbar.php';
                                                     <p>
                                                         Team Lead/Backend 
                                                     </p>
+
                                                 </div><!-- /.col-lg-4 -->
 
                                             </div><!-- /.row -->
-                                        </div></div></div></div></div></div>
+                                        </div><div id="mslinks" class="clearfix">
+                                            <li>
+                                                <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone1Group3.pdf">Milestone #1</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone2Group3.pdf">Milestone #2</a>
+                                            </li>
+                                            <li>
+                                                <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone3Group3.pdf">Milestone #3</a>
+                                            </li>
+                                            <li>
+                                                <!--Milestone #4-->
+                                                <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone4Group3.pdf">Milestone #4</a>
+                                            </li>
+                                            <li>
+                                                <!--Milestone #5-->
+                                                <a href="http://sfsuswe.com/~f14g03/views/assets/documents/CSC648-848Fall2014Milestone5Group3.pdf">Milestone #5</a>
+                                            </li>
+                                            </div></div></div></div></div></div>
                 </div>
             </div>
         </div>
