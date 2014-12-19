@@ -23,13 +23,15 @@ if (isset($_POST['SubmitButton'])) {
     $flag = 0;
     $input['question'] = $question;
     $input['answer'] = $answer;
-    
         foreach ($userlist as $row) 
         {
             if( $row->getUserName() == $username && $row->getUserPassword() == $encryptedpassword )
             {
                 $flag = 1;
-                $row->addqa($input);
+                
+                $row->setUserQuestion($input['question']);
+                $row->setUserAnswer($input['answer']);
+
             }
         }
         if ($flag==0)

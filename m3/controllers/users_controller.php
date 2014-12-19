@@ -200,8 +200,8 @@ class users_controller extends controller {
                 WHERE username = :username";
 
         $stmt = $this->db_connect->prepare($sql);
-        $stmt->bindParam(':question', $input['question'], PDO::PARAM_STR);
-        $stmt->bindParam(':answer', $input['answer'], PDO::PARAM_STR);
+        $stmt->bindParam(':question', $input['question'], PDO::PARAM_STR);//$input['question']
+        $stmt->bindParam(':answer', $input['answer'], PDO::PARAM_STR);//$input['answer']
         $stmt->bindParam(':username', $input['username'], PDO::PARAM_STR);
         $stmt->execute();
     }
