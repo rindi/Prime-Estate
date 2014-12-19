@@ -20,7 +20,7 @@ include 'navbar.php';
             <div id="box" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" >
                 <div class="panel-heading" style="border: 1px solid;border-color: 000;">
                     <h3 class="panel-title" style="color: #000;text-align: center;">Factors to Consider when Buying a House</h3>
-                </div>
+                </div><br/>
 
                 <p>Most people are looking forward to to have their own dream houses in their live. Also, they usually spend most of their savings in their live to buy their favourite houses. Therefore, it is very important to get everything ready before buying houses.   Especially, When buyers can clearly understand  some the knowledge of house purchasing  which can let buyers likely protect their own  benefits and reduce their  unnecessary money and time lost.</p>
 
@@ -30,7 +30,7 @@ include 'navbar.php';
                 <p>(B) By the narrow environments: neighborhood, public facilities, parking lots, housing conditions and other factors.</p>
                 <div class="panel-heading" style="border: 1px solid;border-color: 000;">
                     <h3 class="panel-title" style="color: #000;text-align: center;"> A. General environment</h3>
-                </div>
+                </div><br/>
                 <ol>
                     <li>Regional environment</li>
                     <ul>
@@ -44,8 +44,7 @@ include 'navbar.php';
                         <li>Gas stations in the vicinity?</li>
                     </ul><br/>
                     <li>Transportation network</li>
-                    <ul> <li>Integrity of regional transportation system is directly related to the home buyers' work, school, and whether they easily and quickly reach their destinations. Therefore, in consideration of the traffic problem, homebuyers should understand the convenience of the conjunctions roads, so that it is easy to control the good traffic conditions every day and prevent wasting too much time.
-                        </li></ul><br/>
+                    <p>Integrity of regional transportation system is directly related to the home buyers' work, school, and whether they easily and quickly reach their destinations. Therefore, in consideration of the traffic problem, homebuyers should understand the convenience of the conjunctions roads, so that it is easy to control the good traffic conditions every day and prevent wasting too much time.</p><br/>
                     <li>Types of houses</li>
                     <ul> 
                         <li>Single Hose : No HOA fee. </li>
@@ -56,17 +55,17 @@ include 'navbar.php';
                             maintaining and improving that property and others.</li>
                     </ul><br/> 
 
-                    <li>Public Works</li>
-                    <li>Home buyers should consider value of the house in future, and then they should pay attention to the living conditions of future or existing adequacy of public construction with the government, such as ? hospitals, parks, stadiums, community centers, cultural centers, art galleries, super market, playground, child-care centers and so on.</li>
+                    <li>Public Works</li><br/>
+                    <li>Home buyers should consider value of the house in future, and then they should pay attention to the living conditions of future or existing adequacy of public construction with the government, such as ? hospitals, parks, stadiums, community centers, cultural centers, art galleries, super market, playground, child-care centers and so on.</li><br/>
 
-                    <li>Schools and markets </li>
+                    <li>Schools and markets </li><br/>
                     <li>Good reputation </li><ul><li>Schools not only provide a good educational environment but also increase the value of properties in the future.</li>
                         <li>If homes can nearby markets, supermarkets, shopping centers, any busy professional women, can also reduce the number of unnecessary time.</p>
                     </ul><br/>
                 </ol>
                 <div class="panel-heading" style="border: 1px solid;border-color: 000;">
                     <h3 class="panel-title" style="color: #000;text-align: center;"> B. Narrow environments</h3>
-                </div>
+                </div><br/>
                 <ol>
                     <li>Regional environment
                     </li>
@@ -83,7 +82,7 @@ include 'navbar.php';
 
                 <div class="panel-heading" style="border: 1px solid;border-color: 000;">
                     <h3 class="panel-title" style="color: #000;text-align: center;"> C. House Mortgage/Loan</h3>
-                </div>                <p>Basically, a default value of rate is 30 years of 6.5%, but actually home buyers' home loan interest rate base on your credit history and other various conditions. Each person's rates are not the same. Generally if credit score is not high enough, the loan interest rate is relatively higher. Before you loan, the bank will first consult your consent and check your credit score.</p>
+                </div><br/>                <p>Basically, a default value of rate is 30 years of 6.5%, but actually home buyers' home loan interest rate base on your credit history and other various conditions. Each person's rates are not the same. Generally if credit score is not high enough, the loan interest rate is relatively higher. Before you loan, the bank will first consult your consent and check your credit score.</p>
 
                 <p>Credit score list</p>
                 <ul>
