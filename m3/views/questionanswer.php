@@ -47,7 +47,7 @@ if (isset($_POST['SubmitButton'])) {
     <div class="container-fluid">
     <div id="box" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" >
     <div class="panel-heading" style="border: 1px solid;border-color: 000;">
-        <h3 class="panel-title" style="color: fff;">Password change menu</h3>
+        <h3 class="panel-title" style="color: fff;">Forgot password credentials</h3>
     </div>
     <div class="panel-body" style="border: 1px solid;border-color:#12ACA5;">
     <form action="questionanswer.php" method="post">
