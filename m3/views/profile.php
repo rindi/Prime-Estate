@@ -37,7 +37,7 @@ $profile = $profilecontroller->getProfile(($id));
     <body style="padding-bottom: 40px">
         <div class="container">
 	    <div id="paneler" class="panel panel-default" style="text-align: center;color:#12aca5">
-		<h1 class="panel-body"><strong><?php echo "Hello ! " ;echo $info["firstname"]; echo " "; echo $info["lastname"]?></strong></h1>
+		<h1 class="panel-body"><strong><?php echo "Hello " ;echo $info["firstname"]; echo " "; echo $info["lastname"]; echo "!"?></strong></h1>
 	    </div>
 
 	    <div class="panel panel-default">
@@ -138,16 +138,16 @@ $profile = $profilecontroller->getProfile(($id));
 			<div id="infobox">
 			   <strong <div class="" style="paddingright: 20px">
                                    <strong><h2>
-                            Profile
+                            Personalized Profile Search
 				</h2>
  <p>
-                            By registering with PrimeEstate we promise to keep your information 
-                            safe and only contact you if you chose to contact a realtor about a 
-                            home you are interested in.  Other benefits include:
-                        <li>Exclusive access to profile page where you can create a customized search</li>
-                        <li>Contact realtors quickly without having to enter your contact information more than once</li>
-                        <li>Exclusive Home Buyer's Guide </li></strong>
-                        <br><br><br>
+                            Our personalized profile search allows you to take your housing search to the next level!  
+                            Enter in the price range and any of the other attributes of your dream home.  We will save your 
+                            results so you can quickly find your dream home when you log back on!  Go ahead give it a try, search by:
+                        <li>Price range</li>
+                        <li>Number of bedrooms or bathrooms</li>
+                        <li>or any combination!</li>
+                        
                         </p>
 			    </div>
                                     <div class="col-sm-offset-2 col-sm-10">
