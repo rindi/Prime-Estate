@@ -147,6 +147,7 @@ $profile = $profilecontroller->getProfile(($id));
                         <li>Exclusive access to profile page where you can create a customized search</li>
                         <li>Contact realtors quickly without having to enter your contact information more than once</li>
                         <li>Exclusive Home Buyer's Guide </li>
+                        <br><br><br>
                         </p>
 			    </div>
                                     <div class="col-sm-offset-2 col-sm-10">
