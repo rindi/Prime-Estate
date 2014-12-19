@@ -34,137 +34,174 @@ $profile = $profilecontroller->getProfile(($id));
 
 
     </head>
+    <body style="padding-bottom: 40px">
+        <div class="container">
+	    <div id="paneler" class="panel panel-default" style="text-align: center;color:#12aca5">
+		<h1 class="panel-body"><strong><?php echo "Hello " ;echo $info["firstname"]; echo " "; echo $info["lastname"]?></strong></h1>
+	    </div>
 
-    <!--<div class="row">-->
-    <!--<div class="col-md-4 col-md-offset-4">-->
-    <label><center><?php echo "hello " ;echo $info["firstname"]; echo " "; echo $info["lastname"]?></center></label>
-    <div class="container-fluid">
-        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-primary">
-                		
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?php echo $userid;?>'s Profile</h3>
-                </div>
-                <div class<="panel-body">
-                    <form class="form-horizontal" role="form" action="profilehandler.php" method="post" >
-                        <!--<fieldset>-->
-                        <!-- Form Name -->
-                        <!--<legend>Home Preferences</legend>-->
+	    <div class="panel panel-default">
+		<div class="row">
+		    <div class="col-xs-12 col-sm-6">
+			<div class="clearfix" style="padding-bottom: 20px;">
+                            <form method="POST" action="confirmregistration.php">
+                                <table style="text-align:center; margin: 0px auto">
+                                    <br><br>
+                                <tr>
 
-                        
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <br><br>
-                            <label class="col-sm-2 control-label" for="textinput">Price Min</label>
-                            <div class="col-sm-4">
-                                <input type="text" name ="pricemin"
-                                <?php
-                                if ($profile->pricemin == 0)
-                                    echo 'placeholder="Lower Range"';
-                                else
-                                    echo 'value =' . $profile->pricemin;
-                                ?>>
-                            </div>
-
-                          
-                        </div>
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Maximum</label>
-                            <div class="col-sm-10">
-                                <input type="text" name ="pricemax"
-                                <?php
-                                if ($profile->pricemax == 0)
-                                    echo 'placeholder="Upper Range"';
-                                else
-                                    echo 'value =' . $profile->pricemax;
-                                ?>>
-
-                            </div>
-                           
-                        </div>
-                        
-                        
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">City</label>
-                            <div class="col-sm-10">
-                                <input type="text" name ="city" placeholder="City" value="<?php
-                                   echo $profile->city;?>">
-                            </div>
-                           
-                        </div>
-                        
-
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Zip</label>
-                            <div class="col-sm-10">
-                                <input type="text" name ="zip"                
-                                <?php
-                                if ($profile->zip == 0)
-                                    echo 'placeholder="Zip / Postal Code"';
-                                else
-                                    echo 'value =' . $profile->zip;
-                                ?>>
-                            </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Bedrooms</label>
-                            <div class="col-sm-10">
-                                <input type="text" name ="bed"
-                                <?php
-                                if ($profile->bedrooms == 0)
-                                    echo 'placeholder="Bedrooms"';
-                                else
-                                    echo 'value =' . $profile->bedrooms;
-                                ?>>
-                            </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Bathrooms</label>
-                            <div class="col-sm-10">
-                                <input type="text" name ="bathroom"
-                                <?php
-                                if ($profile->bathrooms == 0)
-                                    echo 'placeholder="Bathrooms"';
-                                else
-                                    echo 'value =' . $profile->bathrooms;
-                                ?>>            
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="textinput">Details</label>
-                            <div class="col-sm-10">
-                                <input type="text"  name = "info" placeholder="Personal Preferences" 
-                               value= "<?php echo  $profile->personalinformation?>">
+                                    <td><b>Price - Min</b></td>
+                                    <td>
+                                        <input type="text" name ="pricemin"
+                                               accept=""<?php
+                                               if ($profile->pricemin == 0)
+                                                   echo 'placeholder="Lower Range"';
+                                               else
+                                                   echo 'value =' . $profile->pricemin;
+                                               ?>>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><b>Price - Max</b></td>
+                                    <td>
+                                        <input type="text" name ="pricemax"
+                                        <?php
+                                        if ($profile->pricemax == 0)
+                                            echo 'placeholder="Upper Range"';
+                                        else
+                                            echo 'value =' . $profile->pricemax;
+                                        ?>>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>City</b></td>
+                                    <td>
+                                        <input type="text" name ="city" placeholder="City" value="<?php echo $profile->city; ?>">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Zip</b></td>
+                                    <td>
+                                        <input type="text" name ="zip"                
+                                        <?php
+                                        if ($profile->zip == 0)
+                                            echo 'placeholder="Zip / Postal Code"';
+                                        else
+                                            echo 'value =' . $profile->zip;
+                                        ?>>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Bedrooms</b></td>
+                                    <td>
+                                        <input type="text" name ="bed"
+                                        <?php
+                                        if ($profile->bedrooms == 0)
+                                            echo 'placeholder="Bedrooms"';
+                                        else
+                                            echo 'value =' . $profile->bedrooms;
+                                        ?>>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Bathrooms</b></td>
+                                    <td>
+                                        <input type="text" name ="bathroom"
+                                        <?php
+                                        if ($profile->bathrooms == 0)
+                                            echo 'placeholder="Bathrooms"';
+                                        else
+                                            echo 'value =' . $profile->bathrooms;
+                                        ?>>            
+                                    </td>
+                                </tr>
+                                 <tr>
+                                     <td><b>Details</b></td>
+                                    <td>
+                                        <input type="text"  name = "info" placeholder="Personal Preferences" 
+                                               value= "<?php echo $profile->personalinformation ?>">    
+                                    </td>
+                                </tr>
                                 
-                            </div>
-                            <input name = "id" type = "hidden"value  =<?php echo $id ?>>
-                        </div>
+                                <tr>
+                                    <td></td>
 
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
+                                </tr>
+</table>
+                           
+                          
+                             
+                     
+                        </form>
+			</div>
+		    </div>
+		    <div class="col-xs-12 col-sm-6">
+			<div id="infobox">
+			    <div class="" style="paddingright: 20px">
+				<h2>
+                            Why Register?
+				</h2>
+ <p>
+                            By registering with PrimeEstate we promise to keep your information 
+                            safe and only contact you if you chose to contact a realtor about a 
+                            home you are interested in.  Other benefits include:
+                        <li>Exclusive access to profile page where you can create a customized search</li>
+                        <li>Contact realtors quickly without having to enter your contact information more than once</li>
+                        <li>Exclusive Home Buyer's Guide </li>
+                        </p>
+			    </div>
+                            
+                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="pull-right">
                                     <input class="btn btn-default" type="button" value="Cancel" onClick="history.go(-1);return true;">
-                                    <button type="submit" class="btn btn-success">Save</button>
+                                    <button type="submit" formaction="profilehandler.php"class="btn btn-success">Save</button>
                                     <button type="submit" formaction="search_results.php"class="btn btn-success">Search</button>
                                 </div>
                             </div>
-                        </div>
-                </div>
-            </div>
-        </div> 
-    </div>  
-    <!--</fieldset>-->
-</form>
-<!--    </div> /.col-lg-12 
-</div> /.row -->
+			</div>
+		    </div>
+		</div>
+	    </div>
+            
+            
+               <!-- Three columns of text below the carousel -->
+	    <div class="panel panel-default" style="text-align: center">
+		<div class="well well-padding">
+		    <div class="row" style="padding-top: 60px;">
+			<div class="col-lg-4">
+			    <img class="img-circle" src="http://sfsuswe.com/~f14g03/views/assets/images/121951415243587.JPG" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <h2>Recently Sold</h2>
+			    <p>With the help of a PrimeEstate agent, we can help you sell your current home and find your dream home today! 
+			    </p>
+			<!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+			    <img class="img-circle" src="http://sfsuswe.com/~f14g03/views/assets/images/47567_535437611765_8287192_n.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <h2>Testimony</h2>
+			    <p>Thanks to our PrimeEstate agent we were able to sell our old house and find our dream home!</p>
+			    <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+			    <img class="img-circle" src="http://sfsuswe.com/~f14g03/views/assets/images/438_522404375810_2159_n.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+			    <h2>Recently Added</h2>
+			    <p>A registered customer recently purchased this beautiful home in the heart of the city! </p>
+			    <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+			</div><!-- /.col-lg-4 -->
+		    </div><!-- /.row -->
+		</div>
+	    </div>
+
+	</div> 
+
+    </body>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </html>
