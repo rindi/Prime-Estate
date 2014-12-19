@@ -37,14 +37,14 @@ $profile = $profilecontroller->getProfile(($id));
     <body style="padding-bottom: 40px">
         <div class="container">
 	    <div id="paneler" class="panel panel-default" style="text-align: center;color:#12aca5">
-		<h1 class="panel-body"><strong><?php echo "Hello " ;echo $info["firstname"]; echo " "; echo $info["lastname"]?></strong></h1>
+		<h1 class="panel-body"><strong><?php echo "Hello ! " ;echo $info["firstname"]; echo " "; echo $info["lastname"]?></strong></h1>
 	    </div>
 
 	    <div class="panel panel-default">
 		<div class="row">
 		    <div class="col-xs-12 col-sm-6">
 			<div class="clearfix" style="padding-bottom: 20px;">
-                            <form method="POST" action="confirmregistration.php">
+                            <form method="POST" action="profilehandler.php">
                                 <table style="text-align:center; margin: 0px auto">
                                     <br><br>
                                 <tr>
@@ -120,6 +120,7 @@ $profile = $profilecontroller->getProfile(($id));
                                         <input type="text"  name = "info" placeholder="Personal Preferences" 
                                                value= "<?php echo $profile->personalinformation ?>">    
                                     </td>
+                                     <input name = "id" type = "hidden"value  =<?php echo $id ?>>
                                 </tr>
                                 
                                 <tr>
@@ -128,17 +129,16 @@ $profile = $profilecontroller->getProfile(($id));
                                 </tr>
 </table>
                            
-                          
-                             
+                   
                      
-                        </form>
+                       
 			</div>
 		    </div>
 		    <div class="col-xs-12 col-sm-6">
 			<div id="infobox">
 			    <div class="" style="paddingright: 20px">
 				<h2>
-                            Why Register?
+                            Profile
 				</h2>
  <p>
                             By registering with PrimeEstate we promise to keep your information 
@@ -149,14 +149,17 @@ $profile = $profilecontroller->getProfile(($id));
                         <li>Exclusive Home Buyer's Guide </li>
                         </p>
 			    </div>
-                            
-                             <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="col-sm-offset-2 col-sm-10">
                                 <div class="pull-right">
                                     <input class="btn btn-default" type="button" value="Cancel" onClick="history.go(-1);return true;">
-                                    <button type="submit" formaction="profilehandler.php"class="btn btn-success">Save</button>
+                                    <button type="submit" class="btn btn-success">Save</button>
                                     <button type="submit" formaction="search_results.php"class="btn btn-success">Search</button>
                                 </div>
                             </div>
+                             </form>
+                             
+                            
+                            
 			</div>
 		    </div>
 		</div>
