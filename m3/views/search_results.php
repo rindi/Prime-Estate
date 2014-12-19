@@ -25,10 +25,12 @@ if (isset($_GET['search'])) {
       $listingSet = $list_controller->searchSold();
       break;
 
+    case "favorites":
+        $listingSet = $list_controller->getFavorites($_SESSION['userid']);
+        break;
+    
     default:
-
       $listingSet = $list_controller->searchListings($value);
-
       break;
   }
 } elseif (isset($_POST["searchvalue"])) {
