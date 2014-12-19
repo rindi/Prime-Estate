@@ -59,6 +59,7 @@ else
             $userid = $registration_controller->getUserId($username);
             if ($_SESSION["type"] == 1)
             {
+                $_SESSION["userid"] = $userid;
                 echo '<meta http-equiv="refresh" content="0; url=http://sfsuswe.com/~f14g03/views/profile.php" />';
             }
             else
