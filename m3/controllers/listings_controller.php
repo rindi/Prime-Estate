@@ -372,7 +372,8 @@ class listings_controller extends controller {
     public function getFavorites($userid) {
         $sql = "SELECT * FROM interestedcustomers WHERE userid = '$userid'";
         $results = $this->db_connect->query($sql);
-        $dataset = array();
+        $dataSet = array();
+        $dataSet2 = array();
         $i = 0;
         foreach ($results as $row) {
             $value = $row[1];
@@ -384,8 +385,9 @@ class listings_controller extends controller {
         ob_end_clean(); //Discard output buffer
         $string = trim($string, '[]');
         $sql2 = "SELECT * FROM listings WHERE id in (" . $string . ")";
-        $res = $this->db_connect->query($sql2);
-        if (!empty($dataSet2)) {
+        if($string!=NULL)
+        {
+            $res = $this->db_connect->query($sql2);
             foreach ($res as $row2) {
                 $imgstack = $this->getImages($row2['id']);
                 $newListing = new listing_model($row2);
@@ -393,7 +395,6 @@ class listings_controller extends controller {
                 $dataSet2[] = $newListing;
             }
         }
-
         if (!empty($dataSet2))
             return $dataSet2;
         else
