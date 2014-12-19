@@ -372,7 +372,6 @@ class listings_controller extends controller {
         ob_end_clean(); //Discard output buffer
         $string = trim($string,'[]');
         $sql2 = "SELECT * FROM listings WHERE id in (".$string.")";
-        echo $sql2;
         $res = $this->db_connect->query($sql2);
         foreach ($res as $row2) {
             $imgstack = $this->getImages($row2['id']);
