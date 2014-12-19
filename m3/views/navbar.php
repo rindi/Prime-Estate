@@ -69,10 +69,11 @@ if (isset($_SESSION['type'])) {
                     <ul class="nav navbar-nav navbar-left"> 
                         <?php if ($type == 1) : ?>
                           <li class="dropdown">
-                              <a class="dropdown-toggle" data-toggle="dropdown">My Profile<span class="caret"></span></a>
+                              <a class="dropdown-toggle" data-toggle="dropdown"><?php echo $username?>'s Profile<span class="caret"></span></a>
                               <ul class="dropdown-menu" role="menu">
-                                  <li><a href="http://sfsuswe.com/~f14g03/views/profile.php">Profile</a></li>
-                                  <li><a href="http://sfsuswe.com/~f14g03/views/changepassword.php">Change password</a></li>
+                                  <li><a href="http://sfsuswe.com/~f14g03/views/profile.php">My Profile</a></li>
+                                  <li><a href="http://sfsuswe.com/~f14g03/views/search_results.php?search=favorites">View Favorites</a></li>
+                                  <li><a href="http://sfsuswe.com/~f14g03/views/changepassword.php">Change Password</a></li>
                                   <li><a href="http://sfsuswe.com/~f14g03/views/questionanswer.php">Security Question</a></li>
                                   <!--                                    <li class="divider"></li>
                                                                       <li><a href="#">Separated link</a></li>-->
