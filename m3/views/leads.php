@@ -69,6 +69,8 @@ include 'navbar.php';
             $end = count($leadSet);
         }
         $max = round(count($leadSet)/$offset, 0, PHP_ROUND_HALF_DOWN);
+        if($max==0)
+            $max++;
 	echo "<div class=\"alert alert-success\" style=\"text-align:center\"><STRONG>";
 	echo "Total Number of Leads : ".count($leadSet);
 	echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";

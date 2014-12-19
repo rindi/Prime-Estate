@@ -1,11 +1,10 @@
 <?php
-
 /*
-@(#)File:           Edit Photo
-@(#)Purpose:        Edit Listing's Photo
-@(#)Author:         PrimeEstate
-@(#)Product:        PrimeEstate Website 2014
-*/
+  @(#)File:           Edit Photo
+  @(#)Purpose:        Edit Listing's Photo
+  @(#)Author:         PrimeEstate
+  @(#)Product:        PrimeEstate Website 2014
+ */
 
 require '../controllers/listings_controller.php';
 
@@ -27,6 +26,10 @@ if ($_GET['removepath']) {
         <a href="http://sfsuswe.com/~f14g03/views/upload.php?id=<?php echo $_GET['id']; ?>">
             <button class="btn btn-default" value="&laquo; Back">Add a Photo</button>
         </a>
+
+    </div><br><br>
+    <div>
+
         <?php for ($i = 0; $i < count($all_images); $i++): ?>
             <div class="col-xs-6 col-md-3">
                 <a class="thumbnail">
