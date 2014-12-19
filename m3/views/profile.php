@@ -136,8 +136,8 @@ $profile = $profilecontroller->getProfile(($id));
 		    </div>
 		    <div class="col-xs-12 col-sm-6">
 			<div id="infobox">
-			    <div class="" style="paddingright: 20px">
-				<h2>
+			   <strong <div class="" style="paddingright: 20px">
+                                   <strong><h2>
                             Profile
 				</h2>
  <p>
@@ -146,7 +146,7 @@ $profile = $profilecontroller->getProfile(($id));
                             home you are interested in.  Other benefits include:
                         <li>Exclusive access to profile page where you can create a customized search</li>
                         <li>Contact realtors quickly without having to enter your contact information more than once</li>
-                        <li>Exclusive Home Buyer's Guide </li>
+                        <li>Exclusive Home Buyer's Guide </li></strong>
                         <br><br><br>
                         </p>
 			    </div>
@@ -164,7 +164,7 @@ $profile = $profilecontroller->getProfile(($id));
 			</div>
 		    </div>
 		</div>
-	    </div>
+	
             
             
                <!-- Three columns of text below the carousel -->
