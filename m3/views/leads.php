@@ -40,7 +40,7 @@ include 'navbar.php';
     <body style="padding-bottom: 40px;">
 	<div class="container">
 	<div class="panel panel-default" style="text-align:center">
-	    <h1> Leads </h1>
+	    <h1> Sales Leads </h1>
             <p>Customers who are interested in selling their home with PrimeEstate</p>
 	</div>
         
