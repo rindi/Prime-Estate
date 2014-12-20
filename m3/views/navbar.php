@@ -101,7 +101,7 @@ if (isset($_SESSION['type'])) {
                         if ($type == 2) :
                           ?>
                           <li>
-                              <a href="http://sfsuswe.com/~f14g03/views/leads.php">Leads</a>
+                              <a href="http://sfsuswe.com/~f14g03/views/leads.php">Sales Leads</a>
                           </li>
                           <?php
                         endif;
