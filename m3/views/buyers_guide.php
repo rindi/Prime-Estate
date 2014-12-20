@@ -17,7 +17,7 @@ include 'navbar.php';
     <body>
 
         <div class="container-fluid">
-            <div id="box" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" >
+            <div id="box" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2" >
                 <div class="panel-heading" style="border: 1px solid;border-color: 000;">
                     <h3 class="panel-title" style="color: #000;text-align: center;">Factors to Consider when Buying a House</h3>
                 </div><br/>

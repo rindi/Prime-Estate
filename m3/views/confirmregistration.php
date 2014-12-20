@@ -10,8 +10,8 @@
 include 'navbar.php';
 require_once '../controllers/users_controller.php';
 require_once '../models/user_model.php';
-if (1 == count($_GET))
-    $type=$_GET['type'];
+if (isset($_POST['type']))
+    $type=2;
 else
     $type=1;
 /* 
