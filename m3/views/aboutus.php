@@ -101,7 +101,7 @@ include 'navbar.php';
                                                     <img class="img-circle" src="assets/images/rushab.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                                                     <h2>Rushab</h2>
                                                     <p>
-                                                        Frontend Lead/Subversion Administrator  
+                                                        Tech Lead/Subversion Administrator  
                                                     </p>
                                                 </div><!-- /.col-lg-4 -->
                                                 <div class="col-md-2 man">
