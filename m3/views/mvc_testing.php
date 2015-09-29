@@ -1,6 +1,4 @@
 <?php
-//require ("../controllers/controller.php");
-require ("../controllers/users_controller.php");
 require ("../controllers/listings_controller.php");
 //$db = new Controller();
 $user_contr = new users_controller();
@@ -128,6 +126,4 @@ $listing_contr = new listings_controller();
 //    }
 //    echo "</p>";
 //}
- 
- 
  ?>
