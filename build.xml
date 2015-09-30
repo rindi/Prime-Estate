@@ -46,14 +46,14 @@
 <delete dir="${basedir}/build/phpdox"/>
 <property name="clean.done" value="true"/>
 </target>
-<target name="prepare" unless="prepare.done" depends="clean" description="Prepare for build">
+<target name="prepare" unless="prepare.done" depends="clean" description="Prepare for build..">
 <mkdir dir="${basedir}/build/api"/>
 <mkdir dir="${basedir}/build/coverage"/>
 <mkdir dir="${basedir}/build/logs"/>
 <mkdir dir="${basedir}/build/phpdox"/>
 <property name="prepare.done" value="true"/>
 </target>
-<target name="lint" unless="lint.done" description="Perform syntax check of sourcecode files">
+<target name="lint" unless="lint.done" description="Perform syntax check of sourcecode files.">
 <apply executable="php" taskname="lint">
 <arg value="-l"/>
 <fileset dir="${basedir}/m3">
@@ -95,7 +95,7 @@
 </exec>
 <property name="phpcpd.done" value="true"/>
 </target>
-<target name="phpdox" unless="phpdox.done" depends="phploc-ci" description="Generate project documentation using phpDox">
+<target name="phpdox" unless="phpdox.done" depends="phploc-ci" description="Generate project documentation using phpDox.">
 <exec executable="${phpdox}" dir="${basedir}/build" taskname="phpdox"/>
 <property name="phpdox.done" value="true"/>
 </target>
