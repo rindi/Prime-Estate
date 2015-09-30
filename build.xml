@@ -5,7 +5,6 @@
 <property name="phpcs" value="phpcs"/>
 <property name="phpdox" value="phpdox"/>
 <property name="phploc" value="phploc"/>
-<property name="phpunit" value="phpunit"/>
 <!--
  Use this when the tools are located as PHARs in ${basedir}/build/tools
  <property name="pdepend" value="${basedir}/build/tools/pdepend.phar"/>
@@ -27,8 +26,8 @@
  <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/> 
 -->
 <target name="full-build" depends="prepare,static-analysis,phpunit,phpdox,-check-failure" description="Performs static analysis, runs the tests, and generates project documentation"/>
-<target name="full-build-parallel" depends="prepare,static-analysis-parallel,phpunit,phpdox,-check-failure" description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
-<target name="quick-build" depends="prepare,lint,phpunit-no-coverage" description="Performs a lint check and runs the tests (without generating code coverage reports)"/>
+<target name="full-build-parallel" depends="prepare,static-analysis-parallel,phpdox,-check-failure" description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
+<target name="quick-build" depends="prepare,lint" description="Performs a lint check and runs the tests (without generating code coverage reports)"/>
 <target name="static-analysis" depends="lint,phploc-ci,phpcpd-ci" description="Performs static analysis"/>
 <!--
  Adjust the threadCount attribute's value to the number of CPUs 
@@ -96,32 +95,8 @@
 </exec>
 <property name="phpcpd.done" value="true"/>
 </target>
-<target name="phpunit" unless="phpunit.done" depends="prepare" description="Run unit tests with PHPUnit">
-<exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
-<arg value="--configuration"/>
-<arg path="${basedir}/build/phpunit.xml"/>
-</exec>
-<property name="phpunit.done" value="true"/>
-</target>
-<target name="phpunit-no-coverage" unless="phpunit.done" depends="prepare" description="Run unit tests with PHPUnit (without generating code coverage reports)">
-<exec executable="${phpunit}" failonerror="true" taskname="phpunit">
-<arg value="--configuration"/>
-<arg path="${basedir}/build/phpunit.xml"/>
-<arg value="--no-coverage"/>
-</exec>
-<property name="phpunit.done" value="true"/>
-</target>
 <target name="phpdox" unless="phpdox.done" depends="phploc-ci" description="Generate project documentation using phpDox">
 <exec executable="${phpdox}" dir="${basedir}/build" taskname="phpdox"/>
 <property name="phpdox.done" value="true"/>
-</target>
-<target name="-check-failure">
-<fail message="PHPUnit did not finish successfully">
-<condition>
-<not>
-<equals arg1="${result.phpunit}" arg2="0"/>
-</not>
-</condition>
-</fail>
 </target>
 </project>
