@@ -66,10 +66,6 @@
 <include name="**/*.php"/>
 <modified/>
 </fileset>
-<fileset dir="${basedir}/tests">
-<include name="**/*.php"/>
-<modified/>
-</fileset>
 </apply>
 <property name="lint.done" value="true"/>
 </target>
@@ -77,7 +73,6 @@
 <exec executable="${phploc}" taskname="phploc">
 <arg value="--count-tests"/>
 <arg path="${basedir}/m3"/>
-<arg path="${basedir}/tests"/>
 </exec>
 <property name="phploc.done" value="true"/>
 </target>
@@ -89,7 +84,6 @@
 <arg value="--log-xml"/>
 <arg path="${basedir}/build/logs/phploc.xml"/>
 <arg path="${basedir}/m3"/>
-<arg path="${basedir}/tests"/>
 </exec>
 <property name="phploc.done" value="true"/>
 </target>
