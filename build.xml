@@ -1,6 +1,6 @@
 <project name="rindi-demo" default="full-build">
 <!--  By default, we assume all tools to be on the $PATH  -->
-<property name="pdepend" value="pdepend"/>
+<!--<property name="pdepend" value="pdepend"/> -->
 <property name="phpcpd" value="phpcpd"/>
 <property name="phpcs" value="phpcs"/>
 <property name="phpdox" value="phpdox"/>
@@ -29,15 +29,12 @@
 <target name="full-build" depends="prepare,static-analysis,phpunit,phpdox,-check-failure" description="Performs static analysis, runs the tests, and generates project documentation"/>
 <target name="full-build-parallel" depends="prepare,static-analysis-parallel,phpunit,phpdox,-check-failure" description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
 <target name="quick-build" depends="prepare,lint,phpunit-no-coverage" description="Performs a lint check and runs the tests (without generating code coverage reports)"/>
-<target name="static-analysis" depends="lint,phploc-ci,pdepend,phpcpd-ci" description="Performs static analysis"/>
+<target name="static-analysis" depends="lint,phploc-ci,phpcpd-ci" description="Performs static analysis"/>
 <!--
  Adjust the threadCount attribute's value to the number of CPUs 
 -->
 <target name="static-analysis-parallel" description="Performs static analysis (executing the tools in parallel)">
 <parallel threadCount="2">
-<sequential>
-<antcall target="pdepend"/>
-</sequential>
 <antcall target="lint"/>
 <antcall target="phpcpd-ci"/>
 <antcall target="phploc-ci"/>
@@ -47,7 +44,6 @@
 <delete dir="${basedir}/build/api"/>
 <delete dir="${basedir}/build/coverage"/>
 <delete dir="${basedir}/build/logs"/>
-<delete dir="${basedir}/build/pdepend"/>
 <delete dir="${basedir}/build/phpdox"/>
 <property name="clean.done" value="true"/>
 </target>
@@ -55,7 +51,6 @@
 <mkdir dir="${basedir}/build/api"/>
 <mkdir dir="${basedir}/build/coverage"/>
 <mkdir dir="${basedir}/build/logs"/>
-<mkdir dir="${basedir}/build/pdepend"/>
 <mkdir dir="${basedir}/build/phpdox"/>
 <property name="prepare.done" value="true"/>
 </target>
