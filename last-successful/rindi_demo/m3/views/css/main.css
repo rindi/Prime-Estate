@@ -1,0 +1,99 @@
+.btn-default, .btn-primary{
+    padding: 9px;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid #12cac5;
+    color: #12aca5;
+    font-weight: bold;
+}
+.btn-danger{
+    padding: 9px;
+    background: rgba(255,100,100,1.0);
+    border: 2px solid red;
+    color: #12aca5;
+    font-weight: bold;
+}
+.btn-default:hover, .btn-primary:hover{
+    background: rgba(38,195,182,0.3);
+    border: 2px solid #12cac5;
+    color: white;
+    font-weight: bold;
+}
+
+.container{
+    margin-top: 20px;
+}
+
+.well{
+    background: rgba(255,255,255,0.9);
+    border: 2px solid #12cac5;
+}
+
+
+body{
+    background-image: url('../assets/images/pattern.png');
+}
+
+.panel{
+    border: 2px solid #12cac5;
+    background-color: rgba(18,172,168,0.1);
+}
+
+.panel .panel-footer{
+    border-top: 2px solid #12cac5;
+}
+
+.panel-footer, .panel-heading{
+    background-color: rgba(18,172,168,0.3);
+}
+
+
+.realtor-desc{
+    margin-left: 15px;
+}
+
+.form-control:focus {
+  border-color: #12dad5;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(18, 172, 168, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(18, 172, 168, .6);
+}
+
+.footer{
+    border-top: 2px solid #12cac5;
+}
+
+.alert-success{
+    background: rgba(194,255,182,0.4);
+    border: 2px solid green;
+}
+
+.pagination > li > a, .pagination > li > span{
+    background-color: rgba(255,255,255,0.4);
+    border-color: #12cac5;
+    color: #12aca5;
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover{
+    background-color: rgba(18,172,168,0.4);
+    border-color: #12cac5;
+    color: #fff;
+}
+
+.well-padding{
+    margin: 10px;
+}
+
+.nav>li>a:hover{
+    background-color: rgba(18,172,168, 0.2);
+}
+
+#contact-seller
+{
+    background-color: rgba(20, 255, 255, 0.3);
+}
+#contact-seller:hover
+{
+    color: #3c763d;
+    background: rgba(194,255,182,0.6);
+    border: 2px solid green;
+}
