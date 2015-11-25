@@ -8,7 +8,7 @@ include 'views/navbar.php';
         <title> Prime Estate </title>
     </head>
     <body>
-        <div class=""container>
+        <div class="container">
           <div class="well well-lg col-xs-offset-1 col-xs-10">
             <h1 align="center">
                 Welcome to Prime Estate.
