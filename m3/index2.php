@@ -10,7 +10,7 @@ include 'views/navbar.php';
         <div class="container">
           <div class="well well-lg col-xs-offset-1 col-xs-10">
             <h1 align="center">
-                Welcome to Prime Estate.
+                Welcome to Prime Estate
             </h1>
             <form class="form-horizontal" style="text-align:center; margin: 0px auto" action="views/search_results.php" method="POST">
                 <div class="form-group">
